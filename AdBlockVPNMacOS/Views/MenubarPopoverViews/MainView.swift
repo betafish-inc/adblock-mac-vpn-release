@@ -1,0 +1,147 @@
+//    AdBlock VPN
+//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+import SwiftUI
+
+struct MainView: View {
+    @EnvironmentObject var state: AppState
+    private(set) var vpnManager: VPNManager
+    private(set) var authManager: AuthManager
+    private(set) var logManager: LogManager
+    private(set) var errorManager: ErrorManager
+    private(set) var updateManager: UpdateManager
+    private(set) var dockIconManager: DockIconManager
+    @ObservedObject var viewModel: MainViewModel
+    private(set) var connectionViewModel: ConnectionViewModel
+    private(set) var loginViewModel: LoginViewModel
+    var body: some View {
+        VStack {
+            Spacer().frame(width: 0, height: 16)
+            TopBarView()
+            VStack {
+                Spacer().frame(width: 0, height: 16)
+                getViewToShow()
+                    .frame(width: 272, height: 352)
+                    .onAppear {
+                        self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isError)
+                    }
+            }
+            .if(state.showOverlay) {
+                $0.overlay(
+                    UpdateOverlayView(text: "Update Complete!", icon: "CheckIcon", background: .abUpToDateAccent, foreground: .white)
+                        .shadow(color: .abShadow, radius: 20, x: 0, y: 5),
+                    alignment: .top
+                )
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        state.showOverlay = false
+                    }
+                }
+            }
+        }
+        .frame(width: 320, height: 440)
+        .background(state.viewToShow == .updates ? Color.abAccentBackground : Color.white)
+        .foregroundColor(.abLightText)
+        .onReceive(authManager.$token, perform: { _ in
+            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isError)
+        })
+        .onReceive(viewModel.$vpnAllowed, perform: { newVal in
+            if let allowed = newVal, allowed {
+                self.state.vpnProfileActive = allowed
+            }
+        })
+        .onReceive(state.$sysExtensionActive, perform: { newVal in
+            if newVal {
+                viewModel.checkState()
+            }
+        })
+        .onReceive(errorManager.$isError, perform: { newVal in
+            var isError = newVal
+            if isError && errorManager.isAuthError {
+                self.state.viewToShow = .login
+                isError = false
+            }
+            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: isError)
+            if errorManager.newError {
+                viewModel.showErrorNotification()
+            }
+        })
+        .onReceive(errorManager.$checkError, perform: { newVal in
+            if newVal, newVal != errorManager.checkError {
+                viewModel.checkForError()
+            }
+        })
+        .onReceive(viewModel.$restartConnection, perform: { newVal in
+            state.restartConnection = newVal
+        })
+        .onReceive(viewModel.$providerAuthChecked, perform: { newVal in
+            state.providerAuthChecked = newVal
+        })
+    }
+    
+    @ViewBuilder
+    func getViewToShow() -> some View {
+        if state.viewToShow == .acceptance {
+            AcceptanceView()
+        } else if state.viewToShow == .setUpExtension {
+            SetUpExtensionView()
+        } else if state.viewToShow == .landing {
+            LandingView()
+        } else if state.viewToShow == .error {
+            ErrorView(viewModel: ErrorViewModel(errorManager: errorManager))
+        } else if state.viewToShow == .login {
+            LoginFlowView(viewModel: loginViewModel)
+        } else if state.viewToShow == .connection {
+            ConnectionView(viewModel: connectionViewModel)
+        } else if state.viewToShow == .setUpVPN {
+            SetUpVPNView(viewModel: connectionViewModel)
+        } else if state.viewToShow == .locations {
+            RegionSelectionView(viewModel: connectionViewModel)
+        } else if state.viewToShow == .preferences {
+            PreferencesView(viewModel: PreferencesViewModel(vpnManager: vpnManager, authManager: authManager))
+        } else if state.viewToShow == .account {
+            AccountView(viewModel: AccountViewModel(vpnManager: vpnManager, authManager: authManager))
+        } else if state.viewToShow == .help {
+            HelpView(viewModel: HelpViewModel())
+        } else if state.viewToShow == .appSettings {
+            AppSettingsView(viewModel: AppSettingsViewModel(updateManager: updateManager, dockIconManager: dockIconManager))
+        } else if state.viewToShow == .updates {
+            UpdatesView(viewModel: UpdatesViewModel(updateManager: updateManager))
+        }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView(vpnManager: VPNManager(),
+                 authManager: AuthManager(),
+                 logManager: LogManager(),
+                 errorManager: ErrorManager(),
+                 updateManager: UpdateManager(logManager: LogManager()),
+                 dockIconManager: DockIconManager(),
+                 viewModel: MainViewModel(authManager: AuthManager(),
+                                          vpnManager: VPNManager(), errorManager: ErrorManager(),
+                                          notificationManager: NotificationManager()),
+                 connectionViewModel: ConnectionViewModel(vpnManager: VPNManager(),
+                                                          authManager: AuthManager(),
+                                                          logManager: LogManager(),
+                                                          notificationManager: NotificationManager(),
+                                                          errorManager: ErrorManager()),
+                 loginViewModel: LoginViewModel(authManager: AuthManager(),
+                                                logManager: LogManager(),
+                                                errorManager: ErrorManager())).environmentObject(AppState())
+    }
+}

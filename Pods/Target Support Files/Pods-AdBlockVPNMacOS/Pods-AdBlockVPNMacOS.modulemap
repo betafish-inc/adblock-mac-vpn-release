@@ -1,0 +1,6 @@
+framework module Pods_AdBlockVPNMacOS {
+  umbrella header "Pods-AdBlockVPNMacOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

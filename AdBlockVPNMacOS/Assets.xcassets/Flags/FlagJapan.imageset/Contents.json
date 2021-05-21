@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "flag_Japan.png",
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "flag_Japan2x.png",
+      "idiom" : "mac",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

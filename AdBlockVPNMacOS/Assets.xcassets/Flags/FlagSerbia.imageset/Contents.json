@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "flag_Serbia.png",
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "flag_Serbia2x.png",
+      "idiom" : "mac",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "Flag_Singapore_gray.png",
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Flag_Singapore_gray2x.png",
+      "idiom" : "mac",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
