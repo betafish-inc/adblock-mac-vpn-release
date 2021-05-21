@@ -1,2 +1,2 @@
-# adblock-mac-vpn
-MacOS VPN Client 
+# adblock-mac-vpn-release
+AdBlock VPN for macOS Client 
