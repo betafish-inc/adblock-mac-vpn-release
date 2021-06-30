@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "MenuBarIcon_2.png",
+      "filename" : "icon_connecting_3_exportable@1x.png",
       "idiom" : "mac",
       "scale" : "1x"
     },
     {
-      "filename" : "MenuBarIcon_2@2x.png",
+      "filename" : "icon_connecting_3_exportable@2x.png",
       "idiom" : "mac",
       "scale" : "2x"
     }

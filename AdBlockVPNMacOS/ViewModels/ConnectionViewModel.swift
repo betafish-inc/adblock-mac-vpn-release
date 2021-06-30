@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -50,8 +50,6 @@ class ConnectionViewModel: ObservableObject {
         self.errorManager = errorManager
         getAvailableGeos(callback: startListening)
         registerForAllPathChanges()
-        registerForSleepEvent()
-        registerForWakeEvent()
     }
     
     deinit {
@@ -69,6 +67,7 @@ class ConnectionViewModel: ObservableObject {
                     let data = try Data(contentsOf: fileURL)
                     let geos = try JSONDecoder().decode(Regions.self, from: data)
                     self?.connection.availableGeos = geos.regions
+                    SwiftyBeaver.debug("regions loaded from file")
                 } catch {
                     self?.errorManager.setError(error: ErrorManager.ErrorObj(message: "Error in reading regions file.", type: .needsMachineRestart, link: nil))
                     SwiftyBeaver.error("can't download or parse geos from file")
@@ -86,56 +85,36 @@ class ConnectionViewModel: ObservableObject {
             notificationManager.requestAuth()
         }
         let geoToUse = connection.availableGeos.first(where: { $0.id == connection.selectedGeo })
-        authManager.checkForCurrentAuthInfo { [weak self] (error) in
+        vpnManager.configureVPN(selectedGeo: geoToUse, deviceID: authManager.deviceID, tokenInfo: authManager.token) { [weak self] success in
             guard let strongSelf = self else { return }
-            if let errorMsg = error {
-                strongSelf.restarting = false
-                SwiftyBeaver.debug("no auth set restarting to false: errorMsg: \(errorMsg)")
-                if strongSelf.userInitiated {
-                    strongSelf.userInitiated = false
-                    strongSelf.logManager.sendLogMessage(message: .connect_error, region: strongSelf.connection.getRegionId(), error: errorMsg.rawValue)
-                }
-                switch errorMsg {
-                case .invalidRefreshToken:
-                    strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "Invalid refresh token.", type: .needsAuth, link: nil))
-                case .noServer:
-                    strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "", type: .noServer, link: nil))
-                case .unknown:
-                    strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "Unknown token error.", type: .needsAppRestart, link: nil))
-                }
-                callback?(false)
-            } else {
-                strongSelf.vpnManager.configureVPN(selectedGeo: geoToUse, deviceID: strongSelf.authManager.deviceID, tokenInfo: strongSelf.authManager.token) { success in
-                    if success {
-                        if connect {
-                            strongSelf.vpnManager.connectVPN { errorMsg in
-                                if let error = errorMsg {
-                                   if strongSelf.userInitiated {
-                                        strongSelf.restarting = false
-                                        SwiftyBeaver.debug("connect failed set restarting to false")
-                                        strongSelf.userInitiated = false
-                                        strongSelf.logManager.sendLogMessage(message: .connect_error, region: strongSelf.connection.getRegionId(), error: error)
-                                    }
-                                    callback?(false)
-                                } else {
-                                    callback?(true)
-                                }
+            if success {
+                if connect {
+                    strongSelf.vpnManager.connectVPN { errorMsg in
+                        if let error = errorMsg {
+                           if strongSelf.userInitiated {
+                                strongSelf.restarting = false
+                                SwiftyBeaver.debug("connect failed set restarting to false: \(error)")
+                                strongSelf.userInitiated = false
+                                strongSelf.logManager.sendLogMessage(message: .connect_error, region: strongSelf.connection.getRegionId(), error: error)
                             }
+                            callback?(false)
                         } else {
                             callback?(true)
                         }
-                    } else {
-                        strongSelf.restarting = false
-                        SwiftyBeaver.debug("can't configure set restarting to false")
-                        if strongSelf.userInitiated {
-                            strongSelf.userInitiated = false
-                            strongSelf.logManager.sendLogMessage(message: .connect_error,
-                                                                 region: strongSelf.connection.getRegionId(),
-                                                                 error: "VPN configuration failed")
-                        }
-                        callback?(false)
                     }
+                } else {
+                    callback?(true)
                 }
+            } else {
+                strongSelf.restarting = false
+                SwiftyBeaver.debug("can't configure set restarting to false")
+                if strongSelf.userInitiated {
+                    strongSelf.userInitiated = false
+                    strongSelf.logManager.sendLogMessage(message: .connect_error,
+                                                         region: strongSelf.connection.getRegionId(),
+                                                         error: "VPN configuration failed")
+                }
+                callback?(false)
             }
         }
     }
@@ -171,7 +150,7 @@ class ConnectionViewModel: ObservableObject {
         if !restarting {
             restarting = true
             SwiftyBeaver.debug("restart set restarting to true")
-            if [.connected, .connecting, .reasserting].contains(vpnManager.providerManager?.connection.status) {
+            if [.connected, .connecting, .reasserting].contains(vpnManager.connectionStatus) {
                 disconnectAndReconnect()
             } else {
                 connect()
@@ -181,7 +160,7 @@ class ConnectionViewModel: ObservableObject {
     
     func toggleConnection() {
         SwiftyBeaver.verbose("connect/disconnect button clicked")
-        switch vpnManager.providerManager?.connection.status {
+        switch vpnManager.connectionStatus {
         case .connected, .connecting, .reasserting:
             disconnect()
         case .disconnected, .disconnecting:
@@ -197,7 +176,7 @@ class ConnectionViewModel: ObservableObject {
     
     func changeGeo(newGeo: String) {
         connection.selectedGeo = newGeo
-        guard let status = vpnManager.providerManager?.connection.status else { return }
+        guard let status = vpnManager.connectionStatus else { return }
         if status == .connected {
             disconnect()
             shouldConnect = true
@@ -212,7 +191,7 @@ class ConnectionViewModel: ObservableObject {
         updateViewBasedOnCurrentState()
         NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange, object: nil, queue: OperationQueue.main) { [weak self] _ in
             guard let strongSelf = self else { return }
-            guard let status = strongSelf.vpnManager.providerManager?.connection.status else { return }
+            guard let status = strongSelf.vpnManager.connectionStatus else { return }
             strongSelf.updateView(status: status)
             if strongSelf.shouldConnect, status == .disconnected {
                 strongSelf.shouldConnect = false
@@ -241,7 +220,7 @@ class ConnectionViewModel: ObservableObject {
     }
     
     func updateViewBasedOnCurrentState() {
-        let status = vpnManager.providerManager?.connection.status ?? .disconnected
+        let status = vpnManager.connectionStatus ?? .disconnected
         updateView(status: status)
     }
     
@@ -294,7 +273,7 @@ class ConnectionViewModel: ObservableObject {
                 }
                 
                 SwiftyBeaver.debug("ping \(uniqueID) status == 200")
-                if strongSelf.vpnManager.providerManager?.connection.status == .connected {
+                if strongSelf.vpnManager.connectionStatus == .connected {
                     strongSelf.pingFailedCount = 0
                 }
             }.resume()
@@ -348,29 +327,5 @@ class ConnectionViewModel: ObservableObject {
         let queue = DispatchQueue.init(label: "pathMonitorQueue", qos: .userInitiated)
         monitor?.start(queue: queue)
         SwiftyBeaver.verbose("start listening for path changes")
-    }
-    
-    private func registerForWakeEvent() {
-        let notificationCenter = NSWorkspace.shared.notificationCenter
-        notificationCenter.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: nil) { [weak self] _ in
-            SwiftyBeaver.verbose("wake event received")
-            if self?.shouldConnectOnWake ?? false {
-                SwiftyBeaver.debug("connecting from wake")
-                self?.shouldConnectOnWake = false
-                self?.connect()
-            }
-        }
-    }
-    
-    private func registerForSleepEvent() {
-        let notificationCenter = NSWorkspace.shared.notificationCenter
-        notificationCenter.addObserver(forName: NSWorkspace.willSleepNotification, object: nil, queue: nil) { [weak self] _ in
-            SwiftyBeaver.verbose("sleep event received")
-            if [.connected, .connecting].contains(self?.vpnManager.providerManager?.connection.status) {
-                self?.shouldConnectOnWake = true
-                SwiftyBeaver.debug("disconnecting on sleep")
-                self?.disconnect()
-            }
-        }
     }
 }

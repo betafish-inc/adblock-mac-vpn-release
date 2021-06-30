@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     override init() {
         SwiftyBeaver.removeAllDestinations()
         let file = FileDestination()
-        file.logFileURL = FileManager.default.urls(for: .cachesDirectory, in: .localDomainMask).first?.appendingPathComponent("AdBlock VPN Provider/swiftybeaver.log")
+        file.logFileURL = FileManager.default.urls(for: .cachesDirectory, in: .localDomainMask).first?.appendingPathComponent("AdBlock VPN Provider/AdBlockVPNProvider.log")
         file.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $L: ($N: $l) $M"
         let console = ConsoleDestination()
         console.useNSLog = true

@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -62,7 +62,7 @@ struct TopBarView: View {
                 Image("FullLogo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 147, height: 24)
+                    .frame(height: 28)
             }
         }.frame(width: 272, height: 56)
     }

@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ class ErrorManager {
         case needsAuth
         case needsSupport
         case needsKB
-        case retryConnection // TODO: doesn't actually trigger retry yet
+        case retryConnection
         
         static func < (lhs: ErrorType, rhs: ErrorType) -> Bool {
             return lhs.rawValue < rhs.rawValue
@@ -69,11 +69,11 @@ class ErrorManager {
         .needsAppRestart: ErrorStrings(
             fullAction: "Please restart AdBlock VPN. If the problem persists, contact our support team.",
             shortAction: "Please restart AdBlock VPN",
-            errorWebLinks: ["support team": Constants.helpURL]),
+            errorWebLinks: ["support team": Constants.newTicketURL]),
         .needsMachineRestart: ErrorStrings(
             fullAction: "Please restart your computer. If the problem persists, contact our support team.",
             shortAction: "Please restart your computer",
-            errorWebLinks: ["support team": Constants.helpURL]),
+            errorWebLinks: ["support team": Constants.needMachineRestartURL]),
         .needsKB: ErrorStrings(
             fullAction: "For help solving this problem, please follow the steps in this article.",
             shortAction: "Please follow the steps in this article",
@@ -81,15 +81,15 @@ class ErrorManager {
         .needsSupport: ErrorStrings(
             fullAction: "For help solving this problem, please contact our support team.",
             shortAction: "Please contact our support team",
-            errorWebLinks: ["support team": Constants.helpURL]),
+            errorWebLinks: ["support team": Constants.newTicketURL]),
         .needsAuth: ErrorStrings(
             fullAction: "Please sign in again. If the problem persists, contact our support team.",
             shortAction: "Please sign in again",
-            errorWebLinks: ["support team": Constants.helpURL]),
+            errorWebLinks: ["support team": Constants.newTicketURL]),
         .noServer: ErrorStrings(
             fullAction: "We can't connect to our servers. Please try again later. If the problem persists, contact our support team.",
             shortAction: "We can't connect to our servers. Please try again later.",
-            errorWebLinks: ["support team": Constants.helpURL])
+            errorWebLinks: ["support team": Constants.connectionHelpURL])
     ]
     
     @Published var isError = false
@@ -102,12 +102,15 @@ class ErrorManager {
             if let error = err, oldValue == nil {
                 if error.isUserFacing {
                     newError = true
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.isError = true
-                    }
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self.isError = true
                 }
             } else if let error = err, error.isUserFacing, let oldErr = oldValue, error.type != oldErr.type {
                 newError = true
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self.isError = true
+                }
             } else if err == nil || !(err?.isUserFacing ?? false) {
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     self.isError = false
@@ -119,19 +122,33 @@ class ErrorManager {
     var isAuthError: Bool {
         return err?.type == .needsAuth
     }
+    var isRetryError: Bool {
+        return err?.type == .retryConnection
+    }
+    var isUserFacingError: Bool {
+        return err?.isUserFacing ?? false
+    }
+    private var restarted = false
     
     init() {
-        if let savedError = UserDefaults.standard.string(forKey: Constants.lastError_key) {
+        if let savedError = UserDefaults.standard.string(forKey: Constants.lastError_key), !savedError.isEmpty {
             setFromAsteriskDelimitedString(asteriskString: savedError)
+            if err?.type == .retryConnection {
+                restarted = true
+            }
         }
     }
     
     func setError(error: ErrorObj) {
         if err == nil {
             err = error
-        } else if let currErr = err, error.type < currErr.type {
-            // replace error only with higher priority error
-            err = error
+        } else if let currErr = err {
+            if isRetryError && error.type == .retryConnection {
+                err = ErrorObj(message: "Connection retry failed.", type: .needsAppRestart, link: nil)
+            } else if error.type < currErr.type {
+                // replace error only with higher priority error
+                err = error
+            }
         }
     }
     
@@ -182,6 +199,7 @@ class ErrorManager {
     
     // swiftlint:disable:next inclusive_language
     func setFromAsteriskDelimitedString(asteriskString: String) {
+        SwiftyBeaver.debug("setFromAsteriskDelimitedString: \(asteriskString)")
         var message = ""
         var errType: Int?
         var link = ""
@@ -196,14 +214,15 @@ class ErrorManager {
             errType = Int(errorArray[1])
             link = String(errorArray[2])
         }
-        let errNum = errType ?? ErrorManager.ErrorType.retryConnection.rawValue
-        let errorType = ErrorManager.ErrorType(rawValue: errNum) ?? .retryConnection
+        
         let errLink = link == "nil" ? nil : link
-        setError(error: ErrorObj(message: message, type: errorType, link: errLink))
+        if let errNum = errType, let errorType = ErrorManager.ErrorType(rawValue: errNum) {
+            setError(error: ErrorObj(message: message, type: errorType, link: errLink))
+        }
     }
     
     func setRetryOrRestartError(message: String) {
-        if err?.type == .retryConnection {
+        if (err?.type == .retryConnection) && restarted {
             setError(error: ErrorObj(message: message, type: .needsAppRestart, link: nil))
         } else {
             setError(error: ErrorObj(message: "", type: .retryConnection, link: nil))

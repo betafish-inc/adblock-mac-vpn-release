@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -129,7 +129,7 @@ class LoginViewModel: ObservableObject {
         case .codeEntry, .emailEntry:
             if !isTransition && !textInput.isEmpty {
                 isTransition = true
-                if loginManager.emailSubmitted {
+                if currentPage == .codeEntry {
                     submitAuthString(authString: textInput, callback: callback)
                 } else {
                     submitEmail(emailString: textInput)
@@ -200,7 +200,7 @@ extension LoginViewModel {
                                              descriptionText: "Enter the email address you used when you purchased AdBlock VPN:",
                                              placeholderText: "Email Address",
                                              buttonText: "Next",
-                                             linkText: "<a href='\(Constants.forgotEmailURL)'>Forgot your email?</a>",
+                                             linkText: "<a href='\(Constants.newTicketURL)'>Forgot your email?</a>",
                                              footerText: "Don't have an AdBlock account? Sign up.",
                                              footerWebLinks: ["Sign up.": Constants.mainVpnURL])
     static let codeEntryText = LoginStrings(titleText: "Check Your Email",
@@ -214,26 +214,26 @@ extension LoginViewModel {
                                             buttonText: "Get AdBlock VPN",
                                             footerText: "Doesn’t sound right? Try using a different email address or contact support.",
                                             footerTryAgainText: "Try again using a different email address",
-                                            footerWebLinks: ["contact support": Constants.helpURL])
+                                            footerWebLinks: ["contact support": Constants.newTicketURL])
     static let subEndedText = LoginStrings(titleText: "Oops!",
                                            descriptionText: "It looks like your subscription has ended. Please click below to renew.",
                                            buttonText: "Renew Subscription",
                                            footerText: "Doesn’t sound right? Try using a different email address or contact support.",
                                            footerTryAgainText: "Try again using a different email address",
-                                           footerWebLinks: ["contact support": Constants.helpURL])
+                                           footerWebLinks: ["contact support": Constants.newTicketURL])
     static let deviceLimitText = LoginStrings(titleText: "Oops!",
                                               descriptionText: "You have already registered the maximum 6 devices. Please click below to update your settings.",
                                               buttonText: "Manage Devices")
     
     static let invalidEmailErrorText = ErrorStrings(errorText: "Oops!\nWe don’t recognize that email address.\nPlease try again or contact support.",
                                                     errorTryAgainText: "try again",
-                                                    errorWebLinks: ["contact support": Constants.helpURL])
+                                                    errorWebLinks: ["contact support": Constants.newTicketURL])
     static let invalidCodeErrorText = ErrorStrings(errorText: "Oops!\nThat code didn’t work. Please try again.",
                                                    errorTryAgainText: "try again")
     static let genericErrorText = ErrorStrings(errorText: "Oops!\nSomething went wrong.\nPlease try again or contact support.",
                                                errorTryAgainText: "try again",
-                                               errorWebLinks: ["contact support": Constants.helpURL])
+                                               errorWebLinks: ["contact support": Constants.newTicketURL])
     static let loggedOutErrorText = ErrorStrings(errorText: "You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team.",
                                                  errorTryAgainText: nil,
-                                                 errorWebLinks: ["support team": Constants.helpURL])
+                                                 errorWebLinks: ["support team": Constants.newTicketURL])
 }

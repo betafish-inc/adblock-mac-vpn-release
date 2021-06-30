@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -23,5 +23,6 @@ extension NSColor {
     static let abLightestText = NSColor(named: "LightestText") ?? .lightGray
     static let abLightText = NSColor(named: "LightText") ?? .lightGray
     static let abLinkColor = NSColor(named: "LinkColor") ?? .blue
-    static let abPrimaryAccent = NSColor(named: "PrimaryAccent") ?? .red
+    static let abPrimaryAccent = NSColor(named: "PrimaryAccent") ?? .blue
+    static let abErrorAccent = NSColor(named: "ErrorAccent") ?? .red
 }

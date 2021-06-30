@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ class PreferencesViewModel: ObservableObject {
     init(vpnManager: VPNManager, authManager: AuthManager) {
         self.authManager = authManager
         self.vpnManager = vpnManager
-        self.isVpnConnected = vpnManager.providerManager?.connection.status == .connected
+        self.isVpnConnected = vpnManager.connectionStatus == .connected
         setupVpnStatusSubscriber()
     }
     
@@ -43,7 +43,7 @@ class PreferencesViewModel: ObservableObject {
     private func setupVpnStatusSubscriber() {
         cancellable = self.notificationCentre.publisher(for: .NEVPNStatusDidChange)
             .sink { _ in
-                self.isVpnConnected = self.vpnManager.providerManager?.connection.status == .connected
+                self.isVpnConnected = self.vpnManager.connectionStatus == .connected
             }
     }
 }
