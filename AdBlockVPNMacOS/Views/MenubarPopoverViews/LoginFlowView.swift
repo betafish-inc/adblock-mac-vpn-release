@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -118,13 +118,13 @@ struct LoginFlowView: View {
                 Spacer().layoutPriority(2)
                 if viewModel.isError {
                     ZStack {
-                        Rectangle().fill(Color.abPrimaryAccent)
+                        Rectangle().fill(Color.abErrorAccent)
                         HStack(alignment: .top) {
                             if let tryAgainText = viewModel.errorStrings.errorTryAgainText {
                                 MultiLinkTextField(content: viewModel.errorStrings.errorText,
                                                    fontSize: 14,
                                                    centered: false,
-                                                   backgroundColor: .abPrimaryAccent,
+                                                   backgroundColor: .abErrorAccent,
                                                    textColor: .white,
                                                    accentColorLinks: false,
                                                    localLinks: [tryAgainText: { viewModel.tryAgainClicked() }],
@@ -137,7 +137,7 @@ struct LoginFlowView: View {
                                 MultiLinkTextField(content: viewModel.errorStrings.errorText,
                                                    fontSize: 14,
                                                    centered: false,
-                                                   backgroundColor: .abPrimaryAccent,
+                                                   backgroundColor: .abErrorAccent,
                                                    textColor: .white,
                                                    accentColorLinks: false,
                                                    localLinks: nil,

@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -16,9 +16,12 @@
 
 import Foundation
 import Sparkle
+import SwiftyBeaver
 
 class UpdateManager: NSObject {
     @Published var updateAvailable = false
+    @Published var updateFailed = false
+    @Published var updateIsRequired = false
     var logManager: LogManager
     var updateVersion = ""
     var applyUpdatesAutomatically = true {
@@ -28,6 +31,8 @@ class UpdateManager: NSObject {
         }
     }
     private var defaults = UserDefaults.standard
+    var storedUpdateBlock: (() -> Void)?
+    var isUserInitiated = false
     
     init(logManager: LogManager) {
         self.logManager = logManager
@@ -42,8 +47,15 @@ class UpdateManager: NSObject {
         SUUpdater.shared()?.checkForUpdateInformation()
     }
     
+    func checkForUpdatesInBackground() {
+        SUUpdater.shared()?.checkForUpdatesInBackground()
+    }
+    
     func update() {
         SUUpdater.shared()?.checkForUpdates(self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            NSApp.activate(ignoringOtherApps: true)
+        }
     }
 }
 
@@ -51,14 +63,30 @@ extension UpdateManager: SUUpdaterDelegate {
     func updater(_ updater: SUUpdater, didFindValidUpdate item: SUAppcastItem) {
         updateVersion = item.displayVersionString
         updateAvailable = true
+        updateIsRequired = item.isCriticalUpdate
     }
     
     func updaterDidNotFindUpdate(_ updater: SUUpdater) {
         updateAvailable = false
+        updateIsRequired = false
     }
     
     func updater(_ updater: SUUpdater, willInstallUpdate item: SUAppcastItem) {
         logManager.sendLogMessage(message: .update, target: item.versionString)
         defaults.setValue(true, forKey: Constants.willInstallUpdate_key)
+    }
+    
+    func updater(_ updater: SUUpdater, didAbortWithError error: Error) {
+        SwiftyBeaver.verbose("update error: \(error.localizedDescription)")
+        let err = error as NSError
+        if isUserInitiated && err.code != 1001 {
+            updateFailed = true
+        }
+        isUserInitiated = false
+    }
+    
+    func updater(_ updater: SUUpdater, willInstallUpdateOnQuit item: SUAppcastItem, immediateInstallationBlock installationBlock: @escaping () -> Void) {
+        SwiftyBeaver.verbose("willInstallUpdateOnQuit")
+        storedUpdateBlock = installationBlock
     }
 }

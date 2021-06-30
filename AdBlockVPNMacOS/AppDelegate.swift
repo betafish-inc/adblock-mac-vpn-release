@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -51,6 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private lazy var onboardingViewModel = OnboardingViewModel(viewToShow: appIsInApplicationsFolder ? .intro : .appMove,
                                                                vpnManager: vpnManager,
                                                                notificationManager: notificationManager)
+    private var shouldConnectOnWake = false
 
     override init() {
         errorManager = ErrorManager()
@@ -79,7 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let file = FileDestination()
         file.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $L: ($N: $l) $M"
-        file.logFileURL = URL(fileURLWithPath: "/Caches/")
+        file.logFileURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("AdBlock VPN/AdBlockVPNApp.log")
         let console = ConsoleDestination()
         console.useNSLog = true
         console.format = "ABLOG: $C$L$c: ($N: $l) $M"
@@ -118,7 +119,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         if let button = self.statusBarItem?.button {
-            self.setStatusBarImage(with: vpnManager.providerManager?.connection.status ?? .invalid)
+            self.setStatusBarImage(with: vpnManager.connectionStatus ?? .invalid)
             button.action = #selector(togglePopover(_:))
             button.imageScaling = .scaleProportionallyDown
 
@@ -130,8 +131,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         registerForInternetChanges()
+        registerForSleepEvent()
+        registerForWakeEvent()
         pingManager = PingManager(manager: logManager)
         pingManager?.start()
+        
+        if defaults.bool(forKey: Constants.reconnect_key) {
+            state.restartConnection = true
+            defaults.set(false, forKey: Constants.reconnect_key)
+        }
 
         activateExtension()
         setupVpnStatusSubscriber()
@@ -152,7 +160,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ notification: Notification) {
-        conditionallyShowPopover()
+        if NSApp.windows.count <= 2 {
+            conditionallyShowPopover()
+        }
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -210,6 +220,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        var shouldConnectOnStart = [.connected, .connecting].contains(vpnManager.connectionStatus) || shouldConnectOnWake
+        UserDefaults.standard.set(shouldConnectOnStart, forKey: Constants.reconnect_key)
         vpnManager.disconnectVPN {
             sender.reply(toApplicationShouldTerminate: true)
         }
@@ -306,6 +318,46 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .sink { [weak self] _ in
                 self?.notificationManager.shouldShow = true
             }
+    }
+    
+    private func registerForWakeEvent() {
+        let notificationCenter = NSWorkspace.shared.notificationCenter
+        notificationCenter.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: nil) { [weak self] _ in
+            SwiftyBeaver.verbose("wake event received")
+            if self?.shouldConnectOnWake ?? false {
+                SwiftyBeaver.debug("connecting from wake")
+                self?.state.restartConnection = true
+                self?.state.viewToShow = .connection
+                self?.shouldConnectOnWake = false
+            }
+            
+            // If user has auto updates on
+            if self?.updateManager?.applyUpdatesAutomatically ?? false {
+                // If the update has been downloaded
+                if self?.updateManager?.storedUpdateBlock != nil {
+                    // Apply the update
+                    self?.updateManager?.storedUpdateBlock?()
+                } else {
+                    // Otherwise, check for an available update and download in background
+                    self?.updateManager?.checkForUpdatesInBackground()
+                }
+            } else {
+                // Otherwise, check if there's an available update, silently
+                self?.updateManager?.checkForUpdates()
+            }
+        }
+    }
+    
+    private func registerForSleepEvent() {
+        let notificationCenter = NSWorkspace.shared.notificationCenter
+        notificationCenter.addObserver(forName: NSWorkspace.willSleepNotification, object: nil, queue: nil) { [weak self] _ in
+            SwiftyBeaver.verbose("sleep event received")
+            if [.connected, .connecting].contains(self?.vpnManager.connectionStatus) {
+                self?.shouldConnectOnWake = true
+                SwiftyBeaver.debug("disconnecting on sleep")
+                self?.vpnManager.disconnectVPN()
+            }
+        }
     }
     
     private func registerForInternetChanges() {

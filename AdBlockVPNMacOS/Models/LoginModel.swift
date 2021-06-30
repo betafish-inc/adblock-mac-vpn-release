@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -32,7 +32,6 @@ enum LoginError {
 class LoginManager {
     private var loginData = LoginResponse()
     private var emailString = ""
-    var emailSubmitted = false
     
     func confirmEmail(authString: String, deviceID: String, callback: @escaping (LoginError?, TokenInfo?) -> Void) {
         // Add device name ie 'Rachel's macBook Pro'
@@ -81,7 +80,6 @@ class LoginManager {
                     case let .success(responseObj):
                         SwiftyBeaver.verbose("submit email response: \(responseObj)")
                         strongSelf.loginData = responseObj
-                        strongSelf.emailSubmitted = true
                         callback(nil)
                     case let .failure(err):
                         if let code = err.responseCode, code >= 500 {
@@ -90,7 +88,7 @@ class LoginManager {
                         }
                         let errorMsg = strongSelf.getErrorMsg(response: response.data)
                         SwiftyBeaver.warning("submit email error: \(errorMsg.isEmpty ? "no error message" : errorMsg)")
-                        if errorMsg == "no_email_provided_in_request" {
+                        if errorMsg == "invalid_email" || errorMsg == "missing_email" {
                             callback(.invalidEmail)
                         } else {
                             callback(.generic)
@@ -102,7 +100,6 @@ class LoginManager {
     func reset() {
         loginData = LoginResponse()
         emailString = ""
-        emailSubmitted = false
     }
     
     private func getErrorMsg(response: Data?) -> String {

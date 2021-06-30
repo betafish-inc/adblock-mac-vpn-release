@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -34,13 +34,13 @@ struct ErrorView: View {
             Spacer()
             ZStack(alignment: .center) {
                 Rectangle()
-                    .fill(Color.abPrimaryAccent)
+                    .fill(Color.abErrorAccent)
                 VStack(alignment: .center) {
                     HStack(alignment: .center) {
                         MultiLinkTextField(content: viewModel.errorString.text,
                                            fontSize: 14,
                                            centered: true,
-                                           backgroundColor: .abPrimaryAccent,
+                                           backgroundColor: .abErrorAccent,
                                            textColor: .white,
                                            accentColorLinks: false,
                                            localLinks: nil,

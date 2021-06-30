@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -19,8 +19,8 @@ import Foundation
 public struct Constants {
     static let channelName = "alpha"
     
-    static let tunnelProviderID = "com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider"
-    static let keychainID = Bundle.main.bundleIdentifier ?? "com.betafish.AdBlockVPNMacOS"
+    static let tunnelProviderID = "com.adblockinc.adblockvpn.macos.provider"
+    static let keychainID = Bundle.main.bundleIdentifier ?? "com.adblockinc.adblockvpn.macos"
     static let deviceID_key = "deviceID"
     static let refreshToken_key = "refreshToken"
     static let loggedOut_key = "loggedOutDate"
@@ -36,13 +36,18 @@ public struct Constants {
     static let launchAtLoginSet_key = "launchAtLoginSet"
     static let lastError_key = "lastError"
     
+    static let helpURL = "http://vpnsupport.getadblock.com/"
+    static let newTicketURL = "https://vpnsupport.getadblock.com/support/tickets/new"
+    static let needMachineRestartURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000247634-how-to-install-uninstall-and-reinstall-adblock-vpn"
+    static let connectionHelpURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000247858-adblock-vpn-connection-issues/"
+    static let permissionsHelpURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000249111-about-adblock-vpn-permissions-for-mac"
+    
     static let feedbackURL = "https://portal.productboard.com/getadblock/6-adblock-vpn"
-    static let helpURL = "https://vpnsupport.getadblock.com/support/home"
-    static let forgotEmailURL = "https://vpnsupport.getadblock.com/support/home"
     static let accountsURL = "https://accounts.getadblock.com"
     static let eulaURL = "https://vpn.getadblock.com/end-user-license-agreement/"
     static let privacyURL = "https://getadblock.com/privacy/"
     static let mainVpnURL = "https://vpn.getadblock.com/"
+    static let macDownloadsURL = "https://vpn.getadblock.com/mac/"
     
     static let refreshURL = "https://api.adblock.dev/v1/vpn/oauth/token"
     static let logOutURL = "https://api.adblock.dev/v1/vpn/logout"

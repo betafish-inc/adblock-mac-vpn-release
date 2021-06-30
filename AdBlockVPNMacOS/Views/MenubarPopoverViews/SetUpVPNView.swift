@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ struct SetUpVPNView: View {
                 .foregroundColor(.abDarkText)
                 .multilineTextAlignment(.center)
             Spacer().frame(height: 17)
-            HTMLStringView(htmlContent: "<a href='\(Constants.helpURL)'>Need Help?</a>", fontSize: 12, centered: true)
+            HTMLStringView(htmlContent: "<a href='\(Constants.permissionsHelpURL)'>Need Help?</a>", fontSize: 12, centered: true)
             Spacer().frame(height: 27)
             DisabledButtonView(text: "Connect")
                 .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)

@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ struct AcceptanceView: View {
             }
             Spacer()
             VStack(alignment: .center) {
-                HTMLStringView(htmlContent: "Questions? <a href='\(Constants.helpURL)'>Chat with our support team</a>", fontSize: 12, centered: true)
+                HTMLStringView(htmlContent: "Questions? <a href='\(Constants.newTicketURL)'>Chat with our support team</a>", fontSize: 12, centered: true)
                 Spacer().frame(height: 13)
                 AccentButtonView(action: {
                     self.state.eulaAccepted = true

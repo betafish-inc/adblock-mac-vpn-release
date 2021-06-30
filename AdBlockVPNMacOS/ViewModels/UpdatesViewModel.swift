@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -16,6 +16,7 @@
 
 import Foundation
 import Combine
+import AppKit
 
 class UpdatesViewModel: ObservableObject {
     private var updateManager: UpdateManager
@@ -25,6 +26,13 @@ class UpdatesViewModel: ObservableObject {
     }
     
     func update() {
+        updateManager.isUserInitiated = true
         updateManager.update()
+    }
+    
+    func openDownloadsPage() {
+        if let url = URL(string: Constants.macDownloadsURL) {
+            NSWorkspace.shared.open(url)
+        }
     }
 }

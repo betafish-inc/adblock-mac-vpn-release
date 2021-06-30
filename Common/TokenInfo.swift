@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@ import Foundation
 import KeychainAccess
 import SwiftyBeaver
 
-struct TokenInfo: Decodable {
+struct TokenInfo: Codable {
     var access_token: String
     var token_type: String
     var expires_in: Int
@@ -63,7 +63,7 @@ struct TokenInfo: Decodable {
         let encoder = JSONEncoder()
         do {
             if !refresh_token.isEmpty {
-                let tokenData = try encoder.encode(TokenDatePair(token: refresh_token, date: creationDate))
+                let tokenData = try encoder.encode(self)
                 try appKeychain.set(tokenData, key: Constants.refreshToken_key)
             } else {
                 try appKeychain.remove(Constants.refreshToken_key)
@@ -86,12 +86,12 @@ struct TokenInfo: Decodable {
     
     static func newFromStored() -> TokenInfo {
         let appKeychain = Keychain(service: Constants.keychainID)
-        var storedToken = TokenDatePair()
+        var storedToken = TokenInfo()
         do {
             if let tokenInfo = try appKeychain.getData(Constants.refreshToken_key) {
                 let decoder = JSONDecoder()
                 do {
-                    storedToken = try decoder.decode(TokenDatePair.self, from: tokenInfo)
+                    storedToken = try decoder.decode(TokenInfo.self, from: tokenInfo)
                 } catch {
                     SwiftyBeaver.warning("error in retrieving saved token")
                 }
@@ -100,12 +100,6 @@ struct TokenInfo: Decodable {
             // Handle error
             SwiftyBeaver.warning("error in retrieving refresh token")
         }
-        let token = TokenInfo(accessToken: "", tokenType: "", expiresIn: 0, refreshToken: storedToken.token, creationDate: storedToken.date)
-        return token
+        return storedToken
     }
-}
-
-struct TokenDatePair: Codable {
-    var token: String = ""
-    var date: Date = Date()
 }

@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -30,12 +30,14 @@ enum VPNViews {
     case error
     case appSettings
     case updates
+    case updateError
+    case updateRequired
 }
 
 class AppState: ObservableObject {
     @Published var viewToShow: VPNViews = .connection {
         didSet {
-            if ![.help, .account, .preferences, .appSettings, .updates].contains(oldValue) {
+            if ![.help, .account, .preferences, .appSettings, .updates, .updateError, .updateRequired].contains(oldValue) {
                 previousView = oldValue
             }
         }
@@ -91,7 +93,7 @@ class AppState: ObservableObject {
             viewToShow = previousView
         case .account, .help, .appSettings:
             viewToShow = .preferences
-        case .locations, .updates:
+        case .locations, .updates, .updateError:
             viewToShow = .connection
         default:
             fatalError()
@@ -102,12 +104,14 @@ class AppState: ObservableObject {
         return "Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown")"
     }
     
-    func checkViewToShow(loggedIn: Bool, isError: Bool) {
-        if [.preferences, .account, .help, .appSettings, .updates].contains(viewToShow) {
+    func checkViewToShow(loggedIn: Bool, isError: Bool, updateRequired: Bool) {
+        if [.preferences, .account, .help, .appSettings, .updates, .updateError, .updateRequired].contains(viewToShow) {
             return
         }
-        
-        if !sysExtensionActive {
+        if updateRequired {
+            viewToShow = .updateRequired
+            return
+        } else if !sysExtensionActive {
             viewToShow = .setUpExtension
         } else if !eulaAccepted {
             viewToShow = .acceptance

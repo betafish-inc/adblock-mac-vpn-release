@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -17,6 +17,8 @@
 import Cocoa
 
 final class StatusItemAnimationManager {
+    // Frame 0 to 3 represent animation frames to be shown when connecting.
+    // Frame 4 represents the default static state.
     private var currentFrame = 0
     private var animTimer: Timer
     private var statusBarItem: NSStatusItem?
@@ -41,7 +43,7 @@ final class StatusItemAnimationManager {
     
     func stopAnimating() {
         animTimer.invalidate()
-        setImage(frameCount: 0)
+        setImage(frameCount: 4)
     }
     
     @objc

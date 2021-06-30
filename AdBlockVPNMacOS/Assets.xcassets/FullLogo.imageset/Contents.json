@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "VPN_logo_Alpha_placeholder.png",
+      "filename" : "VPN_logo_Alpha.svg",
       "idiom" : "mac",
       "scale" : "1x"
     },
     {
-      "filename" : "VPN_logo_Alpha_placeholder2x.png",
       "idiom" : "mac",
       "scale" : "2x"
     }

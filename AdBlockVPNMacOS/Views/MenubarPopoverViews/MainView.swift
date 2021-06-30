@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ struct MainView: View {
                 getViewToShow()
                     .frame(width: 272, height: 352)
                     .onAppear {
-                        self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isError)
+                        self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isUserFacingError, updateRequired: updateManager.updateIsRequired)
                     }
             }
             .if(state.showOverlay) {
@@ -53,10 +53,10 @@ struct MainView: View {
             }
         }
         .frame(width: 320, height: 440)
-        .background(state.viewToShow == .updates ? Color.abAccentBackground : Color.white)
+        .background([.updates, .updateError, .updateRequired].contains(state.viewToShow) ? Color.abAccentBackground : Color.white)
         .foregroundColor(.abLightText)
         .onReceive(authManager.$token, perform: { _ in
-            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isError)
+            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isUserFacingError, updateRequired: updateManager.updateIsRequired)
         })
         .onReceive(viewModel.$vpnAllowed, perform: { newVal in
             if let allowed = newVal, allowed {
@@ -69,12 +69,16 @@ struct MainView: View {
             }
         })
         .onReceive(errorManager.$isError, perform: { newVal in
-            var isError = newVal
-            if isError && errorManager.isAuthError {
-                self.state.viewToShow = .login
-                isError = false
+            var isUserFacingError = errorManager.isUserFacingError
+            if newVal {
+                if errorManager.isAuthError {
+                    self.state.viewToShow = .login
+                    isUserFacingError = false
+                } else if errorManager.isRetryError {
+                    self.state.restartConnection = true
+                }
             }
-            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: isError)
+            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: isUserFacingError, updateRequired: updateManager.updateIsRequired)
             if errorManager.newError {
                 viewModel.showErrorNotification()
             }
@@ -85,10 +89,24 @@ struct MainView: View {
             }
         })
         .onReceive(viewModel.$restartConnection, perform: { newVal in
-            state.restartConnection = newVal
+            if newVal {
+                state.restartConnection = newVal
+            }
         })
         .onReceive(viewModel.$providerAuthChecked, perform: { newVal in
             state.providerAuthChecked = newVal
+        })
+        .onReceive(updateManager.$updateFailed, perform: { newVal in
+            if newVal {
+                state.viewToShow = .updateError
+            }
+        })
+        .onReceive(updateManager.$updateIsRequired, perform: { newVal in
+            if newVal {
+                state.viewToShow = .updateRequired
+            } else if updateManager.updateIsRequired {
+                state.viewToShow = .connection
+            }
         })
     }
     
@@ -120,6 +138,10 @@ struct MainView: View {
             AppSettingsView(viewModel: AppSettingsViewModel(updateManager: updateManager, dockIconManager: dockIconManager))
         } else if state.viewToShow == .updates {
             UpdatesView(viewModel: UpdatesViewModel(updateManager: updateManager))
+        } else if state.viewToShow == .updateError {
+            UpdatesErrorView(viewModel: UpdatesViewModel(updateManager: updateManager))
+        } else if state.viewToShow == .updateRequired {
+            UpdateRequiredView(viewModel: UpdatesViewModel(updateManager: updateManager))
         }
     }
 }

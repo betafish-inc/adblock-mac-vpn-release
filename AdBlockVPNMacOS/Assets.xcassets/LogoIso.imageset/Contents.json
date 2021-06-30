@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "logo_iso_placeholder_exportable.png",
+      "filename" : "LogoIso.svg",
       "idiom" : "mac",
       "scale" : "1x"
     },
     {
-      "filename" : "logo_iso_placeholder_exportable2x.png",
       "idiom" : "mac",
       "scale" : "2x"
     }

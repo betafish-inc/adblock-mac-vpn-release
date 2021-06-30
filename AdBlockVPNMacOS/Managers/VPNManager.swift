@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -20,6 +20,9 @@ import SwiftyBeaver
 
 class VPNManager {
     var providerManager: NETunnelProviderManager?
+    var connectionStatus: NEVPNStatus? {
+        return providerManager?.connection.status
+    }
     
     func initializeProviderManager(callback: @escaping ((Bool) -> Void)) {
         // load any existing managers
@@ -116,7 +119,7 @@ class VPNManager {
                 SwiftyBeaver.warning("error in starting tunnel")
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                if let status = self?.providerManager?.connection.status, status == .connected {
+                if let status = self?.connectionStatus, status == .connected {
                     callback(nil)
                 } else {
                     callback("connection failed")
@@ -127,15 +130,16 @@ class VPNManager {
     
     func disconnectVPN(callback: (() -> Void)? = nil) {
         providerManager?.loadFromPreferences { [weak self] error in
-            guard error == nil else { return }
-            self?.providerManager?.connection.stopVPNTunnel()
-            if let callbackFunction = callback {
-                callbackFunction()
+            guard error == nil else {
+                callback?()
+                return
             }
+            self?.providerManager?.connection.stopVPNTunnel()
+            callback?()
         }
     }
     
-    func sendMessageToProvider(message: String, callback: @escaping (String?) -> Void) {
+    func sendMessageToProvider(message: String, retry: Bool = false, callback: @escaping (String?) -> Void) {
         guard let messageData = message.data(using: .utf8) else { return }
         providerManager?.loadFromPreferences { [weak self] error in
             guard error == nil else {
@@ -151,7 +155,14 @@ class VPNManager {
                             callback(responseString)
                         } else {
                             SwiftyBeaver.debug("No response")
-                            callback("")
+                            if !retry {
+                                SwiftyBeaver.debug("retrying sending message to provider")
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    self?.sendMessageToProvider(message: message, retry: true, callback: callback)
+                                }
+                            } else {
+                                callback("")
+                            }
                         }
                     }
                 } catch {

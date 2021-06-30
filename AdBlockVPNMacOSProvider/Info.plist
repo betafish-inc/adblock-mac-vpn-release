@@ -23,7 +23,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2020 Betafish Inc. All rights reserved.</string>
+	<string>Copyright © 2020-present Adblock, Inc. All rights reserved.</string>
 	<key>NSSystemExtensionUsageDescription</key>
 	<string></string>
 	<key>NetworkExtension</key>

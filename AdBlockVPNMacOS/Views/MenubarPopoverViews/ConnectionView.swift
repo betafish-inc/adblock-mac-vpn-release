@@ -1,5 +1,5 @@
 //    AdBlock VPN
-//    Copyright © 2020-2021 Betafish Inc. All rights reserved.
+//    Copyright © 2020-present Adblock, Inc. All rights reserved.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -64,10 +64,6 @@ struct ConnectionView: View {
         .frame(width: 272, height: 352)
         .background(Color.white)
         .onAppear {
-            if state.restartConnection {
-                viewModel.restart()
-                state.restartConnection = false
-            }
             viewModel.updateViewBasedOnCurrentState()
         }
         .onReceive(state.$restartConnection, perform: { newVal in

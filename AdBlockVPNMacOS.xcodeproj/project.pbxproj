@@ -87,7 +87,7 @@
 		717AC72524C658E200D226A4 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AC72424C658E200D226A4 /* NetworkExtension.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		717AC72824C658E200D226A4 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717AC72724C658E200D226A4 /* PacketTunnelProvider.swift */; };
 		717AC72A24C658E200D226A4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717AC72924C658E200D226A4 /* main.swift */; };
-		717AC72F24C658E200D226A4 /* com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 717AC72224C658E200D226A4 /* com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		717AC72F24C658E200D226A4 /* com.adblockinc.adblockvpn.macos.provider.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 717AC72224C658E200D226A4 /* com.adblockinc.adblockvpn.macos.provider.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		717AC73B24C7D1BC00D226A4 /* ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717AC73A24C7D1BC00D226A4 /* ConnectionViewModel.swift */; };
 		717AC73D24C7D1D000D226A4 /* PreferencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717AC73C24C7D1D000D226A4 /* PreferencesViewModel.swift */; };
 		717AC73F24C7D1E400D226A4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717AC73E24C7D1E400D226A4 /* LoginViewModel.swift */; };
@@ -95,6 +95,7 @@
 		717AC74724C8E64100D226A4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717AC74624C8E64100D226A4 /* LoginModel.swift */; };
 		717EC998261681EE00299F0B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717EC997261681EE00299F0B /* ErrorView.swift */; };
 		717EC99D2617BD1F00299F0B /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717EC99C2617BD1F00299F0B /* ErrorViewModel.swift */; };
+		71900B8F2686A311004351F9 /* UpdatesErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71900B8E2686A311004351F9 /* UpdatesErrorView.swift */; };
 		7199E86A25DEF18B00DDAA0F /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 7199E86925DEF18B00DDAA0F /* regions.json */; };
 		719C2BBF25A695C400558568 /* FocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719C2BBE25A695C400558568 /* FocusTextField.swift */; };
 		719CA8CA24DE0D8B00C46537 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146367C24D488A50085DE9B /* SystemConfiguration.framework */; };
@@ -109,6 +110,7 @@
 		71B9A3F825DC8D3C0013F006 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719CA8DF24DF357500C46537 /* SwiftyBeaver.framework */; };
 		71B9A3F925DC8D460013F006 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719CA8DF24DF357500C46537 /* SwiftyBeaver.framework */; };
 		71B9A3FD25DC8D800013F006 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 719CA8DF24DF357500C46537 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71CE0B65268A58DB00271EBF /* UpdateRequiredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE0B64268A58DB00271EBF /* UpdateRequiredView.swift */; };
 		71D0CC0D260160AB008C4A47 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0CC0C260160AB008C4A47 /* NotificationManager.swift */; };
 		71D0CDBA26029F5B008C4A47 /* FlagJapan.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D0CD6C26029F57008C4A47 /* FlagJapan.png */; };
 		71D0CDBB26029F5B008C4A47 /* FlagBrazilGray.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D0CD6D26029F57008C4A47 /* FlagBrazilGray.png */; };
@@ -227,7 +229,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				717AC72F24C658E200D226A4 /* com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider.systemextension in Embed System Extensions */,
+				717AC72F24C658E200D226A4 /* com.adblockinc.adblockvpn.macos.provider.systemextension in Embed System Extensions */,
 			);
 			name = "Embed System Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +331,7 @@
 		7146367C24D488A50085DE9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		716CF5AA25B7A6CE00C4E448 /* MultiLinkTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLinkTextField.swift; sourceTree = "<group>"; };
 		716E6A562588354F00C06AE1 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
-		717AC72224C658E200D226A4 /* com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		717AC72224C658E200D226A4 /* com.adblockinc.adblockvpn.macos.provider.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.adblockinc.adblockvpn.macos.provider.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		717AC72424C658E200D226A4 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		717AC72724C658E200D226A4 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		717AC72924C658E200D226A4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 		717EC997261681EE00299F0B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		717EC99C2617BD1F00299F0B /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		717EC9A9261B96FE00299F0B /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		71900B8E2686A311004351F9 /* UpdatesErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesErrorView.swift; sourceTree = "<group>"; };
 		7199E86925DEF18B00DDAA0F /* regions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		719C2BBE25A695C400558568 /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
 		719CA8D924DF30C000C46537 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = OpenVPNAdapter.framework; path = OpenVPNAdapter/OpenVPNAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,6 +356,7 @@
 		719DB4872645FAEA004F4800 /* UpdatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewModel.swift; sourceTree = "<group>"; };
 		719DB48F264604BD004F4800 /* UpdateOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOverlayView.swift; sourceTree = "<group>"; };
 		71B751CF261BE97000ED0896 /* Alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alert.png; sourceTree = "<group>"; };
+		71CE0B64268A58DB00271EBF /* UpdateRequiredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateRequiredView.swift; sourceTree = "<group>"; };
 		71D0CC0C260160AB008C4A47 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = AdBlockVPNMacOS/Managers/NotificationManager.swift; sourceTree = SOURCE_ROOT; };
 		71D0CD6C26029F57008C4A47 /* FlagJapan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlagJapan.png; sourceTree = "<group>"; };
 		71D0CD6D26029F57008C4A47 /* FlagBrazilGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlagBrazilGray.png; sourceTree = "<group>"; };
@@ -506,7 +510,9 @@
 				05BE598F261D3E6400BA210A /* SetUpExtensionView.swift */,
 				05BE5998261D3E6400BA210A /* SetUpVPNView.swift */,
 				05BE5993261D3E6400BA210A /* TopBarView.swift */,
+				71900B8E2686A311004351F9 /* UpdatesErrorView.swift */,
 				719DB48F264604BD004F4800 /* UpdateOverlayView.swift */,
+				71CE0B64268A58DB00271EBF /* UpdateRequiredView.swift */,
 				719DB4822645FA9A004F4800 /* UpdatesView.swift */,
 				05BE59A9261D3E9600BA210A /* Buttons */,
 			);
@@ -618,7 +624,7 @@
 				712C4F8724C0D4360063F9AB /* AdBlock VPN.app */,
 				712C4F9C24C0D43A0063F9AB /* AdBlockVPNMacOSTests.xctest */,
 				712C4FA724C0D43A0063F9AB /* AdBlockVPNMacOSUITests.xctest */,
-				717AC72224C658E200D226A4 /* com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider.systemextension */,
+				717AC72224C658E200D226A4 /* com.adblockinc.adblockvpn.macos.provider.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -962,7 +968,7 @@
 			);
 			name = AdBlockVPNMacOSProvider;
 			productName = AdBlockVPNMacOSProvider;
-			productReference = 717AC72224C658E200D226A4 /* com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider.systemextension */;
+			productReference = 717AC72224C658E200D226A4 /* com.adblockinc.adblockvpn.macos.provider.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 /* End PBXNativeTarget section */
@@ -973,7 +979,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1250;
-				ORGANIZATIONNAME = "Betafish Inc";
+				ORGANIZATIONNAME = "Adblock, Inc.";
 				TargetAttributes = {
 					712C4F8624C0D4360063F9AB = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -1302,6 +1308,7 @@
 				052000BB260CA10F00AFD7E5 /* OnboardingMainView.swift in Sources */,
 				7130A34A2637581D008FE10F /* CustomColorToggleStyle.swift in Sources */,
 				052000CE260DF54F00AFD7E5 /* OnboardingCompleteView.swift in Sources */,
+				71CE0B65268A58DB00271EBF /* UpdateRequiredView.swift in Sources */,
 				719DB490264604BD004F4800 /* UpdateOverlayView.swift in Sources */,
 				0522C0F12601049500E6D38E /* LatoFontModifier.swift in Sources */,
 				7140600C250AEE6200E40456 /* MainViewModel.swift in Sources */,
@@ -1319,6 +1326,7 @@
 				05EF3CB9263192DC00902840 /* OnboardingModel.swift in Sources */,
 				712C4F8B24C0D4360063F9AB /* AppDelegate.swift in Sources */,
 				05BE599E261D3E6400BA210A /* PreferencesView.swift in Sources */,
+				71900B8F2686A311004351F9 /* UpdatesErrorView.swift in Sources */,
 				719C2BBF25A695C400558568 /* FocusTextField.swift in Sources */,
 				717AC73F24C7D1E400D226A4 /* LoginViewModel.swift in Sources */,
 				052000C0260CB97B00AFD7E5 /* OnboardingBodyView.swift in Sources */,
@@ -1521,7 +1529,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 0.12.2;
+				CURRENT_PROJECT_VERSION = 0.12.5;
 				DEVELOPMENT_ASSET_PATHS = "\"AdBlockVPNMacOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1532,8 +1540,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.12.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.betafish.AdBlockVPNMacOS;
+				MARKETING_VERSION = 0.12.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos;
 				PRODUCT_NAME = "AdBlock VPN";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN App Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "AdBlockVPNMacOS/AdBlockVPNMacOS-Bridging-Header.h";
@@ -1553,7 +1561,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 0.12.2;
+				CURRENT_PROJECT_VERSION = 0.12.5;
 				DEVELOPMENT_ASSET_PATHS = "\"AdBlockVPNMacOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1564,8 +1572,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.12.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.betafish.AdBlockVPNMacOS;
+				MARKETING_VERSION = 0.12.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos;
 				PRODUCT_NAME = "AdBlock VPN";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Distribution";
 				SWIFT_OBJC_BRIDGING_HEADER = "AdBlockVPNMacOS/AdBlockVPNMacOS-Bridging-Header.h";
@@ -1588,7 +1596,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.betafish.AdBlock-VPN-for-MacOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ablockinc.AdBlock-VPN-for-MacOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdBlockVPNMacOS.app/Contents/MacOS/AdBlockVPNMacOS";
@@ -1610,7 +1618,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.betafish.AdBlock-VPN-for-MacOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ablockinc.AdBlock-VPN-for-MacOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdBlockVPNMacOS.app/Contents/MacOS/AdBlockVPNMacOS";
@@ -1630,7 +1638,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.betafish.AdBlock-VPN-for-MacOSUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adblockinc.AdBlock-VPN-for-MacOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "AdBlock VPN for MacOS";
@@ -1650,7 +1658,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.betafish.AdBlock-VPN-for-MacOSUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adblockinc.AdBlock-VPN-for-MacOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "AdBlock VPN for MacOS";
@@ -1664,7 +1672,7 @@
 				CODE_SIGN_ENTITLEMENTS = "AdBlockVPNMacOSProvider/AdBlockVPNMacOSProvider-Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0.12.2;
+				CURRENT_PROJECT_VERSION = 0.12.4;
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1678,8 +1686,8 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.12.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider;
+				MARKETING_VERSION = 0.12.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos.provider;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Provider Extension Dev";
 				SKIP_INSTALL = YES;
@@ -1694,7 +1702,7 @@
 				CODE_SIGN_ENTITLEMENTS = AdBlockVPNMacOSProvider/AdBlockVPNMacOSProvider.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0.12.2;
+				CURRENT_PROJECT_VERSION = 0.12.4;
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1708,8 +1716,8 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.12.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.betafish.AdBlockVPNMacOS.AdBlockVPNMacOSProvider;
+				MARKETING_VERSION = 0.12.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos.provider;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Provider Distribution";
 				SKIP_INSTALL = YES;
