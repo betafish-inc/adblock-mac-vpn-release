@@ -24,16 +24,18 @@ struct OnboardingVPNConfigView: View {
             OnboardingBodyView(headerImage: "OnboardingVPNConfiguration",
                                bodyTitle: "Allow AdBlock VPN to add VPN configurations")
             // swiftlint:disable:next line_length
-            Text("Click “Open System Dialogue” below. In the following window, click the ”Allow” button. When you're done, click ”Next Steps” below to continue the setup process.")
+            Text("Click “Open System Dialog” below. In the following window, click the ”Allow” button. When you're done, click ”Next Steps” below to continue the setup process.")
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
-                OnboardingButtonView(action: { model.installVPNProfile() }, text: "Open System Dialogue", isPrimary: false)
+                Button(action: { model.installVPNProfile() }, label: { Text("Open System Dialog") })
+                    .buttonStyle(SecondaryButtonStyle())
                     .disabled(model.vpnProfileActive)
-                OnboardingButtonView(action: { model.vpnProfileActive ? model.checkViewToShow() : (model.viewToShow = .VPNConfigError) },
-                                     text: "Next Steps", isPrimary: true)
+                Button(action: { model.vpnProfileActive ? model.checkViewToShow() : (model.viewToShow = .VPNConfigError) },
+                       label: { Text("Next Steps") })
+                    .buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

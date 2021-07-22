@@ -128,6 +128,9 @@ class ErrorManager {
     var isUserFacingError: Bool {
         return err?.isUserFacing ?? false
     }
+    var isMainError: Bool {
+        return isUserFacingError && err?.type != .needsAuth
+    }
     private var restarted = false
     
     init() {

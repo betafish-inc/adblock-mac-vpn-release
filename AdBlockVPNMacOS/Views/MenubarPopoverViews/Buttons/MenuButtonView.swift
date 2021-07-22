@@ -40,17 +40,8 @@ struct MenuButtonView: View {
                     Spacer().frame(width: 26)
                 }
             }
-            .frame(width: 272, height: 22)
-            .background(Color.white)
         }
-        .buttonStyle(PlainButtonStyle())
-        .onHover { inside in
-            if inside {
-                NSCursor.pointingHand.push()
-            } else {
-                NSCursor.pop()
-            }
-        }
+        .buttonStyle(ListItemButtonStyle())
     }
 }
 

@@ -118,7 +118,7 @@ struct ConnectionModel {
                                     notification: "Connected to"),
         .connecting: ConnectionState(status: .connecting,
                                      icon: "LockConnecting",
-                                     state: "Securing your connection...",
+                                     state: "Securing your connection.",
                                      action: "Cancel",
                                      flag: .greyFlag,
                                      greyed: true,

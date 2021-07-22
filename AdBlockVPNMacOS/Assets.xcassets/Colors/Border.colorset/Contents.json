@@ -5,9 +5,9 @@
         "color-space" : "srgb",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.776",
-          "green" : "0.776",
-          "red" : "0.776"
+          "blue" : "0xC5",
+          "green" : "0xC5",
+          "red" : "0xC5"
         }
       },
       "idiom" : "mac"

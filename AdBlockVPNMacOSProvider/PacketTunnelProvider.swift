@@ -116,6 +116,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             } else {
                 // create auth-user-pass string
                 let userPassString = "\n<auth-user-pass>\n\(deviceID)\n\(strongSelf.authManager.token.access_token)\n</auth-user-pass>\n"
+                SwiftyBeaver.debug("auth-user-pass: \(userPassString)")
                 let userPassData = Data(userPassString.utf8)
                 ovpnFileContent.append(userPassData)
 
@@ -152,6 +153,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         reconnectVPN = (reason != .userInitiated)
 
         vpnAdapter.disconnect()
+        completionHandler()
+        stopHandler = nil
+        exit(0)
     }
     
     override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?) {
@@ -232,6 +236,13 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
         SwiftyBeaver.verbose("handleError: \(error.localizedDescription)")
         let fatal = (error as NSError).userInfo[OpenVPNAdapterErrorFatalKey] as? Bool ?? false
         SwiftyBeaver.verbose("error is fatal: \(fatal)")
+        
+        if (error as NSError).code == 50 {
+            SwiftyBeaver.debug("error is auth error")
+            errorManager.setError(error: ErrorManager.ErrorObj(message: "Auth error with server.", type: .needsAuth, link: nil))
+            cancelTunnelWithError(error)
+            return
+        }
 
         if let startHandler = startHandler {
             SwiftyBeaver.debug("error with startHandler: \(error)")

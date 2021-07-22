@@ -1,26 +1,26 @@
 PODS:
   - Alamofire (5.4.3)
   - KeychainAccess (4.2.2)
-  - OpenVPNAdapter (0.6.0):
-    - OpenVPNAdapter/ASIO (= 0.6.0)
-    - OpenVPNAdapter/LZ4 (= 0.6.0)
-    - OpenVPNAdapter/mbedTLS (= 0.6.0)
-    - OpenVPNAdapter/OpenVPN3 (= 0.6.0)
-    - OpenVPNAdapter/OpenVPNAdapter (= 0.6.0)
-    - OpenVPNAdapter/OpenVPNClient (= 0.6.0)
-  - OpenVPNAdapter/ASIO (0.6.0)
-  - OpenVPNAdapter/LZ4 (0.6.0)
-  - OpenVPNAdapter/mbedTLS (0.6.0)
-  - OpenVPNAdapter/OpenVPN3 (0.6.0)
-  - OpenVPNAdapter/OpenVPNAdapter (0.6.0)
-  - OpenVPNAdapter/OpenVPNClient (0.6.0)
+  - OpenVPNAdapter (0.8.0):
+    - OpenVPNAdapter/ASIO (= 0.8.0)
+    - OpenVPNAdapter/LZ4 (= 0.8.0)
+    - OpenVPNAdapter/mbedTLS (= 0.8.0)
+    - OpenVPNAdapter/OpenVPN3 (= 0.8.0)
+    - OpenVPNAdapter/OpenVPNAdapter (= 0.8.0)
+    - OpenVPNAdapter/OpenVPNClient (= 0.8.0)
+  - OpenVPNAdapter/ASIO (0.8.0)
+  - OpenVPNAdapter/LZ4 (0.8.0)
+  - OpenVPNAdapter/mbedTLS (0.8.0)
+  - OpenVPNAdapter/OpenVPN3 (0.8.0)
+  - OpenVPNAdapter/OpenVPNAdapter (0.8.0)
+  - OpenVPNAdapter/OpenVPNClient (0.8.0)
   - Sparkle (1.26.0)
-  - SwiftyBeaver (1.9.3)
+  - SwiftyBeaver (1.9.5)
 
 DEPENDENCIES:
   - Alamofire
   - KeychainAccess
-  - OpenVPNAdapter (from `https://github.com/betafish-inc/OpenVPNAdapterMirror`, branch `feature/use-queues-instead-of-runloop`)
+  - OpenVPNAdapter (from `https://github.com/betafish-inc/OpenVPNAdapter`)
   - Sparkle
   - SwiftyBeaver
 
@@ -33,21 +33,20 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   OpenVPNAdapter:
-    :branch: feature/use-queues-instead-of-runloop
-    :git: https://github.com/betafish-inc/OpenVPNAdapterMirror
+    :git: https://github.com/betafish-inc/OpenVPNAdapter
 
 CHECKOUT OPTIONS:
   OpenVPNAdapter:
-    :commit: 5e1f2cae1b2409d91b5e35a7d12587a0cd2dd68e
-    :git: https://github.com/betafish-inc/OpenVPNAdapterMirror
+    :commit: 4e0db53fc16446e88ba03e4191ff3112720363d1
+    :git: https://github.com/betafish-inc/OpenVPNAdapter
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
-  OpenVPNAdapter: 5a81788e3f28de2ef1be07c4b21b16fba8ffea4c
+  OpenVPNAdapter: 1d945f4528073ff641d4ed90d98e28f2b1c86d05
   Sparkle: d56d028f4b0c123577825f5d1004f6140d77f90e
-  SwiftyBeaver: 2e8acd6fc90c6d0a27055867a290794926d57c02
+  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: dbe7409a2893f6621808d451644f8b826fe30ae8
+PODFILE CHECKSUM: c667c3182d35df9c893bcea8744940154b48c085
 
 COCOAPODS: 1.9.3

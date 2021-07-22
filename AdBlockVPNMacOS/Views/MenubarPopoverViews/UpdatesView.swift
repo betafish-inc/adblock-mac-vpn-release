@@ -31,14 +31,17 @@ struct UpdatesView: View {
                 .latoFont()
                 .foregroundColor(.abDarkText)
             Spacer()
-            PlainButtonView(action: {
-                state.viewToShow = .connection
-            }, text: "Skip for now", width: 272, icon: "", bold: true, background: .abAccentBackground)
+            Button(action: { state.viewToShow = .connection }, label: { Text("Skip for now") })
+                .buttonStyle(SecondaryButtonStyle(bold: true, buttonColor: .abAccentBackground))
             Spacer().frame(height: 24)
-            AccentButtonView(action: {
+            Button(action: {
                 viewModel.update()
                 state.viewToShow = .connection
-            }, text: "Update", background: .abUpdateAccent, foreground: .abDarkText)
+            }, label: { Text("Update") })
+            .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent,
+                                            buttonHoverColor: .abUpdateAccent,
+                                            buttonClickColor: .abUpdateAccentClick,
+                                            textColor: .abDarkText))
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: 352)

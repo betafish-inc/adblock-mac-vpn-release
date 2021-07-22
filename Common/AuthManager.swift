@@ -78,6 +78,15 @@ class AuthManager {
         SwiftyBeaver.debug("tokenInfo on init: \(token)")
     }
     
+    func willBeLoggedIn(newToken: TokenInfo) -> Bool {
+        if newToken.refresh_token.isEmpty {
+            return false
+        } else if let loggedOutDate = loggedOut, loggedOutDate >= token.creationDate {
+            return false
+        }
+        return true
+    }
+    
     func setDeviceID(newID: String) {
         deviceID = newID
     }

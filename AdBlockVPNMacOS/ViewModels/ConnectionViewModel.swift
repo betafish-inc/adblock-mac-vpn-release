@@ -37,10 +37,12 @@ class ConnectionViewModel: ObservableObject {
     private var userInitiated = false
     private var monitor: NWPathMonitor?
     private var restarting = false
-    private var internetLost = false
+    private var internetLostWhileConnected = false
     private var shouldBeConnected = false
     private var pingFailedCount = 0
-    private var shouldConnectOnWake = false // TODO: consider consolidating restart/connect variables
+    private var connectionStateAnimationTimer: Timer?
+    private var noInternet = false
+    private var userDisconnect = false
     
     init(vpnManager: VPNManager, authManager: AuthManager, logManager: LogManager, notificationManager: NotificationManager, errorManager: ErrorManager) {
         self.vpnManager = vpnManager
@@ -88,17 +90,20 @@ class ConnectionViewModel: ObservableObject {
         vpnManager.configureVPN(selectedGeo: geoToUse, deviceID: authManager.deviceID, tokenInfo: authManager.token) { [weak self] success in
             guard let strongSelf = self else { return }
             if success {
+                SwiftyBeaver.debug("configureVPN success")
                 if connect {
                     strongSelf.vpnManager.connectVPN { errorMsg in
                         if let error = errorMsg {
-                           if strongSelf.userInitiated {
-                                strongSelf.restarting = false
-                                SwiftyBeaver.debug("connect failed set restarting to false: \(error)")
+                            SwiftyBeaver.debug("connectVPN failed: \(error)")
+                            strongSelf.restarting = false
+                            if strongSelf.userInitiated {
+                                SwiftyBeaver.debug("connect failed userInitiated")
                                 strongSelf.userInitiated = false
                                 strongSelf.logManager.sendLogMessage(message: .connect_error, region: strongSelf.connection.getRegionId(), error: error)
                             }
                             callback?(false)
                         } else {
+                            SwiftyBeaver.debug("connectVPN success")
                             callback?(true)
                         }
                     }
@@ -129,12 +134,22 @@ class ConnectionViewModel: ObservableObject {
     }
     
     private func connect() {
-        configureAndOptionallyConnect(connect: true) { [weak self] success in
-            if !success {
-                self?.errorManager.checkError = true
+        // if there's no internet connection now, set to reconnect when it's back
+        if noInternet {
+            SwiftyBeaver.debug("trying to connect but no internet")
+            internetLostWhileConnected = true
+        } else {
+            configureAndOptionallyConnect(connect: true) { [weak self] success in
+                guard let strongSelf = self else { return }
+                if !success {
+                    if !strongSelf.userDisconnect {
+                        SwiftyBeaver.debug("connect failed check for error set")
+                        strongSelf.errorManager.checkError = true
+                    }
+                }
             }
+            connection.connectionAttempted = true
         }
-        connection.connectionAttempted = true
     }
     
     private func disconnect() {
@@ -162,14 +177,17 @@ class ConnectionViewModel: ObservableObject {
         SwiftyBeaver.verbose("connect/disconnect button clicked")
         switch vpnManager.connectionStatus {
         case .connected, .connecting, .reasserting:
+            userDisconnect = true
             disconnect()
         case .disconnected, .disconnecting:
             logManager.sendLogMessage(message: .connect_attempt, region: connection.getRegionId(), nearest: connection.selectedGeo == "nearest")
             userInitiated = true
+            userDisconnect = false
             connect()
         default:
             logManager.sendLogMessage(message: .connect_attempt, region: connection.getRegionId(), nearest: connection.selectedGeo == "nearest")
             userInitiated = true
+            userDisconnect = false
             connect()
         }
     }
@@ -203,6 +221,7 @@ class ConnectionViewModel: ObservableObject {
                 strongSelf.logManager.sendLogMessage(message: .connect_success, region: strongSelf.connection.getRegionId())
             }
             if status == .connected {
+                strongSelf.userDisconnect = false
                 strongSelf.restarting = false
                 SwiftyBeaver.debug("connected set restarting to false")
                 strongSelf.shouldBeConnected = true
@@ -239,6 +258,28 @@ class ConnectionViewModel: ObservableObject {
         connectionIcon = connection.getIcon(status: vpnStatus)
         flag = connection.getFlag(status: vpnStatus)
         grey = connection.isGreyed(status: vpnStatus)
+
+        // Timer to update `connectionStateText` if VPN is in the `Connecting` or `Disconnecting` state.
+        connectionStateAnimationTimer?.invalidate()
+        if vpnStatus == .connecting || vpnStatus == .disconnecting {
+            connectionStateAnimationTimer = Timer.scheduledTimer(timeInterval: 0.8,
+                                                                 target: self,
+                                                                 selector: #selector(animateConnectionStateText),
+                                                                 userInfo: nil,
+                                                                 repeats: true)
+        }
+    }
+
+    /// When called repeatedly with a timer, this function iterates between 1-3 periods as a suffix to the connectionStateText.
+    @objc private func animateConnectionStateText() {
+        let periodCharacter: Character = "."
+        let periodCount = connectionStateText.filter { $0 == periodCharacter }.count
+        switch periodCount {
+        case 1, 2:
+            connectionStateText += "."
+        default:
+            connectionStateText = connectionStateText.filter { $0 != periodCharacter } + "."
+        }
     }
     
     private func ping() {
@@ -288,18 +329,19 @@ class ConnectionViewModel: ObservableObject {
         
         let pathUpdateHandler = { [weak self] (path: Network.NWPath) in
             guard let strongSelf = self else { return }
+            strongSelf.noInternet = !path.availableInterfaces.contains(where: { $0.type == .wifi || $0.type == .wiredEthernet })
             
             SwiftyBeaver.debug("path change: \(path.debugDescription)")
             
             if strongSelf.shouldBeConnected {
-                if !path.availableInterfaces.contains(where: { $0.type == .wifi || $0.type == .wiredEthernet }) {
-                    strongSelf.internetLost = true
+                if strongSelf.noInternet {
+                    strongSelf.internetLostWhileConnected = true
                     SwiftyBeaver.debug("no internet")
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         SwiftyBeaver.debug("no internet disconnect")
                         strongSelf.disconnect()
                     }
-                } else if path.status == .unsatisfied && !strongSelf.restarting && !strongSelf.internetLost {
+                } else if path.status == .unsatisfied && !strongSelf.restarting && !strongSelf.internetLostWhileConnected {
                     strongSelf.restarting = true
                     SwiftyBeaver.debug("path unsatisfied set restarting to true")
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -308,13 +350,13 @@ class ConnectionViewModel: ObservableObject {
                     }
                 }
                 
-                if path.status == .satisfied && path.availableInterfaces.contains(where: { $0.type == .other }) {
+                if path.status == .satisfied && path.availableInterfaces.contains(where: { $0.type == .other }) && !strongSelf.noInternet {
                     strongSelf.ping()
                 }
             }
             
-            if path.status != .unsatisfied && path.availableInterfaces.contains(where: { $0.type == .wifi || $0.type == .wiredEthernet }) && strongSelf.internetLost {
-                strongSelf.internetLost = false
+            if path.status != .unsatisfied && path.availableInterfaces.contains(where: { $0.type == .wifi || $0.type == .wiredEthernet }) && strongSelf.internetLostWhileConnected {
+                strongSelf.internetLostWhileConnected = false
                 SwiftyBeaver.debug("internet lost try to reconnect")
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     SwiftyBeaver.debug("internet lost restarting connection")

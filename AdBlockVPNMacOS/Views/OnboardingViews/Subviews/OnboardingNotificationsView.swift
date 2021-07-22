@@ -34,12 +34,11 @@ struct OnboardingNotificationsView: View {
                 .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
-                OnboardingButtonView(action: { model.openNotifications() },
-                                     text: (model.notificationInstructions == .alert) ? "Show Notification" : "Open Notifications", isPrimary: false)
+                Button(action: { model.openNotifications() },
+                       label: { Text((model.notificationInstructions == .alert) ? "Show Notification" : "Open Notifications") })
+                    .buttonStyle(SecondaryButtonStyle())
                     .if(model.notificationAuthorizationStatus == .authorized) { $0.disabled(true) }
-                OnboardingButtonView(action: { model.checkViewToShow() },
-                                     text: "Next",
-                                     isPrimary: true)
+                Button(action: { model.checkViewToShow() }, label: { Text("Next") }).buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

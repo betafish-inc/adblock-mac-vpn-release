@@ -15,7 +15,7 @@ target 'AdBlockVPNMacOSProvider' do
   use_frameworks!
 
   # Pods for AdBlockVPNMacOSProvider
-  pod 'OpenVPNAdapter', :git => 'https://github.com/betafish-inc/OpenVPNAdapterMirror', :branch => 'feature/use-queues-instead-of-runloop'
+  pod 'OpenVPNAdapter', :git => 'https://github.com/betafish-inc/OpenVPNAdapter'
   pod 'Alamofire'
   pod 'KeychainAccess'
   pod 'SwiftyBeaver'

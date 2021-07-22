@@ -33,7 +33,7 @@ struct OnboardingIntroView: View {
             Spacer().frame(height: 48)
             HStack {
                 Spacer()
-                OnboardingButtonView(action: { model.checkViewToShow() }, text: "Get Started", isPrimary: true)
+                Button(action: { model.checkViewToShow() }, label: { Text("Get Started") }).buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

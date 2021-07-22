@@ -30,7 +30,7 @@ struct OnboardingPermissionsErrorView: View {
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
                 OnboardingContactSupportButtonView()
-                OnboardingButtonView(action: { model.checkViewToShow() }, text: "Try Again", isPrimary: true)
+                Button(action: { model.checkViewToShow() }, label: { Text("Try Again") }).buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

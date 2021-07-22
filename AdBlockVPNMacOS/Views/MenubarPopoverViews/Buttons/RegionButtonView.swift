@@ -40,19 +40,8 @@ struct RegionButtonView: View {
                     .latoFont()
                 Spacer()
             }
-            .frame(width: 240, height: 40)
-            .background(selected ? Color.abPrimaryAccent : Color.white)
-            .foregroundColor(selected ? .white : .abDarkText)
         }
-        .cornerRadius(6)
-        .buttonStyle(PlainButtonStyle())
-        .onHover { inside in
-            if inside {
-                NSCursor.pointingHand.push()
-            } else {
-                NSCursor.pop()
-            }
-        }
+        .buttonStyle(ListItemButtonStyle(selected: selected, buttonWidth: 240))
     }
 }
 

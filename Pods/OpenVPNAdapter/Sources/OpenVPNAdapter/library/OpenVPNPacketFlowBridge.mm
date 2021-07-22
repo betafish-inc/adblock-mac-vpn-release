@@ -48,9 +48,7 @@ static void SocketCallback(NSData *data, OpenVPNPacketFlowBridge *obj) {
     _openVPNSocket = sockets[1];
     
     int flags = fcntl(_packetFlowSocket, F_GETFL);
-    //assert(flags != 0)
     bool success = fcntl(_packetFlowSocket, F_SETFL, flags | O_NONBLOCK) >= 0;
-    //assert(success)
     _source = dispatch_source_create(DISPATCH_SOURCE_TYPE_READ, _packetFlowSocket, 0, DISPATCH_QUEUE_SERIAL);
     dispatch_source_set_event_handler(_source, ^{
         unsigned long bytesAvail = dispatch_source_get_data(_source);
