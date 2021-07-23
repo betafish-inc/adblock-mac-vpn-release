@@ -26,6 +26,7 @@ class MainViewModel: ObservableObject {
     @Published var vpnAllowed: Bool?
     @Published var restartConnection = false
     @Published var providerAuthChecked = false
+    private var checkedForErrorReset = Date(timeIntervalSince1970: 0)
     
     init(authManager: AuthManager, vpnManager: VPNManager, errorManager: ErrorManager, notificationManager: NotificationManager) {
         self.authManager = authManager
@@ -46,7 +47,16 @@ class MainViewModel: ObservableObject {
     func checkForError() {
         vpnManager.initializeProviderManager { [weak self] _ in
             guard let strongSelf = self else { return }
-            strongSelf.sendAuthInquiry()
+            strongSelf.sendAuthInquiry {
+                if !strongSelf.errorManager.isError {
+                    if strongSelf.checkedForErrorReset < (Date() - 15) {
+                        strongSelf.checkedForErrorReset = Date()
+                        strongSelf.restartConnection = true
+                    } else {
+                        strongSelf.errorManager.setRetryOrRestartError(message: "Error connecting to VPN provider.")
+                    }
+                }
+            }
             strongSelf.errorManager.checkError = false
         }
     }

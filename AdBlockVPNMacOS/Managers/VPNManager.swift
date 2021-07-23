@@ -109,6 +109,7 @@ class VPNManager {
     func connectVPN(callback: @escaping (String?) -> Void) {
         providerManager?.loadFromPreferences { [weak self] error in
             guard error == nil else {
+                SwiftyBeaver.debug("error in loading provider manager from preferences")
                 callback(error?.localizedDescription)
                 return
             }
@@ -118,12 +119,25 @@ class VPNManager {
                 callback("error in starting tunnel")
                 SwiftyBeaver.warning("error in starting tunnel")
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                if let status = self?.connectionStatus, status == .connected {
+            self?.checkStatus(isRetry: false, callback: callback)
+        }
+    }
+    
+    private func checkStatus(isRetry: Bool, callback: @escaping (String?) -> Void) {
+        SwiftyBeaver.debug("dispatching check of status")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            SwiftyBeaver.debug("checking connection status")
+            if let status = self.connectionStatus {
+                if status == .connected {
                     callback(nil)
+                } else if [.connecting, .reasserting, .disconnecting].contains(status) && !isRetry {
+                    self.checkStatus(isRetry: true, callback: callback)
                 } else {
+                    self.disconnectVPN()
                     callback("connection failed")
                 }
+            } else {
+                callback("connection failed")
             }
         }
     }

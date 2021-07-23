@@ -33,14 +33,11 @@ struct AppSettingsView: View {
                 Toggle("Apply updates" + "\n" + "automatically", isOn: $viewModel.automaticUpdatesOn).toggleStyle(CustomColorToggleStyle())
             }
             Spacer()
-            if viewModel.updateAvailable {
-                ColorfulButtonView(action: {
-                    state.viewToShow = .updates
-                }, text: "Update Available", icon: "NextIcon", iconSize: 11, background: .abUpdateAccent, foreground: .abDarkText)
-                .shadow(color: .abShadow, radius: 20, x: 0, y: 5)
-            } else {
-                ColorfulButtonView(action: {}, text: "Up To Date", icon: "CheckIcon", iconSize: 16, background: .abUpToDateAccent, foreground: .white)
-            }
+            ColorfulButtonView(action: viewModel.updateAvailable ? { state.viewToShow = .updates } : {},
+                               text: viewModel.updateAvailable ? "Update Available" : "Up To Date",
+                               icon: viewModel.updateAvailable ? "NextIcon": "CheckIcon",
+                               iconSize: viewModel.updateAvailable ? 11 : 16,
+                               updateAvailable: viewModel.updateAvailable)
             Spacer().frame(height: 8)
             Text(state.getVersionString())
                 .latoFont(size: 14)
@@ -53,11 +50,11 @@ struct AppSettingsView: View {
         .onAppear {
             viewModel.checkForUpdates()
         }
-        // To prevent multiple dock icons appearing when toggle is clicked a lot in short sucession, a debouncer is added before new value is processed.
+        // To prevent multiple dock icons appearing when toggle is clicked a lot in short succession, a debouncer is added before new value is processed.
         .onReceive(viewModel.$showDockIcon.debounce(for: .milliseconds(250), scheduler: DispatchQueue.main)) {
             viewModel.setDockIconVisibility(isVisible: $0)
         }
-        // Prevents popover from disapearing when app is in focus while dock icon changes to a hidden state.
+        // Prevents popover from disappearing when app is in focus while dock icon changes to a hidden state.
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didHideNotification)) { _ in
             guard let appDelegate: AppDelegate = NSApplication.shared.delegate as? AppDelegate else { return }
             appDelegate.showPopover(nil)

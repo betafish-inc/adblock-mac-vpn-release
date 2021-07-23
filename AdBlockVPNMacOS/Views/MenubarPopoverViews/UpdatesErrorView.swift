@@ -32,10 +32,11 @@ struct UpdatesErrorView: View {
                 .latoFont()
                 .foregroundColor(.abDarkText)
             Spacer()
-            AccentButtonView(action: {
+            Button(action: {
                 viewModel.openDownloadsPage()
                 state.viewToShow = .connection
-            }, text: "Update", background: .abUpdateAccent, foreground: .abDarkText)
+            }, label: { Text("Update") })
+            .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent, buttonHoverColor: .abUpdateAccent, buttonClickColor: .abUpdateAccentClick, textColor: .abDarkText))
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: 352)

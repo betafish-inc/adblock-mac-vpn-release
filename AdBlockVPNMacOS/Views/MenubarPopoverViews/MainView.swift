@@ -36,7 +36,7 @@ struct MainView: View {
                 getViewToShow()
                     .frame(width: 272, height: 352)
                     .onAppear {
-                        self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isUserFacingError, updateRequired: updateManager.updateIsRequired)
+                        self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isMainError, updateRequired: updateManager.updateIsRequired)
                     }
             }
             .if(state.showOverlay) {
@@ -55,8 +55,10 @@ struct MainView: View {
         .frame(width: 320, height: 440)
         .background([.updates, .updateError, .updateRequired].contains(state.viewToShow) ? Color.abAccentBackground : Color.white)
         .foregroundColor(.abLightText)
-        .onReceive(authManager.$token, perform: { _ in
-            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isUserFacingError, updateRequired: updateManager.updateIsRequired)
+        .onReceive(authManager.$token, perform: { newVal in
+            self.state.checkViewToShow(loggedIn: self.authManager.willBeLoggedIn(newToken: newVal),
+                                       isError: errorManager.isMainError,
+                                       updateRequired: updateManager.updateIsRequired)
         })
         .onReceive(viewModel.$vpnAllowed, perform: { newVal in
             if let allowed = newVal, allowed {
@@ -69,16 +71,14 @@ struct MainView: View {
             }
         })
         .onReceive(errorManager.$isError, perform: { newVal in
-            var isUserFacingError = errorManager.isUserFacingError
             if newVal {
                 if errorManager.isAuthError {
-                    self.state.viewToShow = .login
-                    isUserFacingError = false
+                    self.authManager.logOut()
                 } else if errorManager.isRetryError {
                     self.state.restartConnection = true
                 }
             }
-            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: isUserFacingError, updateRequired: updateManager.updateIsRequired)
+            self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isMainError, updateRequired: updateManager.updateIsRequired)
             if errorManager.newError {
                 viewModel.showErrorNotification()
             }

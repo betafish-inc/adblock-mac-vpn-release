@@ -19,11 +19,20 @@ import SwiftUI
 struct RegionSelectionView: View {
     @ObservedObject var viewModel: ConnectionViewModel
     var body: some View {
-        List {
-            ForEach(viewModel.connection.availableGeos) { geo in
-                RegionButtonView(viewModel: self.viewModel, flag: GeoAssets.flags[geo.id] ?? "FlagWorld", name: geo.name, selected: self.viewModel.connection.selectedGeo == geo.id, id: geo.id)
-            }
-        }.frame(width: 272, height: 352)
+        ScrollView {
+            VStack {
+                ForEach(viewModel.connection.availableGeos) { geo in
+                    RegionButtonView(viewModel: self.viewModel,
+                                     flag: GeoAssets.flags[geo.id] ?? "FlagWorld",
+                                     name: geo.name,
+                                     selected: self.viewModel.connection.selectedGeo == geo.id,
+                                     id: geo.id)
+                }
+            }.frame(width: 272)
+            // Add padding to bottom of ScrollView
+            Spacer().frame(height: 24)
+        }
+        .frame(width: 272, height: 352, alignment: .leading)
     }
 }
 
@@ -34,13 +43,5 @@ struct RegionSelectionView_Previews: PreviewProvider {
                                                            logManager: LogManager(),
                                                            notificationManager: NotificationManager(),
                                                            errorManager: ErrorManager()))
-    }
-}
-
-// set the background color of every list to white
-extension NSTableView {
-    open override func viewDidMoveToWindow() {
-        super.viewDidMoveToWindow()
-        backgroundColor = .white
     }
 }

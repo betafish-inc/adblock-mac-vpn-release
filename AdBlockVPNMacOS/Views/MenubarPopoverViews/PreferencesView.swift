@@ -42,10 +42,8 @@ struct PreferencesView: View {
                 }, text: "Help & Feedback", bold: true, icon: "NextIcon", iconSize: 11)
             }
             Spacer()
-            
-            PlainButtonView(action: {
-                self.viewModel.disconnectAndQuit()
-            }, text: viewModel.isVpnConnected ? "Quit & Disconnect" : "Quit", width: 272, icon: "", bold: false)
+            Button(action: { self.viewModel.disconnectAndQuit() }, label: { Text(viewModel.isVpnConnected ? "Quit & Disconnect" : "Quit") })
+                .buttonStyle(SecondaryButtonStyle(bold: true))
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: 352)

@@ -4,7 +4,7 @@
 //               packet encryption, packet authentication, and
 //               packet compression.
 //
-//    Copyright (C) 2012-2017 OpenVPN Inc.
+//    Copyright (C) 2012-2020 OpenVPN Inc.
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU Affero General Public License Version 3
@@ -61,6 +61,9 @@ namespace openvpn {
       UDP_CONNECT_ERROR,   // client error on UDP connect
       SSL_ERROR,           // errors resulting from read/write on SSL object
       SSL_PARTIAL_WRITE,   // SSL object did not process all written cleartext
+      SSL_CA_MD_TOO_WEAK,  // CA message digest is too weak
+      SSL_CA_KEY_TOO_SMALL, // CA key is too small
+      SSL_DH_KEY_TOO_SMALL, // DH key is too small
       ENCAPSULATION_ERROR, // exceptions thrown during packet encapsulation
       EPKI_CERT_ERROR,     // error obtaining certificate from External PKI provider
       EPKI_SIGN_ERROR,     // error obtaining RSA signature from External PKI provider
@@ -91,6 +94,7 @@ namespace openvpn {
       KEV_NEGOTIATE_ERROR,
       KEV_PENDING_ERROR,
       N_KEV_EXPIRE,
+      KEY_EXPANSION_ERROR,
 
       // Packet ID error detail
       PKTID_INVALID,
@@ -139,6 +143,9 @@ namespace openvpn {
 	"UDP_CONNECT_ERROR",
 	"SSL_ERROR",
 	"SSL_PARTIAL_WRITE",
+	"SSL_CA_MD_TOO_WEAK",
+	"SSL_CA_KEY_TOO_SMALL",
+	"SSL_DH_KEY_TOO_SMALL",
 	"ENCAPSULATION_ERROR",
 	"EPKI_CERT_ERROR",
 	"EPKI_SIGN_ERROR",
@@ -167,6 +174,7 @@ namespace openvpn {
 	"KEV_NEGOTIATE_ERROR",
 	"KEV_PENDING_ERROR",
 	"N_KEV_EXPIRE",
+	"KEV_EXPANSION_ERROR",
 	"PKTID_INVALID",
 	"PKTID_BACKTRACK",
 	"PKTID_EXPIRE",

@@ -21,8 +21,7 @@ struct ColorfulButtonView: View {
     var text: String
     var icon: String
     var iconSize: Int
-    var background: Color
-    var foreground: Color
+    var updateAvailable: Bool
     var body: some View {
         Button(action: action ?? {}, label: {
             HStack {
@@ -40,23 +39,29 @@ struct ColorfulButtonView: View {
                 Spacer().frame(width: 14)
             }
         })
-        .frame(width: 272, height: 40)
-        .background(background)
-        .foregroundColor(foreground)
-        .buttonStyle(PlainButtonStyle())
-        .cornerRadius(6)
-        .onHover { inside in
-            if inside && action != nil {
-                NSCursor.pointingHand.push()
-            } else {
-                NSCursor.pop()
-            }
-        }
+        .buttonStyle(PrimaryButtonStyle(buttonColor: updateAvailable ? .abUpdateAccent : .abUpToDateAccent,
+                                        buttonHoverColor: updateAvailable ? .abUpdateAccent : .abUpToDateAccent,
+                                        buttonClickColor: updateAvailable ? .abUpdateAccentClick : .abUpToDateAccent,
+                                        textColor: updateAvailable ? .abDarkText : .white,
+                                        shadowColor: updateAvailable ? .abShadow : .clear,
+                                        enableAnimation: updateAvailable))
     }
 }
 
 struct ColorfulButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorfulButtonView(action: nil, text: "Test Button", icon: "NextIcon", iconSize: 11, background: .abUpToDateAccent, foreground: .white)
+        VStack(spacing: 16) {
+        ColorfulButtonView(action: nil,
+                           text: "Update Available",
+                           icon: "NextIcon",
+                           iconSize: 11,
+                           updateAvailable: true)
+        ColorfulButtonView(action: nil,
+                           text: "Up To Date",
+                           icon: "CheckIcon",
+                           iconSize: 16,
+                           updateAvailable: false)
+        }
+        .padding()
     }
 }

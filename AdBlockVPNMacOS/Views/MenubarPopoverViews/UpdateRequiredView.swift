@@ -37,9 +37,10 @@ struct UpdateRequiredView: View {
                 .latoFont(size: 14)
                 .foregroundColor(.abLightText)
             Spacer()
-            AccentButtonView(action: {
+            Button(action: {
                 viewModel.update()
-            }, text: "Update", background: .abUpdateAccent, foreground: .abDarkText)
+            }, label: { Text("Update") })
+            .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent, buttonHoverColor: .abUpdateAccent, buttonClickColor: .abUpdateAccentClick, textColor: .abDarkText))
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: 352)

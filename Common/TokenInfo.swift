@@ -39,6 +39,14 @@ struct TokenInfo: Codable {
         refresh_token = ""
     }
     
+    init(storedToken: TokenInfoWithDate) {
+        access_token = storedToken.access_token
+        token_type = storedToken.token_type
+        expires_in = storedToken.expires_in
+        refresh_token = storedToken.refresh_token
+        creationDate = storedToken.creationDate
+    }
+    
     init(accessToken: String, tokenType: String, expiresIn: Int, refreshToken: String) {
         access_token = accessToken
         token_type = tokenType
@@ -63,7 +71,7 @@ struct TokenInfo: Codable {
         let encoder = JSONEncoder()
         do {
             if !refresh_token.isEmpty {
-                let tokenData = try encoder.encode(self)
+                let tokenData = try encoder.encode(TokenInfoWithDate(tokenObj: self))
                 try appKeychain.set(tokenData, key: Constants.refreshToken_key)
             } else {
                 try appKeychain.remove(Constants.refreshToken_key)
@@ -86,12 +94,12 @@ struct TokenInfo: Codable {
     
     static func newFromStored() -> TokenInfo {
         let appKeychain = Keychain(service: Constants.keychainID)
-        var storedToken = TokenInfo()
+        var storedToken = TokenInfoWithDate()
         do {
             if let tokenInfo = try appKeychain.getData(Constants.refreshToken_key) {
                 let decoder = JSONDecoder()
                 do {
-                    storedToken = try decoder.decode(TokenInfo.self, from: tokenInfo)
+                    storedToken = try decoder.decode(TokenInfoWithDate.self, from: tokenInfo)
                 } catch {
                     SwiftyBeaver.warning("error in retrieving saved token")
                 }
@@ -100,6 +108,30 @@ struct TokenInfo: Codable {
             // Handle error
             SwiftyBeaver.warning("error in retrieving refresh token")
         }
-        return storedToken
+        return TokenInfo(storedToken: storedToken)
+    }
+}
+
+struct TokenInfoWithDate: Codable {
+    var access_token: String
+    var token_type: String
+    var expires_in: Int
+    var refresh_token: String
+    var creationDate: Date
+    
+    init() {
+        access_token = ""
+        token_type = ""
+        expires_in = 0
+        refresh_token = ""
+        creationDate = Date()
+    }
+    
+    init(tokenObj: TokenInfo) {
+        access_token = tokenObj.access_token
+        token_type = tokenObj.token_type
+        expires_in = tokenObj.expires_in
+        refresh_token = tokenObj.refresh_token
+        creationDate = tokenObj.creationDate
     }
 }

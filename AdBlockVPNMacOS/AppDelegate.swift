@@ -52,6 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                                vpnManager: vpnManager,
                                                                notificationManager: notificationManager)
     private var shouldConnectOnWake = false
+    private var isPowerOff = false
 
     override init() {
         errorManager = ErrorManager()
@@ -133,6 +134,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         registerForInternetChanges()
         registerForSleepEvent()
         registerForWakeEvent()
+        registerForPowerOffEvent()
         pingManager = PingManager(manager: logManager)
         pingManager?.start()
         
@@ -214,14 +216,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func setStatusBarItemVisibility(isVisible: Bool) {
         self.statusBarItem?.isVisible = isVisible
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
     
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        var shouldConnectOnStart = [.connected, .connecting].contains(vpnManager.connectionStatus) || shouldConnectOnWake
+        let isPowerOffOrUpdate = defaults.bool(forKey: Constants.willInstallUpdate_key) || isPowerOff
+        let shouldBeConnected = [.connected, .connecting].contains(vpnManager.connectionStatus) || shouldConnectOnWake
+        let shouldConnectOnStart = isPowerOffOrUpdate && shouldBeConnected
         UserDefaults.standard.set(shouldConnectOnStart, forKey: Constants.reconnect_key)
+        
         vpnManager.disconnectVPN {
             sender.reply(toApplicationShouldTerminate: true)
         }
@@ -320,6 +321,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
     }
     
+    private func registerForPowerOffEvent() {
+        let notificationCenter = NSWorkspace.shared.notificationCenter
+        notificationCenter.addObserver(forName: NSWorkspace.willPowerOffNotification, object: nil, queue: nil) { [weak self] _ in
+            self?.isPowerOff = true
+        }
+    }
+    
     private func registerForWakeEvent() {
         let notificationCenter = NSWorkspace.shared.notificationCenter
         notificationCenter.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: nil) { [weak self] _ in
@@ -335,13 +343,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if self?.updateManager?.applyUpdatesAutomatically ?? false {
                 // If the update has been downloaded
                 if self?.updateManager?.storedUpdateBlock != nil {
+                    SwiftyBeaver.debug("wake apply update")
                     // Apply the update
                     self?.updateManager?.storedUpdateBlock?()
                 } else {
+                    SwiftyBeaver.debug("wake check for updates in background")
                     // Otherwise, check for an available update and download in background
                     self?.updateManager?.checkForUpdatesInBackground()
                 }
             } else {
+                SwiftyBeaver.debug("wake check for updates (no auto update)")
                 // Otherwise, check if there's an available update, silently
                 self?.updateManager?.checkForUpdates()
             }

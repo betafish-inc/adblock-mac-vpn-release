@@ -109,6 +109,8 @@ struct FocusTextFieldElement: NSViewRepresentable {
 
         func controlTextDidChange(_ notification: Notification) {
             guard let textField = notification.object as? NSTextField else { return }
+            // Trim whitespace
+            textField.stringValue = textField.stringValue.filter { !$0.isWhitespace }
             text = textField.stringValue
             textField.font = NSFont.latoFont()
         }

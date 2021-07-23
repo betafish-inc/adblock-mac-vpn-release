@@ -33,10 +33,10 @@ struct AcceptanceView: View {
             VStack(alignment: .center) {
                 HTMLStringView(htmlContent: "Questions? <a href='\(Constants.newTicketURL)'>Chat with our support team</a>", fontSize: 12, centered: true)
                 Spacer().frame(height: 13)
-                AccentButtonView(action: {
+                Button(action: {
                     self.state.eulaAccepted = true
                     self.state.viewToShow = .landing
-                }, text: "Accept and Continue")
+                }, label: { Text("Accept and Continue") }).buttonStyle(PrimaryButtonStyle())
             }
             Spacer().frame(height: 25)
         }

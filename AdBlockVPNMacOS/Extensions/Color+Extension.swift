@@ -29,6 +29,13 @@ extension Color {
     static let abShadow = Color("Shadow")
     static let abUpToDateAccent = Color("UpToDateAccent")
     static let abUpdateAccent = Color("UpdateAccent")
+    static let abUpdateAccentClick = Color("UpdateAccentClick")
     static let abAccentBackground = Color("AccentBackground")
     static let abErrorAccent = Color("ErrorAccent")
+    static let abButtonNormal = Color("ButtonNormal")
+    static let abButtonHover = Color("ButtonHover")
+    static let abButtonClick = Color("ButtonClick")
+    static let abSecondaryButtonNormal = Color("SecondaryButtonNormal")
+    static let abSecondaryButtonClick = Color("SecondaryButtonClick")
+    static let abListItemClicked = Color("ListItemClicked")
 }

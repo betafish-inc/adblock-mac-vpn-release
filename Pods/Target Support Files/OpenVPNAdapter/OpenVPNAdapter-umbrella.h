@@ -10,12 +10,13 @@
 #endif
 #endif
 
-#import "OpenVPNAdapter.h"
 #import "OpenVPNAdapterEvent.h"
+#import "OpenVPNAdapterImpl.h"
 #import "OpenVPNAdapterPacketFlow.h"
 #import "OpenVPNCertificate.h"
 #import "OpenVPNCompressionMode.h"
 #import "OpenVPNConfiguration.h"
+#import "OpenVPNConfigurationEvaluation.h"
 #import "OpenVPNConnectionInfo.h"
 #import "OpenVPNCredentials.h"
 #import "OpenVPNError.h"
@@ -24,7 +25,6 @@
 #import "OpenVPNKeyType.h"
 #import "OpenVPNMinTLSVersion.h"
 #import "OpenVPNPrivateKey.h"
-#import "OpenVPNProperties.h"
 #import "OpenVPNReachability.h"
 #import "OpenVPNReachabilityStatus.h"
 #import "OpenVPNServerEntry.h"

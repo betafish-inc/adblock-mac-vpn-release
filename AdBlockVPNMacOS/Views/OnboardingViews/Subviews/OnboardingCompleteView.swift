@@ -25,14 +25,16 @@ struct OnboardingCompleteView: View {
                                bodyTitle: "You're ready to start using AdBlock VPN!")
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
-                OnboardingButtonView(action: {
+                Button(action: {
                     NSApplication.shared.keyWindow?.close()
                     model.completeOnboarding(showPopover: false)
-                }, text: "Close", isPrimary: false)
-                OnboardingButtonView(action: {
-                    NSApplication.shared.keyWindow?.close()
-                    model.completeOnboarding()
-                }, text: "Open AdBlock VPN", isPrimary: true)
+                }, label: { Text("Close") })
+                .buttonStyle(SecondaryButtonStyle())
+                Button(action: {
+                        NSApplication.shared.keyWindow?.close()
+                        model.completeOnboarding()
+                }, label: { Text("Open AdBlock VPN") })
+                .buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

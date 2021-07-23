@@ -65,7 +65,7 @@ struct LoginFlowView: View {
                     Spacer().frame(height: 17)
                 }
                 if !inputString.isEmpty || [.noAccountError, .subEndedError, .deviceLimitError].contains(viewModel.currentPage) {
-                    AccentButtonView(action: textEntryButtonClicked, text: viewModel.pageStrings.buttonText)
+                    Button(action: { textEntryButtonClicked() }, label: { Text(viewModel.pageStrings.buttonText) }).buttonStyle(PrimaryButtonStyle())
                 } else {
                     DisabledButtonView(text: viewModel.pageStrings.buttonText)
                 }

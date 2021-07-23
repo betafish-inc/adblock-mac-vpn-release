@@ -31,16 +31,9 @@ struct TopBarView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(height: 18.76)
-                        .onHover { inside in
-                            if inside {
-                                NSCursor.pointingHand.push()
-                            } else {
-                                NSCursor.pop()
-                            }
-                        }
                 }
                 .offset(x: -105, y: 0)
-                .buttonStyle(PlainButtonStyle())
+                .buttonStyle(TopBarButtonStyle())
                 Text(state.getViewTitle())
                     .latoFont()
                     .foregroundColor(.abDarkText)
@@ -48,16 +41,9 @@ struct TopBarView: View {
                 if state.viewToShow != .acceptance {
                     Button { self.state.viewToShow = .preferences } label: {
                         Image("MenuIcon")
-                            .onHover { inside in
-                                if inside {
-                                    NSCursor.pointingHand.push()
-                                } else {
-                                    NSCursor.pop()
-                                }
-                            }
                     }
                     .offset(x: -105, y: 0)
-                    .buttonStyle(PlainButtonStyle())
+                    .buttonStyle(TopBarButtonStyle())
                 }
                 Image("FullLogo")
                     .resizable()

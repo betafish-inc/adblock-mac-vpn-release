@@ -31,8 +31,8 @@ struct OnboardingMoveAppView: View {
                 .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
-                OnboardingButtonView(action: { terminateApp() }, text: "Cancel", isPrimary: false)
-                OnboardingButtonView(action: { moveApp() }, text: "Continue", isPrimary: true)
+                Button(action: { terminateApp() }, label: { Text("Cancel") }).buttonStyle(SecondaryButtonStyle())
+                Button(action: { moveApp() }, label: { Text("Continue") }).buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

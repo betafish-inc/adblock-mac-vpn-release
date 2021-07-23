@@ -105,7 +105,7 @@ class AppState: ObservableObject {
     }
     
     func checkViewToShow(loggedIn: Bool, isError: Bool, updateRequired: Bool) {
-        if [.preferences, .account, .help, .appSettings, .updates, .updateError, .updateRequired].contains(viewToShow) {
+        if [.preferences, .account, .help, .appSettings, .updates, .updateError, .updateRequired, .locations].contains(viewToShow) {
             return
         }
         if updateRequired {
@@ -119,16 +119,14 @@ class AppState: ObservableObject {
             viewToShow = .landing
         } else if isError {
             viewToShow = .error
-        } else if !loggedIn && [.login, .setUpVPN, .connection, .locations, .error].contains(viewToShow) {
+        } else if !loggedIn {
             viewToShow = .login
-        } else if loggedIn && [.acceptance, .setUpExtension, .landing, .login, .error].contains(viewToShow) {
+        } else {
             viewToShow = .connection
         }
         
         if !vpnProfileActive && viewToShow == .connection {
             viewToShow = .setUpVPN
-        } else if vpnProfileActive && viewToShow == .setUpVPN {
-            viewToShow = .connection
         }
     }
 }

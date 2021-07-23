@@ -25,7 +25,7 @@ struct OnboardingSysExtensionView: View {
                                bodyTitle: "Allow AdBlock VPN in your security preferences")
             VStack(alignment: .leading, spacing: 12) {
                 OnboardingStepTextView(boldText: "Step 1:",
-                                       normalText: "Click “Open System Dialogue” below. Click ”Open Security Preferences” in the next window.")
+                                       normalText: "Click “Open System Dialog” below. Click ”Open Security Preferences” in the next window.")
                 OnboardingStepTextView(boldText: "Step 2:",
                                        normalText: "At the bottom of the page, click the lock icon and enter your password.")
                 OnboardingStepTextView(boldText: "Step 3:",
@@ -35,10 +35,11 @@ struct OnboardingSysExtensionView: View {
                 .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
-                OnboardingButtonView(action: { model.openSecurityPreferences() }, text: "Open System Dialog", isPrimary: false)
+                Button(action: { model.openSecurityPreferences() }, label: { Text("Open System Dialog") })
+                    .buttonStyle(SecondaryButtonStyle())
                     .disabled(model.sysExtensionActive)
-                OnboardingButtonView(action: { model.sysExtensionActive ? model.checkViewToShow() : (model.viewToShow = .sysExtensionError) },
-                                     text: "Next Steps", isPrimary: true)
+                Button(action: { model.sysExtensionActive ? model.checkViewToShow() : (model.viewToShow = .sysExtensionError) },
+                       label: { Text("Next Steps") }).buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

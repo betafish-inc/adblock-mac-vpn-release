@@ -31,9 +31,7 @@ struct LandingView: View {
                 .foregroundColor(.abDarkText)
                 .multilineTextAlignment(.center)
             Spacer().frame(height: 56)
-            AccentButtonView(action: {
-                self.state.viewToShow = .login
-            }, text: "Log In")
+            Button(action: { self.state.viewToShow = .login }, label: { Text("Log In") }).buttonStyle(PrimaryButtonStyle())
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: 352)
