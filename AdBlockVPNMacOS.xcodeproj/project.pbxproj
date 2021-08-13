@@ -1533,7 +1533,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 0.12.9.1;
+				CURRENT_PROJECT_VERSION = 21.3.1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"AdBlockVPNMacOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1544,7 +1544,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.12.9;
+				MARKETING_VERSION = 21.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos;
 				PRODUCT_NAME = "AdBlock VPN";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN App Dev";
@@ -1565,7 +1565,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 0.12.9.1;
+				CURRENT_PROJECT_VERSION = 21.3.1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"AdBlockVPNMacOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1576,7 +1576,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.12.9;
+				MARKETING_VERSION = 21.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos;
 				PRODUCT_NAME = "AdBlock VPN";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Distribution";
@@ -1676,7 +1676,7 @@
 				CODE_SIGN_ENTITLEMENTS = "AdBlockVPNMacOSProvider/AdBlockVPNMacOSProvider-Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0.12.9.1;
+				CURRENT_PROJECT_VERSION = 21.3.1.1;
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1690,7 +1690,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.12.9;
+				MARKETING_VERSION = 21.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos.provider;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Provider Extension Dev";
@@ -1706,7 +1706,7 @@
 				CODE_SIGN_ENTITLEMENTS = AdBlockVPNMacOSProvider/AdBlockVPNMacOSProvider.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0.12.9.1;
+				CURRENT_PROJECT_VERSION = 21.3.1.1;
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1720,7 +1720,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.12.9;
+				MARKETING_VERSION = 21.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos.provider;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Provider Distribution";
