@@ -55,6 +55,7 @@ public struct Constants {
     static let emailURL = "https://api.adblock.dev/v1/vpn/login/email"
     static let confirmURL = "https://api.adblock.dev/v1/vpn/login/email/confirm"
     static let logURL = "https://log.adblock.dev/v2/record_log"
+    static let accountsMagicLoginURL = "https://api.adblock.dev/v1/vpn/token/account"
 
     static let securityPrefsPaneURL = "/System/Library/PreferencePanes/Security.prefPane"
     static let notificationsPrefsPaneURL = "/System/Library/PreferencePanes/Notifications.prefPane"

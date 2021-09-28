@@ -1,0 +1,33 @@
+{
+  "images" : [
+    {
+      "filename" : "notification_ss_exportabl_generic.png",
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "notification_ss_exportabl_generic@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "notification_ss_exportabl.png",
+      "idiom" : "mac",
+      "locale" : "en",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "notification_ss_exportabl@2x.png",
+      "idiom" : "mac",
+      "locale" : "en",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

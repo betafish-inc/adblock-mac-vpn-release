@@ -18,21 +18,35 @@ import SwiftUI
 
 struct RegionSelectionView: View {
     @ObservedObject var viewModel: ConnectionViewModel
+    @State private var searchTerm = ""
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(viewModel.connection.availableGeos) { geo in
-                    RegionButtonView(viewModel: self.viewModel,
-                                     flag: GeoAssets.flags[geo.id] ?? "FlagWorld",
-                                     name: geo.name,
-                                     selected: self.viewModel.connection.selectedGeo == geo.id,
-                                     id: geo.id)
+        VStack {
+            SearchBar(searchText: $searchTerm)
+            Spacer().frame(height: 8)
+            ScrollView {
+                HStack {
+                    Spacer().frame(width: 2)
+                    VStack(spacing: 0) {
+                        ForEach(
+                            viewModel.connection.availableGeos.filter({
+                                                                        searchTerm.isEmpty ? true : GeoAssets.getGeoName(id: $0.id).lowercased().contains(searchTerm)
+                        })) { geo in
+                            RegionButtonView(viewModel: self.viewModel,
+                                             flag: GeoAssets.flags[geo.id] ?? "FlagWorld",
+                                             name: GeoAssets.getGeoName(id: geo.id),
+                                             selected: self.viewModel.connection.selectedGeo == geo.id,
+                                             id: geo.id)
+                        }
+                    }.frame(width: 240)
+                    Spacer()
                 }
-            }.frame(width: 272)
-            // Add padding to bottom of ScrollView
-            Spacer().frame(height: 24)
+                // Add padding to bottom of ScrollView
+                Spacer().frame(height: 24)
+            }
+            .frame(width: 272, height: 288, alignment: .leading)
         }
-        .frame(width: 272, height: 352, alignment: .leading)
+        .frame(height: 352)
+        .background(Color.white)
     }
 }
 

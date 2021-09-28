@@ -18,7 +18,7 @@ import SwiftUI
 
 struct OnboardingBodyView: View {
     let headerImage: String
-    let bodyTitle: String
+    let bodyTitle: Text
 
     var body: some View {
         VStack {
@@ -29,7 +29,7 @@ struct OnboardingBodyView: View {
                 .background(Color.abBorder)
                 .padding(.vertical, 32)
             HStack {
-                Text(bodyTitle)
+                bodyTitle
                     .latoFont(weight: .bold)
                     .foregroundColor(.abDarkText)
                 Spacer()
@@ -42,7 +42,7 @@ struct OnboardingBodyView: View {
 struct OnboardingSubviewTemplate_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingBodyView(headerImage: "OnboardingIntro",
-                       bodyTitle: "Thanks for installing AdBlockVPN")
+                           bodyTitle: Text(verbatim: "Thanks for installing AdBlockVPN"))
             .background(Color.white)
     }
 }

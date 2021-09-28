@@ -53,7 +53,8 @@ class MainViewModel: ObservableObject {
                         strongSelf.checkedForErrorReset = Date()
                         strongSelf.restartConnection = true
                     } else {
-                        strongSelf.errorManager.setRetryOrRestartError(message: "Error connecting to VPN provider.")
+                        strongSelf.errorManager.setRetryOrRestartError(
+                            message: NSLocalizedString("Error connecting to VPN provider.", comment: "Error shown when error recovery fails"))
                     }
                 }
             }

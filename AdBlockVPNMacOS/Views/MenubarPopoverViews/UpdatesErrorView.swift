@@ -21,13 +21,13 @@ struct UpdatesErrorView: View {
     @ObservedObject var viewModel: UpdatesViewModel
     var body: some View {
         VStack {
-            Spacer().frame(height: 5)
+            Spacer().frame(height: 8)
             Image("Alert")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 144, height: 144)
+                .frame(width: 112, height: 139)
             Spacer().frame(height: 25)
-            Text("Something went wrong while attempting to update AdBlock VPN. Please try again. ")
+            Text("Something went wrong while attempting to update AdBlock VPN. Please try again.", comment: "Instructions on update error page")
                 .multilineTextAlignment(.center)
                 .latoFont()
                 .foregroundColor(.abDarkText)
@@ -35,7 +35,7 @@ struct UpdatesErrorView: View {
             Button(action: {
                 viewModel.openDownloadsPage()
                 state.viewToShow = .connection
-            }, label: { Text("Update") })
+            }, label: { Text("Update", comment: "Label for button that opens external update page") })
             .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent, buttonHoverColor: .abUpdateAccent, buttonClickColor: .abUpdateAccentClick, textColor: .abDarkText))
             Spacer().frame(height: 24)
         }

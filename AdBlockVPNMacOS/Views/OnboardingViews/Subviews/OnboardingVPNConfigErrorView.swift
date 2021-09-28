@@ -22,15 +22,16 @@ struct OnboardingVPNConfigErrorView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingError",
-                               bodyTitle: "Oops!")
-            Text("It looks like we still don't have permission to add VPN configurations to your device. Let's try again.")
+                               bodyTitle: Text("Oops!", comment: "Title for onboarding flow error page"))
+            Text("It looks like we still don't have permission to add VPN configurations to your device. Let's try again.",
+                 comment: "Instructions for VPN configuration error page in onboarding flow")
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
                 OnboardingContactSupportButtonView()
-                Button(action: { model.checkViewToShow() }, label: { Text("Try Again") }).buttonStyle(PrimaryButtonStyle())
+                Button(action: { model.checkViewToShow() }, label: { Text("Try Again", comment: "Label for button to try the step again") }).buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

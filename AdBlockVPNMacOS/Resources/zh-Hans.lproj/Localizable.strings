@@ -1,0 +1,559 @@
+/* No comment provided by engineer. */
+" " = " ";
+
+/* Placeholder text in code entry box */
+"— — — — — —" = "— — — — — —";
+
+/* Link to create a help ticket on email entry page */
+"<a href='%@'>Forgot your email?</a>" = "<a href='%@'>忘记电子邮件？</a>";
+
+/* Link to help page */
+"<a href='%@'>Need Help?</a>" = "<a href='%@'>需要帮助？</a>";
+
+/* Label for button that accepts the EULA and takes the user to the next page of the intro flow */
+"Accept and Continue" = "接受并继续";
+
+/* Account page title
+   Label for button that takes the useer to the account page */
+"Account" = "帐户";
+
+/* Onboarding setup flow title */
+"AdBlock VPN Setup" = "AdBlock VPN 设置";
+
+/* Title for system extensions permissions page in onboarding flow */
+"Allow AdBlock VPN in your security preferences" = "在您的安全首选项中允许 AdBlock VPN";
+
+/* Title for notifications page in onboarding flow */
+"Allow AdBlock VPN Notifications" = "允许 AdBlock VPN 通知";
+
+/* Title for VPN configuration page of onboarding flow */
+"Allow AdBlock VPN to add VPN configurations" = "允许 AdBlock VPN 添加 VPN 配置";
+
+/* Title for updates view */
+"An update is available" = "有可用的更新";
+
+/* App settings page title
+   Label for button that takes the user to the app settings page */
+"App Settings" = "应用设置";
+
+/* Label for toggle to turn the 'apply updates automatically' feature on/off */
+"Apply updates automatically" = "自动应用更新";
+
+/* Second step in instruction to enable system extension */
+"At the bottom of the page, click the lock icon and enter your password." = "在页面底部，点击锁定图标，然后输入密码。";
+
+/* Name of 'au_per' region */
+"Australia - Perth" = "澳大利亚 - 珀斯";
+
+/* Name of 'au_syd' region */
+"Australia - Sydney" = "澳大利亚 - 悉尼";
+
+/* Name of 'at' region */
+"Austria" = "奥地利";
+
+/* Name of 'be' region */
+"Belgium" = "比利时";
+
+/* Name of 'br' region */
+"Brazil" = "巴西";
+
+/* Name of 'bg' region */
+"Bulgaria" = "保加利亚";
+
+/* Links to EULA and Privacy Policy */
+"By proceeding, you are confirming you have read and accepted the <a href='%@'>End User License Agreement (EULA)</a>, and our <a href='%@'>Privacy Policy</a>." = "如若继续，即表示您确认您已阅读并接受<a href='%1$@'>最终用户许可协议 (EULA)</a> 和我们的<a href='%2$@'>隐私政策</a>。";
+
+/* Name of 'ca' region */
+"Canada" = "加拿大";
+
+/* Label for button that cancels out of the onboarding flow
+   Label for cancel button, shown when VPN is in the process of connecting
+   Label for cancel button, shown when VPN is in the process of reconnecting */
+"Cancel" = "取消";
+
+/* Default label for region selector
+   Text shown on region selector when the VPN is connected */
+"Change Location" = "更改位置";
+
+/* Title of code entry page */
+"Check Your Email" = "查看您的电子邮件";
+
+/* Name of 'cl' region */
+"Chile" = "智利";
+
+/* Location picker page title */
+"Choose location" = "选择位置";
+
+/* First step in instructions to enable system extension */
+"Click “Open System Dialog” below. Click ”Open Security Preferences” in the next window." = "点击下方的“打开系统对话框”。在下一个窗口中点击“打开安全首选项”。";
+
+/* Instructions for VPN configuration page of onboarding flow */
+"Click “Open System Dialog” below. In the following window, click the ”Allow” button. When you're done, click ”Next Steps” below to continue the setup process." = "点击下方的“打开系统对话框”。在下一个窗口中，点击“允许”按钮。完成后，点击下方的“后续步骤”，继续设置流程。";
+
+/* Third step in instructions to enable the system extension */
+"Click the “Allow” button to give AdBlock VPN permission to run on your device. Close the preferences window and click “Next Steps” below to continue the setup process." = "点击“允许”按钮授权 AdBlock VPN 在您的设备上运行。关闭首选项窗口，然后点击下方的“后续步骤”继续设置流程。";
+
+/* Label for button that closes the onboarding flow */
+"Close" = "关闭";
+
+/* Default label for connection button
+   Label for connect button, shown when VPN is disconnected
+   Label for connect button, shown when VPN is in an invalid state
+   Label for disabled button on VPN setup page */
+"Connect" = "连接";
+
+/* Notification shown when the VPN connects to the given location. Variable holds the name of the location. */
+"Connected to\n%@" = "已连接到\n%@";
+
+/* VPN state text when connected. Variable holds the name of the location. */
+"Connected to %@" = "已连接到 %@";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "重试连接失败。";
+
+/* Link to contact support on no account error page. Text must match corresponding text in footer
+   Link to contact support on subscription ended error page. Text must match corresponding text in footer
+   Link to contact support. Text must match corresponding text in error */
+"contact support" = "联系支持团队";
+
+/* Label for button to contact support from onboarding flow */
+"Contact Support" = "联系支持团队";
+
+/* Label for button that continues the process of moving the app to the correct folder */
+"Continue" = "继续";
+
+/* Name of 'cz' region */
+"Czech Republic" = "捷克共和国";
+
+/* Name of 'dk' region */
+"Denmark" = "丹麦";
+
+/* Footer text on code entry page */
+"Didn't get the code? Try again." = "没有收到代码？请再次重试。";
+
+/* Label for disconnect button, shown when VPN is connected */
+"Disconnect" = "断开连接";
+
+/* Default text for connection state */
+"Disconnected" = "已断开连接";
+
+/* Notification shown when the VPN disconnects from the given location. Variable holds the name of the location. */
+"Disconnected\n%@" = "已断开连接\n%@";
+
+/* Footer text on no account error page
+   Footer text on subscription ended page */
+"Doesn’t sound right? Try using a different email address or contact support." = "没有反应？请尝试使用其他电子邮件地址或联系支持团队。";
+
+/* Footer text on email entry page */
+"Don't have an AdBlock account? Sign up." = "没有 AdBlock 帐户？请先注册。";
+
+/* Placeholder text in email entry box */
+"Email Address" = "电子邮件地址";
+
+/* Intructions for entering your email address */
+"Enter the email address you used when you purchased AdBlock VPN:" = "输入您购买 AdBlock VPN 时使用的电子邮件地址：";
+
+/* Shown when the location name cannot be found */
+"Error" = "错误";
+
+/* Error shown when error recovery fails */
+"Error connecting to VPN provider." = "连接到 VPN 提供商时出错。";
+
+/* Downloading and reading regions file failed error
+   Reading regions file failed error. */
+"Error in reading regions file." = "读取区域文件时出错。";
+
+/* Name of 'fi' region */
+"Finland" = "芬兰";
+
+/* Needs support error full msg */
+"For help solving this problem, please contact our support team." = "为帮助解决此问题，请联系我们的支持团队。";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "为帮助解决此问题，请遵循我们文章中的步骤。";
+
+/* Instructions for enabling notifications from the system alert */
+"For the best app experience from AdBlock VPN, allow notifications. Click “Show Notification“ below. A notification will appear in the top right corner of your screen. Click “Options” then “Allow”. (You can choose “Don’t Allow” if you do not want notifications from AdBlock VPN.) Click “Next” below when you are done." = "要想获得 AdBlock VPN 的最佳应用体验，请允许通知。点击下方的“显示通知”。屏幕右上角将显示通知。点击“选项”，然后点击“允许”。（如果不想收到来自 AdBlock VPN 的通知，您可以选择“不允许”。）完成后，点击“下一步”。";
+
+/* Name of 'fr' region */
+"France" = "法国";
+
+/* Name of 'de' region */
+"Germany" = "德国";
+
+/* Label for button on no account error page. Links to page to set up account */
+"Get AdBlock VPN" = "获取 AdBlock VPN";
+
+/* Label for button that opens a help page */
+"Get Help" = "获取帮助";
+
+/* Label for button that starts the onboarding flow */
+"Get Started" = "开始";
+
+/* Name of 'gr' region */
+"Greece" = "希腊";
+
+/* Help and feedback page title
+   Label for button that takes the user to the help and feedback page */
+"Help & Feedback" = "帮助和反馈";
+
+/* Name of 'hk' region */
+"Hong Kong" = "中国香港";
+
+/* Name of 'hu' region */
+"Hungary" = "匈牙利";
+
+/* Name of 'is' region */
+"Iceland" = "冰岛";
+
+/* Name of 'in' region */
+"India" = "印度";
+
+/* Name of 'ie' region */
+"Ireland" = "爱尔兰";
+
+/* Name of 'im' region */
+"Isle of Man" = "马恩岛";
+
+/* Name of 'il' region */
+"Israel" = "以色列";
+
+/* Instructions for VPN configuration error page in onboarding flow */
+"It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "似乎我们还没有权限向您的设备添加 VPN 配置。让我们重试。";
+
+/* Instructions for system extensions permissions error page in onboarding flow */
+"It looks like we still don't have permission to run on your device. Let's try again." = "看起来我们仍然没有权限在您的设备上运行。我们重试一次吧。";
+
+/* Instructions on subscription ended error page */
+"It looks like your subscription has ended. Please click below to renew." = "似乎您的订阅已结束。请点击下方续订。";
+
+/* Name of 'it' region */
+"Italy" = "意大利";
+
+/* Name of 'jp' region */
+"Japan" = "日本";
+
+/* Label for toggle to turn the 'launch at login' feature on/off */
+"Launch at login" = "登录时启动";
+
+/* Label for button that takes user to login page
+   Label for button to go to login page */
+"Log In" = "登录";
+
+/* Instructions on landing page */
+"Log in to connect to AdBlock VPN and secure your connection" = "登录以连接 AdBlock VPN 并确保您的连接安全";
+
+/* Label for button that links to the account management page */
+"Manage Account" = "管理帐户";
+
+/* Label for button on device limit error page */
+"Manage Devices" = "管理设备";
+
+/* Name of 'mx' region */
+"Mexico" = "墨西哥";
+
+/* Name of 'md' region */
+"Moldova" = "摩尔多瓦";
+
+/* Title for move app page of onboarding flow */
+"Move AdBlock VPN to the Applications folder" = "将 AdBlock VPN 移动到“应用程序”文件夹";
+
+/* Name of option to use the nearest region */
+"Nearest location" = "最近的位置";
+
+/* Name of 'nl' region */
+"Netherlands" = "荷兰";
+
+/* Name of 'nz' region */
+"New Zealand" = "新西兰";
+
+/* Label for button on email entry page
+   Label for button that takes user to the next page of the onboarding flow */
+"Next" = "下一步";
+
+/* Label for button that take the user to the next step in the onboarding flow
+   Label for button that takes the user to the next step in the onboarding flow */
+"Next Steps" = "后续步骤";
+
+/* Name of 'no' region */
+"Norway" = "挪威";
+
+/* Title for error view */
+"Oh dear. Something went wrong." = "哎哟。出错了。";
+
+/* Title for device limit error page
+   Title for onboarding flow error page
+   Title for subscription ended error page
+   Title of no account error page */
+"Oops!" = "哎呀！";
+
+/* Error text for generic errors */
+"Oops!\nSomething went wrong.\nPlease try again or contact support." = "糟糕！\n出错了。\n请再次重试或联系支持团队。";
+
+/* Error text for invalid code error */
+"Oops!\nThat code didn’t work. Please try again." = "糟糕！\n该代码无效。请再次重试。";
+
+/* Error text for imvalid email error. */
+"Oops!\nWe don’t recognize that email address.\nPlease try again or contact support." = "糟糕！\n无法识别该电子邮件地址。\n请再次重试或联系支持团队。";
+
+/* Label for button that opens the main app after onboarding flow is complete */
+"Open AdBlock VPN" = "打开 AdBlock VPN";
+
+/* Label for button to open system preferences to notifications */
+"Open Notifications" = "打开通知";
+
+/* Label for button that opens the system dialog */
+"Open System Dialog" = "打开系统对话框";
+
+/* Title for VPN setup page */
+"Please allow VPN configurations when prompted to connect to AdBlock VPN." = "当系统提示连接 AdBlock VPN 时，请允许 VPN 配置。";
+
+/* Needs support error short msg */
+"Please contact our support team" = "请联系我们的支持团队";
+
+/* Instructions on system extension set up page */
+"Please enable the AdBlock VPN system extension to start using AdBlock VPN." = "请启用 AdBlock VPN 系统扩展以开始使用 AdBlock VPN。";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "请跟随此文章中的步骤";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "请重新启动 AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN. If the problem persists, contact our support team." = "请重新启动 AdBlock VPN。如果问题仍然存在，请联系我们的支持团队。";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "请重新启动您的电脑";
+
+/* Needs machine restart error full msg */
+"Please restart your computer. If the problem persists, contact our support team." = "请重新启动您的电脑。如果问题仍然存在，请联系我们的支持团队。";
+
+/* Needs authentication short msg */
+"Please sign in again" = "请重新登录";
+
+/* Needs authentication error full msg */
+"Please sign in again. If the problem persists, contact our support team." = "请重新登录。如果问题仍然存在，请联系我们的支持团队。";
+
+/* Title for update required page */
+"Please update AdBlock VPN to continue." = "请更新 AdBlock VPN 以继续。";
+
+/* Name of 'pl' region */
+"Poland" = "波兰";
+
+/* Preferences page title */
+"Preferences" = "首选项";
+
+/* Link to contact support team */
+"Questions? <a href='%@'>Chat with our support team</a>" = "有问题吗？<a href='%@'>请咨询我们的支持团队</a>";
+
+/* Label for quit button when the VPN is disconnected */
+"Quit" = "退出";
+
+/* Label for quit button when the VPN is connected */
+"Quit & Disconnect" = "退出并断开连接";
+
+/* Label for reconnect button, shown when VPN is in the process of disconnecting */
+"Reconnect" = "重新连接";
+
+/* Label for button on subscription ended error page. Links to page where user can renew their subscription */
+"Renew Subscription" = "续订";
+
+/* VPN state text when reasserting */
+"Retrying connection" = "正在重试连接";
+
+/* Notification shown when the VPN is reconnecting to the given location. Variable holds the name of the location. */
+"Retrying connection...\n%@" = "正在重试连接...\n%@";
+
+/* Name of 'ro' region */
+"Romania" = "罗马尼亚";
+
+/* Name of 'ru' region */
+"Russia" = "俄罗斯";
+
+/* VPN state text when connecting. */
+"Securing your connection." = "正在确保您的连接安全。";
+
+/* Notification shown when the VPN is connecting to the given location. Variable holds the name of the location. */
+"Securing your connection...\n%@" = "正在确保您的连接安全…\n%@";
+
+/* Label for button that opens a feedback page */
+"Send Feedback" = "发送反馈";
+
+/* Name of 'rs' region */
+"Serbia" = "塞尔维亚";
+
+/* Label for toggle to turn the 'show dock icon' feature on/off */
+"Show dock icon" = "显示 dock 图标";
+
+/* Label for button to show the notifications system alert */
+"Show Notification" = "显示通知";
+
+/* Title for email entry page */
+"Sign In" = "登录";
+
+/* Label for button that signs the user out of their account (and the app) */
+"Sign Out" = "注销";
+
+/* Link text on email entry page. This text must match the corresponding text in the footer text. */
+"Sign up." = "注册。";
+
+/* Name of 'sg' region */
+"Singapore" = "新加坡";
+
+/* Label for button that skips the available update */
+"Skip for now" = "以后再说";
+
+/* Name of 'si' region */
+"Slovenia" = "斯洛文尼亚";
+
+/* Instructions on update error page */
+"Something went wrong while attempting to update AdBlock VPN. Please try again." = "尝试更新 AdBlock VPN 时出错。请再次重试。";
+
+/* Name of 'es' region */
+"Spain" = "西班牙";
+
+/* Prefix for step 1 of intructions */
+"Step 1:" = "第 1 步：";
+
+/* Prefix for step 2 of instructions */
+"Step 2:" = "第 2 步：";
+
+/* Prefix for step 3 of instructions */
+"Step 3:" = "第 3 步：";
+
+/* Label for button on code entry page */
+"Submit" = "提交";
+
+/* Link to contact support. Text must match corresponding text in error
+   Link to contact support. Text must match corresponding text in full msg */
+"support team" = "支持团队";
+
+/* Name of 'se' region */
+"Sweden" = "瑞典";
+
+/* Name of 'ch' region */
+"Switzerland" = "瑞士";
+
+/* Title for onboarding intro */
+"Thanks for installing AdBlock VPN" = "感谢安装 AdBlock VPN";
+
+/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
+"this article" = "此文章";
+
+/* Link to try again on generic errors. Text must match corresponding text in error
+   Link to try again on invalid code error. Text must match corresponding text in error
+   Link to try again on invalid email error. Text must match corresponding text in error */
+"try again" = "重试";
+
+/* Label for button to try the step again */
+"Try Again" = "重试";
+
+/* Link to try again on code entry page. This text must match the corresponding text in the footer text. */
+"Try again." = "重试。";
+
+/* Link to try again on the no account error page. Text must match corresponding text in footer.
+   Link to try again on the subscription ended error page. Text must match corresponding text in footer */
+"Try using a different email address" = "尝试使用其他电子邮件地址";
+
+/* Name of 'gb_lon' region */
+"United Kingdom - London" = "英国 - 伦敦";
+
+/* Name of 'gb_mnc' region */
+"United Kingdom - Manchester" = "英国 - 曼彻斯特";
+
+/* Label for disabled button (when no update is available) */
+"Up To Date" = "最新";
+
+/* Label for button that opens external update page
+   Label for button that triggers an update */
+"Update" = "更新";
+
+/* Label for button to go to updates page */
+"Update Available" = "可更新";
+
+/* Notification that an update has been completed */
+"Update Complete!" = "更新完成！";
+
+/* Name of 'us_atl' region */
+"US - Atlanta" = "美国 - 亚特兰大";
+
+/* Name of 'us_chi' region */
+"US - Chicago" = "美国 - 芝加哥";
+
+/* Name of 'us_dal' region */
+"US - Dallas" = "美国 - 达拉斯";
+
+/* Name of 'us_las' region */
+"US - Las Vegas" = "美国 - 拉斯维加斯";
+
+/* Name of 'us_lax' region */
+"US - Los Angeles" = "美国 - 洛杉矶";
+
+/* Name of 'us_mia' region */
+"US - Miami" = "美国 - 迈阿密";
+
+/* Name of 'us_nyc' region */
+"US - New York City" = "美国 - 纽约市";
+
+/* Name of 'us_ewr' region */
+"US - Newark" = "美国 - 纽瓦克";
+
+/* Name of 'us_phx' region */
+"US - Phoenix" = "美国 - 凤凰城";
+
+/* Name of 'us_sfo' region */
+"US - San Francisco" = "美国 - 旧金山";
+
+/* Name of 'us_sea' region */
+"US - Seattle" = "美国 - 西雅图";
+
+/* Name of 'us_was' region */
+"US - Washington, D.C." = "美国 - 华盛顿特区";
+
+/* App version shown on settings page. Variable holds the version number */
+"Version %@" = "版本 %@";
+
+/* Server error short msg */
+"We can't connect to our servers. Please try again later." = "无法连接到服务器。请稍后重试。";
+
+/* Server error full msg */
+"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "无法连接到服务器。请稍后重试。如果问题仍然存在，请联系我们的支持团队。";
+
+/* Intructions for no account error page */
+"We couldn’t find an account for that email address. Please click below to get started." = "找不到该电子邮件地址对应的帐户。请点击下方开始操作。";
+
+/* Intructions on code entry page */
+"We sent you a 6-character access code. Enter it below:" = "我们给您发送了一个 6 个字符的访问代码。请在下方输入：";
+
+/* Instructions for move app page of onboarding flow */
+"We’ll need to move the AdBlock VPN app into your Applications folder first. Click “Continue” to confirm this change." = "我们需要先将 AdBlock VPN 应用移动到您的“应用程序”文件夹。点击“继续”以确认此更改。";
+
+/* Title of acceptance page */
+"Welcome to AdBlock VPN" = "欢迎使用 AdBlock VPN";
+
+/* Subtitle on update required page */
+"You are using an unsupported version of AdBlock VPN." = "您使用的是不受支持的 AdBlock VPN 版本。";
+
+/* No internet error full msg
+   No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "您未连接到互联网！\n请检查您的网络连接。";
+
+/* Intructions for device limit error page */
+"You have already registered the maximum 6 devices. Please click below to update your settings." = "您注册的设备数已达到 6 台的上限。请点击下方以更新您的设置。";
+
+/* Error text for loggeed out error */
+"You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team." = "您已退出。\n请重新登录。\n如果问题仍然存在，请联系我们的支持团队。";
+
+/* Instructions for enabling notifications from system preferences */
+"You will get the best app experience from AdBlock VPN by turning on notifications. Click ”Open Notifications”  then toggle notifications from AdBlock VPN to ”On”. You can also skip this step if you do not want notifications from AdBlock VPN." = "开启通知即可获得 AdBlock VPN 的最佳应用体验。点击“打开通知”，然后将 AdBlock VPN 的通知切换为“开启”。如果您不想接收来自 AdBlock VPN 的通知，您也可以跳过这一步。";
+
+/* Onboarding flow intro instructions */
+"You'll need to change a couple of permissions on your device in order to use AdBlock VPN. We'll walk you through how to do that now." = "您需要更改设备上的几个权限才能使用 AdBlock VPN。接下来我们逐步引导您如何操作。";
+
+/* Title of onboarding complete page */
+"You're ready to start using AdBlock VPN!" = "您可以开始使用 AdBlock VPN 了！";
+
+/* VPN state text when disconnected, disconnecting, or in an invalid state. */
+"Your connection is not secure" = "您的连接不安全";
+

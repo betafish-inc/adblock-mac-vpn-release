@@ -25,14 +25,17 @@ struct SetUpExtensionView: View {
                 Image("LogoIso").resizable().scaledToFit().frame(width: 93, height: 142).offset(x: 0, y: -22)
             }
             Spacer().frame(height: 5)
-            Text("Please enable the AdBlock VPN system extension to start using AdBlock VPN.")
+            Text("Please enable the AdBlock VPN system extension to start using AdBlock VPN.", comment: "Instructions on system extension set up page")
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .multilineTextAlignment(.center)
             Spacer().frame(height: 17)
-            HTMLStringView(htmlContent: "<a href='\(Constants.permissionsHelpURL)'>Need Help?</a>", fontSize: 12, centered: true)
+            HTMLStringView(htmlContent:
+                            String(format:
+                                    NSLocalizedString("<a href='%@'>Need Help?</a>", comment: "Link to help page"), Constants.permissionsHelpURL),
+                           fontSize: 12, centered: true)
             Spacer().frame(height: 27)
-            DisabledButtonView(text: "Log In")
+            DisabledButtonView(text: Text("Log In", comment: "Label for button that takes user to login page"))
                 .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
             Spacer().frame(height: 24)
         }

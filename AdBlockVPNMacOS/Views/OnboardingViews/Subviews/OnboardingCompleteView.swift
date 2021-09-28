@@ -22,18 +22,18 @@ struct OnboardingCompleteView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingComplete",
-                               bodyTitle: "You're ready to start using AdBlock VPN!")
+                               bodyTitle: Text("You're ready to start using AdBlock VPN!", comment: "Title of onboarding complete page"))
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
                 Button(action: {
                     NSApplication.shared.keyWindow?.close()
                     model.completeOnboarding(showPopover: false)
-                }, label: { Text("Close") })
+                }, label: { Text("Close", comment: "Label for button that closes the onboarding flow") })
                 .buttonStyle(SecondaryButtonStyle())
                 Button(action: {
                         NSApplication.shared.keyWindow?.close()
                         model.completeOnboarding()
-                }, label: { Text("Open AdBlock VPN") })
+                }, label: { Text("Open AdBlock VPN", comment: "Label for button that opens the main app after onboarding flow is complete") })
                 .buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)

@@ -26,14 +26,17 @@ struct SetUpVPNView: View {
                 Image("LockNotConnected").resizable().scaledToFit().frame(width: 120, height: 145)
             }
             Spacer().frame(height: 5)
-            Text("Please allow VPN configurations when prompted to connect to AdBlock VPN.")
+            Text("Please allow VPN configurations when prompted to connect to AdBlock VPN.", comment: "Title for VPN setup page")
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .multilineTextAlignment(.center)
             Spacer().frame(height: 17)
-            HTMLStringView(htmlContent: "<a href='\(Constants.permissionsHelpURL)'>Need Help?</a>", fontSize: 12, centered: true)
+            HTMLStringView(htmlContent:
+                            String(format:
+                                    NSLocalizedString("<a href='%@'>Need Help?</a>", comment: "Link to help page"), Constants.permissionsHelpURL),
+                           fontSize: 12, centered: true)
             Spacer().frame(height: 27)
-            DisabledButtonView(text: "Connect")
+            DisabledButtonView(text: Text("Connect", comment: "Label for disabled button on VPN setup page"))
                 .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
             Spacer().frame(height: 24)
         }

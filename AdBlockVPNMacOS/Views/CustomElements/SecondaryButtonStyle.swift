@@ -66,13 +66,13 @@ struct SecondaryButtonStyle: ButtonStyle {
 struct SecondaryButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 16) {
-            Button(action: {}, label: { Text("Button") })
+            Button(action: {}, label: { Text(verbatim: "Button") })
                 .buttonStyle(SecondaryButtonStyle())
-            Button(action: {}, label: { Text("Button with Icon") })
+            Button(action: {}, label: { Text(verbatim: "Button with Icon") })
                 .buttonStyle(SecondaryButtonStyle(icon: "NextIcon"))
-            Button(action: {}, label: { Text("Button with Icon and a lot of non-bold text") })
+            Button(action: {}, label: { Text(verbatim: "Button with Icon and a lot of non-bold text") })
                 .buttonStyle(SecondaryButtonStyle(icon: "NextIcon", bold: false))
-            Button(action: {}, label: { Text("Custom Style") })
+            Button(action: {}, label: { Text(verbatim: "Custom Style") })
                 .buttonStyle(SecondaryButtonStyle(buttonWidth: 200,
                                                   icon: "NextIcon",
                                                   bold: false,

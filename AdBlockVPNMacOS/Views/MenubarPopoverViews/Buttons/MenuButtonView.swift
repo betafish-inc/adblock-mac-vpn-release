@@ -18,7 +18,7 @@ import SwiftUI
 
 struct MenuButtonView: View {
     var action: () -> Void
-    var text: String
+    var text: Text
     var bold: Bool
     var icon: String
     var iconSize: Int
@@ -26,7 +26,7 @@ struct MenuButtonView: View {
         Button(action: action) {
             HStack {
                 Spacer().frame(width: 16)
-                Text(text)
+                text
                     .foregroundColor(.abDarkText)
                     .latoFont(weight: bold ? .bold : .regular)
                 Spacer()
@@ -47,6 +47,6 @@ struct MenuButtonView: View {
 
 struct MenuButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuButtonView(action: {}, text: "Test", bold: false, icon: "LinkIcon", iconSize: 16)
+        MenuButtonView(action: {}, text: Text(verbatim: "Test"), bold: false, icon: "LinkIcon", iconSize: 16)
     }
 }

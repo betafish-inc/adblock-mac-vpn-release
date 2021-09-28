@@ -71,8 +71,8 @@ color: #333333}</style>\(htmlContent)
         text.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         text.setContentCompressionResistancePriority(.required, for: .vertical)
         DispatchQueue.main.async {
-            let data = Data(fullString.utf8)
-            if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            let data = NSString(string: fullString).data(using: String.Encoding.unicode.rawValue)
+            if let attributedString = try? NSAttributedString(data: data ?? Data(), options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
                 text.attributedStringValue = attributedString
                 text.sizeToFit()
             }

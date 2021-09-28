@@ -17,14 +17,14 @@
 import SwiftUI
 
 struct UpdateOverlayView: View {
-    var text: String
+    var text: Text
     var icon: String
     var background: Color
     var foreground: Color
     var body: some View {
         HStack {
             Spacer().frame(width: 16)
-            Text(text)
+            text
                 .latoFont()
             Spacer()
             Image(icon)
@@ -70,8 +70,9 @@ struct RoundedBottom: Shape {
 struct UpdateOverlayView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UpdateOverlayView(text: "Update Complete!", icon: "CheckIcon", background: .abUpToDateAccent, foreground: .white)
-            UpdateOverlayView(text: "Update required in XX days", icon: "TimerIcon", background: .abUpdateAccent, foreground: .abDarkText)
+            UpdateOverlayView(text: Text(verbatim: "Update Complete!"), icon: "CheckIcon", background: .abUpToDateAccent, foreground: .white)
+            UpdateOverlayView(text: Text(verbatim: "Update required in XX days"),
+                              icon: "TimerIcon", background: .abUpdateAccent, foreground: .abDarkText)
         }
     }
 }

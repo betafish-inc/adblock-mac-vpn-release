@@ -24,15 +24,20 @@ struct OnboardingMoveAppView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingMoveApp",
-                               bodyTitle: "Move AdBlock VPN to the Applications folder")
-            Text("We’ll need to move the AdBlock VPN app into your Applications folder first. Click “Continue” to confirm this change.")
+                               bodyTitle: Text("Move AdBlock VPN to the Applications folder", comment: "Title for move app page of onboarding flow"))
+            Text("We’ll need to move the AdBlock VPN app into your Applications folder first. Click “Continue” to confirm this change.",
+                 comment: "Instructions for move app page of onboarding flow")
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
-                Button(action: { terminateApp() }, label: { Text("Cancel") }).buttonStyle(SecondaryButtonStyle())
-                Button(action: { moveApp() }, label: { Text("Continue") }).buttonStyle(PrimaryButtonStyle())
+                Button(action: { terminateApp() }, label: {
+                    Text("Cancel", comment: "Label for button that cancels out of the onboarding flow")
+                }).buttonStyle(SecondaryButtonStyle())
+                Button(action: { moveApp() }, label: {
+                    Text("Continue", comment: "Label for button that continues the process of moving the app to the correct folder")
+                }).buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

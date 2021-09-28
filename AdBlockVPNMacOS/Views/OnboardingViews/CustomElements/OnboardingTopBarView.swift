@@ -27,7 +27,7 @@ struct OnboardingTopBarView: View {
                 .frame(height: 56)
                 .overlay(
                     HStack {
-                        Text("AdBlock VPN Setup")
+                        Text("AdBlock VPN Setup", comment: "Onboarding setup flow title")
                             .latoFont(weight: .bold)
                             .foregroundColor(.abDarkText)
                             .padding(.leading, 48)

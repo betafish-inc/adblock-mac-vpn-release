@@ -36,7 +36,6 @@ struct LoginFlowView: View {
                     }
             } else {
                 VStack(alignment: .leading) {
-                    Spacer().frame(height: 17)
                     Text(viewModel.pageStrings.titleText)
                         .latoFont(weight: .bold)
                         .foregroundColor(.abDarkText)
@@ -67,7 +66,7 @@ struct LoginFlowView: View {
                 if !inputString.isEmpty || [.noAccountError, .subEndedError, .deviceLimitError].contains(viewModel.currentPage) {
                     Button(action: { textEntryButtonClicked() }, label: { Text(viewModel.pageStrings.buttonText) }).buttonStyle(PrimaryButtonStyle())
                 } else {
-                    DisabledButtonView(text: viewModel.pageStrings.buttonText)
+                    DisabledButtonView(text: Text(viewModel.pageStrings.buttonText))
                 }
                 if let linkText = viewModel.pageStrings.linkText {
                     Spacer().frame(height: 8)

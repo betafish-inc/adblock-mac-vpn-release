@@ -17,10 +17,10 @@
 import SwiftUI
 
 struct DisabledButtonView: View {
-    var text: String
+    var text: Text
     var body: some View {
         Button {} label: {
-            Text(text)
+            text
                 .frame(width: 272, height: 40)
                 .background(Color.abBorder)
         }
@@ -40,6 +40,6 @@ struct DisabledButtonView: View {
 
 struct DisabledButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        DisabledButtonView(text: "Test Button")
+        DisabledButtonView(text: Text(verbatim: "Test Button"))
     }
 }

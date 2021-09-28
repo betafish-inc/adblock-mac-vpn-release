@@ -1,0 +1,559 @@
+/* No comment provided by engineer. */
+" " = " ";
+
+/* Placeholder text in code entry box */
+"— — — — — —" = "— — — — — —";
+
+/* Link to create a help ticket on email entry page */
+"<a href='%@'>Forgot your email?</a>" = "<a href='%@'>メールアドレスをお忘れですか？</a>";
+
+/* Link to help page */
+"<a href='%@'>Need Help?</a>" = "<a href='%@'>お困りですか？</a>";
+
+/* Label for button that accepts the EULA and takes the user to the next page of the intro flow */
+"Accept and Continue" = "承認し続ける";
+
+/* Account page title
+   Label for button that takes the useer to the account page */
+"Account" = "アカウント";
+
+/* Onboarding setup flow title */
+"AdBlock VPN Setup" = "AdBlock VPNの設定";
+
+/* Title for system extensions permissions page in onboarding flow */
+"Allow AdBlock VPN in your security preferences" = "セキュリティ設定でAdBlock VPNを許可";
+
+/* Title for notifications page in onboarding flow */
+"Allow AdBlock VPN Notifications" = "AdBlock VPNの通知を許可";
+
+/* Title for VPN configuration page of onboarding flow */
+"Allow AdBlock VPN to add VPN configurations" = "AdBlock VPNによるVPN設定の追加を許可";
+
+/* Title for updates view */
+"An update is available" = "更新あり";
+
+/* App settings page title
+   Label for button that takes the user to the app settings page */
+"App Settings" = "アプリ設定";
+
+/* Label for toggle to turn the 'apply updates automatically' feature on/off */
+"Apply updates automatically" = "更新を自動的に適用";
+
+/* Second step in instruction to enable system extension */
+"At the bottom of the page, click the lock icon and enter your password." = "ページの下部にある鍵のアイコンをクリックし、パスワードを入力します。";
+
+/* Name of 'au_per' region */
+"Australia - Perth" = "オーストラリア・パース";
+
+/* Name of 'au_syd' region */
+"Australia - Sydney" = "オーストラリア・シドニー";
+
+/* Name of 'at' region */
+"Austria" = "オーストリア";
+
+/* Name of 'be' region */
+"Belgium" = "ベルギー";
+
+/* Name of 'br' region */
+"Brazil" = "ブラジル";
+
+/* Name of 'bg' region */
+"Bulgaria" = "ブルガリア";
+
+/* Links to EULA and Privacy Policy */
+"By proceeding, you are confirming you have read and accepted the <a href='%@'>End User License Agreement (EULA)</a>, and our <a href='%@'>Privacy Policy</a>." = "このページにアクセスすることで、お客様は<a href='%1$@'>EULA（使用許諾契約）</a>および<a href='%2$@'>プライバシーポリシー</a>に同意したものと見做されます。";
+
+/* Name of 'ca' region */
+"Canada" = "カナダ";
+
+/* Label for button that cancels out of the onboarding flow
+   Label for cancel button, shown when VPN is in the process of connecting
+   Label for cancel button, shown when VPN is in the process of reconnecting */
+"Cancel" = "キャンセル";
+
+/* Default label for region selector
+   Text shown on region selector when the VPN is connected */
+"Change Location" = "場所を変更";
+
+/* Title of code entry page */
+"Check Your Email" = "メールをご確認ください";
+
+/* Name of 'cl' region */
+"Chile" = "チリ";
+
+/* Location picker page title */
+"Choose location" = "場所を選択";
+
+/* First step in instructions to enable system extension */
+"Click “Open System Dialog” below. Click ”Open Security Preferences” in the next window." = "下の「システムダイアログを開く」をクリックしてください。次の画面で「セキュリティ設定を開く」をクリックします。";
+
+/* Instructions for VPN configuration page of onboarding flow */
+"Click “Open System Dialog” below. In the following window, click the ”Allow” button. When you're done, click ”Next Steps” below to continue the setup process." = "下の「システムダイアログを開く」をクリックしてください。次の画面で、「許可」ボタンをクリックします。完了すれば、下の「次の手順」をクリックし、設定処理を続行します。";
+
+/* Third step in instructions to enable the system extension */
+"Click the “Allow” button to give AdBlock VPN permission to run on your device. Close the preferences window and click “Next Steps” below to continue the setup process." = "「許可」ボタンをクリックし、AdBlock VPNがご利用の端末上で実行する許可が与えられます。環境設定ウィンドウを閉じ、下の「次の手順」をクリックし設定処理を続行してください。";
+
+/* Label for button that closes the onboarding flow */
+"Close" = "閉じる";
+
+/* Default label for connection button
+   Label for connect button, shown when VPN is disconnected
+   Label for connect button, shown when VPN is in an invalid state
+   Label for disabled button on VPN setup page */
+"Connect" = "接続";
+
+/* Notification shown when the VPN connects to the given location. Variable holds the name of the location. */
+"Connected to\n%@" = "接続：\n%@";
+
+/* VPN state text when connected. Variable holds the name of the location. */
+"Connected to %@" = "接続：\n%@";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "接続の再試行に失敗しました。";
+
+/* Link to contact support on no account error page. Text must match corresponding text in footer
+   Link to contact support on subscription ended error page. Text must match corresponding text in footer
+   Link to contact support. Text must match corresponding text in error */
+"contact support" = "サポートに連絡";
+
+/* Label for button to contact support from onboarding flow */
+"Contact Support" = "サポートに連絡";
+
+/* Label for button that continues the process of moving the app to the correct folder */
+"Continue" = "続行";
+
+/* Name of 'cz' region */
+"Czech Republic" = "チェコ共和国";
+
+/* Name of 'dk' region */
+"Denmark" = "デンマーク";
+
+/* Footer text on code entry page */
+"Didn't get the code? Try again." = "コードが届きませんか？再度お試しください。";
+
+/* Label for disconnect button, shown when VPN is connected */
+"Disconnect" = "接続を切断";
+
+/* Default text for connection state */
+"Disconnected" = "接続切断";
+
+/* Notification shown when the VPN disconnects from the given location. Variable holds the name of the location. */
+"Disconnected\n%@" = "接続切断：\n%@";
+
+/* Footer text on no account error page
+   Footer text on subscription ended page */
+"Doesn’t sound right? Try using a different email address or contact support." = "問題が発生しましたか？別のメールアドレスを使用するか、サポートにお問い合わせください。";
+
+/* Footer text on email entry page */
+"Don't have an AdBlock account? Sign up." = "AdBlockアカウントをお持ちでない場合は、ご登録ください。";
+
+/* Placeholder text in email entry box */
+"Email Address" = "メールアドレス";
+
+/* Intructions for entering your email address */
+"Enter the email address you used when you purchased AdBlock VPN:" = "AdBlock VPNを購入した際のメールアドレスを入力してください：";
+
+/* Shown when the location name cannot be found */
+"Error" = "エラー";
+
+/* Error shown when error recovery fails */
+"Error connecting to VPN provider." = "VPNプロバイダーの接続エラー発生";
+
+/* Downloading and reading regions file failed error
+   Reading regions file failed error. */
+"Error in reading regions file." = "地域ファイルの読み込み中でエラー発生";
+
+/* Name of 'fi' region */
+"Finland" = "フィンランド";
+
+/* Needs support error full msg */
+"For help solving this problem, please contact our support team." = "この問題を解決するには、サポートチームにご連絡ください。";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "この問題を解決するには、この記事の手順に従ってください。";
+
+/* Instructions for enabling notifications from the system alert */
+"For the best app experience from AdBlock VPN, allow notifications. Click “Show Notification“ below. A notification will appear in the top right corner of your screen. Click “Options” then “Allow”. (You can choose “Don’t Allow” if you do not want notifications from AdBlock VPN.) Click “Next” below when you are done." = "AdBlock VPNで最高のアプリ体験をお楽しみいただくために、通知を許可してください。下の「通知を表示」をクリックしてください。画面の右上に通知が表示されます。「オプション」、そして「許可」をクリックしてください。\n(AdBlock VPNからの通知が不要な場合は、「許可しない」を選択できます)\n設定が完了してから、下の「次へ」をクリックしてください。";
+
+/* Name of 'fr' region */
+"France" = "フランス";
+
+/* Name of 'de' region */
+"Germany" = "ドイツ";
+
+/* Label for button on no account error page. Links to page to set up account */
+"Get AdBlock VPN" = "AdBlock VPNを入手する";
+
+/* Label for button that opens a help page */
+"Get Help" = "お問い合わせ";
+
+/* Label for button that starts the onboarding flow */
+"Get Started" = "今すぐ開始";
+
+/* Name of 'gr' region */
+"Greece" = "ギリシャ";
+
+/* Help and feedback page title
+   Label for button that takes the user to the help and feedback page */
+"Help & Feedback" = "ヘルプとフィードバック";
+
+/* Name of 'hk' region */
+"Hong Kong" = "香港";
+
+/* Name of 'hu' region */
+"Hungary" = "ハンガリー";
+
+/* Name of 'is' region */
+"Iceland" = "アイスランド";
+
+/* Name of 'in' region */
+"India" = "インド";
+
+/* Name of 'ie' region */
+"Ireland" = "アイルランド";
+
+/* Name of 'im' region */
+"Isle of Man" = "マン島";
+
+/* Name of 'il' region */
+"Israel" = "イスラエル";
+
+/* Instructions for VPN configuration error page in onboarding flow */
+"It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "お客様のデバイスにVPN設定を追加する許可がまだ下りていないようです。もう一度お試しください。";
+
+/* Instructions for system extensions permissions error page in onboarding flow */
+"It looks like we still don't have permission to run on your device. Let's try again." = "お客様のデバイス上で起動する許可がまだ下りていないようです。もう一度お試しください。";
+
+/* Instructions on subscription ended error page */
+"It looks like your subscription has ended. Please click below to renew." = "購読が終了したようです。以下をクリックして更新してください。";
+
+/* Name of 'it' region */
+"Italy" = "イタリア";
+
+/* Name of 'jp' region */
+"Japan" = "日本";
+
+/* Label for toggle to turn the 'launch at login' feature on/off */
+"Launch at login" = "ログイン時に起動";
+
+/* Label for button that takes user to login page
+   Label for button to go to login page */
+"Log In" = "ログイン";
+
+/* Instructions on landing page */
+"Log in to connect to AdBlock VPN and secure your connection" = "ログインしAdBlock VPNに接続し、接続を確保";
+
+/* Label for button that links to the account management page */
+"Manage Account" = "アカウント管理";
+
+/* Label for button on device limit error page */
+"Manage Devices" = "デバイス管理";
+
+/* Name of 'mx' region */
+"Mexico" = "メキシコ";
+
+/* Name of 'md' region */
+"Moldova" = "モルドバ";
+
+/* Title for move app page of onboarding flow */
+"Move AdBlock VPN to the Applications folder" = "AdBlock VPNを「アプリケーション」フォルダーへ移動";
+
+/* Name of option to use the nearest region */
+"Nearest location" = "最も近い場所";
+
+/* Name of 'nl' region */
+"Netherlands" = "オランダ";
+
+/* Name of 'nz' region */
+"New Zealand" = "ニュージーランド";
+
+/* Label for button on email entry page
+   Label for button that takes user to the next page of the onboarding flow */
+"Next" = "次へ";
+
+/* Label for button that take the user to the next step in the onboarding flow
+   Label for button that takes the user to the next step in the onboarding flow */
+"Next Steps" = "次の手順";
+
+/* Name of 'no' region */
+"Norway" = "ノルウェー";
+
+/* Title for error view */
+"Oh dear. Something went wrong." = "おっと！何らかの問題が発生しました。";
+
+/* Title for device limit error page
+   Title for onboarding flow error page
+   Title for subscription ended error page
+   Title of no account error page */
+"Oops!" = "おっと！";
+
+/* Error text for generic errors */
+"Oops!\nSomething went wrong.\nPlease try again or contact support." = "おっと！\n何らかの問題が発生しました。\n再度お試しいただくか、サポートにお問い合わせください。";
+
+/* Error text for invalid code error */
+"Oops!\nThat code didn’t work. Please try again." = "おっと！\nそのコードは正しくありません。再度お試しください。";
+
+/* Error text for imvalid email error. */
+"Oops!\nWe don’t recognize that email address.\nPlease try again or contact support." = "おっと！\nそのメールアドレスは登録されていません。\n再度お試しいただくか、サポートにお問い合わせください。";
+
+/* Label for button that opens the main app after onboarding flow is complete */
+"Open AdBlock VPN" = "AdBlock VPNを開く";
+
+/* Label for button to open system preferences to notifications */
+"Open Notifications" = "通知を開く";
+
+/* Label for button that opens the system dialog */
+"Open System Dialog" = "システムダイアログを開く";
+
+/* Title for VPN setup page */
+"Please allow VPN configurations when prompted to connect to AdBlock VPN." = "AdBlock VPNへの接続を促すメッセージが表示されたら、VPNの設定を許可してください。";
+
+/* Needs support error short msg */
+"Please contact our support team" = "サポートチームにお問い合わせください";
+
+/* Instructions on system extension set up page */
+"Please enable the AdBlock VPN system extension to start using AdBlock VPN." = "AdBlock VPNの使用を開始するには、AdBlock VPNシステム拡張を有効にしてください。";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "この記事の手順に従ってください";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "AdBlock VPNを再起動してください";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN. If the problem persists, contact our support team." = "AdBlock VPNを再起動してください。それでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "コンピューターを再起動してください";
+
+/* Needs machine restart error full msg */
+"Please restart your computer. If the problem persists, contact our support team." = "コンピューターを再起動してください。それでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Needs authentication short msg */
+"Please sign in again" = "もう一度ログインしてください";
+
+/* Needs authentication error full msg */
+"Please sign in again. If the problem persists, contact our support team." = "もう一度ログインしてください。それでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Title for update required page */
+"Please update AdBlock VPN to continue." = "続行するにはAdBlock VPNを更新してください。";
+
+/* Name of 'pl' region */
+"Poland" = "ポーランド";
+
+/* Preferences page title */
+"Preferences" = "設定";
+
+/* Link to contact support team */
+"Questions? <a href='%@'>Chat with our support team</a>" = "お困りですか？<a href='%@'>サポートチームがチャットでご対応致します</a>";
+
+/* Label for quit button when the VPN is disconnected */
+"Quit" = "終了";
+
+/* Label for quit button when the VPN is connected */
+"Quit & Disconnect" = "終了し&接続を切断";
+
+/* Label for reconnect button, shown when VPN is in the process of disconnecting */
+"Reconnect" = "再接続";
+
+/* Label for button on subscription ended error page. Links to page where user can renew their subscription */
+"Renew Subscription" = "購読を更新";
+
+/* VPN state text when reasserting */
+"Retrying connection" = "再接続を試行";
+
+/* Notification shown when the VPN is reconnecting to the given location. Variable holds the name of the location. */
+"Retrying connection...\n%@" = "再接続を試行中です\n%@";
+
+/* Name of 'ro' region */
+"Romania" = "ルーマニア";
+
+/* Name of 'ru' region */
+"Russia" = "ロシア";
+
+/* VPN state text when connecting. */
+"Securing your connection." = "接続を確保";
+
+/* Notification shown when the VPN is connecting to the given location. Variable holds the name of the location. */
+"Securing your connection...\n%@" = "接続を確保し中です\n%@";
+
+/* Label for button that opens a feedback page */
+"Send Feedback" = "帰還を送信";
+
+/* Name of 'rs' region */
+"Serbia" = "セルビア";
+
+/* Label for toggle to turn the 'show dock icon' feature on/off */
+"Show dock icon" = "ドックアイコンを表示";
+
+/* Label for button to show the notifications system alert */
+"Show Notification" = "通知を表示";
+
+/* Title for email entry page */
+"Sign In" = "ログイン";
+
+/* Label for button that signs the user out of their account (and the app) */
+"Sign Out" = "ログアウト";
+
+/* Link text on email entry page. This text must match the corresponding text in the footer text. */
+"Sign up." = "登録";
+
+/* Name of 'sg' region */
+"Singapore" = "シンガポール";
+
+/* Label for button that skips the available update */
+"Skip for now" = "今はスキップする";
+
+/* Name of 'si' region */
+"Slovenia" = "スロベニア";
+
+/* Instructions on update error page */
+"Something went wrong while attempting to update AdBlock VPN. Please try again." = "AdBlock VPNを更新しようとした際に問題が発生しました。もう一度お試しください。";
+
+/* Name of 'es' region */
+"Spain" = "スペイン";
+
+/* Prefix for step 1 of intructions */
+"Step 1:" = "手順 1：";
+
+/* Prefix for step 2 of instructions */
+"Step 2:" = "手順 2：";
+
+/* Prefix for step 3 of instructions */
+"Step 3:" = "手順 3：";
+
+/* Label for button on code entry page */
+"Submit" = "送信";
+
+/* Link to contact support. Text must match corresponding text in error
+   Link to contact support. Text must match corresponding text in full msg */
+"support team" = "サポートチーム";
+
+/* Name of 'se' region */
+"Sweden" = "スウェーデン";
+
+/* Name of 'ch' region */
+"Switzerland" = "スイス";
+
+/* Title for onboarding intro */
+"Thanks for installing AdBlock VPN" = "AdBlock VPNをインストール頂きありがとうございました。";
+
+/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
+"this article" = "この記事";
+
+/* Link to try again on generic errors. Text must match corresponding text in error
+   Link to try again on invalid code error. Text must match corresponding text in error
+   Link to try again on invalid email error. Text must match corresponding text in error */
+"try again" = "再試";
+
+/* Label for button to try the step again */
+"Try Again" = "再試行";
+
+/* Link to try again on code entry page. This text must match the corresponding text in the footer text. */
+"Try again." = "再試行";
+
+/* Link to try again on the no account error page. Text must match corresponding text in footer.
+   Link to try again on the subscription ended error page. Text must match corresponding text in footer */
+"Try using a different email address" = "別のメールアドレスをお試しください";
+
+/* Name of 'gb_lon' region */
+"United Kingdom - London" = "イギリス・ロンドン";
+
+/* Name of 'gb_mnc' region */
+"United Kingdom - Manchester" = "イギリス・マンチェスター";
+
+/* Label for disabled button (when no update is available) */
+"Up To Date" = "最新の状態";
+
+/* Label for button that opens external update page
+   Label for button that triggers an update */
+"Update" = "アップデートする";
+
+/* Label for button to go to updates page */
+"Update Available" = "更新あり";
+
+/* Notification that an update has been completed */
+"Update Complete!" = "アップデート完了！";
+
+/* Name of 'us_atl' region */
+"US - Atlanta" = "北米・アトランタ";
+
+/* Name of 'us_chi' region */
+"US - Chicago" = "北米・シカゴ";
+
+/* Name of 'us_dal' region */
+"US - Dallas" = "北米・ダラス";
+
+/* Name of 'us_las' region */
+"US - Las Vegas" = "北米・ラスベガス";
+
+/* Name of 'us_lax' region */
+"US - Los Angeles" = "北米・ロサンジェルス";
+
+/* Name of 'us_mia' region */
+"US - Miami" = "北米・マイアミ";
+
+/* Name of 'us_nyc' region */
+"US - New York City" = "北米・ニューヨーク";
+
+/* Name of 'us_ewr' region */
+"US - Newark" = "北米・ニューアーク";
+
+/* Name of 'us_phx' region */
+"US - Phoenix" = "北米・フェニックス";
+
+/* Name of 'us_sfo' region */
+"US - San Francisco" = "北米・サンフランシスコ";
+
+/* Name of 'us_sea' region */
+"US - Seattle" = "北米・シアトル";
+
+/* Name of 'us_was' region */
+"US - Washington, D.C." = "北米・ワシントン D.C.";
+
+/* App version shown on settings page. Variable holds the version number */
+"Version %@" = "バージョン %@";
+
+/* Server error short msg */
+"We can't connect to our servers. Please try again later." = "サーバーに接続できません。時間をおいてから再度お試しください。";
+
+/* Server error full msg */
+"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "サーバーに接続できません。時間をおいてから再度お試しください。それでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Intructions for no account error page */
+"We couldn’t find an account for that email address. Please click below to get started." = "そのメールアドレスのアカウントが見付かりませんでした。以下をクリックして、ご利用を開始してください。";
+
+/* Intructions on code entry page */
+"We sent you a 6-character access code. Enter it below:" = "6文字のアクセスコードをお送りしました。以下に入力してください：";
+
+/* Instructions for move app page of onboarding flow */
+"We’ll need to move the AdBlock VPN app into your Applications folder first. Click “Continue” to confirm this change." = "先ず「AdBlock VPN」アプリを「アプリケーション」フォルダへ移動する必要があります。この変更を確認するには、「続行」をクリックしてください。";
+
+/* Title of acceptance page */
+"Welcome to AdBlock VPN" = "AdBlock VPNへようこそ！";
+
+/* Subtitle on update required page */
+"You are using an unsupported version of AdBlock VPN." = "このAdBlock VPNのバージョンは非対応です。";
+
+/* No internet error full msg
+   No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "インターネットに接続していません。\nネットワーク接続をご確認ください。";
+
+/* Intructions for device limit error page */
+"You have already registered the maximum 6 devices. Please click below to update your settings." = "既に最大6台の端末が登録されています。以下をクリックして設定を更新してください。";
+
+/* Error text for loggeed out error */
+"You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team." = "ログアウトしました。\nもう一度ログインしてください。\nそれでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Instructions for enabling notifications from system preferences */
+"You will get the best app experience from AdBlock VPN by turning on notifications. Click ”Open Notifications”  then toggle notifications from AdBlock VPN to ”On”. You can also skip this step if you do not want notifications from AdBlock VPN." = "通知機能をオンにすれば、AdBlock VPNアプリ体験を最高のものにすることができます。「通知を開く」をクリックし、AdBlock VPNからの通知を「オン」に切り替えてください。AdBlock VPNからの通知を受けたくない場合は、このステップを省略できます。";
+
+/* Onboarding flow intro instructions */
+"You'll need to change a couple of permissions on your device in order to use AdBlock VPN. We'll walk you through how to do that now." = "AdBlock VPNを利用するには、端末のいくつかの権限を変更する必要があります。ここではその方法をご紹介します。";
+
+/* Title of onboarding complete page */
+"You're ready to start using AdBlock VPN!" = "AdBlock VPNへの登録が完了しました！";
+
+/* VPN state text when disconnected, disconnecting, or in an invalid state. */
+"Your connection is not secure" = "お客様の接続は安全ではありません";
+

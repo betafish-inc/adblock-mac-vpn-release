@@ -49,9 +49,6 @@ class ErrorManager {
         var message: String
         var type: ErrorType
         var link: String?
-        var isSolvable: Bool {
-            return [.noInternet, .noServer, .needsAuth, .retryConnection].contains(type)
-        }
         var isUserFacing: Bool {
             return type != .retryConnection
         }
@@ -63,33 +60,36 @@ class ErrorManager {
     
     let errorStrings: [ErrorType: ErrorStrings] = [
         .noInternet: ErrorStrings(
-            fullAction: "You aren't connected to the internet!\nPlease check your network connection.",
-            shortAction: "You aren't connected to the internet!\nPlease check your network connection.",
+            fullAction: NSLocalizedString("You aren't connected to the internet!\nPlease check your network connection.", comment: "No internet error full msg"),
+            shortAction: NSLocalizedString("You aren't connected to the internet!\nPlease check your network connection.", comment: "No internet error short msg"),
             errorWebLinks: nil),
         .needsAppRestart: ErrorStrings(
-            fullAction: "Please restart AdBlock VPN. If the problem persists, contact our support team.",
-            shortAction: "Please restart AdBlock VPN",
-            errorWebLinks: ["support team": Constants.newTicketURL]),
+            fullAction: NSLocalizedString("Please restart AdBlock VPN. If the problem persists, contact our support team.", comment: "Needs app restart error full msg"),
+            shortAction: NSLocalizedString("Please restart AdBlock VPN", comment: "Needs app restart short msg"),
+            errorWebLinks: [NSLocalizedString("support team", comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.newTicketURL]),
         .needsMachineRestart: ErrorStrings(
-            fullAction: "Please restart your computer. If the problem persists, contact our support team.",
-            shortAction: "Please restart your computer",
-            errorWebLinks: ["support team": Constants.needMachineRestartURL]),
+            fullAction: NSLocalizedString("Please restart your computer. If the problem persists, contact our support team.", comment: "Needs machine restart error full msg"),
+            shortAction: NSLocalizedString("Please restart your computer", comment: "Needs machine restart short msg"),
+            errorWebLinks: [NSLocalizedString("support team",
+                                              comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.needMachineRestartURL]),
         .needsKB: ErrorStrings(
-            fullAction: "For help solving this problem, please follow the steps in this article.",
-            shortAction: "Please follow the steps in this article",
+            fullAction: NSLocalizedString("For help solving this problem, please follow the steps in this article.", comment: "Needs knowledge base article error full msg"),
+            shortAction: NSLocalizedString("Please follow the steps in this article", comment: "Needs knowledge base article error short msg"),
             errorWebLinks: nil),
         .needsSupport: ErrorStrings(
-            fullAction: "For help solving this problem, please contact our support team.",
-            shortAction: "Please contact our support team",
-            errorWebLinks: ["support team": Constants.newTicketURL]),
+            fullAction: NSLocalizedString("For help solving this problem, please contact our support team.", comment: "Needs support error full msg"),
+            shortAction: NSLocalizedString("Please contact our support team", comment: "Needs support error short msg"),
+            errorWebLinks: [NSLocalizedString("support team", comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.newTicketURL]),
         .needsAuth: ErrorStrings(
-            fullAction: "Please sign in again. If the problem persists, contact our support team.",
-            shortAction: "Please sign in again",
-            errorWebLinks: ["support team": Constants.newTicketURL]),
+            fullAction: NSLocalizedString("Please sign in again. If the problem persists, contact our support team.", comment: "Needs authentication error full msg"),
+            shortAction: NSLocalizedString("Please sign in again", comment: "Needs authentication short msg"),
+            errorWebLinks: [NSLocalizedString("support team", comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.newTicketURL]),
         .noServer: ErrorStrings(
-            fullAction: "We can't connect to our servers. Please try again later. If the problem persists, contact our support team.",
-            shortAction: "We can't connect to our servers. Please try again later.",
-            errorWebLinks: ["support team": Constants.connectionHelpURL])
+            fullAction: NSLocalizedString("We can't connect to our servers. Please try again later. If the problem persists, contact our support team.",
+                                          comment: "Server error full msg"),
+            shortAction: NSLocalizedString("We can't connect to our servers. Please try again later.", comment: "Server error short msg"),
+            errorWebLinks: [NSLocalizedString("support team",
+                                              comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.connectionHelpURL])
     ]
     
     @Published var isError = false
@@ -147,7 +147,7 @@ class ErrorManager {
             err = error
         } else if let currErr = err {
             if isRetryError && error.type == .retryConnection {
-                err = ErrorObj(message: "Connection retry failed.", type: .needsAppRestart, link: nil)
+                err = ErrorObj(message: NSLocalizedString("Connection retry failed.", comment: "Error msg when connection retry fails"), type: .needsAppRestart, link: nil)
             } else if error.type < currErr.type {
                 // replace error only with higher priority error
                 err = error
@@ -156,14 +156,6 @@ class ErrorManager {
     }
     
     func clearError() {
-        // can only clear solvable errors
-        if let error = err, error.isSolvable {
-            err = nil
-        }
-    }
-    
-    // to force clear the error -- used for main app initialization
-    func resetErrorState() {
         err = nil
     }
     
@@ -175,7 +167,8 @@ class ErrorManager {
             var links = errorStrings[error.type]?.errorWebLinks
             // Check for KB link
             if let link = error.link, error.type == .needsKB {
-                links = ["contact support": link]
+                links = [NSLocalizedString("this article",
+                                           comment: "Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg"): link]
             }
             let text = error.message.isEmpty ? errorStrings[error.type]?.fullAction ?? "" : "\(error.message)\n\(errorStrings[error.type]?.fullAction ?? "")"
             return AppErrorString(text: text, links: links)

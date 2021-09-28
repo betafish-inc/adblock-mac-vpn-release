@@ -1,0 +1,186 @@
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "1JS-dh-Act"; */
+"1JS-dh-Act.title" = "Förvandlingar";
+
+/* Class = "NSMenuItem"; title = "AdBlock VPN"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Find…"; ObjectID = "2Z5-VU-Qi9"; */
+"2Z5-VU-Qi9.title" = "Hitta…";
+
+/* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "3Vl-Od-5pg"; */
+"3Vl-Od-5pg.title" = "Hitta Tidigare";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "4kz-sU-URk"; */
+"4kz-sU-URk.title" = "Börja Tala";
+
+/* Class = "NSMenuItem"; title = "Quit AdBlock VPN"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Avsluta AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "About AdBlock VPN"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Om AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "5Ou-Fw-s7a"; */
+"5Ou-Fw-s7a.title" = "Smart kopiering/klistring";
+
+/* Class = "NSMenu"; title = "Find"; ObjectID = "7BZ-89-7yN"; */
+"7BZ-89-7yN.title" = "Hitta";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "7mb-Wn-kq1"; */
+"7mb-Wn-kq1.title" = "Smartcitat";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "8T5-WF-ZRb"; */
+"8T5-WF-ZRb.title" = "Förvandlingar";
+
+/* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "9ey-Gp-kVY"; */
+"9ey-Gp-kVY.title" = "Hitta och ersätta…";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "67L-RA-3Q9"; */
+"67L-RA-3Q9.title" = "Kontrollera dokument nu";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "ae9-Aa-Jof"; */
+"ae9-Aa-Jof.title" = "Gör till gemener";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "ASV-na-6VQ"; */
+"ASV-na-6VQ.title" = "Kontrollera stavning medan du skriver";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Huvudmeny";
+
+/* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "bbK-Hq-0oI"; */
+"bbK-Hq-0oI.title" = "Rätta stavning automatiskt";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "bfz-4M-tyY"; */
+"bfz-4M-tyY.title" = "Gör om";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "biD-5Y-XbJ"; */
+"biD-5Y-XbJ.title" = "Textersättning";
+
+/* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "BMq-y5-MGv"; */
+"BMq-y5-MGv.title" = "Hoppa till urval";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "BTS-gX-kK2"; */
+"BTS-gX-kK2.title" = "Visa utbyten";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "cgc-6D-UqQ"; */
+"cgc-6D-UqQ.title" = "Redigera";
+
+/* Class = "NSMenuItem"; title = "Manage Account"; ObjectID = "COb-vw-9el"; */
+"COb-vw-9el.title" = "Hantera konto";
+
+/* Class = "NSMenu"; title = "Substitutions"; ObjectID = "cTv-qE-hI6"; */
+"cTv-qE-hI6.title" = "Utbyten";
+
+/* Class = "NSMenuItem"; title = "Find"; ObjectID = "E1f-UJ-wh7"; */
+"E1f-UJ-wh7.title" = "Hitta";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "eWZ-L3-Hhv"; */
+"eWZ-L3-Hhv.title" = "Radera";
+
+/* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "F0s-cw-L5f"; */
+"F0s-cw-L5f.title" = "Använd urval för att hitta";
+
+/* Class = "NSMenu"; title = "Help & Feedback"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Hjälp & synpunkter";
+
+/* Class = "NSMenuItem"; title = "Send Feedback"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Skicka synpunkter";
+
+/* Class = "NSMenuItem"; title = "Check for Updates"; ObjectID = "G3G-6v-6rx"; */
+"G3G-6v-6rx.title" = "Kolla efter uppdateringar";
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "gYB-Dq-Ay1"; */
+"gYB-Dq-Ay1.title" = "Klistra in och matcha stil";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "gz6-Fi-O1X"; */
+"gz6-Fi-O1X.title" = "Tal";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "HFG-Yu-Fzx"; */
+"HFG-Yu-Fzx.title" = "Ångra";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "hiR-W0-Rne"; */
+"hiR-W0-Rne.title" = "Visa stavning och grammatik";
+
+/* Class = "NSMenuItem"; title = "Sign Out"; ObjectID = "hkF-uJ-ObW"; */
+"hkF-uJ-ObW.title" = "Logga ut";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Tjänster";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "j2z-dn-6gu"; */
+"j2z-dn-6gu.title" = "Redigera";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Visa alla";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "kfp-MK-jch"; */
+"kfp-MK-jch.title" = "Smarta länkar";
+
+/* Class = "NSMenuItem"; title = "Data Detectors"; ObjectID = "KGg-Kp-2hX"; */
+"KGg-Kp-2hX.title" = "Datadetektorer";
+
+/* Class = "NSMenuItem"; title = "Account"; ObjectID = "lHY-ta-d8y"; */
+"lHY-ta-d8y.title" = "Konto";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "LPj-IP-aAi"; */
+"LPj-IP-aAi.title" = "Kopiera";
+
+/* Class = "NSMenuItem"; title = "Get Help"; ObjectID = "lPU-EG-Dez"; */
+"lPU-EG-Dez.title" = "Få hjälp";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Tjänster";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "NZl-MH-IO9"; */
+"NZl-MH-IO9.title" = "Stavning och grammatik";
+
+/* Class = "NSMenuItem"; title = "Hide AdBlock VPN"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Dölj AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "Ori-28-j9W"; */
+"Ori-28-j9W.title" = "Klistra in";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "PAH-pg-uyu"; */
+"PAH-pg-uyu.title" = "Gör till versaler";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "R1Q-Mc-RBl"; */
+"R1Q-Mc-RBl.title" = "Kontrollera grammatik med stavning";
+
+/* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "rFZ-2t-3mw"; */
+"rFZ-2t-3mw.title" = "Utbyten";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "syr-ue-Ar8"; */
+"syr-ue-Ar8.title" = "Gör till versaler";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "UdN-gX-18k"; */
+"UdN-gX-18k.title" = "Smart tankstreck";
+
+/* Class = "NSMenu"; title = "AdBlock VPN"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Dölj andra";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "Vhf-yj-6gY"; */
+"Vhf-yj-6gY.title" = "Sluta tala";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "WCH-7A-3sm"; */
+"WCH-7A-3sm.title" = "Tal";
+
+/* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "WcK-gr-v0m"; */
+"WcK-gr-v0m.title" = "Hitta nästa";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "wEi-rT-QdX"; */
+"wEi-rT-QdX.title" = "Klipp ut";
+
+/* Class = "NSMenuItem"; title = "Help & Feedback"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Hjälp & synpunkter";
+
+/* Class = "NSMenu"; title = "Account"; ObjectID = "wZb-RD-jEE"; */
+"wZb-RD-jEE.title" = "Konto";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "yqD-qa-IDh"; */
+"yqD-qa-IDh.title" = "Välj alla";
+
+/* Class = "NSMenu"; title = "Spelling"; ObjectID = "zXh-3K-675"; */
+"zXh-3K-675.title" = "Stavning";
+

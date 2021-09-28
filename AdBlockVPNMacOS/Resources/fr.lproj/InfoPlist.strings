@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "VPN AdBlock";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright © 2020–présent Adblock, Inc. Tous droits réservés.";
+
