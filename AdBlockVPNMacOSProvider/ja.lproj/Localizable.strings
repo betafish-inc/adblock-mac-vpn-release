@@ -1,0 +1,73 @@
+/* Authentication error during VPN connection */
+"Auth error with server." = "サーバーとの認証エラー発生。";
+
+/* Error applying VPN configuration */
+"Can't apply VPN configuration." = "VPN構成を適用できません。";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "接続の再試行に失敗しました。";
+
+/* Needs support error full msg */
+"For help solving this problem, please contact our support team." = "この問題を解決するには、サポートチームにお問い合わせください。";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "この問題を解決するには、この記事の手順に従ってください。";
+
+/* Invalid refresh token error */
+"Invalid refresh token." = "更新トークンが無効";
+
+/* Device ID not set error */
+"No deviceID found." = "端末のIDが見付かりませんでした。";
+
+/* Configuration file missing error */
+"OVPN file missing." = "OVPNファイルがありません。";
+
+/* Needs support error short msg */
+"Please contact our support team" = "サポートチームにお問い合わせください";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "この記事の手順に従ってください";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "AdBlock VPNを再起動してください";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN. If the problem persists, contact our support team." = "AdBlock VPNを再起動してください。それでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "コンピューターを再起動してください";
+
+/* Needs machine restart error full msg */
+"Please restart your computer. If the problem persists, contact our support team." = "コンピューターを再起動してください。それでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Needs authentication short msg */
+"Please sign in again" = "もう一度ログインしてください";
+
+/* Needs authentication error full msg */
+"Please sign in again. If the problem persists, contact our support team." = "もう一度ログインしてください。それでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Protocol configuration error msg */
+"Protocol configuration error." = "プロトコル構成エラー発生";
+
+/* Link to contact support. Text must match corresponding text in full msg */
+"support team" = "サポートチーム";
+
+/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
+"this article" = "この記事";
+
+/* Generic token error */
+"Unknown token error." = "不明のトークンエラー発生";
+
+/* Server error short msg */
+"We can't connect to our servers. Please try again later." = "サーバーに接続できません。時間をおいてから再度お試しください。";
+
+/* Server error full msg */
+"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "サーバーに接続できません。時間をおいてから再度お試しください。それでも問題が解決しない場合は、サポートチームにお問い合わせください。";
+
+/* Not signed in error */
+"You are not signed in." = "ログインしていません。";
+
+/* No internet error full msg
+   No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "インターネットに接続していません。\nネットワーク接続をご確認ください。";
+

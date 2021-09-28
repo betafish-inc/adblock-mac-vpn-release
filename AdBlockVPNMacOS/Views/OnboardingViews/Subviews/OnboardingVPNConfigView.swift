@@ -22,19 +22,19 @@ struct OnboardingVPNConfigView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingVPNConfiguration",
-                               bodyTitle: "Allow AdBlock VPN to add VPN configurations")
+                               bodyTitle: Text("Allow AdBlock VPN to add VPN configurations", comment: "Title for VPN configuration page of onboarding flow"))
             // swiftlint:disable:next line_length
-            Text("Click “Open System Dialog” below. In the following window, click the ”Allow” button. When you're done, click ”Next Steps” below to continue the setup process.")
+            Text("Click “Open System Dialog” below. In the following window, click the ”Allow” button. When you're done, click ”Next Steps” below to continue the setup process.", comment: "Instructions for VPN configuration page of onboarding flow")
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 48)
             HStack(spacing: 32) {
-                Button(action: { model.installVPNProfile() }, label: { Text("Open System Dialog") })
+                Button(action: { model.installVPNProfile() }, label: { Text("Open System Dialog", comment: "Label for button that opens the system dialog") })
                     .buttonStyle(SecondaryButtonStyle())
                     .disabled(model.vpnProfileActive)
                 Button(action: { model.vpnProfileActive ? model.checkViewToShow() : (model.viewToShow = .VPNConfigError) },
-                       label: { Text("Next Steps") })
+                       label: { Text("Next Steps", comment: "Label for button that take the user to the next step in the onboarding flow") })
                     .buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)

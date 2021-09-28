@@ -1,0 +1,73 @@
+/* Authentication error during VPN connection */
+"Auth error with server." = "Error de autenticación con el servidor.";
+
+/* Error applying VPN configuration */
+"Can't apply VPN configuration." = "No puede aplicarse la configuración de VPN.";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "Error al reintentar la conexión.";
+
+/* Needs support error full msg */
+"For help solving this problem, please contact our support team." = "Si necesitas ayuda para solucionar este problema, contacta con nuestro equipo de soporte técnico.";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "Si necesitas ayuda para solucionar este problema, sigue los pasos de este artículo.";
+
+/* Invalid refresh token error */
+"Invalid refresh token." = "Token de actualización no válido.";
+
+/* Device ID not set error */
+"No deviceID found." = "No se ha encontrado el ID del dispositivo.";
+
+/* Configuration file missing error */
+"OVPN file missing." = "Falta el archivo OVPN.";
+
+/* Needs support error short msg */
+"Please contact our support team" = "Contacta con nuestro equipo de soporte técnico";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "Sigue los pasos de este artículo";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "Reinicia AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN. If the problem persists, contact our support team." = "Reinicia AdBlock VPN. Si el problema continúa, contacta con nuestro equipo de soporte técnico.";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "Reinicia el ordenador";
+
+/* Needs machine restart error full msg */
+"Please restart your computer. If the problem persists, contact our support team." = "Reinicia el ordenador. Si el problema continúa, contacta con nuestro equipo de soporte técnico.";
+
+/* Needs authentication short msg */
+"Please sign in again" = "Vuelve a iniciar sesión";
+
+/* Needs authentication error full msg */
+"Please sign in again. If the problem persists, contact our support team." = "Vuelve a iniciar sesión. Si el problema continúa, contacta con nuestro equipo de soporte técnico.";
+
+/* Protocol configuration error msg */
+"Protocol configuration error." = "Error de configuración del protocolo.";
+
+/* Link to contact support. Text must match corresponding text in full msg */
+"support team" = "equipo de soporte técnico";
+
+/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
+"this article" = "este artículo";
+
+/* Generic token error */
+"Unknown token error." = "Error de token desconocido.";
+
+/* Server error short msg */
+"We can't connect to our servers. Please try again later." = "No podemos conectar con nuestros servidores. Vuelve a intentarlo más adelante.";
+
+/* Server error full msg */
+"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "No podemos conectar con nuestros servidores. Vuelve a intentarlo más adelante. Si el problema continúa, contacta con nuestro equipo de soporte técnico.";
+
+/* Not signed in error */
+"You are not signed in." = "No has iniciado sesión.";
+
+/* No internet error full msg
+   No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "¡No te has conectado a Internet!\nComprueba tu conexión de red.";
+

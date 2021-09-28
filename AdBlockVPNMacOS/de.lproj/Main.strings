@@ -1,0 +1,186 @@
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "1JS-dh-Act"; */
+"1JS-dh-Act.title" = "Transformationen";
+
+/* Class = "NSMenuItem"; title = "AdBlock VPN"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Find…"; ObjectID = "2Z5-VU-Qi9"; */
+"2Z5-VU-Qi9.title" = "Suchen …";
+
+/* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "3Vl-Od-5pg"; */
+"3Vl-Od-5pg.title" = "Vorheriges suchen";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "4kz-sU-URk"; */
+"4kz-sU-URk.title" = "Sprechen";
+
+/* Class = "NSMenuItem"; title = "Quit AdBlock VPN"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "AdBlock VPN verlassen";
+
+/* Class = "NSMenuItem"; title = "About AdBlock VPN"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Über AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "5Ou-Fw-s7a"; */
+"5Ou-Fw-s7a.title" = "Smart-Copy/Paste";
+
+/* Class = "NSMenu"; title = "Find"; ObjectID = "7BZ-89-7yN"; */
+"7BZ-89-7yN.title" = "Suchen";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "7mb-Wn-kq1"; */
+"7mb-Wn-kq1.title" = "Smart-Quotes";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "8T5-WF-ZRb"; */
+"8T5-WF-ZRb.title" = "Transformationen";
+
+/* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "9ey-Gp-kVY"; */
+"9ey-Gp-kVY.title" = "Suchen und ersetzen …";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "67L-RA-3Q9"; */
+"67L-RA-3Q9.title" = "Dokument jetzt prüfen";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "ae9-Aa-Jof"; */
+"ae9-Aa-Jof.title" = "In Kleinbuchstaben";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "ASV-na-6VQ"; */
+"ASV-na-6VQ.title" = "Rechtschreibprüfung während der Eingabe";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Hauptmenü";
+
+/* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "bbK-Hq-0oI"; */
+"bbK-Hq-0oI.title" = "Rechtschreibung automatisch korrigieren";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "bfz-4M-tyY"; */
+"bfz-4M-tyY.title" = "Wiederholen";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "biD-5Y-XbJ"; */
+"biD-5Y-XbJ.title" = "Textersetzung";
+
+/* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "BMq-y5-MGv"; */
+"BMq-y5-MGv.title" = "Zur Auswahl springen";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "BTS-gX-kK2"; */
+"BTS-gX-kK2.title" = "Ersetzte Elemente anzeigen";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "cgc-6D-UqQ"; */
+"cgc-6D-UqQ.title" = "Bearbeiten";
+
+/* Class = "NSMenuItem"; title = "Manage Account"; ObjectID = "COb-vw-9el"; */
+"COb-vw-9el.title" = "Konto verwalten";
+
+/* Class = "NSMenu"; title = "Substitutions"; ObjectID = "cTv-qE-hI6"; */
+"cTv-qE-hI6.title" = "Ersetzungen";
+
+/* Class = "NSMenuItem"; title = "Find"; ObjectID = "E1f-UJ-wh7"; */
+"E1f-UJ-wh7.title" = "Suchen";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "eWZ-L3-Hhv"; */
+"eWZ-L3-Hhv.title" = "Löschen";
+
+/* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "F0s-cw-L5f"; */
+"F0s-cw-L5f.title" = "Auswahl zur Suche verwenden";
+
+/* Class = "NSMenu"; title = "Help & Feedback"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Hilfe & Feedback";
+
+/* Class = "NSMenuItem"; title = "Send Feedback"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Feedback senden";
+
+/* Class = "NSMenuItem"; title = "Check for Updates"; ObjectID = "G3G-6v-6rx"; */
+"G3G-6v-6rx.title" = "Nach Updates suchen";
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "gYB-Dq-Ay1"; */
+"gYB-Dq-Ay1.title" = "Stil einfügen und anpassen";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "gz6-Fi-O1X"; */
+"gz6-Fi-O1X.title" = "Sprache";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "HFG-Yu-Fzx"; */
+"HFG-Yu-Fzx.title" = "Rückgängig machen";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "hiR-W0-Rne"; */
+"hiR-W0-Rne.title" = "Rechtschreibung und Grammatik anzeigen";
+
+/* Class = "NSMenuItem"; title = "Sign Out"; ObjectID = "hkF-uJ-ObW"; */
+"hkF-uJ-ObW.title" = "Abmelden";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Services";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "j2z-dn-6gu"; */
+"j2z-dn-6gu.title" = "Bearbeiten";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Alle anzeigen";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "kfp-MK-jch"; */
+"kfp-MK-jch.title" = "Smart Links";
+
+/* Class = "NSMenuItem"; title = "Data Detectors"; ObjectID = "KGg-Kp-2hX"; */
+"KGg-Kp-2hX.title" = "Daten-Detektoren";
+
+/* Class = "NSMenuItem"; title = "Account"; ObjectID = "lHY-ta-d8y"; */
+"lHY-ta-d8y.title" = "Konto";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "LPj-IP-aAi"; */
+"LPj-IP-aAi.title" = "Kopieren";
+
+/* Class = "NSMenuItem"; title = "Get Help"; ObjectID = "lPU-EG-Dez"; */
+"lPU-EG-Dez.title" = "Hilfe";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "NZl-MH-IO9"; */
+"NZl-MH-IO9.title" = "Rechtschreibung und Grammatik";
+
+/* Class = "NSMenuItem"; title = "Hide AdBlock VPN"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "AdBlock VPN verbergen";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "Ori-28-j9W"; */
+"Ori-28-j9W.title" = "Einfügen";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "PAH-pg-uyu"; */
+"PAH-pg-uyu.title" = "In Großbuchstaben";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "R1Q-Mc-RBl"; */
+"R1Q-Mc-RBl.title" = "Grammatik und Rechtschreibung überprüfen";
+
+/* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "rFZ-2t-3mw"; */
+"rFZ-2t-3mw.title" = "Ersetzungen";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "syr-ue-Ar8"; */
+"syr-ue-Ar8.title" = "Groß schreiben";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "UdN-gX-18k"; */
+"UdN-gX-18k.title" = "Smart Dashes";
+
+/* Class = "NSMenu"; title = "AdBlock VPN"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Andere verbergen";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "Vhf-yj-6gY"; */
+"Vhf-yj-6gY.title" = "Nicht mehr sprechen";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "WCH-7A-3sm"; */
+"WCH-7A-3sm.title" = "Sprache";
+
+/* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "WcK-gr-v0m"; */
+"WcK-gr-v0m.title" = "Nächste suchen";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "wEi-rT-QdX"; */
+"wEi-rT-QdX.title" = "Ausschneiden";
+
+/* Class = "NSMenuItem"; title = "Help & Feedback"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Hilfe & Feedback";
+
+/* Class = "NSMenu"; title = "Account"; ObjectID = "wZb-RD-jEE"; */
+"wZb-RD-jEE.title" = "Konto";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "yqD-qa-IDh"; */
+"yqD-qa-IDh.title" = "Alle auswählen";
+
+/* Class = "NSMenu"; title = "Spelling"; ObjectID = "zXh-3K-675"; */
+"zXh-3K-675.title" = "Rechtschreibung";
+

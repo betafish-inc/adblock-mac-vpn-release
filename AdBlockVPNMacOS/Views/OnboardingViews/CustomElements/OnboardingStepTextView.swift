@@ -17,22 +17,22 @@
 import SwiftUI
 
 struct OnboardingStepTextView: View {
-    var boldText: String
-    var normalText: String
+    var boldText: Text
+    var normalText: Text
 
     var body: some View {
-        Text(boldText)
+        boldText
             .font(.custom("Lato-Bold", size: 16))
             .foregroundColor(.abDarkText)
             + Text(" ")
-            + Text(normalText).font(.custom("Lato-Regular", size: 16))
+            + normalText.font(.custom("Lato-Regular", size: 16))
             .foregroundColor(.abDarkText)
     }
 }
 
 struct OnboardingStepTextView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingStepTextView(boldText: "Step 1:", normalText: "Do the thing.")
+        OnboardingStepTextView(boldText: Text(verbatim: "Step 1:"), normalText: Text(verbatim: "Do the thing."))
             .padding()
     }
 }

@@ -1,0 +1,73 @@
+/* Authentication error during VPN connection */
+"Auth error with server." = "Autentiseringsfel med server.";
+
+/* Error applying VPN configuration */
+"Can't apply VPN configuration." = "Kan inte tillämpa VPN-konfiguration.";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "Återanslutning misslyckades.";
+
+/* Needs support error full msg */
+"For help solving this problem, please contact our support team." = "För hjälp med att lösa detta problem, var god kontakta vårt supportteam.";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "För hjälp med att lösa detta problem, var god följ stegen i denna artikel.";
+
+/* Invalid refresh token error */
+"Invalid refresh token." = "Ogiltig uppdaterings-token.";
+
+/* Device ID not set error */
+"No deviceID found." = "Inge deviceID hittad.";
+
+/* Configuration file missing error */
+"OVPN file missing." = "OVPN-fil saknas.";
+
+/* Needs support error short msg */
+"Please contact our support team" = "Var god kontakta vårt supportteam";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "Var god följ stegen i den här artikeln";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "Var god starta om AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN. If the problem persists, contact our support team." = "Var god starta om AdBlock VPN. Om problemet kvarstår, kontakta vårt supportteam.";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "Var god starta om din dator";
+
+/* Needs machine restart error full msg */
+"Please restart your computer. If the problem persists, contact our support team." = "Var god starta om din dator. Om problemet kvarstår, kontakta vårt supportteam.";
+
+/* Needs authentication short msg */
+"Please sign in again" = "Var god logga in igen";
+
+/* Needs authentication error full msg */
+"Please sign in again. If the problem persists, contact our support team." = "Var god logga in igen. Om problemet kvarstår, kontakta vårt supportteam.";
+
+/* Protocol configuration error msg */
+"Protocol configuration error." = "Konfigurationsfel i protokoll.";
+
+/* Link to contact support. Text must match corresponding text in full msg */
+"support team" = "supportteam";
+
+/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
+"this article" = "denna artikel";
+
+/* Generic token error */
+"Unknown token error." = "Okänt token-fel.";
+
+/* Server error short msg */
+"We can't connect to our servers. Please try again later." = "Vi kan inte ansluta till våra servrar. Var god försök igen senare.";
+
+/* Server error full msg */
+"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "Vi kan inte ansluta till våra servrar. Var god försök igen senare. Om problemet kvarstår, kontakta vårt supportteam.";
+
+/* Not signed in error */
+"You are not signed in." = "Du är inte inloggad.";
+
+/* No internet error full msg
+   No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "Du är inte ansluten till internet!\nVar god kontrollera din nätverksanslutning.";
+

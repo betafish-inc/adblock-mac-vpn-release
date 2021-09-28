@@ -20,16 +20,15 @@ struct HelpView: View {
     @ObservedObject var viewModel: HelpViewModel
     var body: some View {
         VStack {
-            Spacer().frame(height: 24)
             MenuButtonView(action: {
                 self.viewModel.openFeedback()
-            }, text: "Send Feedback", bold: false, icon: "LinkIcon", iconSize: 16)
+            }, text: Text("Send Feedback", comment: "Label for button that opens a feedback page"), bold: false, icon: "LinkIcon", iconSize: 16)
             Spacer().frame(height: 16)
             Divider().background(Color.abBorder).frame(width: 256)
             Spacer().frame(height: 16)
             MenuButtonView(action: {
                 self.viewModel.openHelp()
-            }, text: "Get Help", bold: false, icon: "LinkIcon", iconSize: 16)
+            }, text: Text("Get Help", comment: "Label for button that opens a help page"), bold: false, icon: "LinkIcon", iconSize: 16)
             Spacer()
         }
         .frame(width: 272, height: 352)

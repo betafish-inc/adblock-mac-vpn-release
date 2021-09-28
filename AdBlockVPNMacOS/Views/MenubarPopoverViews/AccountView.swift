@@ -21,17 +21,17 @@ struct AccountView: View {
     @ObservedObject var viewModel: AccountViewModel
     var body: some View {
         VStack {
-            Spacer().frame(height: 24)
             MenuButtonView(action: {
                 self.viewModel.openAccountManagement()
-            }, text: "Manage Account", bold: false, icon: "LinkIcon", iconSize: 16)
+            }, text: Text("Manage Account", comment: "Label for button that links to the account management page"), bold: false, icon: "LinkIcon", iconSize: 16)
+            .disabled(viewModel.isRequestingMagicLink)
             Spacer().frame(height: 16)
             Divider().background(Color.abBorder).frame(width: 256)
             Spacer().frame(height: 16)
             MenuButtonView(action: {
                 self.viewModel.logOut()
                 self.state.viewToShow = .landing
-            }, text: "Sign Out", bold: false, icon: "", iconSize: 11)
+            }, text: Text("Sign Out", comment: "Label for button that signs the user out of their account (and the app)"), bold: false, icon: "", iconSize: 11)
             Spacer()
         }
         .frame(width: 272, height: 352)

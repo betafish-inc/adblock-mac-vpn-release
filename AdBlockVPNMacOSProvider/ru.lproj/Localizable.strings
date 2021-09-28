@@ -1,0 +1,73 @@
+/* Authentication error during VPN connection */
+"Auth error with server." = "Ошибка авторизации на сервере.";
+
+/* Error applying VPN configuration */
+"Can't apply VPN configuration." = "Невозможно использовать конфигурацию VPN.";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "Неудачная попытка переподключения.";
+
+/* Needs support error full msg */
+"For help solving this problem, please contact our support team." = "Получите помощь в решении этой проблемы у нашей службы поддержки.";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "Чтобы решить эту проблему, выполните шаги, описанные в этом материале.";
+
+/* Invalid refresh token error */
+"Invalid refresh token." = "Недействительный токен обновления.";
+
+/* Device ID not set error */
+"No deviceID found." = "Не найден ID устройства.";
+
+/* Configuration file missing error */
+"OVPN file missing." = "Отсутствует файл OVPN.";
+
+/* Needs support error short msg */
+"Please contact our support team" = "Свяжитесь с нашей службой поддержки";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "Выполните шаги, описанные в этом материале";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "Перезапустите AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN. If the problem persists, contact our support team." = "Перезапустите AdBlock VPN. Если проблема сохраняется, обратитесь в службу поддержки.";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "Перезапустите компьютер";
+
+/* Needs machine restart error full msg */
+"Please restart your computer. If the problem persists, contact our support team." = "Перезапустите компьютер. Если проблема сохраняется, обратитесь в службу поддержки.";
+
+/* Needs authentication short msg */
+"Please sign in again" = "Повторно войдите в систему";
+
+/* Needs authentication error full msg */
+"Please sign in again. If the problem persists, contact our support team." = "Повторно войдите в систему. Если проблема сохраняется, обратитесь в службу поддержки.";
+
+/* Protocol configuration error msg */
+"Protocol configuration error." = "Ошибка конфигурации протокола.";
+
+/* Link to contact support. Text must match corresponding text in full msg */
+"support team" = "служба поддержки";
+
+/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
+"this article" = "этот материал";
+
+/* Generic token error */
+"Unknown token error." = "Неизвестная ошибка токена.";
+
+/* Server error short msg */
+"We can't connect to our servers. Please try again later." = "Мы не можем подключиться к нашим серверам. Повторите попытку позже.";
+
+/* Server error full msg */
+"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "Мы не можем подключиться к нашим серверам. Повторите попытку позже. Если проблема сохраняется, обратитесь в службу поддержки.";
+
+/* Not signed in error */
+"You are not signed in." = "Вы не вошли в систему.";
+
+/* No internet error full msg
+   No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "Вы не подключены к интернету!\nПроверьте свое подключение.";
+

@@ -27,7 +27,7 @@ struct ErrorView: View {
                     .scaledToFit()
                     .frame(width: 112, height: 139)
                 Spacer().frame(height: 30)
-                Text("Oh dear. Something went wrong.")
+                Text("Oh dear. Something went wrong.", comment: "Title for error view")
                     .latoFont()
                     .foregroundColor(.abDarkText)
             }

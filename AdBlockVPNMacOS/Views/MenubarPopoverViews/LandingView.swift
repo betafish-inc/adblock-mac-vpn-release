@@ -26,12 +26,12 @@ struct LandingView: View {
                 Image("LogoIso").resizable().scaledToFit().frame(width: 93, height: 142).offset(x: 0, y: -22)
             }
             Spacer().frame(height: 5)
-            Text("Log in to connect to AdBlock VPN and secure your connection")
+            Text("Log in to connect to AdBlock VPN and secure your connection", comment: "Instructions on landing page")
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .multilineTextAlignment(.center)
             Spacer().frame(height: 56)
-            Button(action: { self.state.viewToShow = .login }, label: { Text("Log In") }).buttonStyle(PrimaryButtonStyle())
+            Button(action: { self.state.viewToShow = .login }, label: { Text("Log In", comment: "Label for button to go to login page") }).buttonStyle(PrimaryButtonStyle())
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: 352)

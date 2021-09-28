@@ -33,6 +33,7 @@ struct ListItemButtonStyle: ButtonStyle {
                     radius: isHover ? 4 : 0,
                     x: 0,
                     y: isHover ? 3 : 0)
+            .blendMode(.plusDarker)
             .onHover { inside in
                 withAnimation(.easeInOut(duration: animationSpeed)) {
                     isHover = inside
@@ -44,14 +45,18 @@ struct ListItemButtonStyle: ButtonStyle {
 struct RegionButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Button("List Item Button") {}
-                .buttonStyle(ListItemButtonStyle())
-            Button("Reduced Width Button") {}
-                .buttonStyle(ListItemButtonStyle(buttonWidth: 240))
-            Button("Selected Button") {}
-                .buttonStyle(ListItemButtonStyle(selected: true))
-            Button("Selected Reduced Width Button") {}
-                .buttonStyle(ListItemButtonStyle(selected: true, buttonWidth: 240))
+            Button(action: {}, label: {
+                Text(verbatim: "List Item Button")
+            }).buttonStyle(ListItemButtonStyle())
+            Button(action: {}, label: {
+                Text(verbatim: "Reduced Width Button")
+            }).buttonStyle(ListItemButtonStyle(buttonWidth: 240))
+            Button(action: {}, label: {
+                Text(verbatim: "Selected Button")
+            }).buttonStyle(ListItemButtonStyle(selected: true))
+            Button(action: {}, label: {
+                Text(verbatim: "Selected Reduced Width Button")
+            }).buttonStyle(ListItemButtonStyle(selected: true, buttonWidth: 240))
         }
         .padding()
     }

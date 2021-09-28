@@ -22,9 +22,10 @@ struct OnboardingIntroView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingIntro",
-                               bodyTitle: "Thanks for installing AdBlock VPN")
+                               bodyTitle: Text("Thanks for installing AdBlock VPN", comment: "Title for onboarding intro"))
             HStack {
-                Text("You'll need to change a couple of permissions on your device in order to use AdBlock VPN. We'll walk you through how to do that now.")
+                Text("You'll need to change a couple of permissions on your device in order to use AdBlock VPN. We'll walk you through how to do that now.",
+                     comment: "Onboarding flow intro instructions")
                     .latoFont()
                     .foregroundColor(.abDarkText)
                     .fixedSize(horizontal: false, vertical: true)
@@ -33,7 +34,8 @@ struct OnboardingIntroView: View {
             Spacer().frame(height: 48)
             HStack {
                 Spacer()
-                Button(action: { model.checkViewToShow() }, label: { Text("Get Started") }).buttonStyle(PrimaryButtonStyle())
+                Button(action: { model.checkViewToShow() }, label: { Text("Get Started", comment: "Label for button that starts the onboarding flow") })
+                    .buttonStyle(PrimaryButtonStyle())
             }
             .fixedSize(horizontal: false, vertical: true)
             Spacer().frame(height: 32)

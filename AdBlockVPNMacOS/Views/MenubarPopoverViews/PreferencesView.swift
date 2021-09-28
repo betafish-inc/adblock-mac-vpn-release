@@ -22,28 +22,32 @@ struct PreferencesView: View {
     var body: some View {
         VStack {
             Group {
-                Spacer().frame(height: 25)
                 if viewModel.showAccount() {
                     MenuButtonView(action: {
                         self.state.viewToShow = .account
-                    }, text: "Account", bold: true, icon: "NextIcon", iconSize: 11)
+                    }, text: Text("Account", comment: "Label for button that takes the useer to the account page"), bold: true, icon: "NextIcon", iconSize: 11)
                     Spacer().frame(height: 16)
                     Divider().background(Color.abBorder).frame(width: 256)
                     Spacer().frame(height: 16)
                 }
-                MenuButtonView(action: {
-                    self.state.viewToShow = .appSettings
-                }, text: "App Settings", bold: true, icon: "NextIcon", iconSize: 11)
+                MenuButtonView(action: { self.state.viewToShow = .appSettings },
+                               text: Text("App Settings", comment: "Label for button that takes the user to the app settings page"),
+                               bold: true,
+                               icon: "NextIcon",
+                               iconSize: 11)
                 Spacer().frame(height: 16)
                 Divider().background(Color.abBorder).frame(width: 256)
                 Spacer().frame(height: 16)
                 MenuButtonView(action: {
                     self.state.viewToShow = .help
-                }, text: "Help & Feedback", bold: true, icon: "NextIcon", iconSize: 11)
+                }, text: Text("Help & Feedback", comment: "Label for button that takes the user to the help and feedback page"), bold: true, icon: "NextIcon", iconSize: 11)
             }
             Spacer()
-            Button(action: { self.viewModel.disconnectAndQuit() }, label: { Text(viewModel.isVpnConnected ? "Quit & Disconnect" : "Quit") })
-                .buttonStyle(SecondaryButtonStyle(bold: true))
+            Button(action: { self.viewModel.disconnectAndQuit() }, label: {
+                viewModel.isVpnConnected ?
+                Text("Quit & Disconnect", comment: "Label for quit button when the VPN is connected") :
+                Text("Quit", comment: "Label for quit button when the VPN is disconnected")
+            }).buttonStyle(SecondaryButtonStyle(bold: true))
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: 352)

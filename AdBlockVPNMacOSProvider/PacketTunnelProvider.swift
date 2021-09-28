@@ -60,19 +60,19 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             let providerConfiguration = protocolConfiguration.providerConfiguration
         else {
             SwiftyBeaver.error("PacketTunnelProvider no protocolConfiguration")
-            errorManager.setRetryOrRestartError(message: "Protocol configuration error.")
+            errorManager.setRetryOrRestartError(message: NSLocalizedString("Protocol configuration error.", comment: "Protocol configuration error msg"))
             fatalError()
         }
 
         guard var ovpnFileContent: Data = providerConfiguration["ovpn"] as? Data else {
             SwiftyBeaver.error("PacketTunnelProvider no ovpnFileContent")
-            errorManager.setRetryOrRestartError(message: "OVPN file missing.")
+            errorManager.setRetryOrRestartError(message: NSLocalizedString("OVPN file missing.", comment: "Configuration file missing error"))
             fatalError()
         }
         
         guard let deviceID: String = providerConfiguration["device-id"] as? String else {
             SwiftyBeaver.error("PacketTunnelProvider no deviceID")
-            errorManager.setRetryOrRestartError(message: "No deviceID found.")
+            errorManager.setRetryOrRestartError(message: NSLocalizedString("No deviceID found.", comment: "Device ID not set error"))
             fatalError()
         }
         authManager.setDeviceID(newID: deviceID)
@@ -93,7 +93,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         
         // if no token is in configuration, abort and send message that user needs to log in
         if !authManager.isLoggedIn {
-            errorManager.setError(error: ErrorManager.ErrorObj(message: "You are not signed in.", type: .needsAuth, link: nil))
+            errorManager.setError(error:
+                                    ErrorManager.ErrorObj(message: NSLocalizedString("You are not signed in.", comment: "Not signed in error"),
+                                                          type: .needsAuth, link: nil))
             SwiftyBeaver.error("PacketTunnelProvider not logged in")
             fatalError()
         }
@@ -105,11 +107,13 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             if let errorMsg = error {
                 switch errorMsg {
                 case .invalidRefreshToken:
-                    strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "Invalid refresh token.", type: .needsAuth, link: nil))
+                    strongSelf.errorManager.setError(error:
+                                                        ErrorManager.ErrorObj(message: NSLocalizedString("Invalid refresh token.", comment: "Invalid refresh token error"),
+                                                                              type: .needsAuth, link: nil))
                 case .noServer:
                     strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "", type: .noServer, link: nil))
                 case .unknown:
-                    strongSelf.errorManager.setRetryOrRestartError(message: "Unknown token error.")
+                    strongSelf.errorManager.setRetryOrRestartError(message: NSLocalizedString("Unknown token error.", comment: "Generic token error"))
                 }
                 SwiftyBeaver.error("in startTunnel auth error: error message: \(errorMsg)")
                 fatalError()
@@ -132,7 +136,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 do {
                     try strongSelf.vpnAdapter.apply(configuration: configuration)
                 } catch {
-                    strongSelf.errorManager.setRetryOrRestartError(message: "Can't apply VPN configuration.")
+                    strongSelf.errorManager.setRetryOrRestartError(message: NSLocalizedString("Can't apply VPN configuration.", comment: "Error applying VPN configuration"))
                     SwiftyBeaver.warning("error in apply config: \(error.localizedDescription)")
                     completionHandler(error)
                     return
@@ -239,7 +243,9 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
         
         if (error as NSError).code == 50 {
             SwiftyBeaver.debug("error is auth error")
-            errorManager.setError(error: ErrorManager.ErrorObj(message: "Auth error with server.", type: .needsAuth, link: nil))
+            errorManager.setError(error:
+                                    ErrorManager.ErrorObj(message: NSLocalizedString("Auth error with server.", comment: "Authentication error during VPN connection"),
+                                                          type: .needsAuth, link: nil))
             cancelTunnelWithError(error)
             return
         }

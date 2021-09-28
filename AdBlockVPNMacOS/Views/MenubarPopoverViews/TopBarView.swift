@@ -56,6 +56,6 @@ struct TopBarView: View {
 
 struct TopBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TopBarView()
+        TopBarView().environmentObject(AppState())
     }
 }

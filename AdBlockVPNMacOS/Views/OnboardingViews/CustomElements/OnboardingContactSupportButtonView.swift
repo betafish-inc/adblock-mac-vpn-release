@@ -21,7 +21,7 @@ struct OnboardingContactSupportButtonView: View {
 
     var body: some View {
         Button(action: model.openSupportURL) {
-            Text("Contact Support")
+            Text("Contact Support", comment: "Label for button to contact support from onboarding flow")
                 .underline()
                 .multilineTextAlignment(.center)
                 .padding(8)

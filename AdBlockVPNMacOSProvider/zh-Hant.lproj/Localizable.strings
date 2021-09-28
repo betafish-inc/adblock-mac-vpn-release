@@ -1,0 +1,73 @@
+/* Authentication error during VPN connection */
+"Auth error with server." = "伺服器驗證錯誤。";
+
+/* Error applying VPN configuration */
+"Can't apply VPN configuration." = "無法套用 VPN 設定。";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "連線重試失敗。";
+
+/* Needs support error full msg */
+"For help solving this problem, please contact our support team." = "請聯絡我們的支援團隊以協助解決問題。";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "請依照本文步驟協助解決此問題。";
+
+/* Invalid refresh token error */
+"Invalid refresh token." = "重新整理權杖";
+
+/* Device ID not set error */
+"No deviceID found." = "找不到 DeviceiD。";
+
+/* Configuration file missing error */
+"OVPN file missing." = "缺少 OVPN 檔案。";
+
+/* Needs support error short msg */
+"Please contact our support team" = "請聯絡我們的支援團隊";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "請依照本文的步驟。";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "請重新啟動 AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN. If the problem persists, contact our support team." = "請重新啟動 AdBlock VPN。如果問題仍然持續，請聯絡我們的支援團隊。";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "請重新啟動您的電腦";
+
+/* Needs machine restart error full msg */
+"Please restart your computer. If the problem persists, contact our support team." = "請重新啟動您的電腦。如果問題仍然持續，請聯絡我們的支援團隊。";
+
+/* Needs authentication short msg */
+"Please sign in again" = "請重新登入";
+
+/* Needs authentication error full msg */
+"Please sign in again. If the problem persists, contact our support team." = "請重新登入。如果問題仍然持續，請聯絡我們的支援團隊。";
+
+/* Protocol configuration error msg */
+"Protocol configuration error." = "通訊協定設定錯誤。";
+
+/* Link to contact support. Text must match corresponding text in full msg */
+"support team" = "支援團隊";
+
+/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
+"this article" = "本文";
+
+/* Generic token error */
+"Unknown token error." = "未知權杖錯誤。";
+
+/* Server error short msg */
+"We can't connect to our servers. Please try again later." = "無法連線到伺服器。請稍後再試。";
+
+/* Server error full msg */
+"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "無法連線到伺服器。請稍後再試。如果問題仍然持續，請聯絡我們的支援團隊。";
+
+/* Not signed in error */
+"You are not signed in." = "您未登入。";
+
+/* No internet error full msg
+   No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "您未連線到網路！\n請檢查您的網路連線。";
+

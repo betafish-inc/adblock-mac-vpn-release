@@ -26,20 +26,28 @@ struct AppSettingsView: View {
         VStack(alignment: .leading) {
             Spacer().frame(height: 8)
             VStack {
-                Toggle("Show dock icon", isOn: $viewModel.showDockIcon).toggleStyle(CustomColorToggleStyle())
+                Toggle(isOn: $viewModel.showDockIcon) {
+                    Text("Show dock icon", comment: "Label for toggle to turn the 'show dock icon' feature on/off")
+                }.toggleStyle(CustomColorToggleStyle())
                 Divider().customDividerStyle().padding(.vertical, 6)
-                Toggle("Launch at Login", isOn: $launchAtLogin.isEnabled).toggleStyle(CustomColorToggleStyle())
+                Toggle(isOn: $launchAtLogin.isEnabled) {
+                    Text("Launch at login", comment: "Label for toggle to turn the 'launch at login' feature on/off")
+                }.toggleStyle(CustomColorToggleStyle())
                 Divider().customDividerStyle().padding(.vertical, 6)
-                Toggle("Apply updates" + "\n" + "automatically", isOn: $viewModel.automaticUpdatesOn).toggleStyle(CustomColorToggleStyle())
+                Toggle(isOn: $viewModel.automaticUpdatesOn) {
+                    Text("Apply updates automatically", comment: "Label for toggle to turn the 'apply updates automatically' feature on/off")
+                }.toggleStyle(CustomColorToggleStyle())
             }
             Spacer()
             ColorfulButtonView(action: viewModel.updateAvailable ? { state.viewToShow = .updates } : {},
-                               text: viewModel.updateAvailable ? "Update Available" : "Up To Date",
+                               text: viewModel.updateAvailable ?
+                               Text("Update Available", comment: "Label for button to go to updates page") :
+                               Text("Up To Date", comment: "Label for disabled button (when no update is available)"),
                                icon: viewModel.updateAvailable ? "NextIcon": "CheckIcon",
                                iconSize: viewModel.updateAvailable ? 11 : 16,
                                updateAvailable: viewModel.updateAvailable)
             Spacer().frame(height: 8)
-            Text(state.getVersionString())
+            Text("Version \(state.versionString)", comment: "App version shown on settings page. Variable holds the version number")
                 .latoFont(size: 14)
                 .foregroundColor(.abLightText)
                 .offset(x: 16, y: 0)

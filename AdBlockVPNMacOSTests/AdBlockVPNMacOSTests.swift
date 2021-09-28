@@ -15,7 +15,7 @@
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import XCTest
-@testable import AdBlock_VPN_for_MacOS
+//@testable import AdBlock_VPN_for_MacOS
 
 class AdBlock_VPN_for_MacOSTests: XCTestCase {
     override func setUpWithError() throws {

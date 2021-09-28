@@ -1,0 +1,186 @@
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "1JS-dh-Act"; */
+"1JS-dh-Act.title" = "Преобразования";
+
+/* Class = "NSMenuItem"; title = "AdBlock VPN"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Find…"; ObjectID = "2Z5-VU-Qi9"; */
+"2Z5-VU-Qi9.title" = "Найти…";
+
+/* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "3Vl-Od-5pg"; */
+"3Vl-Od-5pg.title" = "Найти предыдущее";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "4kz-sU-URk"; */
+"4kz-sU-URk.title" = "Начать говорить";
+
+/* Class = "NSMenuItem"; title = "Quit AdBlock VPN"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Выйти из AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "About AdBlock VPN"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Об AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "5Ou-Fw-s7a"; */
+"5Ou-Fw-s7a.title" = "Умное копирование/вставка";
+
+/* Class = "NSMenu"; title = "Find"; ObjectID = "7BZ-89-7yN"; */
+"7BZ-89-7yN.title" = "Найти";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "7mb-Wn-kq1"; */
+"7mb-Wn-kq1.title" = "Смарт-кавычки";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "8T5-WF-ZRb"; */
+"8T5-WF-ZRb.title" = "Преобразования";
+
+/* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "9ey-Gp-kVY"; */
+"9ey-Gp-kVY.title" = "Найти и заменить…";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "67L-RA-3Q9"; */
+"67L-RA-3Q9.title" = "Проверить документ";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "ae9-Aa-Jof"; */
+"ae9-Aa-Jof.title" = "Перевести в нижний регистр";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "ASV-na-6VQ"; */
+"ASV-na-6VQ.title" = "Проверка правописания во время ввода";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Главное меню";
+
+/* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "bbK-Hq-0oI"; */
+"bbK-Hq-0oI.title" = "Исправлять ошибки автоматически";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "bfz-4M-tyY"; */
+"bfz-4M-tyY.title" = "Повторить";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "biD-5Y-XbJ"; */
+"biD-5Y-XbJ.title" = "Замена текста";
+
+/* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "BMq-y5-MGv"; */
+"BMq-y5-MGv.title" = "Перейти к выделенному";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "BTS-gX-kK2"; */
+"BTS-gX-kK2.title" = "Показать замены";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "cgc-6D-UqQ"; */
+"cgc-6D-UqQ.title" = "Настройка";
+
+/* Class = "NSMenuItem"; title = "Manage Account"; ObjectID = "COb-vw-9el"; */
+"COb-vw-9el.title" = "Управление аккаунтом";
+
+/* Class = "NSMenu"; title = "Substitutions"; ObjectID = "cTv-qE-hI6"; */
+"cTv-qE-hI6.title" = "Замены";
+
+/* Class = "NSMenuItem"; title = "Find"; ObjectID = "E1f-UJ-wh7"; */
+"E1f-UJ-wh7.title" = "Найти";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "eWZ-L3-Hhv"; */
+"eWZ-L3-Hhv.title" = "Удалить";
+
+/* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "F0s-cw-L5f"; */
+"F0s-cw-L5f.title" = "Поиск по выделению";
+
+/* Class = "NSMenu"; title = "Help & Feedback"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Помощь и обратная связь";
+
+/* Class = "NSMenuItem"; title = "Send Feedback"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Отправить отзыв";
+
+/* Class = "NSMenuItem"; title = "Check for Updates"; ObjectID = "G3G-6v-6rx"; */
+"G3G-6v-6rx.title" = "Проверить обновления";
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "gYB-Dq-Ay1"; */
+"gYB-Dq-Ay1.title" = "Вставить и согласовать стиль";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "gz6-Fi-O1X"; */
+"gz6-Fi-O1X.title" = "Речь";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "HFG-Yu-Fzx"; */
+"HFG-Yu-Fzx.title" = "Отменить";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "hiR-W0-Rne"; */
+"hiR-W0-Rne.title" = "Показать правописание и грамматику";
+
+/* Class = "NSMenuItem"; title = "Sign Out"; ObjectID = "hkF-uJ-ObW"; */
+"hkF-uJ-ObW.title" = "Выйти";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Службы";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "j2z-dn-6gu"; */
+"j2z-dn-6gu.title" = "Настройка";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Показать все";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "kfp-MK-jch"; */
+"kfp-MK-jch.title" = "Смарт-ссылки";
+
+/* Class = "NSMenuItem"; title = "Data Detectors"; ObjectID = "KGg-Kp-2hX"; */
+"KGg-Kp-2hX.title" = "Детекторы данных";
+
+/* Class = "NSMenuItem"; title = "Account"; ObjectID = "lHY-ta-d8y"; */
+"lHY-ta-d8y.title" = "Аккаунт";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "LPj-IP-aAi"; */
+"LPj-IP-aAi.title" = "Копировать";
+
+/* Class = "NSMenuItem"; title = "Get Help"; ObjectID = "lPU-EG-Dez"; */
+"lPU-EG-Dez.title" = "Обратиться за помощью";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Службы";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "NZl-MH-IO9"; */
+"NZl-MH-IO9.title" = "Правописание и грамматика";
+
+/* Class = "NSMenuItem"; title = "Hide AdBlock VPN"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Скрыть AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "Ori-28-j9W"; */
+"Ori-28-j9W.title" = "Вставить";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "PAH-pg-uyu"; */
+"PAH-pg-uyu.title" = "Перевести в верхний регистр";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "R1Q-Mc-RBl"; */
+"R1Q-Mc-RBl.title" = "Проверять грамматику и правописание";
+
+/* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "rFZ-2t-3mw"; */
+"rFZ-2t-3mw.title" = "Замены";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "syr-ue-Ar8"; */
+"syr-ue-Ar8.title" = "Каждое слово с заглавной буквы";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "UdN-gX-18k"; */
+"UdN-gX-18k.title" = "Смарт-тире";
+
+/* Class = "NSMenu"; title = "AdBlock VPN"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "AdBlock VPN";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Скрыть остальные";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "Vhf-yj-6gY"; */
+"Vhf-yj-6gY.title" = "Прекратить говорить";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "WCH-7A-3sm"; */
+"WCH-7A-3sm.title" = "Речь";
+
+/* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "WcK-gr-v0m"; */
+"WcK-gr-v0m.title" = "Найти следующее";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "wEi-rT-QdX"; */
+"wEi-rT-QdX.title" = "Вырезать";
+
+/* Class = "NSMenuItem"; title = "Help & Feedback"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Помощь и обратная связь";
+
+/* Class = "NSMenu"; title = "Account"; ObjectID = "wZb-RD-jEE"; */
+"wZb-RD-jEE.title" = "Аккаунт";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "yqD-qa-IDh"; */
+"yqD-qa-IDh.title" = "Выбрать все";
+
+/* Class = "NSMenu"; title = "Spelling"; ObjectID = "zXh-3K-675"; */
+"zXh-3K-675.title" = "Правописание";
+

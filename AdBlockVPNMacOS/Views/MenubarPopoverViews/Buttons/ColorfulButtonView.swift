@@ -18,7 +18,7 @@ import SwiftUI
 
 struct ColorfulButtonView: View {
     var action: (() -> Void)?
-    var text: String
+    var text: Text
     var icon: String
     var iconSize: Int
     var updateAvailable: Bool
@@ -26,7 +26,7 @@ struct ColorfulButtonView: View {
         Button(action: action ?? {}, label: {
             HStack {
                 Spacer().frame(width: 16)
-                Text(text)
+                text
                     .latoFont()
                 Spacer()
                 if !icon.isEmpty {
@@ -52,12 +52,12 @@ struct ColorfulButtonView_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 16) {
         ColorfulButtonView(action: nil,
-                           text: "Update Available",
+                           text: Text(verbatim: "Update Available"),
                            icon: "NextIcon",
                            iconSize: 11,
                            updateAvailable: true)
         ColorfulButtonView(action: nil,
-                           text: "Up To Date",
+                           text: Text(verbatim: "Up To Date"),
                            icon: "CheckIcon",
                            iconSize: 16,
                            updateAvailable: false)

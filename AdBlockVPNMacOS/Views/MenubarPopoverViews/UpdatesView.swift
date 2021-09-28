@@ -27,17 +27,17 @@ struct UpdatesView: View {
                 .scaledToFit()
                 .frame(width: 144, height: 144)
             Spacer().frame(height: 28)
-            Text("An update is available")
+            Text("An update is available", comment: "Title for updates view")
                 .latoFont()
                 .foregroundColor(.abDarkText)
             Spacer()
-            Button(action: { state.viewToShow = .connection }, label: { Text("Skip for now") })
+            Button(action: { state.viewToShow = .connection }, label: { Text("Skip for now", comment: "Label for button that skips the available update") })
                 .buttonStyle(SecondaryButtonStyle(bold: true, buttonColor: .abAccentBackground))
             Spacer().frame(height: 24)
             Button(action: {
                 viewModel.update()
                 state.viewToShow = .connection
-            }, label: { Text("Update") })
+            }, label: { Text("Update", comment: "Label for button that triggers an update") })
             .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent,
                                             buttonHoverColor: .abUpdateAccent,
                                             buttonClickColor: .abUpdateAccentClick,

@@ -65,6 +65,9 @@ class AppState: ObservableObject {
     @Published var restartConnection = false
     @Published var providerAuthChecked = false
     @Published var showOverlay = false
+    var versionString: String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "x.x.x"
+    }
     
     init() {
         eulaAccepted = UserDefaults.standard.bool(forKey: Constants.acceptance_key)
@@ -73,15 +76,15 @@ class AppState: ObservableObject {
     func getViewTitle() -> String {
         switch viewToShow {
         case .preferences:
-            return "Preferences"
+            return NSLocalizedString("Preferences", comment: "Preferences page title")
         case .account:
-            return "Account"
+            return NSLocalizedString("Account", comment: "Account page title")
         case .help:
-            return "Help & Feedback"
+            return NSLocalizedString("Help & Feedback", comment: "Help and feedback page title")
         case .locations:
-            return "Choose location"
+            return NSLocalizedString("Choose location", comment: "Location picker page title")
         case .appSettings:
-            return "App Settings"
+            return NSLocalizedString("App Settings", comment: "App settings page title")
         default:
             return ""
         }
@@ -98,10 +101,6 @@ class AppState: ObservableObject {
         default:
             fatalError()
         }
-    }
-    
-    func getVersionString() -> String {
-        return "Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown")"
     }
     
     func checkViewToShow(loggedIn: Bool, isError: Bool, updateRequired: Bool) {

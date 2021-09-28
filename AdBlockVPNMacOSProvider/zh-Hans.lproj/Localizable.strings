@@ -1,0 +1,73 @@
+/* Authentication error during VPN connection */
+"Auth error with server." = "服务器出现身份验证错误。";
+
+/* Error applying VPN configuration */
+"Can't apply VPN configuration." = "无法应用 VPN 配置。";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "重试连接失败。";
+
+/* Needs support error full msg */
+"For help solving this problem, please contact our support team." = "为帮助解决此问题，请联系我们的支持团队。";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "为帮助解决此问题，请遵循我们文章中的步骤。";
+
+/* Invalid refresh token error */
+"Invalid refresh token." = "无效的刷新令牌。";
+
+/* Device ID not set error */
+"No deviceID found." = "未找到 deviceID。";
+
+/* Configuration file missing error */
+"OVPN file missing." = "OVPN 文件缺失。";
+
+/* Needs support error short msg */
+"Please contact our support team" = "请联系我们的支持团队";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "请跟随此文章中的步骤";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "请重新启动 AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN. If the problem persists, contact our support team." = "请重新启动 AdBlock VPN。如果问题仍然存在，请联系我们的支持团队。";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "请重新启动您的电脑";
+
+/* Needs machine restart error full msg */
+"Please restart your computer. If the problem persists, contact our support team." = "请重新启动您的电脑。如果问题仍然存在，请联系我们的支持团队。";
+
+/* Needs authentication short msg */
+"Please sign in again" = "请重新登录";
+
+/* Needs authentication error full msg */
+"Please sign in again. If the problem persists, contact our support team." = "请重新登录。如果问题仍然存在，请联系我们的支持团队。";
+
+/* Protocol configuration error msg */
+"Protocol configuration error." = "协议配置错误。";
+
+/* Link to contact support. Text must match corresponding text in full msg */
+"support team" = "支持团队";
+
+/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
+"this article" = "此文章";
+
+/* Generic token error */
+"Unknown token error." = "未知的令牌错误。";
+
+/* Server error short msg */
+"We can't connect to our servers. Please try again later." = "无法连接到服务器。请稍后重试。";
+
+/* Server error full msg */
+"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "无法连接到服务器。请稍后重试。如果问题仍然存在，请联系我们的支持团队。";
+
+/* Not signed in error */
+"You are not signed in." = "您未登录。";
+
+/* No internet error full msg
+   No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "您未连接到互联网！\n请检查您的网络连接。";
+

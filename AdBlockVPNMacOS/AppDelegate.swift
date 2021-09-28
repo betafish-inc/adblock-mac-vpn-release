@@ -56,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     override init() {
         errorManager = ErrorManager()
-        errorManager.resetErrorState()
+        errorManager.clearError()
         #if DEBUG
         // Prevents `Move to Application Folder` UI from presenting in debug builds.
         appIsInApplicationsFolder = true
@@ -89,6 +89,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SwiftyBeaver.addDestination(console)
 
         checkForUpdateOrReinstall()
+        SwiftyBeaver.debug("current app version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "x.x.x")")
         
         updateManager = UpdateManager(logManager: logManager)
         guard let initializedUpdateManager = updateManager else { return }

@@ -50,11 +50,11 @@ struct PrimaryButtonStyle: ButtonStyle {
 struct PrimaryButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 16) {
-            Button(action: {}, label: { Text("Button") })
+            Button(action: {}, label: { Text(verbatim: "Button") })
                 .buttonStyle(PrimaryButtonStyle())
-            Button(action: {}, label: { Text("A lot of text to intentionally make the button two lines") })
+            Button(action: {}, label: { Text(verbatim: "A lot of text to intentionally make the button two lines") })
                 .buttonStyle(PrimaryButtonStyle())
-            Button(action: {}, label: { Text("Custom Style") })
+            Button(action: {}, label: { Text(verbatim: "Custom Style") })
                 .buttonStyle(PrimaryButtonStyle(buttonColor: Color.black.opacity(0.9), textColor: .pink, buttonWidth: 150))
         }
         .padding()

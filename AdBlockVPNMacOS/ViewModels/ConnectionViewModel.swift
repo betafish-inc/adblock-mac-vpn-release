@@ -27,9 +27,9 @@ class ConnectionViewModel: ObservableObject {
     private var logManager: LogManager
     private let notificationManager: NotificationManager
     private let errorManager: ErrorManager
-    @Published var connectionButtonText = "Connect"
-    @Published var connectionStateText = "Disconnected"
-    @Published var regionButtonText = "Change Location"
+    @Published var connectionButtonText = NSLocalizedString("Connect", comment: "Default label for connection button")
+    @Published var connectionStateText = NSLocalizedString("Disconnected", comment: "Default text for connection state")
+    @Published var regionButtonText = NSLocalizedString("Change Location", comment: "Default label for region selector")
     @Published var connectionIcon = "LockNotConnected"
     @Published var flag = ""
     @Published var grey = false
@@ -71,11 +71,21 @@ class ConnectionViewModel: ObservableObject {
                     self?.connection.availableGeos = geos.regions
                     SwiftyBeaver.debug("regions loaded from file")
                 } catch {
-                    self?.errorManager.setError(error: ErrorManager.ErrorObj(message: "Error in reading regions file.", type: .needsMachineRestart, link: nil))
+                    self?.errorManager.setError(
+                        error: ErrorManager.ErrorObj(
+                            message: NSLocalizedString("Error in reading regions file.", comment: "Reading regions file failed error."),
+                            type: .needsMachineRestart,
+                            link: nil
+                        ))
                     SwiftyBeaver.error("can't download or parse geos from file")
                 }
             } else {
-                self?.errorManager.setError(error: ErrorManager.ErrorObj(message: "Error in reading regions file.", type: .needsAppRestart, link: nil))
+                self?.errorManager.setError(
+                    error: ErrorManager.ErrorObj(
+                        message: NSLocalizedString("Error in reading regions file.", comment: "Downloading and reading regions file failed error"),
+                        type: .needsAppRestart,
+                        link: nil
+                    ))
                 SwiftyBeaver.error("can't download or read geos from file")
             }
             callback?()
@@ -296,13 +306,18 @@ class ConnectionViewModel: ObservableObject {
                 guard error == nil else {
                     SwiftyBeaver.warning("ping \(uniqueID) failed: \(error.debugDescription)")
                     if !strongSelf.restarting {
-                        strongSelf.restarting = true
-                        SwiftyBeaver.debug("ping \(uniqueID) failed set restarting to true")
-                        DispatchQueue.main.asyncAfter(deadline: .now()) {
-                            SwiftyBeaver.debug("ping \(uniqueID) failed restart connection")
-                            strongSelf.pingFailedCount += 1
-                            SwiftyBeaver.verbose("ping failed count: \(strongSelf.pingFailedCount)")
-                            strongSelf.disconnectAndReconnect()
+                        if strongSelf.pingFailedCount < 2 {
+                            strongSelf.restarting = true
+                            SwiftyBeaver.debug("ping \(uniqueID) failed set restarting to true")
+                            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                SwiftyBeaver.debug("ping \(uniqueID) failed restart connection")
+                                strongSelf.pingFailedCount += 1
+                                SwiftyBeaver.verbose("ping failed count: \(strongSelf.pingFailedCount)")
+                                strongSelf.disconnectAndReconnect()
+                            }
+                        } else {
+                            strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "Connection cannot be established (too many retries).", type: .needsSupport, link: nil))
+                            strongSelf.disconnect()
                         }
                     }
                     return
@@ -355,7 +370,9 @@ class ConnectionViewModel: ObservableObject {
                 }
             }
             
-            if path.status != .unsatisfied && path.availableInterfaces.contains(where: { $0.type == .wifi || $0.type == .wiredEthernet }) && strongSelf.internetLostWhileConnected {
+            if path.status != .unsatisfied
+                && path.availableInterfaces.contains(where: { $0.type == .wifi || $0.type == .wiredEthernet })
+                && strongSelf.internetLostWhileConnected {
                 strongSelf.internetLostWhileConnected = false
                 SwiftyBeaver.debug("internet lost try to reconnect")
                 DispatchQueue.main.asyncAfter(deadline: .now()) {

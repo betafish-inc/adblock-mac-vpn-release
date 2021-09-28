@@ -196,44 +196,135 @@ extension LoginViewModel {
         var errorWebLinks: [String: String]?
     }
     
-    static let emailEntryText = LoginStrings(titleText: "Sign In",
-                                             descriptionText: "Enter the email address you used when you purchased AdBlock VPN:",
-                                             placeholderText: "Email Address",
-                                             buttonText: "Next",
-                                             linkText: "<a href='\(Constants.newTicketURL)'>Forgot your email?</a>",
-                                             footerText: "Don't have an AdBlock account? Sign up.",
-                                             footerWebLinks: ["Sign up.": Constants.mainVpnURL])
-    static let codeEntryText = LoginStrings(titleText: "Check Your Email",
-                                            descriptionText: "We sent you a 6-character access code. Enter it below:",
-                                            placeholderText: "— — — — — —",
-                                            buttonText: "Submit",
-                                            footerText: "Didn't get the code? Try again.",
-                                            footerTryAgainText: "Try again.")
-    static let noAccountText = LoginStrings(titleText: "Oops!",
-                                            descriptionText: "We couldn’t find an account for that email address. Please click below to get started.",
-                                            buttonText: "Get AdBlock VPN",
-                                            footerText: "Doesn’t sound right? Try using a different email address or contact support.",
-                                            footerTryAgainText: "Try again using a different email address",
-                                            footerWebLinks: ["contact support": Constants.newTicketURL])
-    static let subEndedText = LoginStrings(titleText: "Oops!",
-                                           descriptionText: "It looks like your subscription has ended. Please click below to renew.",
-                                           buttonText: "Renew Subscription",
-                                           footerText: "Doesn’t sound right? Try using a different email address or contact support.",
-                                           footerTryAgainText: "Try again using a different email address",
-                                           footerWebLinks: ["contact support": Constants.newTicketURL])
-    static let deviceLimitText = LoginStrings(titleText: "Oops!",
-                                              descriptionText: "You have already registered the maximum 6 devices. Please click below to update your settings.",
-                                              buttonText: "Manage Devices")
+    static let emailEntryText =
+        LoginStrings(titleText:
+                        NSLocalizedString("Sign In",
+                                          comment: "Title for email entry page"),
+                     descriptionText:
+                        NSLocalizedString("Enter the email address you used when you purchased AdBlock VPN:",
+                                          comment: "Intructions for entering your email address"),
+                     placeholderText:
+                        NSLocalizedString("Email Address",
+                                          comment: "Placeholder text in email entry box"),
+                     buttonText:
+                        NSLocalizedString("Next",
+                                          comment: "Label for button on email entry page"),
+                     linkText:
+                        String(format: NSLocalizedString("<a href='%@'>Forgot your email?</a>",
+                                                         comment: "Link to create a help ticket on email entry page"), Constants.newTicketURL),
+                     footerText:
+                        NSLocalizedString("Don't have an AdBlock account? Sign up.",
+                                          comment: "Footer text on email entry page"),
+                     footerWebLinks: [
+                        NSLocalizedString("Sign up.",
+                                          comment: "Link text on email entry page. This text must match the corresponding text in the footer text."):
+                            Constants.mainVpnURL])
+    static let codeEntryText =
+        LoginStrings(titleText:
+                        NSLocalizedString("Check Your Email",
+                                          comment: "Title of code entry page"),
+                     descriptionText:
+                        NSLocalizedString("We sent you a 6-character access code. Enter it below:",
+                                          comment: "Intructions on code entry page"),
+                     placeholderText:
+                        NSLocalizedString("— — — — — —",
+                                          comment: "Placeholder text in code entry box"),
+                     buttonText:
+                        NSLocalizedString("Submit",
+                                          comment: "Label for button on code entry page"),
+                     footerText:
+                        NSLocalizedString("Didn't get the code? Try again.",
+                                          comment: "Footer text on code entry page"),
+                     footerTryAgainText:
+                        NSLocalizedString("Try again.",
+                                          comment: "Link to try again on code entry page. This text must match the corresponding text in the footer text."))
+    static let noAccountText =
+        LoginStrings(titleText:
+                        NSLocalizedString("Oops!",
+                                          comment: "Title of no account error page"),
+                     descriptionText:
+                        NSLocalizedString("We couldn’t find an account for that email address. Please click below to get started.",
+                                          comment: "Intructions for no account error page"),
+                     buttonText:
+                        NSLocalizedString("Get AdBlock VPN",
+                                          comment: "Label for button on no account error page. Links to page to set up account"),
+                     footerText:
+                        NSLocalizedString("Doesn’t sound right? Try using a different email address or contact support.",
+                                          comment: "Footer text on no account error page"),
+                     footerTryAgainText:
+                        NSLocalizedString("Try using a different email address",
+                                          comment: "Link to try again on the no account error page. Text must match corresponding text in footer."),
+                     footerWebLinks: [
+                        NSLocalizedString("contact support",
+                                          comment: "Link to contact support on no account error page. Text must match corresponding text in footer"):
+                            Constants.newTicketURL])
+    static let subEndedText =
+        LoginStrings(titleText:
+                        NSLocalizedString("Oops!",
+                                          comment: "Title for subscription ended error page"),
+                     descriptionText:
+                        NSLocalizedString("It looks like your subscription has ended. Please click below to renew.",
+                                          comment: "Instructions on subscription ended error page"),
+                     buttonText:
+                        NSLocalizedString("Renew Subscription",
+                                          comment: "Label for button on subscription ended error page. Links to page where user can renew their subscription"),
+                     footerText:
+                        NSLocalizedString("Doesn’t sound right? Try using a different email address or contact support.",
+                                          comment: "Footer text on subscription ended page"),
+                     footerTryAgainText:
+                        NSLocalizedString("Try using a different email address",
+                                          comment: "Link to try again on the subscription ended error page. Text must match corresponding text in footer"),
+                     footerWebLinks: [
+                        NSLocalizedString("contact support",
+                                          comment: "Link to contact support on subscription ended error page. Text must match corresponding text in footer"):
+                            Constants.newTicketURL])
+    static let deviceLimitText =
+        LoginStrings(titleText:
+                        NSLocalizedString("Oops!",
+                                          comment: "Title for device limit error page"),
+                     descriptionText:
+                        NSLocalizedString("You have already registered the maximum 6 devices. Please click below to update your settings.",
+                                          comment: "Intructions for device limit error page"),
+                     buttonText:
+                        NSLocalizedString("Manage Devices",
+                                          comment: "Label for button on device limit error page"))
     
-    static let invalidEmailErrorText = ErrorStrings(errorText: "Oops!\nWe don’t recognize that email address.\nPlease try again or contact support.",
-                                                    errorTryAgainText: "try again",
-                                                    errorWebLinks: ["contact support": Constants.newTicketURL])
-    static let invalidCodeErrorText = ErrorStrings(errorText: "Oops!\nThat code didn’t work. Please try again.",
-                                                   errorTryAgainText: "try again")
-    static let genericErrorText = ErrorStrings(errorText: "Oops!\nSomething went wrong.\nPlease try again or contact support.",
-                                               errorTryAgainText: "try again",
-                                               errorWebLinks: ["contact support": Constants.newTicketURL])
-    static let loggedOutErrorText = ErrorStrings(errorText: "You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team.",
-                                                 errorTryAgainText: nil,
-                                                 errorWebLinks: ["support team": Constants.newTicketURL])
+    static let invalidEmailErrorText =
+        ErrorStrings(errorText:
+                        NSLocalizedString("Oops!\nWe don’t recognize that email address.\nPlease try again or contact support.",
+                                          comment: "Error text for imvalid email error."),
+                     errorTryAgainText:
+                        NSLocalizedString("try again",
+                                          comment: "Link to try again on invalid email error. Text must match corresponding text in error"),
+                     errorWebLinks: [
+                        NSLocalizedString("contact support",
+                                          comment: "Link to contact support. Text must match corresponding text in error"):
+                            Constants.newTicketURL])
+    static let invalidCodeErrorText =
+        ErrorStrings(errorText:
+                        NSLocalizedString("Oops!\nThat code didn’t work. Please try again.",
+                                          comment: "Error text for invalid code error"),
+                     errorTryAgainText:
+                        NSLocalizedString("try again",
+                                          comment: "Link to try again on invalid code error. Text must match corresponding text in error"))
+    static let genericErrorText =
+        ErrorStrings(errorText:
+                        NSLocalizedString("Oops!\nSomething went wrong.\nPlease try again or contact support.",
+                                          comment: "Error text for generic errors"),
+                     errorTryAgainText:
+                        NSLocalizedString("try again",
+                                          comment: "Link to try again on generic errors. Text must match corresponding text in error"),
+                     errorWebLinks: [
+                        NSLocalizedString("contact support",
+                                          comment: "Link to contact support. Text must match corresponding text in error"):
+                            Constants.newTicketURL])
+    static let loggedOutErrorText =
+        ErrorStrings(errorText:
+                        NSLocalizedString("You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team.",
+                                          comment: "Error text for loggeed out error"),
+                     errorTryAgainText: nil,
+                     errorWebLinks: [
+                        NSLocalizedString("support team",
+                                          comment: "Link to contact support. Text must match corresponding text in error"):
+                            Constants.newTicketURL])
 }

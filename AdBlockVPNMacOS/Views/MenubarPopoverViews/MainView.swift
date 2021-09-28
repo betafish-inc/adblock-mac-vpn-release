@@ -41,7 +41,8 @@ struct MainView: View {
             }
             .if(state.showOverlay) {
                 $0.overlay(
-                    UpdateOverlayView(text: "Update Complete!", icon: "CheckIcon", background: .abUpToDateAccent, foreground: .white)
+                    UpdateOverlayView(text: Text("Update Complete!", comment: "Notification that an update has been completed"),
+                                      icon: "CheckIcon", background: .abUpToDateAccent, foreground: .white)
                         .shadow(color: .abShadow, radius: 20, x: 0, y: 5),
                     alignment: .top
                 )
