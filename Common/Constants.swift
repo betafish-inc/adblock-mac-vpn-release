@@ -35,6 +35,7 @@ public struct Constants {
     static let showDockIcon_key = "showDockIcon"
     static let launchAtLoginSet_key = "launchAtLoginSet"
     static let lastError_key = "lastError"
+    static let showConnectionInfo_key = "showConnectionInfo"
     
     static let helpURL = "http://vpnsupport.getadblock.com/"
     static let newTicketURL = "https://vpnsupport.getadblock.com/support/tickets/new"
@@ -56,7 +57,11 @@ public struct Constants {
     static let confirmURL = "https://api.adblock.dev/v1/vpn/login/email/confirm"
     static let logURL = "https://log.adblock.dev/v2/record_log"
     static let accountsMagicLoginURL = "https://api.adblock.dev/v1/vpn/token/account"
+    static let ipv4ConnectionInfoURL = "https://ip4.adblock.dev"
+    static let ipv6ConnectionInfoURL = "https://ip6.adblock.dev"
 
     static let securityPrefsPaneURL = "/System/Library/PreferencePanes/Security.prefPane"
     static let notificationsPrefsPaneURL = "/System/Library/PreferencePanes/Notifications.prefPane"
+
+    static let connectionSatisfiedNotification = NSNotification.Name(rawValue: "connectionSatisfied")
 }

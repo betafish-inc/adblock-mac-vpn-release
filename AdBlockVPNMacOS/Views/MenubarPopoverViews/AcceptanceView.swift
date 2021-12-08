@@ -28,7 +28,7 @@ struct AcceptanceView: View {
                     htmlContent: String(format:
                                             // swiftlint:disable:next line_length
                                             NSLocalizedString("By proceeding, you are confirming you have read and accepted the <a href='%@'>End User License Agreement (EULA)</a>, and our <a href='%@'>Privacy Policy</a>.", comment: "Links to EULA and Privacy Policy"),
-                                        [Constants.eulaURL, Constants.privacyURL]),
+                                        Constants.eulaURL, Constants.privacyURL),
                     fontSize: 16,
                     centered: false)
             }
@@ -50,7 +50,7 @@ struct AcceptanceView: View {
             }
             Spacer().frame(height: 25)
         }
-        .frame(width: 272, height: 352)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
     }
 }

@@ -14,8 +14,8 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import Foundation
 import NetworkExtension
+import SwiftUI
 
 struct Geo: Identifiable, Decodable {
     var host: String
@@ -204,7 +204,7 @@ struct ConnectionModel {
     func getIcon(status: NEVPNStatus) -> String {
         return ConnectionModel.connectionState[status]?.icon ?? ""
     }
-    
+
     func getStateText(status: NEVPNStatus) -> String {
         switch status {
         case .connected:
@@ -219,6 +219,19 @@ struct ConnectionModel {
             return NSLocalizedString("Retrying connection", comment: "VPN state text when reasserting")
         default:
             return NSLocalizedString("Your connection is not secure", comment: "")
+        }
+    }
+
+    func getStateColor(status: NEVPNStatus) -> Color {
+        switch status {
+        case .connected:
+            return Color.abVPNStateConnected
+        case .connecting, .reasserting, .disconnecting:
+            return Color.abVPNStateConnecting
+        case .disconnected, .invalid:
+            return Color.abVPNStateDisconnected
+        default:
+            return Color.abVPNStateDisconnected
         }
     }
     

@@ -30,11 +30,12 @@ struct LandingView: View {
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .multilineTextAlignment(.center)
-            Spacer().frame(height: 56)
+            Spacer()
+                .if(!state.showConnectionInfo) { $0.frame(height: 56) }
             Button(action: { self.state.viewToShow = .login }, label: { Text("Log In", comment: "Label for button to go to login page") }).buttonStyle(PrimaryButtonStyle())
             Spacer().frame(height: 24)
         }
-        .frame(width: 272, height: 352)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .foregroundColor(Color.black)
     }

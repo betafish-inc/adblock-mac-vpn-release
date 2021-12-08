@@ -17,6 +17,7 @@
 import SwiftUI
 
 struct RegionSelectionView: View {
+    @EnvironmentObject var state: AppState
     @ObservedObject var viewModel: ConnectionViewModel
     @State private var searchTerm = ""
     var body: some View {
@@ -43,10 +44,10 @@ struct RegionSelectionView: View {
                 // Add padding to bottom of ScrollView
                 Spacer().frame(height: 24)
             }
-            .frame(width: 272, height: 288, alignment: .leading)
+            .frame(width: 272, height: state.showConnectionInfo ? 396 : 288, alignment: .leading)
         }
-        .frame(height: 352)
         .background(Color.white)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352, alignment: .leading)
     }
 }
 

@@ -21,7 +21,8 @@ struct UpdatesView: View {
     @ObservedObject var viewModel: UpdatesViewModel
     var body: some View {
         VStack {
-            Spacer().frame(height: 5)
+            Spacer()
+                .if(!state.showConnectionInfo) { $0.frame(height: 5) }
             Image("UpdateIcon")
                 .resizable()
                 .scaledToFit()
@@ -44,7 +45,7 @@ struct UpdatesView: View {
                                             textColor: .abDarkText))
             Spacer().frame(height: 24)
         }
-        .frame(width: 272, height: 352)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.abAccentBackground)
     }
 }

@@ -26,6 +26,10 @@ struct AppSettingsView: View {
         VStack(alignment: .leading) {
             Spacer().frame(height: 8)
             VStack {
+                Toggle(isOn: $state.showConnectionInfo) {
+                    Text("Show connection info", comment: "Label for toggle to turn the 'show connection info' feature on/off")
+                }.toggleStyle(CustomColorToggleStyle())
+                Divider().customDividerStyle().padding(.vertical, 6)
                 Toggle(isOn: $viewModel.showDockIcon) {
                     Text("Show dock icon", comment: "Label for toggle to turn the 'show dock icon' feature on/off")
                 }.toggleStyle(CustomColorToggleStyle())
@@ -53,7 +57,7 @@ struct AppSettingsView: View {
                 .offset(x: 16, y: 0)
             Spacer().frame(height: 24)
         }
-        .frame(width: 272, height: 352)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .onAppear {
             viewModel.checkForUpdates()

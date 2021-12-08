@@ -108,7 +108,7 @@ struct LoginFlowView: View {
                 }.frame(width: 320, height: 62)
             }
         }
-        .frame(width: 320, height: 352)
+        .frame(width: 320, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .foregroundColor(Color.black)
         .latoFont()

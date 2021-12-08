@@ -27,6 +27,7 @@ struct MainView: View {
     @ObservedObject var viewModel: MainViewModel
     private(set) var connectionViewModel: ConnectionViewModel
     private(set) var loginViewModel: LoginViewModel
+    private(set) var connectionInfoViewModel: ConnectionInfoViewModel
     var body: some View {
         VStack {
             Spacer().frame(width: 0, height: 16)
@@ -34,7 +35,7 @@ struct MainView: View {
             VStack {
                 Spacer().frame(width: 0, height: 16)
                 getViewToShow()
-                    .frame(width: 272, height: 352)
+                    .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
                     .onAppear {
                         self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isMainError, updateRequired: updateManager.updateIsRequired)
                     }
@@ -53,7 +54,7 @@ struct MainView: View {
                 }
             }
         }
-        .frame(width: 320, height: 440)
+        .frame(width: 320, height: state.showConnectionInfo ? 548 : 440)
         .background([.updates, .updateError, .updateRequired].contains(state.viewToShow) ? Color.abAccentBackground : Color.white)
         .foregroundColor(.abLightText)
         .onReceive(authManager.$token, perform: { newVal in
@@ -124,7 +125,7 @@ struct MainView: View {
         } else if state.viewToShow == .login {
             LoginFlowView(viewModel: loginViewModel)
         } else if state.viewToShow == .connection {
-            ConnectionView(viewModel: connectionViewModel)
+            ConnectionView(viewModel: connectionViewModel, connectionInfoViewModel: connectionInfoViewModel)
         } else if state.viewToShow == .setUpVPN {
             SetUpVPNView(viewModel: connectionViewModel)
         } else if state.viewToShow == .locations {
@@ -165,6 +166,8 @@ struct MainView_Previews: PreviewProvider {
                                                           errorManager: ErrorManager()),
                  loginViewModel: LoginViewModel(authManager: AuthManager(),
                                                 logManager: LogManager(),
-                                                errorManager: ErrorManager())).environmentObject(AppState())
+                                                errorManager: ErrorManager()),
+                 connectionInfoViewModel: ConnectionInfoViewModel(vpnManager: VPNManager()))
+            .environmentObject(AppState())
     }
 }

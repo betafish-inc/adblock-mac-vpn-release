@@ -122,6 +122,9 @@
 /* Label for button that continues the process of moving the app to the correct folder */
 "Continue" = "Doorgaan";
 
+/* Label that is shown when user copies data to clipboard. */
+"Copied" = "Gekopieerd";
+
 /* Name of 'cz' region */
 "Czech Republic" = "Tsjechië";
 
@@ -153,7 +156,8 @@
 /* Intructions for entering your email address */
 "Enter the email address you used when you purchased AdBlock VPN:" = "Voer het e-mailadres in dat je hebt gebruikt voor de aankoop van AdBlock VPN:";
 
-/* Shown when the location name cannot be found */
+/* Label that is shown when IP Address lookup fails
+   Shown when the location name cannot be found */
 "Error" = "Fout";
 
 /* Error shown when error recovery fails */
@@ -365,6 +369,9 @@
 /* Notification shown when the VPN is reconnecting to the given location. Variable holds the name of the location. */
 "Retrying connection...\n%@" = "Bezig opnieuw te verbinden...\n%@";
 
+/* Label that is shown when retrying a network request */
+"Retrying..." = "Opnieuw proberen...";
+
 /* Name of 'ro' region */
 "Romania" = "Roemenië";
 
@@ -382,6 +389,9 @@
 
 /* Name of 'rs' region */
 "Serbia" = "Servië";
+
+/* Label for toggle to turn the 'show connection info' feature on/off */
+"Show connection info" = "Verbindingsinfo weergeven";
 
 /* Label for toggle to turn the 'show dock icon' feature on/off */
 "Show dock icon" = "Dockpictogram weergeven";

@@ -17,6 +17,7 @@
 import SwiftUI
 
 struct HelpView: View {
+    @EnvironmentObject var state: AppState
     @ObservedObject var viewModel: HelpViewModel
     var body: some View {
         VStack {
@@ -31,7 +32,7 @@ struct HelpView: View {
             }, text: Text("Get Help", comment: "Label for button that opens a help page"), bold: false, icon: "LinkIcon", iconSize: 16)
             Spacer()
         }
-        .frame(width: 272, height: 352)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .foregroundColor(.abDarkText)
     }

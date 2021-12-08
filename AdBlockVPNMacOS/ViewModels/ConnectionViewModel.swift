@@ -14,11 +14,11 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import Foundation
 import Alamofire
-import NetworkExtension
-import SwiftyBeaver
 import Network
+import NetworkExtension
+import SwiftUI
+import SwiftyBeaver
 
 class ConnectionViewModel: ObservableObject {
     @Published var connection = ConnectionModel()
@@ -27,8 +27,10 @@ class ConnectionViewModel: ObservableObject {
     private var logManager: LogManager
     private let notificationManager: NotificationManager
     private let errorManager: ErrorManager
+    private let notificationCenter = NotificationCenter.default
     @Published var connectionButtonText = NSLocalizedString("Connect", comment: "Default label for connection button")
     @Published var connectionStateText = NSLocalizedString("Disconnected", comment: "Default text for connection state")
+    @Published var connectionStateColor: Color = .abVPNStateDisconnected
     @Published var regionButtonText = NSLocalizedString("Change Location", comment: "Default label for region selector")
     @Published var connectionIcon = "LockNotConnected"
     @Published var flag = ""
@@ -217,7 +219,7 @@ class ConnectionViewModel: ObservableObject {
     
     private func startListening() {
         updateViewBasedOnCurrentState()
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange, object: nil, queue: OperationQueue.main) { [weak self] _ in
+        notificationCenter.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange, object: nil, queue: OperationQueue.main) { [weak self] _ in
             guard let strongSelf = self else { return }
             guard let status = strongSelf.vpnManager.connectionStatus else { return }
             strongSelf.updateView(status: status)
@@ -254,7 +256,7 @@ class ConnectionViewModel: ObservableObject {
     }
     
     private func stopListening() {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.NEVPNStatusDidChange, object: nil)
+        notificationCenter.removeObserver(self, name: NSNotification.Name.NEVPNStatusDidChange, object: nil)
     }
     
     private func updateView(status: NEVPNStatus) {
@@ -263,6 +265,7 @@ class ConnectionViewModel: ObservableObject {
             vpnStatus = .disconnected
         }
         connectionStateText = connection.getStateText(status: vpnStatus)
+        connectionStateColor = connection.getStateColor(status: vpnStatus)
         connectionButtonText = connection.getActionText(status: vpnStatus)
         regionButtonText = connection.getRegionText(status: vpnStatus)
         connectionIcon = connection.getIcon(status: vpnStatus)
@@ -316,7 +319,9 @@ class ConnectionViewModel: ObservableObject {
                                 strongSelf.disconnectAndReconnect()
                             }
                         } else {
-                            strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "Connection cannot be established (too many retries).", type: .needsSupport, link: nil))
+                            strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "Connection cannot be established (too many retries).",
+                                                                                          type: .needsSupport,
+                                                                                          link: nil))
                             strongSelf.disconnect()
                         }
                     }
@@ -345,9 +350,12 @@ class ConnectionViewModel: ObservableObject {
         let pathUpdateHandler = { [weak self] (path: Network.NWPath) in
             guard let strongSelf = self else { return }
             strongSelf.noInternet = !path.availableInterfaces.contains(where: { $0.type == .wifi || $0.type == .wiredEthernet })
-            
+
             SwiftyBeaver.debug("path change: \(path.debugDescription)")
-            
+
+            // Broadcast notification if connection is satisfied - Used by `ConnectionInfoViewModel` to trigger an IP Address refresh.
+            if path.status == .satisfied { strongSelf.notificationCenter.post(name: Constants.connectionSatisfiedNotification, object: nil) }
+
             if strongSelf.shouldBeConnected {
                 if strongSelf.noInternet {
                     strongSelf.internetLostWhileConnected = true

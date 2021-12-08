@@ -43,11 +43,18 @@ class AppState: ObservableObject {
         }
     }
     var previousView: VPNViews = .connection
-    var eulaAccepted: Bool {
+    var eulaAccepted = UserDefaults.standard.bool(forKey: Constants.acceptance_key) {
         didSet {
             UserDefaults.standard.set(eulaAccepted, forKey: Constants.acceptance_key)
         }
     }
+
+    @Published var showConnectionInfo = UserDefaults.standard.bool(forKey: Constants.showConnectionInfo_key) {
+        didSet {
+            UserDefaults.standard.set(showConnectionInfo, forKey: Constants.showConnectionInfo_key)
+        }
+    }
+
     @Published var sysExtensionActive = false {
         didSet {
             if sysExtensionActive == true && viewToShow == .setUpExtension {
@@ -67,10 +74,6 @@ class AppState: ObservableObject {
     @Published var showOverlay = false
     var versionString: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "x.x.x"
-    }
-    
-    init() {
-        eulaAccepted = UserDefaults.standard.bool(forKey: Constants.acceptance_key)
     }
     
     func getViewTitle() -> String {

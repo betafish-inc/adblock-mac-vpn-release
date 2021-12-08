@@ -291,7 +291,7 @@ extension LoginViewModel {
     
     static let invalidEmailErrorText =
         ErrorStrings(errorText:
-                        NSLocalizedString("Oops!\nWe don’t recognize that email address.\nPlease try again or contact support.",
+                        NSLocalizedString("Oops! We don’t recognize that email address. Please try again or contact support.",
                                           comment: "Error text for imvalid email error."),
                      errorTryAgainText:
                         NSLocalizedString("try again",
@@ -302,14 +302,14 @@ extension LoginViewModel {
                             Constants.newTicketURL])
     static let invalidCodeErrorText =
         ErrorStrings(errorText:
-                        NSLocalizedString("Oops!\nThat code didn’t work. Please try again.",
+                        NSLocalizedString("Oops! That code didn’t work. Please try again.",
                                           comment: "Error text for invalid code error"),
                      errorTryAgainText:
                         NSLocalizedString("try again",
                                           comment: "Link to try again on invalid code error. Text must match corresponding text in error"))
     static let genericErrorText =
         ErrorStrings(errorText:
-                        NSLocalizedString("Oops!\nSomething went wrong.\nPlease try again or contact support.",
+                        NSLocalizedString("Oops! Something went wrong. Please try again or contact support.",
                                           comment: "Error text for generic errors"),
                      errorTryAgainText:
                         NSLocalizedString("try again",
@@ -320,7 +320,7 @@ extension LoginViewModel {
                             Constants.newTicketURL])
     static let loggedOutErrorText =
         ErrorStrings(errorText:
-                        NSLocalizedString("You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team.",
+                        NSLocalizedString("You were logged out. Please sign in again. If the problem persists, contact our support team.",
                                           comment: "Error text for loggeed out error"),
                      errorTryAgainText: nil,
                      errorWebLinks: [

@@ -38,4 +38,8 @@ extension Color {
     static let abSecondaryButtonNormal = Color("SecondaryButtonNormal")
     static let abSecondaryButtonClick = Color("SecondaryButtonClick")
     static let abListItemClicked = Color("ListItemClicked")
+    static let abVPNStateConnected = Color("VPNStateConnected")
+    static let abVPNStateConnecting = Color("VPNStateConnecting")
+    static let abVPNStateDisconnected = Color("VPNStateDisconnected")
+    static let abInactiveElement = Color("InactiveElement")
 }

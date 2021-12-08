@@ -34,7 +34,7 @@ struct AccountView: View {
             }, text: Text("Sign Out", comment: "Label for button that signs the user out of their account (and the app)"), bold: false, icon: "", iconSize: 11)
             Spacer()
         }
-        .frame(width: 272, height: 352)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .foregroundColor(.abDarkText)
     }
