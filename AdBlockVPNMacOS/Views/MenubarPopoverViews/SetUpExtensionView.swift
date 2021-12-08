@@ -17,6 +17,7 @@
 import SwiftUI
 
 struct SetUpExtensionView: View {
+    @EnvironmentObject var state: AppState
     var body: some View {
         VStack {
             Spacer()
@@ -29,7 +30,8 @@ struct SetUpExtensionView: View {
                 .latoFont()
                 .foregroundColor(.abDarkText)
                 .multilineTextAlignment(.center)
-            Spacer().frame(height: 17)
+            Spacer()
+                .if(!state.showConnectionInfo) { $0.frame(height: 17) }
             HTMLStringView(htmlContent:
                             String(format:
                                     NSLocalizedString("<a href='%@'>Need Help?</a>", comment: "Link to help page"), Constants.permissionsHelpURL),
@@ -39,7 +41,7 @@ struct SetUpExtensionView: View {
                 .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
             Spacer().frame(height: 24)
         }
-        .frame(width: 320, height: 352)
+        .frame(width: 320, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .foregroundColor(Color.black)
     }

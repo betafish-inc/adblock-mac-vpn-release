@@ -24,7 +24,11 @@ struct CustomColorToggleStyle: ToggleStyle {
     
     func makeBody(configuration: Self.Configuration) -> some View {
         HStack {
-            Button(action: { configuration.isOn.toggle() }, label: {
+            Button(action: {
+                withAnimation(Animation.easeInOut(duration: 0.1), {
+                    configuration.isOn.toggle()
+                })
+            }, label: {
                 HStack {
                     configuration.label
                         .latoFont()
@@ -39,7 +43,6 @@ struct CustomColorToggleStyle: ToggleStyle {
                                 .fill(circleColor)
                                 .padding(2)
                                 .offset(x: configuration.isOn ? 12 : -12))
-                        .animation(Animation.easeInOut(duration: 0.1))
                 }
             })
                 .buttonStyle(PlainButtonStyle())

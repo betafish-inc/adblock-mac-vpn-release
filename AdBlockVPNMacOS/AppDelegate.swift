@@ -113,7 +113,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                                             errorManager: errorManager),
                                    loginViewModel: LoginViewModel(authManager: authManager,
                                                                   logManager: logManager,
-                                                                  errorManager: errorManager)).environmentObject(state)
+                                                                  errorManager: errorManager),
+                                   connectionInfoViewModel: ConnectionInfoViewModel(vpnManager: vpnManager))
+            .environmentObject(state)
 
         popover.contentSize = NSSize(width: 320, height: 440)
         popover.behavior = .transient

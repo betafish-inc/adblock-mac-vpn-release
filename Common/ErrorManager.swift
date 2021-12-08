@@ -60,7 +60,7 @@ class ErrorManager {
     
     let errorStrings: [ErrorType: ErrorStrings] = [
         .noInternet: ErrorStrings(
-            fullAction: NSLocalizedString("You aren't connected to the internet!\nPlease check your network connection.", comment: "No internet error full msg"),
+            fullAction: NSLocalizedString("You aren't connected to the internet! Please check your network connection.", comment: "No internet error full msg"),
             shortAction: NSLocalizedString("You aren't connected to the internet!\nPlease check your network connection.", comment: "No internet error short msg"),
             errorWebLinks: nil),
         .needsAppRestart: ErrorStrings(
@@ -170,7 +170,7 @@ class ErrorManager {
                 links = [NSLocalizedString("this article",
                                            comment: "Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg"): link]
             }
-            let text = error.message.isEmpty ? errorStrings[error.type]?.fullAction ?? "" : "\(error.message)\n\(errorStrings[error.type]?.fullAction ?? "")"
+            let text = error.message.isEmpty ? errorStrings[error.type]?.fullAction ?? "" : "\(error.message) \(errorStrings[error.type]?.fullAction ?? "")"
             return AppErrorString(text: text, links: links)
         }
     }

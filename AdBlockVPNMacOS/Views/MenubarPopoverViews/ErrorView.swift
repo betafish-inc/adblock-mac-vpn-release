@@ -17,11 +17,12 @@
 import SwiftUI
 
 struct ErrorView: View {
+    @EnvironmentObject var state: AppState
     @ObservedObject var viewModel: ErrorViewModel
     var body: some View {
         VStack {
             VStack {
-                Spacer().frame(height: 8)
+                Spacer().frame(height: state.showConnectionInfo ? 58 : 8)
                 Image("Alert")
                     .resizable()
                     .scaledToFit()
@@ -51,7 +52,7 @@ struct ErrorView: View {
                 }
             }.frame(width: 320, height: 118)
         }
-        .frame(width: 320, height: 352)
+        .frame(width: 320, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .foregroundColor(Color.black)
         .latoFont()

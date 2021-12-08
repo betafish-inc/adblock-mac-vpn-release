@@ -21,10 +21,11 @@ struct ConnectionView: View {
     @EnvironmentObject var state: AppState
     @ObservedObject var viewModel: ConnectionViewModel
     @State private var connectionAnimation = false
+    private(set) var connectionInfoViewModel: ConnectionInfoViewModel
 
     var body: some View {
         VStack {
-            Spacer().frame(height: 24)
+            Spacer().frame(height: state.showConnectionInfo ? 0 : 24)
             ZStack {
                 if !viewModel.flag.isEmpty && viewModel.grey {
                     Image("FlagWorldGrey")
@@ -47,13 +48,18 @@ struct ConnectionView: View {
                     .frame(width: 120, height: 145)
                     .offset(x: 0, y: -20)
             }
-            Spacer().frame(height: 24)
-            Text(viewModel.connectionStateText)
-                .multilineTextAlignment(.center)
-                .lineLimit(2)
-                .fixedSize(horizontal: false, vertical: true)
-                .latoFont()
-                .foregroundColor(.abDarkText)
+            Spacer().frame(height: state.showConnectionInfo ? 8 : 24)
+            HStack(alignment: .firstTextBaseline, spacing: 12) {
+                Circle()
+                    .frame(width: 12, height: 12)
+                    .foregroundColor(viewModel.connectionStateColor)
+                Text(viewModel.connectionStateText)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .latoFont()
+                    .foregroundColor(.abDarkText)
+            }
             Spacer().frame(height: viewModel.grey ? 33 : CGFloat(24)) // CGFloat() explicitly added to fix bug in SwiftUI Previews
             if viewModel.grey {
                 Text(viewModel.regionButtonText)
@@ -63,7 +69,7 @@ struct ConnectionView: View {
                 Button(action: { state.viewToShow = .locations }, label: { Text(viewModel.regionButtonText) })
                     .buttonStyle(SecondaryButtonStyle(icon: "NextIcon", bold: true))
             }
-            Spacer()
+            Spacer().frame(height: 16)
             if viewModel.grey {
                 Button(action: { viewModel.toggleConnection() }, label: { Text(viewModel.connectionButtonText) })
                     .buttonStyle(SecondaryButtonStyle(bold: true))
@@ -71,8 +77,11 @@ struct ConnectionView: View {
                 Button(action: { viewModel.toggleConnection() }, label: { Text(viewModel.connectionButtonText) }).buttonStyle(PrimaryButtonStyle())
             }
             Spacer().frame(height: 24)
+            if state.showConnectionInfo {
+                ConnectionInfoView(viewModel: connectionInfoViewModel)
+            }
         }
-        .frame(width: 272, height: 352)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .onAppear {
             viewModel.updateViewBasedOnCurrentState()
@@ -93,7 +102,8 @@ struct ConnectionView_Previews: PreviewProvider {
                                                       authManager: AuthManager(),
                                                       logManager: LogManager(),
                                                       notificationManager: NotificationManager(),
-                                                      errorManager: ErrorManager()))
+                                                      errorManager: ErrorManager()),
+                       connectionInfoViewModel: ConnectionInfoViewModel(vpnManager: VPNManager()))
             .environmentObject(AppState())
     }
 }

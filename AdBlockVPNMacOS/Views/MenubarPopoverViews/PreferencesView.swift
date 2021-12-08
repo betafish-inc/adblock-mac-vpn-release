@@ -50,7 +50,7 @@ struct PreferencesView: View {
             }).buttonStyle(SecondaryButtonStyle(bold: true))
             Spacer().frame(height: 24)
         }
-        .frame(width: 272, height: 352)
+        .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
         .background(Color.white)
         .foregroundColor(.abDarkText)
     }
