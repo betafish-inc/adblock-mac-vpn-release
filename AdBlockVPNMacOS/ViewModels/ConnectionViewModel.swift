@@ -250,6 +250,14 @@ class ConnectionViewModel: ObservableObject {
         }
     }
     
+    func getVoiceOverNotification() -> String {
+        guard let status = vpnManager.connectionStatus else { return "" }
+        if [.connected, .disconnected, .invalid, .reasserting].contains(status) {
+            return connection.getNotificationText(status: status)
+        }
+        return ""
+    }
+    
     func updateViewBasedOnCurrentState() {
         let status = vpnManager.connectionStatus ?? .disconnected
         updateView(status: status)
@@ -319,9 +327,12 @@ class ConnectionViewModel: ObservableObject {
                                 strongSelf.disconnectAndReconnect()
                             }
                         } else {
-                            strongSelf.errorManager.setError(error: ErrorManager.ErrorObj(message: "Connection cannot be established (too many retries).",
-                                                                                          type: .needsSupport,
-                                                                                          link: nil))
+                            strongSelf.errorManager.setError(
+                                error: ErrorManager.ErrorObj(
+                                    message: "Connection cannot be established (too many retries).",
+                                    type: .needsSupport,
+                                    link: nil
+                                ))
                             strongSelf.disconnect()
                         }
                     }

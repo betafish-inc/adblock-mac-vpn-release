@@ -27,7 +27,7 @@ struct UpdateOverlayView: View {
             text
                 .latoFont()
             Spacer()
-            Image(icon)
+            Image(decorative: icon)
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFit()
@@ -70,7 +70,10 @@ struct RoundedBottom: Shape {
 struct UpdateOverlayView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UpdateOverlayView(text: Text(verbatim: "Update Complete!"), icon: "CheckIcon", background: .abUpToDateAccent, foreground: .white)
+            UpdateOverlayView(text: Text(verbatim: "Update Complete!"),
+                              icon: "CheckIcon",
+                              background: .abUpToDateAccent,
+                              foreground: .abWhiteText)
             UpdateOverlayView(text: Text(verbatim: "Update required in XX days"),
                               icon: "TimerIcon", background: .abUpdateAccent, foreground: .abDarkText)
         }

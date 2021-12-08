@@ -4,18 +4,23 @@
 /* Placeholder text in code entry box */
 "— — — — — —" = "— — — — — —";
 
-/* Link to create a help ticket on email entry page */
-"<a href='%@'>Forgot your email?</a>" = "<a href='%@'>Glömt din e-post?</a>";
+/* Alt text for region selection button */
+"%@, next" = "%@, nästa";
 
-/* Link to help page */
-"<a href='%@'>Need Help?</a>" = "<a href='%@'>Behöver du hjälp?</a>";
+/* Label for selected region button */
+"%@, selected" = "%@, vald";
+
+/* No comment provided by engineer. */
+"%@: %@" = "%@: %@";
 
 /* Label for button that accepts the EULA and takes the user to the next page of the intro flow */
 "Accept and Continue" = "Acceptera och fortsätt";
 
-/* Account page title
-   Label for button that takes the useer to the account page */
+/* Account page title */
 "Account" = "Konto";
+
+/* Alt text for AdBlock VPN logo */
+"AdBlock VPN" = "AdBlock VPN";
 
 /* Onboarding setup flow title */
 "AdBlock VPN Setup" = "Ställ in AdBlock VPN";
@@ -32,8 +37,7 @@
 /* Title for updates view */
 "An update is available" = "En uppdatering är tillgänglig";
 
-/* App settings page title
-   Label for button that takes the user to the app settings page */
+/* App settings page title */
 "App Settings" = "App-inställningar";
 
 /* Label for toggle to turn the 'apply updates automatically' feature on/off */
@@ -51,6 +55,9 @@
 /* Name of 'at' region */
 "Austria" = "Österrike";
 
+/* Alt text for back button */
+"Back" = "Tillbaka";
+
 /* Name of 'be' region */
 "Belgium" = "Belgien";
 
@@ -60,14 +67,13 @@
 /* Name of 'bg' region */
 "Bulgaria" = "Bulgarien";
 
-/* Links to EULA and Privacy Policy */
-"By proceeding, you are confirming you have read and accepted the <a href='%@'>End User License Agreement (EULA)</a>, and our <a href='%@'>Privacy Policy</a>." = "Genom att fortsätta bekräftar du att du har läst och accepterat <a href='%1$@'>Licensavtal för slutanvändare (EULA)</a> och vår <a href='%2$@'>Integritetspolicy</a>.";
+/* Text explaining acceptance of EULA and Privacy Policy */
+"By proceeding, you are confirming you have read and accepted both of the following..." = "Genom att fortsätta bekräftar du att du har läst och godkänner båda följande...";
 
 /* Name of 'ca' region */
 "Canada" = "Kanada";
 
-/* Label for button that cancels out of the onboarding flow
-   Label for cancel button, shown when VPN is in the process of connecting
+/* Label for cancel button, shown when VPN is in the process of connecting
    Label for cancel button, shown when VPN is in the process of reconnecting */
 "Cancel" = "Avbryt";
 
@@ -93,13 +99,13 @@
 /* Third step in instructions to enable the system extension */
 "Click the “Allow” button to give AdBlock VPN permission to run on your device. Close the preferences window and click “Next Steps” below to continue the setup process." = "Klicka på knappen \"Tillåt\" för att ge AdBlock VPN tillåtelse att köras på din enhet. Stäng inställningsfönstret och klicka på \"Nästa steg\" nedan för att gå vidare med installationsprocessen.";
 
-/* Label for button that closes the onboarding flow */
+/* label for close icon
+Label for button that closes the onboarding flow */
 "Close" = "Stäng";
 
 /* Default label for connection button
    Label for connect button, shown when VPN is disconnected
-   Label for connect button, shown when VPN is in an invalid state
-   Label for disabled button on VPN setup page */
+   Label for connect button, shown when VPN is in an invalid state */
 "Connect" = "Anslut";
 
 /* Notification shown when the VPN connects to the given location. Variable holds the name of the location. */
@@ -111,19 +117,17 @@
 /* Error msg when connection retry fails */
 "Connection retry failed." = "Återanslutning misslyckades.";
 
-/* Link to contact support on no account error page. Text must match corresponding text in footer
-   Link to contact support on subscription ended error page. Text must match corresponding text in footer
-   Link to contact support. Text must match corresponding text in error */
-"contact support" = "kontakta supporten";
-
 /* Label for button to contact support from onboarding flow */
 "Contact Support" = "Kontakta supporten";
 
 /* Label for button that continues the process of moving the app to the correct folder */
 "Continue" = "Fortsätt";
 
-/* Label that is shown when user copies data to clipboard. */
+/* Voiceover notification when IP address is copied */
 "Copied" = "Kopierad";
+
+/* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
+"Copy %@" = "Kopiera %@";
 
 /* Name of 'cz' region */
 "Czech Republic" = "Tjeckien";
@@ -145,13 +149,16 @@
 
 /* Footer text on no account error page
    Footer text on subscription ended page */
-"Doesn’t sound right? Try using a different email address or contact support." = "Låter det konstigt? Testa att använda en annan e-postadress eller kontakta supporten.";
+"Doesn’t sound right? Try using a different email address." = "Låter det konstigt? Testa att använda en annan e-postadress.";
 
 /* Footer text on email entry page */
 "Don't have an AdBlock account? Sign up." = "Har du inte något AdBlock-konto? Registrera dig.";
 
 /* Placeholder text in email entry box */
 "Email Address" = "E-postadress";
+
+/* Link to EULA */
+"End User License Agreement" = "Licensavtal för slutanvändare";
 
 /* Intructions for entering your email address */
 "Enter the email address you used when you purchased AdBlock VPN:" = "Fyll i e-postadressen du använde när du köpte AdBlock VPN:";
@@ -170,7 +177,7 @@
 /* Name of 'fi' region */
 "Finland" = "Finland";
 
-/* Needs support error full msg */
+/* Link to support site */
 "For help solving this problem, please contact our support team." = "För hjälp med att lösa detta problem, var god kontakta vårt supportteam.";
 
 /* Needs knowledge base article error full msg */
@@ -178,6 +185,9 @@
 
 /* Instructions for enabling notifications from the system alert */
 "For the best app experience from AdBlock VPN, allow notifications. Click “Show Notification“ below. A notification will appear in the top right corner of your screen. Click “Options” then “Allow”. (You can choose “Don’t Allow” if you do not want notifications from AdBlock VPN.) Click “Next” below when you are done." = "För bästa möjliga appupplevelse med AdBlock VPN, tillåt aviseringar. Klicka på \"Visa avisering\" nedan. En avisering kommer att dyka upp i det övre högra hörnet av skärmen. Klicka på \"Alternativ\" och sedan \"Tillåt\". (Du kan välj \"Tillåt inte\" om du inte vill ha aviseringar från AdBlock VPN.) Klicka på \"Nästa\" nedan när du är klar.";
+
+/* Link to create a help ticket on email entry page */
+"Forgot your email?" = "Glömt din e-post?";
 
 /* Name of 'fr' region */
 "France" = "Frankrike";
@@ -188,17 +198,16 @@
 /* Label for button on no account error page. Links to page to set up account */
 "Get AdBlock VPN" = "Skaffa AdBlock VPN";
 
-/* Label for button that opens a help page */
-"Get Help" = "Få hjälp";
-
 /* Label for button that starts the onboarding flow */
 "Get Started" = "Kom igång";
 
 /* Name of 'gr' region */
 "Greece" = "Grekland";
 
-/* Help and feedback page title
-   Label for button that takes the user to the help and feedback page */
+/* label for help icon */
+"Help" = "Hjälp";
+
+/* Help and feedback page title */
 "Help & Feedback" = "Hjälp & synpunkter";
 
 /* Name of 'hk' region */
@@ -210,8 +219,18 @@
 /* Name of 'is' region */
 "Iceland" = "Island";
 
+/* Label for empty IP address shown in connection info
+   Label for empty time connected section of connection info when the VPN isn't connected */
+"inactive" = "inaktiv";
+
 /* Name of 'in' region */
 "India" = "Indien";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv4" = "IPv4";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv6" = "IPv6";
 
 /* Name of 'ie' region */
 "Ireland" = "Irland";
@@ -225,9 +244,6 @@
 /* Instructions for VPN configuration error page in onboarding flow */
 "It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "Det verkar som att vi fortfarande inte har tillstånd att lägga till VPN-konfigurationer på din enhet. Vi försöker igen.";
 
-/* Instructions for system extensions permissions error page in onboarding flow */
-"It looks like we still don't have permission to run on your device. Let's try again." = "Det verkar som att vi fortfarande inte har tillåtelse att köras på din enhet. Vi försöker igen.";
-
 /* Instructions on subscription ended error page */
 "It looks like your subscription has ended. Please click below to renew." = "Det verkar som att din prenumeration upphörd. Klicka nedan för att förnya.";
 
@@ -240,8 +256,8 @@
 /* Label for toggle to turn the 'launch at login' feature on/off */
 "Launch at login" = "Starta vid inloggning";
 
-/* Label for button that takes user to login page
-   Label for button to go to login page */
+/* Label for button to go to login page
+Label for button that takes user to login page */
 "Log In" = "Logga in";
 
 /* Instructions on landing page */
@@ -265,18 +281,20 @@
 /* Name of option to use the nearest region */
 "Nearest location" = "Närmast plats";
 
+/* Link to help site */
+"Need Help?" = "Behöver du hjälp?";
+
 /* Name of 'nl' region */
 "Netherlands" = "Nederländerna";
 
 /* Name of 'nz' region */
 "New Zealand" = "Nya Zealand";
 
-/* Label for button on email entry page
-   Label for button that takes user to the next page of the onboarding flow */
+/* Label for button on email entry page */
 "Next" = "Nästa";
 
-/* Label for button that take the user to the next step in the onboarding flow
-   Label for button that takes the user to the next step in the onboarding flow */
+/* Label for button that takes the user to the next step in the onboarding flow
+Label for button that take the user to the next step in the onboarding flow */
 "Next Steps" = "Nästa steg";
 
 /* Name of 'no' region */
@@ -285,20 +303,13 @@
 /* Title for error view */
 "Oh dear. Something went wrong." = "Oj då, ett fel uppstod.";
 
+/* Alt text for onboarding complete header image */
+"Onboarding complete" = "Introduktion klar";
+
 /* Title for device limit error page
-   Title for onboarding flow error page
    Title for subscription ended error page
    Title of no account error page */
 "Oops!" = "Hoppsan!";
-
-/* Error text for generic errors */
-"Oops!\nSomething went wrong.\nPlease try again or contact support." = "Hoppsan!\nEtt fel uppstod.\nFörsök igen eller kontakta supporten.";
-
-/* Error text for invalid code error */
-"Oops!\nThat code didn’t work. Please try again." = "Hoppsan!\nDen koden funkade inte. Var god försök igen.";
-
-/* Error text for imvalid email error. */
-"Oops!\nWe don’t recognize that email address.\nPlease try again or contact support." = "Hoppsan!\nVi känner inte igen den e-postadressen.\nFörsök igen eller kontakta supporten.";
 
 /* Label for button that opens the main app after onboarding flow is complete */
 "Open AdBlock VPN" = "Öppna AdBlock VPN";
@@ -308,6 +319,21 @@
 
 /* Label for button that opens the system dialog */
 "Open System Dialog" = "Öppna systemdialog";
+
+/* No comment provided by engineer. */
+"Page 1 of 5" = "Sida 1 av 5";
+
+/* No comment provided by engineer. */
+"Page 2 of 5" = "Sida 2 av 5";
+
+/* No comment provided by engineer. */
+"Page 3 of 5" = "Sida 3 av 5";
+
+/* No comment provided by engineer. */
+"Page 4 of 5" = "Sida 4 av 5";
+
+/* No comment provided by engineer. */
+"Page 5 of 5" = "Sida 5 av 5";
 
 /* Title for VPN setup page */
 "Please allow VPN configurations when prompted to connect to AdBlock VPN." = "Tillåt VPN-konfigurationer när du uppmanas för att ansluta till AdBlock VPN.";
@@ -325,19 +351,19 @@
 "Please restart AdBlock VPN" = "Var god starta om AdBlock VPN";
 
 /* Needs app restart error full msg */
-"Please restart AdBlock VPN. If the problem persists, contact our support team." = "Var god starta om AdBlock VPN. Om problemet kvarstår, kontakta vårt supportteam.";
+"Please restart AdBlock VPN." = "Vänligen starta om AdBlock VPN.";
 
 /* Needs machine restart short msg */
 "Please restart your computer" = "Var god starta om din dator";
 
 /* Needs machine restart error full msg */
-"Please restart your computer. If the problem persists, contact our support team." = "Var god starta om din dator. Om problemet kvarstår, kontakta vårt supportteam.";
+"Please restart your computer." = "Vänligen starta om din dator.";
 
 /* Needs authentication short msg */
 "Please sign in again" = "Var god logga in igen";
 
 /* Needs authentication error full msg */
-"Please sign in again. If the problem persists, contact our support team." = "Var god logga in igen. Om problemet kvarstår, kontakta vårt supportteam.";
+"Please sign in again." = "Vänligen logga in igen.";
 
 /* Title for update required page */
 "Please update AdBlock VPN to continue." = "Var god uppdatera AdBlock VPN för att fortsätta.";
@@ -348,8 +374,14 @@
 /* Preferences page title */
 "Preferences" = "Inställningar";
 
-/* Link to contact support team */
-"Questions? <a href='%@'>Chat with our support team</a>" = "Frågor? <a href='%@'>Chatta med vårt supportteam</a>";
+/* Link to Privacy Policy */
+"Privacy Policy" = "Integritetspolicy";
+
+/* Label for spinning circle when login flow is waiting for the server response */
+"Processing" = "Behandlar";
+
+/* Link to support site */
+"Questions? Chat with our support team" = "Frågor? Chatta med vårt supportteam";
 
 /* Label for quit button when the VPN is disconnected */
 "Quit" = "Avsluta";
@@ -359,6 +391,9 @@
 
 /* Label for reconnect button, shown when VPN is in the process of disconnecting */
 "Reconnect" = "Återanslut";
+
+/* Label for resfresh icon */
+"Refresh" = "Uppdatera";
 
 /* Label for button on subscription ended error page. Links to page where user can renew their subscription */
 "Renew Subscription" = "Förnya prenumeration";
@@ -384,8 +419,8 @@
 /* Notification shown when the VPN is connecting to the given location. Variable holds the name of the location. */
 "Securing your connection...\n%@" = "Säkrar din anslutning...\n%@";
 
-/* Label for button that opens a feedback page */
-"Send Feedback" = "Skicka synpunkter";
+/* No comment provided by engineer. */
+"Select region" = "Välj region";
 
 /* Name of 'rs' region */
 "Serbia" = "Serbien";
@@ -405,9 +440,6 @@
 /* Label for button that signs the user out of their account (and the app) */
 "Sign Out" = "Logga ut";
 
-/* Link text on email entry page. This text must match the corresponding text in the footer text. */
-"Sign up." = "Registrera dig.";
-
 /* Name of 'sg' region */
 "Singapore" = "Singapore";
 
@@ -419,6 +451,9 @@
 
 /* Instructions on update error page */
 "Something went wrong while attempting to update AdBlock VPN. Please try again." = "Ett fel uppstod när AdBlock VPN skulle uppdateras. Var god försök igen.";
+
+/* Error text for generic errors */
+"Something went wrong. Please try again." = "Ett fel uppstod. Var god försök igen.";
 
 /* Name of 'es' region */
 "Spain" = "Spanien";
@@ -435,10 +470,6 @@
 /* Label for button on code entry page */
 "Submit" = "Skicka in";
 
-/* Link to contact support. Text must match corresponding text in error
-   Link to contact support. Text must match corresponding text in full msg */
-"support team" = "supportteam";
-
 /* Name of 'se' region */
 "Sweden" = "Sverige";
 
@@ -448,23 +479,14 @@
 /* Title for onboarding intro */
 "Thanks for installing AdBlock VPN" = "Tack för att du installerat AdBlock VPN";
 
-/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
-"this article" = "denna artikel";
+/* Error text for invalid code error */
+"That code didn’t work. Please try again." = "Koden fungerade inte. Var god försök igen.";
 
-/* Link to try again on generic errors. Text must match corresponding text in error
-   Link to try again on invalid code error. Text must match corresponding text in error
-   Link to try again on invalid email error. Text must match corresponding text in error */
-"try again" = "försök igen";
+/* Label for time connected secion of connection info */
+"Time connected: %@" = "Tid ansluten: %@";
 
 /* Label for button to try the step again */
 "Try Again" = "Försök igen";
-
-/* Link to try again on code entry page. This text must match the corresponding text in the footer text. */
-"Try again." = "Försök igen.";
-
-/* Link to try again on the no account error page. Text must match corresponding text in footer.
-   Link to try again on the subscription ended error page. Text must match corresponding text in footer */
-"Try using a different email address" = "Testa att använda en annan e-postadress";
 
 /* Name of 'gb_lon' region */
 "United Kingdom - London" = "Storbritannien - London";
@@ -475,8 +497,8 @@
 /* Label for disabled button (when no update is available) */
 "Up To Date" = "Uppdaterad";
 
-/* Label for button that opens external update page
-   Label for button that triggers an update */
+/* Label for button that triggers an update
+Label for button that opens external update page */
 "Update" = "Uppdatera";
 
 /* Label for button to go to updates page */
@@ -524,14 +546,19 @@
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "Version %@";
 
-/* Server error short msg */
-"We can't connect to our servers. Please try again later." = "Vi kan inte ansluta till våra servrar. Var god försök igen senare.";
+/* Alt text for image on VPN set up page
+Alt text for image on extension set up page */
+"VPN disabled" = "VPN avstängd";
 
-/* Server error full msg */
-"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "Vi kan inte ansluta till våra servrar. Var god försök igen senare. Om problemet kvarstår, kontakta vårt supportteam.";
+/* Server error full msg
+   Server error short msg */
+"We can't connect to our servers. Please try again later." = "Vi kan inte ansluta till våra servrar. Var god försök igen senare.";
 
 /* Intructions for no account error page */
 "We couldn’t find an account for that email address. Please click below to get started." = "Vi kunde inte hitta något konto med den e-postadressen. Var god klicka nedan för att komma igång.";
+
+/* Error text for imvalid email error. */
+"We don’t recognize that email address. Please try again." = "Vi känner inte igen den e-postadressen. Var god försök igen.";
 
 /* Intructions on code entry page */
 "We sent you a 6-character access code. Enter it below:" = "Vi skickade en 6-siffrig åtkomstkod. Fyll i den nedan:";
@@ -545,15 +572,17 @@
 /* Subtitle on update required page */
 "You are using an unsupported version of AdBlock VPN." = "Du använder en version av AdBlock VPN som inte stöd.";
 
-/* No internet error full msg
-   No internet error short msg */
+/* No internet error short msg */
 "You aren't connected to the internet!\nPlease check your network connection." = "Du är inte ansluten till internet!\nVar god kontrollera din nätverksanslutning.";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "Du är inte ansluten till internet! Var god kontrollera din nätverksanslutning.";
 
 /* Intructions for device limit error page */
 "You have already registered the maximum 6 devices. Please click below to update your settings." = "Du har redan registrerat maxantalet på 6 enheter. Var god klicka nedan för att uppdatera dina inställningar.";
 
 /* Error text for loggeed out error */
-"You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team." = "Du loggades ut.\nVar god logga in igen.\nOm problemet kvarstår, kontakta vårt supportteam.";
+"You were logged out. Please sign in again." = "Du loggades ut. Var god logga in igen.";
 
 /* Instructions for enabling notifications from system preferences */
 "You will get the best app experience from AdBlock VPN by turning on notifications. Click ”Open Notifications”  then toggle notifications from AdBlock VPN to ”On”. You can also skip this step if you do not want notifications from AdBlock VPN." = "Du kommer att få bästa möjliga app-upplevelse från AdBlock VPN genom att aktivera aviseringar. Klicka på \"Öppna aviseringar\" och ställ sedan in aviseringar från AdBlock VPN till \"På\". Du kan även hoppa över detta steg om du inte vill ha aviseringar från AdBlock VPN.";

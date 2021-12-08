@@ -24,7 +24,7 @@ struct ConnectionInfoView: View {
     
     var body: some View {
         VStack {
-            IPAddressCell(IPVersion: "IPv4",
+            IPAddressCell(IPVersion: NSLocalizedString("IPv4", comment: "Label for IPv4 IP address shown in connection info"),
                           IPAddress: viewModel.ipv4Address,
                           isIPError: viewModel.ipError,
                           updateIPAddress: viewModel.updateIPAddresses,
@@ -32,7 +32,7 @@ struct ConnectionInfoView: View {
                           errorTextOpacity: $errorTextOpacity,
                           refreshIconRotationAngle: $refreshIconRotationAngle)
             Divider().customDividerStyle()
-            IPAddressCell(IPVersion: "IPv6",
+            IPAddressCell(IPVersion: NSLocalizedString("IPv6", comment: "Label for IPv4 IP address shown in connection info"),
                           IPAddress: viewModel.ipv6Address,
                           isIPError: viewModel.ipError,
                           updateIPAddress: viewModel.updateIPAddresses,
@@ -44,10 +44,21 @@ struct ConnectionInfoView: View {
                 Image("TimeIcon").renderingMode(.template)
                 Spacer()
                 Text(viewModel.connectedTime).latoFont()
-            }.foregroundColor(viewModel.vpnConnected ? .abDarkText : .abInactiveElement)
+            }.foregroundColor(viewModel.vpnConnected ? .abDarkText : .abInactiveAccent)
+                .accessibilityElement(children: .combine)
+                .customAccessibilityLabel(getConnectedTimeLabel())
         }
         .foregroundColor(.abDarkText)
         .frame(width: 240)
+    }
+    
+    private func getConnectedTimeLabel() -> Text {
+        var time = viewModel.connectedTime
+        if viewModel.connectedTime == "--" {
+            time = NSLocalizedString("inactive", comment: "Label for empty time connected section of connection info when the VPN isn't connected")
+        }
+        
+        return Text("Time connected: \(time)", comment: "Label for time connected secion of connection info")
     }
 }
 

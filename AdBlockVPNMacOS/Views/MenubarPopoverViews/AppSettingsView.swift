@@ -50,6 +50,7 @@ struct AppSettingsView: View {
                                icon: viewModel.updateAvailable ? "NextIcon": "CheckIcon",
                                iconSize: viewModel.updateAvailable ? 11 : 16,
                                updateAvailable: viewModel.updateAvailable)
+                .disabled(!viewModel.updateAvailable)
             Spacer().frame(height: 8)
             Text("Version \(state.versionString)", comment: "App version shown on settings page. Variable holds the version number")
                 .latoFont(size: 14)
@@ -58,7 +59,7 @@ struct AppSettingsView: View {
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
+        .background(Color.abBackground)
         .onAppear {
             viewModel.checkForUpdates()
         }

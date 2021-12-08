@@ -4,18 +4,23 @@
 /* Placeholder text in code entry box */
 "— — — — — —" = "— — — — — —";
 
-/* Link to create a help ticket on email entry page */
-"<a href='%@'>Forgot your email?</a>" = "<a href='%@'>Je e-mailadres vergeten?</a>";
+/* Alt text for region selection button */
+"%@, next" = "%@, volgende";
 
-/* Link to help page */
-"<a href='%@'>Need Help?</a>" = "<a href='%@'>Hulp nodig?</a>";
+/* Label for selected region button */
+"%@, selected" = "%@, geselecteerd";
+
+/* No comment provided by engineer. */
+"%@: %@" = "%@: %@";
 
 /* Label for button that accepts the EULA and takes the user to the next page of the intro flow */
 "Accept and Continue" = "Accepteren en doorgaan";
 
-/* Account page title
-   Label for button that takes the useer to the account page */
+/* Account page title */
 "Account" = "Account";
+
+/* Alt text for AdBlock VPN logo */
+"AdBlock VPN" = "AdBlock VPN";
 
 /* Onboarding setup flow title */
 "AdBlock VPN Setup" = "AdBlock VPN instellen";
@@ -32,8 +37,7 @@
 /* Title for updates view */
 "An update is available" = "Er is een update beschikbaar";
 
-/* App settings page title
-   Label for button that takes the user to the app settings page */
+/* App settings page title */
 "App Settings" = "App-instellingen";
 
 /* Label for toggle to turn the 'apply updates automatically' feature on/off */
@@ -51,6 +55,9 @@
 /* Name of 'at' region */
 "Austria" = "Oostenrijk";
 
+/* Alt text for back button */
+"Back" = "Terug";
+
 /* Name of 'be' region */
 "Belgium" = "België";
 
@@ -60,14 +67,13 @@
 /* Name of 'bg' region */
 "Bulgaria" = "Bulgarije";
 
-/* Links to EULA and Privacy Policy */
-"By proceeding, you are confirming you have read and accepted the <a href='%@'>End User License Agreement (EULA)</a>, and our <a href='%@'>Privacy Policy</a>." = "Door verder te gaan, bevestig je dat je de <a href='%1$@'>gebruikersovereenkomst (EULA)</a> en ons <a href='%2$@'>privacybeleid</a> hebt gelezen en ermee akkoord gaat.";
+/* Text explaining acceptance of EULA and Privacy Policy */
+"By proceeding, you are confirming you have read and accepted both of the following..." = "Als je doorgaat, bevestig je dat je de volgende teksten hebt gelezen en begrepen...";
 
 /* Name of 'ca' region */
 "Canada" = "Canada";
 
-/* Label for button that cancels out of the onboarding flow
-   Label for cancel button, shown when VPN is in the process of connecting
+/* Label for cancel button, shown when VPN is in the process of connecting
    Label for cancel button, shown when VPN is in the process of reconnecting */
 "Cancel" = "Annuleren";
 
@@ -93,13 +99,13 @@
 /* Third step in instructions to enable the system extension */
 "Click the “Allow” button to give AdBlock VPN permission to run on your device. Close the preferences window and click “Next Steps” below to continue the setup process." = "Klik op de knop \"Toestaan\" om AdBlock VPN toestemming te geven om te werken op jouw apparaat. Sluit het voorkeursscherm en klik op \"Volgende stappen\" hieronder om door te gaan met het installeringsproces.";
 
-/* Label for button that closes the onboarding flow */
+/* label for close icon
+Label for button that closes the onboarding flow */
 "Close" = "Sluiten";
 
 /* Default label for connection button
    Label for connect button, shown when VPN is disconnected
-   Label for connect button, shown when VPN is in an invalid state
-   Label for disabled button on VPN setup page */
+   Label for connect button, shown when VPN is in an invalid state */
 "Connect" = "Verbinden";
 
 /* Notification shown when the VPN connects to the given location. Variable holds the name of the location. */
@@ -111,19 +117,17 @@
 /* Error msg when connection retry fails */
 "Connection retry failed." = "Opnieuw verbinding zoeken is mislukt.";
 
-/* Link to contact support on no account error page. Text must match corresponding text in footer
-   Link to contact support on subscription ended error page. Text must match corresponding text in footer
-   Link to contact support. Text must match corresponding text in error */
-"contact support" = "contact opnemen met ondersteuning";
-
 /* Label for button to contact support from onboarding flow */
 "Contact Support" = "Contact opnemen met ondersteuning";
 
 /* Label for button that continues the process of moving the app to the correct folder */
 "Continue" = "Doorgaan";
 
-/* Label that is shown when user copies data to clipboard. */
+/* Voiceover notification when IP address is copied */
 "Copied" = "Gekopieerd";
+
+/* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
+"Copy %@" = "%@ kopiëren";
 
 /* Name of 'cz' region */
 "Czech Republic" = "Tsjechië";
@@ -145,13 +149,16 @@
 
 /* Footer text on no account error page
    Footer text on subscription ended page */
-"Doesn’t sound right? Try using a different email address or contact support." = "Klopt dat niet? Probeer dan een ander e-mailadres te gebruiken of neem contact op met de ondersteuning.";
+"Doesn’t sound right? Try using a different email address." = "Klopt dat niet? Probeer dan een ander e-mailadres te gebruiken.";
 
 /* Footer text on email entry page */
 "Don't have an AdBlock account? Sign up." = "Heb je geen AdBlock-account? Meld je aan.";
 
 /* Placeholder text in email entry box */
 "Email Address" = "E-mailadres";
+
+/* Link to EULA */
+"End User License Agreement" = "Licentieovereenkomst voor de eindgebruiker";
 
 /* Intructions for entering your email address */
 "Enter the email address you used when you purchased AdBlock VPN:" = "Voer het e-mailadres in dat je hebt gebruikt voor de aankoop van AdBlock VPN:";
@@ -170,7 +177,7 @@
 /* Name of 'fi' region */
 "Finland" = "Finland";
 
-/* Needs support error full msg */
+/* Link to support site */
 "For help solving this problem, please contact our support team." = "Voor hulp bij het oplossen van dit probleem neem je contact op met ons ondersteuningsteam.";
 
 /* Needs knowledge base article error full msg */
@@ -178,6 +185,9 @@
 
 /* Instructions for enabling notifications from the system alert */
 "For the best app experience from AdBlock VPN, allow notifications. Click “Show Notification“ below. A notification will appear in the top right corner of your screen. Click “Options” then “Allow”. (You can choose “Don’t Allow” if you do not want notifications from AdBlock VPN.) Click “Next” below when you are done." = "Voor de beste app-ervaring van AdBlock VPN, sta meldingen toe. Klik hieronder op \"Melding weergeven\". Er zal een melding verschijnen in de rechterbovenhoek van je scherm. Klik op \"Opties\" en daarna op \"Toestaan\". (Je kunt \"Niet toestaan\" kiezen als je geen meldingen wilt ontvangen van AdBlock VPN.) Klik hieronder op \"Volgende\" als je klaar bent.";
+
+/* Link to create a help ticket on email entry page */
+"Forgot your email?" = "Je e-mailadres vergeten?";
 
 /* Name of 'fr' region */
 "France" = "Frankrijk";
@@ -188,17 +198,16 @@
 /* Label for button on no account error page. Links to page to set up account */
 "Get AdBlock VPN" = "Haal AdBlock VPN";
 
-/* Label for button that opens a help page */
-"Get Help" = "Hulp vragen";
-
 /* Label for button that starts the onboarding flow */
 "Get Started" = "Beginnen";
 
 /* Name of 'gr' region */
 "Greece" = "Griekenland";
 
-/* Help and feedback page title
-   Label for button that takes the user to the help and feedback page */
+/* label for help icon */
+"Help" = "Help";
+
+/* Help and feedback page title */
 "Help & Feedback" = "Help en feedback";
 
 /* Name of 'hk' region */
@@ -210,8 +219,18 @@
 /* Name of 'is' region */
 "Iceland" = "IJsland";
 
+/* Label for empty IP address shown in connection info
+   Label for empty time connected section of connection info when the VPN isn't connected */
+"inactive" = "inactief";
+
 /* Name of 'in' region */
 "India" = "India";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv4" = "IPv4";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv6" = "IPv6";
 
 /* Name of 'ie' region */
 "Ireland" = "Ierland";
@@ -225,9 +244,6 @@
 /* Instructions for VPN configuration error page in onboarding flow */
 "It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "Het lijkt erop dat we nog geen toestemming hebben om VPN-configuraties toe te voegen aan je apparaat. Laten we het nog eens proberen.";
 
-/* Instructions for system extensions permissions error page in onboarding flow */
-"It looks like we still don't have permission to run on your device. Let's try again." = "Het lijkt erop dat we nog geen toestemming hebben om werkzaam te zijn op je apparaat. Laten we het nog eens proberen.";
-
 /* Instructions on subscription ended error page */
 "It looks like your subscription has ended. Please click below to renew." = "Het lijkt erop dat je abonnement is afgelopen. Klik hieronder om te vernieuwen.";
 
@@ -240,8 +256,8 @@
 /* Label for toggle to turn the 'launch at login' feature on/off */
 "Launch at login" = "Opstarten bij inloggen";
 
-/* Label for button that takes user to login page
-   Label for button to go to login page */
+/* Label for button to go to login page
+Label for button that takes user to login page */
 "Log In" = "Inloggen";
 
 /* Instructions on landing page */
@@ -265,18 +281,20 @@
 /* Name of option to use the nearest region */
 "Nearest location" = "Dichtstbijzijnde locatie";
 
+/* Link to help site */
+"Need Help?" = "Hulp nodig?";
+
 /* Name of 'nl' region */
 "Netherlands" = "Nederland";
 
 /* Name of 'nz' region */
 "New Zealand" = "Nieuw-Zeeland";
 
-/* Label for button on email entry page
-   Label for button that takes user to the next page of the onboarding flow */
+/* Label for button on email entry page */
 "Next" = "Volgende";
 
-/* Label for button that take the user to the next step in the onboarding flow
-   Label for button that takes the user to the next step in the onboarding flow */
+/* Label for button that takes the user to the next step in the onboarding flow
+Label for button that take the user to the next step in the onboarding flow */
 "Next Steps" = "Volgende stappen";
 
 /* Name of 'no' region */
@@ -285,20 +303,13 @@
 /* Title for error view */
 "Oh dear. Something went wrong." = "Oei, er ging iets mis.";
 
+/* Alt text for onboarding complete header image */
+"Onboarding complete" = "Onboarding voltooid";
+
 /* Title for device limit error page
-   Title for onboarding flow error page
    Title for subscription ended error page
    Title of no account error page */
 "Oops!" = "Oeps!";
-
-/* Error text for generic errors */
-"Oops!\nSomething went wrong.\nPlease try again or contact support." = "Oeps!\nEr ging iets mis.\nProbeer het opnieuw of neem contact op met de ondersteuning.";
-
-/* Error text for invalid code error */
-"Oops!\nThat code didn’t work. Please try again." = "Oeps!\nDie code werkte niet. Probeer het opnieuw.";
-
-/* Error text for imvalid email error. */
-"Oops!\nWe don’t recognize that email address.\nPlease try again or contact support." = "Oeps!\nWe hebben dat e-mailadres niet herkend.\nProbeer het opnieuw of neem contact op met de ondersteuning.";
 
 /* Label for button that opens the main app after onboarding flow is complete */
 "Open AdBlock VPN" = "AdBlock VPN openen";
@@ -308,6 +319,21 @@
 
 /* Label for button that opens the system dialog */
 "Open System Dialog" = "Systeemdialoog openen";
+
+/* No comment provided by engineer. */
+"Page 1 of 5" = "Pagina 1 van 5";
+
+/* No comment provided by engineer. */
+"Page 2 of 5" = "Pagina 2 van 5";
+
+/* No comment provided by engineer. */
+"Page 3 of 5" = "Pagina 3 van 5";
+
+/* No comment provided by engineer. */
+"Page 4 of 5" = "Pagina 4 van 5";
+
+/* No comment provided by engineer. */
+"Page 5 of 5" = "Pagina 5 van 5";
 
 /* Title for VPN setup page */
 "Please allow VPN configurations when prompted to connect to AdBlock VPN." = "Sta VPN-configuraties toe als er wordt gevraagd om verbinding te maken met AdBlock VPN.";
@@ -325,19 +351,19 @@
 "Please restart AdBlock VPN" = "Herstart AdBlock VPN";
 
 /* Needs app restart error full msg */
-"Please restart AdBlock VPN. If the problem persists, contact our support team." = "Herstart AdBlock VPN. Als het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
+"Please restart AdBlock VPN." = "Herstart AdBlock VPN.";
 
 /* Needs machine restart short msg */
 "Please restart your computer" = "Herstart je computer";
 
 /* Needs machine restart error full msg */
-"Please restart your computer. If the problem persists, contact our support team." = "Herstart je computer. Als het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
+"Please restart your computer." = "Herstart je computer.";
 
 /* Needs authentication short msg */
 "Please sign in again" = "Log opnieuw in";
 
 /* Needs authentication error full msg */
-"Please sign in again. If the problem persists, contact our support team." = "Log opnieuw in. Als het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
+"Please sign in again." = "Log opnieuw in.";
 
 /* Title for update required page */
 "Please update AdBlock VPN to continue." = "Werk AdBlock VPN bij om door te gaan.";
@@ -348,8 +374,14 @@
 /* Preferences page title */
 "Preferences" = "Voorkeuren";
 
-/* Link to contact support team */
-"Questions? <a href='%@'>Chat with our support team</a>" = "Vragen? <a href='%@'>Praat met ons ondersteuningsteam</a>";
+/* Link to Privacy Policy */
+"Privacy Policy" = "Privacybeleid";
+
+/* Label for spinning circle when login flow is waiting for the server response */
+"Processing" = "Bezig met verwerken";
+
+/* Link to support site */
+"Questions? Chat with our support team" = "Vragen? Praat met ons ondersteuningsteam";
 
 /* Label for quit button when the VPN is disconnected */
 "Quit" = "Afsluiten";
@@ -359,6 +391,9 @@
 
 /* Label for reconnect button, shown when VPN is in the process of disconnecting */
 "Reconnect" = "Opnieuw verbinden";
+
+/* Label for resfresh icon */
+"Refresh" = "Verversen";
 
 /* Label for button on subscription ended error page. Links to page where user can renew their subscription */
 "Renew Subscription" = "Abonnement vernieuwen";
@@ -384,8 +419,8 @@
 /* Notification shown when the VPN is connecting to the given location. Variable holds the name of the location. */
 "Securing your connection...\n%@" = "Bezig je verbinding te beveiligen...\n%@";
 
-/* Label for button that opens a feedback page */
-"Send Feedback" = "Feedback sturen";
+/* No comment provided by engineer. */
+"Select region" = "Kies regio";
 
 /* Name of 'rs' region */
 "Serbia" = "Servië";
@@ -405,9 +440,6 @@
 /* Label for button that signs the user out of their account (and the app) */
 "Sign Out" = "Uitloggen";
 
-/* Link text on email entry page. This text must match the corresponding text in the footer text. */
-"Sign up." = "Aanmelden.";
-
 /* Name of 'sg' region */
 "Singapore" = "Singapore";
 
@@ -419,6 +451,9 @@
 
 /* Instructions on update error page */
 "Something went wrong while attempting to update AdBlock VPN. Please try again." = "Er ging iets mis bij een poging tot het updaten van AdBlock VPN. Probeer het opnieuw.";
+
+/* Error text for generic errors */
+"Something went wrong. Please try again." = "Er ging iets mis. Probeer het nogmaals.";
 
 /* Name of 'es' region */
 "Spain" = "Spanje";
@@ -435,10 +470,6 @@
 /* Label for button on code entry page */
 "Submit" = "Verzenden";
 
-/* Link to contact support. Text must match corresponding text in error
-   Link to contact support. Text must match corresponding text in full msg */
-"support team" = "ondersteuningsteam";
-
 /* Name of 'se' region */
 "Sweden" = "Zweden";
 
@@ -448,23 +479,14 @@
 /* Title for onboarding intro */
 "Thanks for installing AdBlock VPN" = "Bedankt voor het installeren van AdBlock VPN";
 
-/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
-"this article" = "dit artikel";
+/* Error text for invalid code error */
+"That code didn’t work. Please try again." = "Die code werkte niet. Probeer het opnieuw.";
 
-/* Link to try again on generic errors. Text must match corresponding text in error
-   Link to try again on invalid code error. Text must match corresponding text in error
-   Link to try again on invalid email error. Text must match corresponding text in error */
-"try again" = "Opnieuw proberen";
+/* Label for time connected secion of connection info */
+"Time connected: %@" = "Tijd verbonden: %@";
 
 /* Label for button to try the step again */
 "Try Again" = "Probeer het opnieuw";
-
-/* Link to try again on code entry page. This text must match the corresponding text in the footer text. */
-"Try again." = "Probeer het opnieuw.";
-
-/* Link to try again on the no account error page. Text must match corresponding text in footer.
-   Link to try again on the subscription ended error page. Text must match corresponding text in footer */
-"Try using a different email address" = "Probeer een ander e-mailadres te gebruiken";
 
 /* Name of 'gb_lon' region */
 "United Kingdom - London" = "Verenigd Koninkrijk - Londen";
@@ -475,8 +497,8 @@
 /* Label for disabled button (when no update is available) */
 "Up To Date" = "Actueel";
 
-/* Label for button that opens external update page
-   Label for button that triggers an update */
+/* Label for button that triggers an update
+Label for button that opens external update page */
 "Update" = "Updaten";
 
 /* Label for button to go to updates page */
@@ -524,14 +546,19 @@
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "Versie %@";
 
-/* Server error short msg */
-"We can't connect to our servers. Please try again later." = "We kunnen geen contact maken met onze servers. Probeer het later opnieuw.";
+/* Alt text for image on VPN set up page
+Alt text for image on extension set up page */
+"VPN disabled" = "VPN uitgeschakeld";
 
-/* Server error full msg */
-"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "We kunnen geen contact maken met onze servers. Probeer het later opnieuw. Als het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
+/* Server error full msg
+   Server error short msg */
+"We can't connect to our servers. Please try again later." = "We kunnen geen contact maken met onze servers. Probeer het later opnieuw.";
 
 /* Intructions for no account error page */
 "We couldn’t find an account for that email address. Please click below to get started." = "We konden geen account vinden voor dat e-mailadres. Klik hieronder om te beginnen.";
+
+/* Error text for imvalid email error. */
+"We don’t recognize that email address. Please try again." = "We herkennen dit e-mailadres niet. Probeer het nogmaals.";
 
 /* Intructions on code entry page */
 "We sent you a 6-character access code. Enter it below:" = "We hebben je een toegangscode van 6 tekens toegestuurd. Voer die hieronder in:";
@@ -545,15 +572,17 @@
 /* Subtitle on update required page */
 "You are using an unsupported version of AdBlock VPN." = "Je maakt gebruik van een niet-ondersteunde versie van AdBlock VPN.";
 
-/* No internet error full msg
-   No internet error short msg */
+/* No internet error short msg */
 "You aren't connected to the internet!\nPlease check your network connection." = "Je bent niet verbonden met het internet!\nControleer je netwerkverbinding.";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "Je bent niet verbonden met het internet! Controleer je netwerkverbinding.";
 
 /* Intructions for device limit error page */
 "You have already registered the maximum 6 devices. Please click below to update your settings." = "Je hebt al de maximaal toegestane 6 apparaten geregistreerd. Klik hieronder om je instellingen bij te werken.";
 
 /* Error text for loggeed out error */
-"You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team." = "Je bent uitgelogd.\nLog weer in.\nAls het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
+"You were logged out. Please sign in again." = "Je bent uitgelogd. Log weer in.";
 
 /* Instructions for enabling notifications from system preferences */
 "You will get the best app experience from AdBlock VPN by turning on notifications. Click ”Open Notifications”  then toggle notifications from AdBlock VPN to ”On”. You can also skip this step if you do not want notifications from AdBlock VPN." = "De beste app-ervaring van AdBlock VPN krijg je door meldingen in te schakelen. Klik op \"Meldingen openen\" en schakel vervolgens meldingen van AdBlock VPN naar \"Aan\". Je kunt deze stap ook overslaan als je geen meldingen wilt ontvangen van AdBlock VPN.";

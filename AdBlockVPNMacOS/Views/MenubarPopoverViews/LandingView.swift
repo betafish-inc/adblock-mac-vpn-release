@@ -22,8 +22,8 @@ struct LandingView: View {
         VStack {
             Spacer()
             ZStack {
-                Image("FlagWorld").resizable().scaledToFit().frame(width: 120, height: 120)
-                Image("LogoIso").resizable().scaledToFit().frame(width: 93, height: 142).offset(x: 0, y: -22)
+                Image(decorative: "FlagWorld").resizable().scaledToFit().frame(width: 120, height: 120)
+                Image(decorative: "LogoIso").resizable().scaledToFit().frame(width: 93, height: 142).offset(x: 0, y: -22)
             }
             Spacer().frame(height: 5)
             Text("Log in to connect to AdBlock VPN and secure your connection", comment: "Instructions on landing page")
@@ -36,13 +36,12 @@ struct LandingView: View {
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
-        .foregroundColor(Color.black)
+        .background(Color.abBackground)
     }
 }
 
 struct LandingView_Previews: PreviewProvider {
     static var previews: some View {
-        LandingView()
+        LandingView().environmentObject(AppState())
     }
 }

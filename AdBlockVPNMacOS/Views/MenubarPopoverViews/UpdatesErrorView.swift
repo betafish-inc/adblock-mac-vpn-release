@@ -23,7 +23,7 @@ struct UpdatesErrorView: View {
         VStack {
             Spacer()
                 .if(!state.showConnectionInfo) { $0.frame(height: 8) }
-            Image("Alert")
+            Image("Alert", label: Text("Error", comment: "Alt text for alert icon"))
                 .resizable()
                 .scaledToFit()
                 .frame(width: 112, height: 139)

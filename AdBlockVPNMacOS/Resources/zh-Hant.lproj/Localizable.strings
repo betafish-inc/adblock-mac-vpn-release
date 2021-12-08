@@ -4,18 +4,23 @@
 /* Placeholder text in code entry box */
 "— — — — — —" = "— — — — — —";
 
-/* Link to create a help ticket on email entry page */
-"<a href='%@'>Forgot your email?</a>" = "<a href='%@'>忘記電子郵件嗎？</a>";
+/* Alt text for region selection button */
+"%@, next" = "%@, 繼續";
 
-/* Link to help page */
-"<a href='%@'>Need Help?</a>" = "<a href='%@'>需要協助嗎？</a>";
+/* Label for selected region button */
+"%@, selected" = "%@, 已選擇";
+
+/* No comment provided by engineer. */
+"%@: %@" = "%@：%@";
 
 /* Label for button that accepts the EULA and takes the user to the next page of the intro flow */
 "Accept and Continue" = "接受並繼續";
 
-/* Account page title
-   Label for button that takes the useer to the account page */
+/* Account page title */
 "Account" = "帳戶";
+
+/* Alt text for AdBlock VPN logo */
+"AdBlock VPN" = "AdBlock VPN";
 
 /* Onboarding setup flow title */
 "AdBlock VPN Setup" = "AdBlock VPN 設定";
@@ -32,8 +37,7 @@
 /* Title for updates view */
 "An update is available" = "有可用的更新";
 
-/* App settings page title
-   Label for button that takes the user to the app settings page */
+/* App settings page title */
 "App Settings" = "應用程式設定";
 
 /* Label for toggle to turn the 'apply updates automatically' feature on/off */
@@ -51,6 +55,9 @@
 /* Name of 'at' region */
 "Austria" = "奧地利";
 
+/* Alt text for back button */
+"Back" = "返回";
+
 /* Name of 'be' region */
 "Belgium" = "比利時";
 
@@ -60,14 +67,13 @@
 /* Name of 'bg' region */
 "Bulgaria" = "保加利亞";
 
-/* Links to EULA and Privacy Policy */
-"By proceeding, you are confirming you have read and accepted the <a href='%@'>End User License Agreement (EULA)</a>, and our <a href='%@'>Privacy Policy</a>." = "繼續進行即表示您確認已閱讀並接受<a href='%1$@'>使用者授權合約 (EULA)</a>，以及我們的<a href='%2$@'>隱私權政策</a>。";
+/* Text explaining acceptance of EULA and Privacy Policy */
+"By proceeding, you are confirming you have read and accepted both of the following..." = "繼續進行即表示您確認已閱讀並接受以下兩者……";
 
 /* Name of 'ca' region */
 "Canada" = "加拿大";
 
-/* Label for button that cancels out of the onboarding flow
-   Label for cancel button, shown when VPN is in the process of connecting
+/* Label for cancel button, shown when VPN is in the process of connecting
    Label for cancel button, shown when VPN is in the process of reconnecting */
 "Cancel" = "取消";
 
@@ -93,13 +99,13 @@
 /* Third step in instructions to enable the system extension */
 "Click the “Allow” button to give AdBlock VPN permission to run on your device. Close the preferences window and click “Next Steps” below to continue the setup process." = "按下「允許」按鈕授權 AdBlock VPN 在您的裝置上執行。關閉偏好設定視窗，然後按下方的「後續步驟」繼續設定流程。";
 
-/* Label for button that closes the onboarding flow */
+/* label for close icon
+Label for button that closes the onboarding flow */
 "Close" = "關閉";
 
 /* Default label for connection button
    Label for connect button, shown when VPN is disconnected
-   Label for connect button, shown when VPN is in an invalid state
-   Label for disabled button on VPN setup page */
+   Label for connect button, shown when VPN is in an invalid state */
 "Connect" = "連線";
 
 /* Notification shown when the VPN connects to the given location. Variable holds the name of the location. */
@@ -111,19 +117,17 @@
 /* Error msg when connection retry fails */
 "Connection retry failed." = "連線重試失敗。";
 
-/* Link to contact support on no account error page. Text must match corresponding text in footer
-   Link to contact support on subscription ended error page. Text must match corresponding text in footer
-   Link to contact support. Text must match corresponding text in error */
-"contact support" = "聯絡支援團隊";
-
 /* Label for button to contact support from onboarding flow */
 "Contact Support" = "聯絡支援團隊";
 
 /* Label for button that continues the process of moving the app to the correct folder */
 "Continue" = "繼續";
 
-/* Label that is shown when user copies data to clipboard. */
+/* Voiceover notification when IP address is copied */
 "Copied" = "已複製";
+
+/* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
+"Copy %@" = "複製 %@";
 
 /* Name of 'cz' region */
 "Czech Republic" = "捷克共和國";
@@ -145,13 +149,16 @@
 
 /* Footer text on no account error page
    Footer text on subscription ended page */
-"Doesn’t sound right? Try using a different email address or contact support." = "不正確嗎？請嘗試使用其他電子郵件地址或聯絡支援團隊。";
+"Doesn’t sound right? Try using a different email address." = "聽起來不太對嗎？請嘗試使用不同的電子郵件地址。";
 
 /* Footer text on email entry page */
 "Don't have an AdBlock account? Sign up." = "沒有 AdBlock 帳戶？請先註冊。";
 
 /* Placeholder text in email entry box */
 "Email Address" = "電子郵件地址";
+
+/* Link to EULA */
+"End User License Agreement" = "終端使用者授權合約";
 
 /* Intructions for entering your email address */
 "Enter the email address you used when you purchased AdBlock VPN:" = "請輸入您購買 AdBlock VPN 時使用的電子郵件地址：";
@@ -170,7 +177,7 @@
 /* Name of 'fi' region */
 "Finland" = "芬蘭";
 
-/* Needs support error full msg */
+/* Link to support site */
 "For help solving this problem, please contact our support team." = "請聯絡我們的支援團隊以協助解決問題。";
 
 /* Needs knowledge base article error full msg */
@@ -178,6 +185,9 @@
 
 /* Instructions for enabling notifications from the system alert */
 "For the best app experience from AdBlock VPN, allow notifications. Click “Show Notification“ below. A notification will appear in the top right corner of your screen. Click “Options” then “Allow”. (You can choose “Don’t Allow” if you do not want notifications from AdBlock VPN.) Click “Next” below when you are done." = "要獲得 AdBlock VPN 的最佳應用程式體驗，請允許通知。按下方的「顯示通知」，畫面右上角將出現通知。按下「選項」，然後按下「允許」。 （如果不想收到來自 AdBlock VPN 的通知，可以選擇「不允許」。）完成後，請按「下一步」。";
+
+/* Link to create a help ticket on email entry page */
+"Forgot your email?" = "忘了您的電子郵件嗎？";
 
 /* Name of 'fr' region */
 "France" = "法國";
@@ -188,17 +198,16 @@
 /* Label for button on no account error page. Links to page to set up account */
 "Get AdBlock VPN" = "立即取得 AdBlock VPN";
 
-/* Label for button that opens a help page */
-"Get Help" = "取得協助";
-
 /* Label for button that starts the onboarding flow */
 "Get Started" = "開始";
 
 /* Name of 'gr' region */
 "Greece" = "希臘";
 
-/* Help and feedback page title
-   Label for button that takes the user to the help and feedback page */
+/* label for help icon */
+"Help" = "説明";
+
+/* Help and feedback page title */
 "Help & Feedback" = "説明與回饋";
 
 /* Name of 'hk' region */
@@ -210,8 +219,18 @@
 /* Name of 'is' region */
 "Iceland" = "冰島";
 
+/* Label for empty IP address shown in connection info
+   Label for empty time connected section of connection info when the VPN isn't connected */
+"inactive" = "關閉";
+
 /* Name of 'in' region */
 "India" = "印度";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv4" = "IPv4";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv6" = "IPv6";
 
 /* Name of 'ie' region */
 "Ireland" = "愛爾蘭";
@@ -225,9 +244,6 @@
 /* Instructions for VPN configuration error page in onboarding flow */
 "It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "我們似乎仍沒有權限新增 VPN 設定到您的裝置。讓我們再試一次。";
 
-/* Instructions for system extensions permissions error page in onboarding flow */
-"It looks like we still don't have permission to run on your device. Let's try again." = "我們似乎仍沒有權限在您的裝置上執行。讓我們再試一次。";
-
 /* Instructions on subscription ended error page */
 "It looks like your subscription has ended. Please click below to renew." = "您的訂閱似乎已經結束了。請按下方續訂。";
 
@@ -240,8 +256,8 @@
 /* Label for toggle to turn the 'launch at login' feature on/off */
 "Launch at login" = "登入時啟動";
 
-/* Label for button that takes user to login page
-   Label for button to go to login page */
+/* Label for button to go to login page
+Label for button that takes user to login page */
 "Log In" = "登入";
 
 /* Instructions on landing page */
@@ -265,18 +281,20 @@
 /* Name of option to use the nearest region */
 "Nearest location" = "最近的位置";
 
+/* Link to help site */
+"Need Help?" = "需要協助嗎？";
+
 /* Name of 'nl' region */
 "Netherlands" = "荷蘭";
 
 /* Name of 'nz' region */
 "New Zealand" = "紐西蘭";
 
-/* Label for button on email entry page
-   Label for button that takes user to the next page of the onboarding flow */
+/* Label for button on email entry page */
 "Next" = "繼續";
 
-/* Label for button that take the user to the next step in the onboarding flow
-   Label for button that takes the user to the next step in the onboarding flow */
+/* Label for button that takes the user to the next step in the onboarding flow
+Label for button that take the user to the next step in the onboarding flow */
 "Next Steps" = "後續步驟";
 
 /* Name of 'no' region */
@@ -285,20 +303,13 @@
 /* Title for error view */
 "Oh dear. Something went wrong." = "糟糕，發生錯誤。";
 
+/* Alt text for onboarding complete header image */
+"Onboarding complete" = "設置完成";
+
 /* Title for device limit error page
-   Title for onboarding flow error page
    Title for subscription ended error page
    Title of no account error page */
 "Oops!" = "糟糕！";
-
-/* Error text for generic errors */
-"Oops!\nSomething went wrong.\nPlease try again or contact support." = "糟糕！\n出錯了。\n請重試或聯絡支援團隊。";
-
-/* Error text for invalid code error */
-"Oops!\nThat code didn’t work. Please try again." = "糟糕！\n代碼無效。請重試。";
-
-/* Error text for imvalid email error. */
-"Oops!\nWe don’t recognize that email address.\nPlease try again or contact support." = "糟糕！\n無法識別電子郵件地址。\n請重試或聯絡支援團隊。";
 
 /* Label for button that opens the main app after onboarding flow is complete */
 "Open AdBlock VPN" = "開啟 AdBlock VPN";
@@ -308,6 +319,21 @@
 
 /* Label for button that opens the system dialog */
 "Open System Dialog" = "開啟系統對話框";
+
+/* No comment provided by engineer. */
+"Page 1 of 5" = "第 1 頁，共 5 頁";
+
+/* No comment provided by engineer. */
+"Page 2 of 5" = "第 2 頁，共 5 頁";
+
+/* No comment provided by engineer. */
+"Page 3 of 5" = "第 3 頁，共 5 頁";
+
+/* No comment provided by engineer. */
+"Page 4 of 5" = "第 4 頁，共 5 頁";
+
+/* No comment provided by engineer. */
+"Page 5 of 5" = "第 5 頁，共 5 頁";
 
 /* Title for VPN setup page */
 "Please allow VPN configurations when prompted to connect to AdBlock VPN." = "當系統提示連到 AdBlock VPN 時，請允許 VPN 設定。";
@@ -325,19 +351,19 @@
 "Please restart AdBlock VPN" = "請重新啟動 AdBlock VPN";
 
 /* Needs app restart error full msg */
-"Please restart AdBlock VPN. If the problem persists, contact our support team." = "請重新啟動 AdBlock VPN。如果問題仍然持續，請聯絡我們的支援團隊。";
+"Please restart AdBlock VPN." = "請重新開啟 AdBlock VPN。";
 
 /* Needs machine restart short msg */
 "Please restart your computer" = "請重新啟動您的電腦";
 
 /* Needs machine restart error full msg */
-"Please restart your computer. If the problem persists, contact our support team." = "請重新啟動您的電腦。如果問題仍然持續，請聯絡我們的支援團隊。";
+"Please restart your computer." = "請重新開啟您的電腦。";
 
 /* Needs authentication short msg */
 "Please sign in again" = "請重新登入";
 
 /* Needs authentication error full msg */
-"Please sign in again. If the problem persists, contact our support team." = "請重新登入。如果問題仍然持續，請聯絡我們的支援團隊。";
+"Please sign in again." = "請重新登入。";
 
 /* Title for update required page */
 "Please update AdBlock VPN to continue." = "請更新 AdBlock VPN 以繼續。";
@@ -348,8 +374,14 @@
 /* Preferences page title */
 "Preferences" = "偏好設定";
 
-/* Link to contact support team */
-"Questions? <a href='%@'>Chat with our support team</a>" = "有問題嗎？<a href='%@'>使用語音聊天聯絡我們的支援團隊</a>";
+/* Link to Privacy Policy */
+"Privacy Policy" = "隱私權政策";
+
+/* Label for spinning circle when login flow is waiting for the server response */
+"Processing" = "正在處理中";
+
+/* Link to support site */
+"Questions? Chat with our support team" = "有任何問題嗎？請與我們的支援團隊聊聊";
 
 /* Label for quit button when the VPN is disconnected */
 "Quit" = "退出";
@@ -359,6 +391,9 @@
 
 /* Label for reconnect button, shown when VPN is in the process of disconnecting */
 "Reconnect" = "重新連線";
+
+/* Label for resfresh icon */
+"Refresh" = "重新整理";
 
 /* Label for button on subscription ended error page. Links to page where user can renew their subscription */
 "Renew Subscription" = "續訂";
@@ -384,8 +419,8 @@
 /* Notification shown when the VPN is connecting to the given location. Variable holds the name of the location. */
 "Securing your connection...\n%@" = "正在確保您的連線安全……\n%@";
 
-/* Label for button that opens a feedback page */
-"Send Feedback" = "傳送回饋意見";
+/* No comment provided by engineer. */
+"Select region" = "選擇地區";
 
 /* Name of 'rs' region */
 "Serbia" = "塞爾維亞";
@@ -405,9 +440,6 @@
 /* Label for button that signs the user out of their account (and the app) */
 "Sign Out" = "登出";
 
-/* Link text on email entry page. This text must match the corresponding text in the footer text. */
-"Sign up." = "註冊。";
-
 /* Name of 'sg' region */
 "Singapore" = "新加坡";
 
@@ -419,6 +451,9 @@
 
 /* Instructions on update error page */
 "Something went wrong while attempting to update AdBlock VPN. Please try again." = "嘗試更新 AdBlock VPN 時出現錯誤。請再試一次。";
+
+/* Error text for generic errors */
+"Something went wrong. Please try again." = "發生問題了。請再試一次。";
 
 /* Name of 'es' region */
 "Spain" = "西班牙";
@@ -435,10 +470,6 @@
 /* Label for button on code entry page */
 "Submit" = "送出";
 
-/* Link to contact support. Text must match corresponding text in error
-   Link to contact support. Text must match corresponding text in full msg */
-"support team" = "支援團隊";
-
 /* Name of 'se' region */
 "Sweden" = "瑞典";
 
@@ -448,23 +479,14 @@
 /* Title for onboarding intro */
 "Thanks for installing AdBlock VPN" = "感謝安裝 AdBlock VPN";
 
-/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
-"this article" = "本文";
+/* Error text for invalid code error */
+"That code didn’t work. Please try again." = "代碼無效。請再試一次。";
 
-/* Link to try again on generic errors. Text must match corresponding text in error
-   Link to try again on invalid code error. Text must match corresponding text in error
-   Link to try again on invalid email error. Text must match corresponding text in error */
-"try again" = "再試一次";
+/* Label for time connected secion of connection info */
+"Time connected: %@" = "已連線的時間：%@";
 
 /* Label for button to try the step again */
 "Try Again" = "再試一次";
-
-/* Link to try again on code entry page. This text must match the corresponding text in the footer text. */
-"Try again." = "再試一次。";
-
-/* Link to try again on the no account error page. Text must match corresponding text in footer.
-   Link to try again on the subscription ended error page. Text must match corresponding text in footer */
-"Try using a different email address" = "嘗試使用其他電子郵件地址";
 
 /* Name of 'gb_lon' region */
 "United Kingdom - London" = "英國 - 倫敦";
@@ -475,8 +497,8 @@
 /* Label for disabled button (when no update is available) */
 "Up To Date" = "已是最新";
 
-/* Label for button that opens external update page
-   Label for button that triggers an update */
+/* Label for button that triggers an update
+Label for button that opens external update page */
 "Update" = "更新";
 
 /* Label for button to go to updates page */
@@ -524,14 +546,19 @@
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "%@ 版";
 
-/* Server error short msg */
-"We can't connect to our servers. Please try again later." = "無法連線到伺服器。請稍後再試。";
+/* Alt text for image on VPN set up page
+Alt text for image on extension set up page */
+"VPN disabled" = "VPN 已關閉";
 
-/* Server error full msg */
-"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "無法連線到伺服器。請稍後再試。如果問題仍然持續，請聯絡我們的支援團隊。";
+/* Server error full msg
+   Server error short msg */
+"We can't connect to our servers. Please try again later." = "無法連線到伺服器。請稍後再試。";
 
 /* Intructions for no account error page */
 "We couldn’t find an account for that email address. Please click below to get started." = "找不到該電子郵件地址對應的帳戶。請按下方開始操作。";
+
+/* Error text for imvalid email error. */
+"We don’t recognize that email address. Please try again." = "我們無法辨識此電子郵件地址。請再試一次。";
 
 /* Intructions on code entry page */
 "We sent you a 6-character access code. Enter it below:" = "我們傳送了一個 6 字元的存取碼給您。請在下方輸入：";
@@ -545,15 +572,17 @@
 /* Subtitle on update required page */
 "You are using an unsupported version of AdBlock VPN." = "您使用的是不支援的 AdBlock VPN 版本。";
 
-/* No internet error full msg
-   No internet error short msg */
+/* No internet error short msg */
 "You aren't connected to the internet!\nPlease check your network connection." = "您未連線到網路！\n請檢查您的網路連線。";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "您並無連結至網際網路！請確認您的網路連線。";
 
 /* Intructions for device limit error page */
 "You have already registered the maximum 6 devices. Please click below to update your settings." = "您註冊的裝置已達 6 台上限。請按下方更新設定。";
 
 /* Error text for loggeed out error */
-"You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team." = "您已登出。\n請重新登入。\n如果問題仍然持續，請聯絡我們的支援團隊。";
+"You were logged out. Please sign in again." = "您已登出。請重新登入。";
 
 /* Instructions for enabling notifications from system preferences */
 "You will get the best app experience from AdBlock VPN by turning on notifications. Click ”Open Notifications”  then toggle notifications from AdBlock VPN to ”On”. You can also skip this step if you do not want notifications from AdBlock VPN." = "開啟通知可獲得 AdBlock VPN 的最佳應用程式體驗。按下「開啟通知」，然後將 AdBlock VPN 的通知切換為「開啟」。如果您不想接收來自 AdBlock VPN 的通知，也可以跳過這一步。";

@@ -21,19 +21,29 @@ struct HelpView: View {
     @ObservedObject var viewModel: HelpViewModel
     var body: some View {
         VStack {
-            MenuButtonView(action: {
-                self.viewModel.openFeedback()
-            }, text: Text("Send Feedback", comment: "Label for button that opens a feedback page"), bold: false, icon: "LinkIcon", iconSize: 16)
+            MenuButtonView(
+                action: { self.viewModel.openFeedback() },
+                text: Text("Send Feedback", comment: "Label for button that opens a feedback page"),
+                bold: false,
+                icon: "LinkIcon",
+                iconSize: 16
+            )
+            .customAccessibilityAddTraits(.isLink)
             Spacer().frame(height: 16)
             Divider().background(Color.abBorder).frame(width: 256)
             Spacer().frame(height: 16)
-            MenuButtonView(action: {
-                self.viewModel.openHelp()
-            }, text: Text("Get Help", comment: "Label for button that opens a help page"), bold: false, icon: "LinkIcon", iconSize: 16)
+            MenuButtonView(
+                action: { self.viewModel.openHelp() },
+                text: Text("Get Help", comment: "Label for button that opens a help page"),
+                bold: false,
+                icon: "LinkIcon",
+                iconSize: 16
+            )
+            .customAccessibilityAddTraits(.isLink)
             Spacer()
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
+        .background(Color.abBackground)
         .foregroundColor(.abDarkText)
     }
 }
@@ -41,5 +51,6 @@ struct HelpView: View {
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
         HelpView(viewModel: HelpViewModel())
+            .environmentObject(AppState())
     }
 }

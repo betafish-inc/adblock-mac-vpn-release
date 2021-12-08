@@ -30,7 +30,7 @@ struct RegionButtonView: View {
         } label: {
             HStack {
                 Spacer().frame(width: 15)
-                Image(selected ? "CheckIcon" : flag)
+                Image(decorative: selected ? "CheckIcon" : flag)
                     .renderingMode(selected ? .template : .original)
                     .resizable()
                     .scaledToFit()
@@ -42,6 +42,9 @@ struct RegionButtonView: View {
             }
         }
         .buttonStyle(ListItemButtonStyle(selected: selected, buttonWidth: 240))
+        .if(selected) {
+            $0.customAccessibilityLabel(Text("\(name), selected", comment: "Label for selected region button"))
+        }
     }
 }
 

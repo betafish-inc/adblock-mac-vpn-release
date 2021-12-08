@@ -24,6 +24,7 @@ struct OnboardingMoveAppView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingMoveApp",
+                               headerImageLabel: nil,
                                bodyTitle: Text("Move AdBlock VPN to the Applications folder", comment: "Title for move app page of onboarding flow"))
             Text("We’ll need to move the AdBlock VPN app into your Applications folder first. Click “Continue” to confirm this change.",
                  comment: "Instructions for move app page of onboarding flow")
@@ -60,7 +61,7 @@ struct OnboardingMoveAppView: View {
 struct OnboardingMoveAppView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingMoveAppView()
-            .background(Color.white)
+            .background(Color.abBackground)
             .frame(width: 576)
     }
 }

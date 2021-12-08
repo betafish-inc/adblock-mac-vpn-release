@@ -30,7 +30,7 @@ struct ColorfulButtonView: View {
                     .latoFont()
                 Spacer()
                 if !icon.isEmpty {
-                    Image(icon)
+                    Image(decorative: icon)
                         .renderingMode(.template)
                         .resizable()
                         .scaledToFit()
@@ -42,7 +42,7 @@ struct ColorfulButtonView: View {
         .buttonStyle(PrimaryButtonStyle(buttonColor: updateAvailable ? .abUpdateAccent : .abUpToDateAccent,
                                         buttonHoverColor: updateAvailable ? .abUpdateAccent : .abUpToDateAccent,
                                         buttonClickColor: updateAvailable ? .abUpdateAccentClick : .abUpToDateAccent,
-                                        textColor: updateAvailable ? .abDarkText : .white,
+                                        textColor: updateAvailable ? .abDarkText : .abWhiteText,
                                         shadowColor: updateAvailable ? .abShadow : .clear,
                                         enableAnimation: updateAvailable))
     }

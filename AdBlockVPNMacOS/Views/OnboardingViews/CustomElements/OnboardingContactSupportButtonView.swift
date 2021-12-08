@@ -20,28 +20,17 @@ struct OnboardingContactSupportButtonView: View {
     @EnvironmentObject var model: OnboardingViewModel
 
     var body: some View {
-        Button(action: model.openSupportURL) {
-            Text("Contact Support", comment: "Label for button to contact support from onboarding flow")
-                .underline()
-                .multilineTextAlignment(.center)
-                .padding(8)
-                .foregroundColor(.abLinkColor)
-        }
+        LinkButtonView(
+            action: model.openSupportURL,
+            text: Text("Contact Support", comment: "Label for button to contact support from onboarding flow"),
+            fontSize: 16)
+        .padding(8)
         .frame(maxWidth: 272, minHeight: 40, maxHeight: .infinity)
-        .buttonStyle(PlainButtonStyle())
-        .latoFont(weight: .bold)
-        .onHover { inside in
-            if inside {
-                NSCursor.pointingHand.push()
-            } else {
-                NSCursor.pop()
-            }
-        }
     }
 }
 
 struct OnboardingSupportButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingContactSupportButtonView()
+        OnboardingContactSupportButtonView().environmentObject(OnboardingViewModel(vpnManager: VPNManager(), notificationManager: NotificationManager()))
     }
 }

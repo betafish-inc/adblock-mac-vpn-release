@@ -18,28 +18,48 @@ import SwiftUI
 
 // Asset Catalog custom colors
 extension Color {
-    static let abBorder = Color("Border")
-    static let abDarkText = Color("DarkText")
-    static let abHeaderBackground = Color("HeaderBackground")
-    static let abLightestText = Color("LightestText")
-    static let abLightText = Color("LightText")
-    static let abLinkColor = Color("LinkColor")
-    static let abPrimaryAccent = Color("PrimaryAccent")
-    static let abSecondaryHeaderBackground = Color("SecondaryHeaderBackground")
-    static let abShadow = Color("Shadow")
-    static let abUpToDateAccent = Color("UpToDateAccent")
-    static let abUpdateAccent = Color("UpdateAccent")
-    static let abUpdateAccentClick = Color("UpdateAccentClick")
-    static let abAccentBackground = Color("AccentBackground")
-    static let abErrorAccent = Color("ErrorAccent")
-    static let abButtonNormal = Color("ButtonNormal")
-    static let abButtonHover = Color("ButtonHover")
-    static let abButtonClick = Color("ButtonClick")
-    static let abSecondaryButtonNormal = Color("SecondaryButtonNormal")
-    static let abSecondaryButtonClick = Color("SecondaryButtonClick")
-    static let abListItemClicked = Color("ListItemClicked")
-    static let abVPNStateConnected = Color("VPNStateConnected")
-    static let abVPNStateConnecting = Color("VPNStateConnecting")
-    static let abVPNStateDisconnected = Color("VPNStateDisconnected")
-    static let abInactiveElement = Color("InactiveElement")
+    // Text colors
+    static let abDarkText = Color("abGray33")
+    static let abLightText = Color("abGray66")
+    static let abLightestText = Color("abGray99")
+    static let abWhiteText = Color("abWhite")
+    static let abLinkColor = Color("abBlueLight")
+
+    // Button colors
+    static let abButtonNormal = Color("abBlue")
+    static let abButtonHover = Color("abBlueLight")
+    static let abButtonClick = Color("abBlueDark")
+    static let abSecondaryButtonNormal = Color("abWhite")
+    static let abSecondaryButtonClick = Color("abGrayC6")
+    static let abDisabledButtonForeground = Color("abWhite")
+    static let abDisabledButtonBackground = Color("abGrayC6")
+    static let abToggleOn = Color("abGreen")
+    static let abToggleOff = Color("abGrayC6")
+    static let abToggleCircle = Color("abWhite")
+    static let abUpToDateAccent = Color("abGreen")
+    static let abUpdateAccent = Color("abYellow")
+    static let abUpdateAccentClick = Color("abOrange")
+    static let abErrorAccent = Color("abRed")
+    static let abErrorDismiss = Color("abWhite")
+
+    // VPN state colors
+    static let abVPNStateConnected = Color("abGreen")
+    static let abVPNStateConnecting = Color("abOrange")
+    static let abVPNStateDisconnected = Color("abRed")
+
+    // Region list colors
+    static let abListItemClicked = Color("abGrayE6")
+    static let abSearchBarBackground = Color("abWhite")
+    static let abListItemBackground = Color("abWhite")
+
+    // General UI Colors
+    static let abBackground = Color("abWhite")
+    static let abAccentBackground = Color("abGrayE6")
+    static let abHeaderBackground = Color("abGrayF4")
+    static let abSecondaryHeaderBackground = Color("abGrayE6")
+    static let abBorder = Color("abGrayC6")
+    static let abPrimaryAccent = Color("abBlue")
+    static let abShadow = Color("abGrayTransparent")
+    static let abShadowLight = Color("abWhite")
+    static let abInactiveAccent = Color("abGray99")
 }

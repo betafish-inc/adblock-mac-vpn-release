@@ -43,7 +43,7 @@ public struct Constants {
     static let connectionHelpURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000247858-adblock-vpn-connection-issues/"
     static let permissionsHelpURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000249111-about-adblock-vpn-permissions-for-mac"
     
-    static let feedbackURL = "https://portal.productboard.com/getadblock/6-adblock-vpn"
+    static let feedbackURL = "https://vpn.getadblock.com/feedback"
     static let accountsURL = "https://accounts.getadblock.com"
     static let eulaURL = "https://vpn.getadblock.com/end-user-license-agreement/"
     static let privacyURL = "https://getadblock.com/privacy/"

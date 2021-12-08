@@ -22,6 +22,7 @@ struct OnboardingSysExtensionView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingSysExtension",
+                               headerImageLabel: nil,
                                bodyTitle: Text("Allow AdBlock VPN in your security preferences", comment: "Title for system extensions permissions page in onboarding flow"))
             VStack(alignment: .leading, spacing: 12) {
                 OnboardingStepTextView(boldText: Text("Step 1:", comment: "Prefix for step 1 of intructions"),

@@ -18,9 +18,9 @@ import Foundation
 import SwiftUI
 
 struct CustomColorToggleStyle: ToggleStyle {
-    private var onColor = Color.abUpToDateAccent
-    private var offColor = Color.abBorder
-    private var circleColor = Color.white
+    private var onColor = Color.abToggleOn
+    private var offColor = Color.abToggleOff
+    private var circleColor = Color.abToggleCircle
     
     func makeBody(configuration: Self.Configuration) -> some View {
         HStack {

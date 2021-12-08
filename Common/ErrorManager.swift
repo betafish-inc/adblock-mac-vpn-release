@@ -37,12 +37,13 @@ class ErrorManager {
     struct ErrorStrings {
         var fullAction: String
         var shortAction: String
-        var errorWebLinks: [String: String]?
+        var errorWebLink: String?
     }
     
     struct AppErrorString {
         var text: String
-        var links: [String: String]?
+        var link: String?
+        var inlineLink = false
     }
     
     struct ErrorObj {
@@ -61,35 +62,29 @@ class ErrorManager {
     let errorStrings: [ErrorType: ErrorStrings] = [
         .noInternet: ErrorStrings(
             fullAction: NSLocalizedString("You aren't connected to the internet! Please check your network connection.", comment: "No internet error full msg"),
-            shortAction: NSLocalizedString("You aren't connected to the internet!\nPlease check your network connection.", comment: "No internet error short msg"),
-            errorWebLinks: nil),
+            shortAction: NSLocalizedString("You aren't connected to the internet!\nPlease check your network connection.", comment: "No internet error short msg")),
         .needsAppRestart: ErrorStrings(
-            fullAction: NSLocalizedString("Please restart AdBlock VPN. If the problem persists, contact our support team.", comment: "Needs app restart error full msg"),
-            shortAction: NSLocalizedString("Please restart AdBlock VPN", comment: "Needs app restart short msg"),
-            errorWebLinks: [NSLocalizedString("support team", comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.newTicketURL]),
+            fullAction: NSLocalizedString("Please restart AdBlock VPN.", comment: "Needs app restart error full msg"),
+            shortAction: NSLocalizedString("Please restart AdBlock VPN", comment: "Needs app restart short msg")),
         .needsMachineRestart: ErrorStrings(
-            fullAction: NSLocalizedString("Please restart your computer. If the problem persists, contact our support team.", comment: "Needs machine restart error full msg"),
+            fullAction: NSLocalizedString("Please restart your computer.", comment: "Needs machine restart error full msg"),
             shortAction: NSLocalizedString("Please restart your computer", comment: "Needs machine restart short msg"),
-            errorWebLinks: [NSLocalizedString("support team",
-                                              comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.needMachineRestartURL]),
+            errorWebLink: Constants.needMachineRestartURL),
         .needsKB: ErrorStrings(
             fullAction: NSLocalizedString("For help solving this problem, please follow the steps in this article.", comment: "Needs knowledge base article error full msg"),
             shortAction: NSLocalizedString("Please follow the steps in this article", comment: "Needs knowledge base article error short msg"),
-            errorWebLinks: nil),
+            errorWebLink: nil),
         .needsSupport: ErrorStrings(
-            fullAction: NSLocalizedString("For help solving this problem, please contact our support team.", comment: "Needs support error full msg"),
-            shortAction: NSLocalizedString("Please contact our support team", comment: "Needs support error short msg"),
-            errorWebLinks: [NSLocalizedString("support team", comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.newTicketURL]),
+            fullAction: NSLocalizedString("For help solving this problem, please contact our support team.", comment: "Link to support site"),
+            shortAction: NSLocalizedString("Please contact our support team", comment: "Needs support error short msg")),
         .needsAuth: ErrorStrings(
-            fullAction: NSLocalizedString("Please sign in again. If the problem persists, contact our support team.", comment: "Needs authentication error full msg"),
-            shortAction: NSLocalizedString("Please sign in again", comment: "Needs authentication short msg"),
-            errorWebLinks: [NSLocalizedString("support team", comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.newTicketURL]),
+            fullAction: NSLocalizedString("Please sign in again.", comment: "Needs authentication error full msg"),
+            shortAction: NSLocalizedString("Please sign in again", comment: "Needs authentication short msg")),
         .noServer: ErrorStrings(
-            fullAction: NSLocalizedString("We can't connect to our servers. Please try again later. If the problem persists, contact our support team.",
+            fullAction: NSLocalizedString("We can't connect to our servers. Please try again later.",
                                           comment: "Server error full msg"),
             shortAction: NSLocalizedString("We can't connect to our servers. Please try again later.", comment: "Server error short msg"),
-            errorWebLinks: [NSLocalizedString("support team",
-                                              comment: "Link to contact support. Text must match corresponding text in full msg"): Constants.connectionHelpURL])
+            errorWebLink: Constants.connectionHelpURL)
     ]
     
     @Published var isError = false
@@ -160,18 +155,19 @@ class ErrorManager {
     }
     
     func getFullAppMessage() -> AppErrorString {
-        guard let error = err else { return AppErrorString(text: "", links: nil) }
+        guard let error = err else { return AppErrorString(text: "", link: nil) }
+        var inlineLink = false
         if error.type == .noInternet {
-            return AppErrorString(text: errorStrings[error.type]?.fullAction ?? "", links: nil)
+            return AppErrorString(text: errorStrings[error.type]?.fullAction ?? "", link: nil)
         } else {
-            var links = errorStrings[error.type]?.errorWebLinks
+            var kbLink = errorStrings[error.type]?.errorWebLink
             // Check for KB link
             if let link = error.link, error.type == .needsKB {
-                links = [NSLocalizedString("this article",
-                                           comment: "Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg"): link]
+                kbLink = link
+                inlineLink = true
             }
             let text = error.message.isEmpty ? errorStrings[error.type]?.fullAction ?? "" : "\(error.message) \(errorStrings[error.type]?.fullAction ?? "")"
-            return AppErrorString(text: text, links: links)
+            return AppErrorString(text: text, link: kbLink, inlineLink: inlineLink)
         }
     }
     

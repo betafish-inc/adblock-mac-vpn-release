@@ -21,7 +21,7 @@ struct PrimaryButtonStyle: ButtonStyle {
     var buttonColor: Color = .abButtonNormal
     var buttonHoverColor: Color = .abButtonHover
     var buttonClickColor: Color = .abButtonClick
-    var textColor: Color = .white
+    var textColor: Color = .abWhiteText
     var shadowColor: Color = .abShadow
     var buttonWidth: CGFloat = 272
     var animationSpeed: Double = 0.15

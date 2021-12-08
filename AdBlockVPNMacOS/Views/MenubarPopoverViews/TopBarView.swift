@@ -27,7 +27,7 @@ struct TopBarView: View {
                 Button {
                     self.state.backButtonClick()
                 } label: {
-                    Image("BackArrowIcon")
+                    Image("BackArrowIcon", label: Text("Back", comment: "Alt text for back button"))
                         .resizable()
                         .scaledToFit()
                         .frame(height: 18.76)
@@ -40,12 +40,12 @@ struct TopBarView: View {
             } else {
                 if state.viewToShow != .acceptance {
                     Button { self.state.viewToShow = .preferences } label: {
-                        Image("MenuIcon")
+                        Image("MenuIcon", label: Text("Preferences", comment: "Alt text for preferences button"))
                     }
                     .offset(x: -105, y: 0)
                     .buttonStyle(TopBarButtonStyle())
                 }
-                Image("FullLogo")
+                Image("FullLogo", label: Text("AdBlock VPN", comment: "Alt text for AdBlock VPN logo"))
                     .resizable()
                     .scaledToFit()
                     .frame(height: 28)
