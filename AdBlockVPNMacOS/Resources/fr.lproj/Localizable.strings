@@ -4,18 +4,23 @@
 /* Placeholder text in code entry box */
 "— — — — — —" = "— — — — — —";
 
-/* Link to create a help ticket on email entry page */
-"<a href='%@'>Forgot your email?</a>" = "<a href='%@'>Adresse e-mail oubliée ?</a>";
+/* Alt text for region selection button */
+"%@, next" = "%@, suivant";
 
-/* Link to help page */
-"<a href='%@'>Need Help?</a>" = "<a href='%@'>Besoin d'aide ?</a>";
+/* Label for selected region button */
+"%@, selected" = "%@, sélectionné";
+
+/* No comment provided by engineer. */
+"%@: %@" = "%@ : %@";
 
 /* Label for button that accepts the EULA and takes the user to the next page of the intro flow */
 "Accept and Continue" = "Accepter et continuer";
 
-/* Account page title
-   Label for button that takes the useer to the account page */
+/* Account page title */
 "Account" = "Compte";
+
+/* Alt text for AdBlock VPN logo */
+"AdBlock VPN" = "VPN AdBlock";
 
 /* Onboarding setup flow title */
 "AdBlock VPN Setup" = "Configuration d'AdBlock VPN";
@@ -32,8 +37,7 @@
 /* Title for updates view */
 "An update is available" = "Une mise à jour est disponible";
 
-/* App settings page title
-   Label for button that takes the user to the app settings page */
+/* App settings page title */
 "App Settings" = "Paramètres de l'application";
 
 /* Label for toggle to turn the 'apply updates automatically' feature on/off */
@@ -51,6 +55,9 @@
 /* Name of 'at' region */
 "Austria" = "Autriche";
 
+/* Alt text for back button */
+"Back" = "Retour";
+
 /* Name of 'be' region */
 "Belgium" = "Belgique";
 
@@ -60,14 +67,13 @@
 /* Name of 'bg' region */
 "Bulgaria" = "Bulgarie";
 
-/* Links to EULA and Privacy Policy */
-"By proceeding, you are confirming you have read and accepted the <a href='%@'>End User License Agreement (EULA)</a>, and our <a href='%@'>Privacy Policy</a>." = "En poursuivant, vous confirmez avoir lu et accepté le <a href='%1$@'>Contrat de licence utilisateur final (CLUF)</a>, et notre <a href='%2$@'>Politique de confidentialité</a>.";
+/* Text explaining acceptance of EULA and Privacy Policy */
+"By proceeding, you are confirming you have read and accepted both of the following..." = "En poursuivant, vous confirmez avoir lu et accepté les deux documents suivants...";
 
 /* Name of 'ca' region */
 "Canada" = "Canada";
 
-/* Label for button that cancels out of the onboarding flow
-   Label for cancel button, shown when VPN is in the process of connecting
+/* Label for cancel button, shown when VPN is in the process of connecting
    Label for cancel button, shown when VPN is in the process of reconnecting */
 "Cancel" = "Annuler";
 
@@ -93,13 +99,13 @@
 /* Third step in instructions to enable the system extension */
 "Click the “Allow” button to give AdBlock VPN permission to run on your device. Close the preferences window and click “Next Steps” below to continue the setup process." = "Cliquez sur le bouton \"Autoriser\" pour donner à AdBlock VPN l'autorisation d'être exécuté sur votre appareil. Fermez la fenêtre des préférences et cliquez sur \"Étapes suivantes\" ci-dessous pour continuer le processus d'installation.";
 
-/* Label for button that closes the onboarding flow */
+/* label for close icon
+Label for button that closes the onboarding flow */
 "Close" = "Fermer";
 
 /* Default label for connection button
    Label for connect button, shown when VPN is disconnected
-   Label for connect button, shown when VPN is in an invalid state
-   Label for disabled button on VPN setup page */
+   Label for connect button, shown when VPN is in an invalid state */
 "Connect" = "Connexion";
 
 /* Notification shown when the VPN connects to the given location. Variable holds the name of the location. */
@@ -111,19 +117,17 @@
 /* Error msg when connection retry fails */
 "Connection retry failed." = "La nouvelle tentative de connexion a échoué.";
 
-/* Link to contact support on no account error page. Text must match corresponding text in footer
-   Link to contact support on subscription ended error page. Text must match corresponding text in footer
-   Link to contact support. Text must match corresponding text in error */
-"contact support" = "contacter l'assistance";
-
 /* Label for button to contact support from onboarding flow */
 "Contact Support" = "Contacter l'assistance";
 
 /* Label for button that continues the process of moving the app to the correct folder */
 "Continue" = "Continuer";
 
-/* Label that is shown when user copies data to clipboard. */
+/* Voiceover notification when IP address is copied */
 "Copied" = "Copié";
+
+/* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
+"Copy %@" = "Copier %@";
 
 /* Name of 'cz' region */
 "Czech Republic" = "République tchèque";
@@ -145,13 +149,16 @@
 
 /* Footer text on no account error page
    Footer text on subscription ended page */
-"Doesn’t sound right? Try using a different email address or contact support." = "Quelque chose ne tourne pas rond ? Essayez d'utiliser une autre adresse e-mail ou contactez le service d'assistance.";
+"Doesn’t sound right? Try using a different email address." = "Quelque chose ne tourne pas rond ? Essayez d'utiliser une autre adresse e-mail.";
 
 /* Footer text on email entry page */
 "Don't have an AdBlock account? Sign up." = "Vous n'avez pas de compte AdBlock ? Inscrivez-vous.";
 
 /* Placeholder text in email entry box */
 "Email Address" = "Adresse e-mail";
+
+/* Link to EULA */
+"End User License Agreement" = "Contrat de licence utilisateur final";
 
 /* Intructions for entering your email address */
 "Enter the email address you used when you purchased AdBlock VPN:" = "Entrez l'adresse e-mail que vous avez utilisée lors de l'achat d'AdBlock VPN :";
@@ -170,7 +177,7 @@
 /* Name of 'fi' region */
 "Finland" = "Finlande";
 
-/* Needs support error full msg */
+/* Link to support site */
 "For help solving this problem, please contact our support team." = "Pour obtenir de l'aide afin de résoudre ce problème, veuillez contacter notre équipe d'assistance.";
 
 /* Needs knowledge base article error full msg */
@@ -178,6 +185,9 @@
 
 /* Instructions for enabling notifications from the system alert */
 "For the best app experience from AdBlock VPN, allow notifications. Click “Show Notification“ below. A notification will appear in the top right corner of your screen. Click “Options” then “Allow”. (You can choose “Don’t Allow” if you do not want notifications from AdBlock VPN.) Click “Next” below when you are done." = "Pour une expérience optimale de l'application AdBlock VPN, autorisez les notifications. Cliquez sur \"Afficher la notification\" ci-dessous. Une notification apparaîtra dans le coin supérieur droit de votre écran. Cliquez sur \"Options\" puis sur \"Autoriser\". (Vous pouvez choisir \"Ne pas autoriser\" si vous ne voulez pas de notifications de la part d'AdBlock VPN). Cliquez sur \"Suivant\" ci-dessous lorsque vous aurez terminé.";
+
+/* Link to create a help ticket on email entry page */
+"Forgot your email?" = "Adresse e-mail oubliée ?";
 
 /* Name of 'fr' region */
 "France" = "France";
@@ -188,17 +198,16 @@
 /* Label for button on no account error page. Links to page to set up account */
 "Get AdBlock VPN" = "Obtenir AdBlock VPN";
 
-/* Label for button that opens a help page */
-"Get Help" = "Obtenir de l'aide";
-
 /* Label for button that starts the onboarding flow */
 "Get Started" = "Commencer";
 
 /* Name of 'gr' region */
 "Greece" = "Grèce";
 
-/* Help and feedback page title
-   Label for button that takes the user to the help and feedback page */
+/* label for help icon */
+"Help" = "Aide";
+
+/* Help and feedback page title */
 "Help & Feedback" = "Aide et remarques";
 
 /* Name of 'hk' region */
@@ -210,8 +219,18 @@
 /* Name of 'is' region */
 "Iceland" = "Islande";
 
+/* Label for empty IP address shown in connection info
+   Label for empty time connected section of connection info when the VPN isn't connected */
+"inactive" = "inactif";
+
 /* Name of 'in' region */
 "India" = "Inde";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv4" = "IPv4";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv6" = "IPv6";
 
 /* Name of 'ie' region */
 "Ireland" = "Irlande";
@@ -225,9 +244,6 @@
 /* Instructions for VPN configuration error page in onboarding flow */
 "It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "Il semble que nous ne disposions toujours pas de l'autorisation pour ajouter des configurations VPN à votre appareil. Essayons à nouveau.";
 
-/* Instructions for system extensions permissions error page in onboarding flow */
-"It looks like we still don't have permission to run on your device. Let's try again." = "Il semble que nous ne disposions toujours pas de l'autorisation pour une exécution sur votre appareil. Essayons à nouveau.";
-
 /* Instructions on subscription ended error page */
 "It looks like your subscription has ended. Please click below to renew." = "Il semble que votre abonnement soit arrivé à échéance. Veuillez cliquer ci-dessous pour le renouveler.";
 
@@ -240,8 +256,8 @@
 /* Label for toggle to turn the 'launch at login' feature on/off */
 "Launch at login" = "Lancer à la connexion";
 
-/* Label for button that takes user to login page
-   Label for button to go to login page */
+/* Label for button to go to login page
+Label for button that takes user to login page */
 "Log In" = "Ouvrir une session";
 
 /* Instructions on landing page */
@@ -265,18 +281,20 @@
 /* Name of option to use the nearest region */
 "Nearest location" = "Lieu le plus proche";
 
+/* Link to help site */
+"Need Help?" = "Besoin d'aide ?";
+
 /* Name of 'nl' region */
 "Netherlands" = "Pays-Bas";
 
 /* Name of 'nz' region */
 "New Zealand" = "Nouvelle-Zélande";
 
-/* Label for button on email entry page
-   Label for button that takes user to the next page of the onboarding flow */
+/* Label for button on email entry page */
 "Next" = "Suivant";
 
-/* Label for button that take the user to the next step in the onboarding flow
-   Label for button that takes the user to the next step in the onboarding flow */
+/* Label for button that takes the user to the next step in the onboarding flow
+Label for button that take the user to the next step in the onboarding flow */
 "Next Steps" = "Étapes suivantes";
 
 /* Name of 'no' region */
@@ -285,20 +303,13 @@
 /* Title for error view */
 "Oh dear. Something went wrong." = "Oh là là ! Une erreur est survenue.";
 
+/* Alt text for onboarding complete header image */
+"Onboarding complete" = "Intégration terminée";
+
 /* Title for device limit error page
-   Title for onboarding flow error page
    Title for subscription ended error page
    Title of no account error page */
 "Oops!" = "Oups !";
-
-/* Error text for generic errors */
-"Oops!\nSomething went wrong.\nPlease try again or contact support." = "Oups !\nUn problème est survenu.\nVeuillez réessayer ou contacter le service d'assistance.";
-
-/* Error text for invalid code error */
-"Oops!\nThat code didn’t work. Please try again." = "Oups !\nCe code n'a pas fonctionné. Veuillez réessayer.";
-
-/* Error text for imvalid email error. */
-"Oops!\nWe don’t recognize that email address.\nPlease try again or contact support." = "Oups !\nNous ne reconnaissons pas cette adresse e-mail.\nVeuillez réessayer ou contacter le service d'assistance.";
 
 /* Label for button that opens the main app after onboarding flow is complete */
 "Open AdBlock VPN" = "Ouvrir AdBlock VPN";
@@ -308,6 +319,21 @@
 
 /* Label for button that opens the system dialog */
 "Open System Dialog" = "Ouvrir le dialogue système";
+
+/* No comment provided by engineer. */
+"Page 1 of 5" = "Page 1 sur 5";
+
+/* No comment provided by engineer. */
+"Page 2 of 5" = "Page 2 sur 5";
+
+/* No comment provided by engineer. */
+"Page 3 of 5" = "Page 3 sur 5";
+
+/* No comment provided by engineer. */
+"Page 4 of 5" = "Page 4 sur 5";
+
+/* No comment provided by engineer. */
+"Page 5 of 5" = "Page 5 sur 5";
 
 /* Title for VPN setup page */
 "Please allow VPN configurations when prompted to connect to AdBlock VPN." = "Veuillez autoriser les configurations VPN lorsque vous êtes invité à vous connecter à AdBlock VPN.";
@@ -325,19 +351,19 @@
 "Please restart AdBlock VPN" = "Veuillez redémarrer AdBlock VPN";
 
 /* Needs app restart error full msg */
-"Please restart AdBlock VPN. If the problem persists, contact our support team." = "Veuillez redémarrer AdBlock VPN. Si le problème persiste, contactez notre équipe d'assistance.";
+"Please restart AdBlock VPN." = "Veuillez redémarrer AdBlock VPN.";
 
 /* Needs machine restart short msg */
 "Please restart your computer" = "Veuillez redémarrer votre ordinateur";
 
 /* Needs machine restart error full msg */
-"Please restart your computer. If the problem persists, contact our support team." = "Veuillez redémarrer votre ordinateur. Si le problème persiste, contactez notre équipe d'assistance.";
+"Please restart your computer." = "Veuillez redémarrer votre ordinateur.";
 
 /* Needs authentication short msg */
 "Please sign in again" = "Veuillez vous reconnecter";
 
 /* Needs authentication error full msg */
-"Please sign in again. If the problem persists, contact our support team." = "Veuillez vous reconnecter. Si le problème persiste, contactez notre équipe d'assistance.";
+"Please sign in again." = "Veuillez vous reconnecter.";
 
 /* Title for update required page */
 "Please update AdBlock VPN to continue." = "Veuillez mettre à jour AdBlock VPN pour continuer.";
@@ -348,8 +374,14 @@
 /* Preferences page title */
 "Preferences" = "Préférences";
 
-/* Link to contact support team */
-"Questions? <a href='%@'>Chat with our support team</a>" = "Des questions ? <a href='%@'>Chattez avec notre équipe d'assistance</a>";
+/* Link to Privacy Policy */
+"Privacy Policy" = "Politique de confidentialité";
+
+/* Label for spinning circle when login flow is waiting for the server response */
+"Processing" = "Traitement en cours";
+
+/* Link to support site */
+"Questions? Chat with our support team" = "Vous avez des questions ? Chattez avec notre équipe d'assistance";
 
 /* Label for quit button when the VPN is disconnected */
 "Quit" = "Quitter";
@@ -359,6 +391,9 @@
 
 /* Label for reconnect button, shown when VPN is in the process of disconnecting */
 "Reconnect" = "Reconnecter";
+
+/* Label for resfresh icon */
+"Refresh" = "Actualiser";
 
 /* Label for button on subscription ended error page. Links to page where user can renew their subscription */
 "Renew Subscription" = "Renouveler l'abonnement";
@@ -384,8 +419,8 @@
 /* Notification shown when the VPN is connecting to the given location. Variable holds the name of the location. */
 "Securing your connection...\n%@" = "Sécurisation de votre connexion...\n%@";
 
-/* Label for button that opens a feedback page */
-"Send Feedback" = "Envoyer commentaires";
+/* No comment provided by engineer. */
+"Select region" = "Sélectionner région";
 
 /* Name of 'rs' region */
 "Serbia" = "Serbie";
@@ -405,9 +440,6 @@
 /* Label for button that signs the user out of their account (and the app) */
 "Sign Out" = "Se déconnecter";
 
-/* Link text on email entry page. This text must match the corresponding text in the footer text. */
-"Sign up." = "S'inscrire.";
-
 /* Name of 'sg' region */
 "Singapore" = "Singapour";
 
@@ -419,6 +451,9 @@
 
 /* Instructions on update error page */
 "Something went wrong while attempting to update AdBlock VPN. Please try again." = "Un problème est survenu lors de la tentative de mise à jour d'AdBlock VPN. Veuillez réessayer.";
+
+/* Error text for generic errors */
+"Something went wrong. Please try again." = "Une erreur s'est produite. Veuillez réessayer.";
 
 /* Name of 'es' region */
 "Spain" = "Espagne";
@@ -435,10 +470,6 @@
 /* Label for button on code entry page */
 "Submit" = "Envoyer";
 
-/* Link to contact support. Text must match corresponding text in error
-   Link to contact support. Text must match corresponding text in full msg */
-"support team" = "équipe d'assistance";
-
 /* Name of 'se' region */
 "Sweden" = "Suède";
 
@@ -448,23 +479,14 @@
 /* Title for onboarding intro */
 "Thanks for installing AdBlock VPN" = "Merci d'avoir installé AdBlock VPN";
 
-/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
-"this article" = "cet article";
+/* Error text for invalid code error */
+"That code didn’t work. Please try again." = "Ce code n'a pas fonctionné. Veuillez réessayer.";
 
-/* Link to try again on generic errors. Text must match corresponding text in error
-   Link to try again on invalid code error. Text must match corresponding text in error
-   Link to try again on invalid email error. Text must match corresponding text in error */
-"try again" = "réessayer";
+/* Label for time connected secion of connection info */
+"Time connected: %@" = "Temps de connexion : %@";
 
 /* Label for button to try the step again */
 "Try Again" = "Réessayer";
-
-/* Link to try again on code entry page. This text must match the corresponding text in the footer text. */
-"Try again." = "Réessayer.";
-
-/* Link to try again on the no account error page. Text must match corresponding text in footer.
-   Link to try again on the subscription ended error page. Text must match corresponding text in footer */
-"Try using a different email address" = "Essayez d'utiliser une autre adresse électronique";
 
 /* Name of 'gb_lon' region */
 "United Kingdom - London" = "Royaume-Uni – Londres";
@@ -475,8 +497,8 @@
 /* Label for disabled button (when no update is available) */
 "Up To Date" = "À jour";
 
-/* Label for button that opens external update page
-   Label for button that triggers an update */
+/* Label for button that triggers an update
+Label for button that opens external update page */
 "Update" = "Mettre à jour";
 
 /* Label for button to go to updates page */
@@ -524,14 +546,19 @@
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "Version %@";
 
-/* Server error short msg */
-"We can't connect to our servers. Please try again later." = "Nous ne pouvons pas nous connecter à nos serveurs. Veuillez réessayer plus tard.";
+/* Alt text for image on VPN set up page
+Alt text for image on extension set up page */
+"VPN disabled" = "VPN désactivé";
 
-/* Server error full msg */
-"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "Nous ne pouvons pas nous connecter à nos serveurs. Veuillez réessayer plus tard. Si le problème persiste, contactez notre équipe d'assistance.";
+/* Server error full msg
+   Server error short msg */
+"We can't connect to our servers. Please try again later." = "Nous ne pouvons pas nous connecter à nos serveurs. Veuillez réessayer plus tard.";
 
 /* Intructions for no account error page */
 "We couldn’t find an account for that email address. Please click below to get started." = "Nous n'avons pas trouvé de compte pour cette adresse électronique. Veuillez cliquer ci-dessous pour commencer.";
+
+/* Error text for imvalid email error. */
+"We don’t recognize that email address. Please try again." = "Nous ne reconnaissons pas cette adresse e-mail. Veuillez réessayer.";
 
 /* Intructions on code entry page */
 "We sent you a 6-character access code. Enter it below:" = "Nous vous avons envoyé un code d'accès à 6 caractères. Saisissez-le ci-dessous :";
@@ -545,15 +572,17 @@
 /* Subtitle on update required page */
 "You are using an unsupported version of AdBlock VPN." = "Vous utilisez une version d'AdBlock VPN non prise en charge.";
 
-/* No internet error full msg
-   No internet error short msg */
+/* No internet error short msg */
 "You aren't connected to the internet!\nPlease check your network connection." = "Vous n'êtes pas connecté à Internet !\nVeuillez vérifier votre connexion réseau.";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "Vous n'êtes pas connecté à l'Internet ! Veuillez vérifier votre connexion réseau.";
 
 /* Intructions for device limit error page */
 "You have already registered the maximum 6 devices. Please click below to update your settings." = "Vous avez déjà enregistré le maximum de 6 appareils. Veuillez cliquer ci-dessous pour mettre à jour vos paramètres.";
 
 /* Error text for loggeed out error */
-"You were logged out.\nPlease sign in again.\nIf the problem persists, contact our support team." = "Vous avez été déconnecté.\nVeuillez vous reconnecter.\nSi le problème persiste, contactez notre équipe d'assistance.";
+"You were logged out. Please sign in again." = "Vous avez été déconnecté. Veuillez vous reconnecter.";
 
 /* Instructions for enabling notifications from system preferences */
 "You will get the best app experience from AdBlock VPN by turning on notifications. Click ”Open Notifications”  then toggle notifications from AdBlock VPN to ”On”. You can also skip this step if you do not want notifications from AdBlock VPN." = "Vous obtiendrez la meilleure expérience de l'application AdBlock VPN en activant les notifications. Cliquez sur \"Ouvrir les notifications\" puis activez les notifications d'AdBlock VPN. Vous pouvez également ignorer cette étape si vous ne souhaitez pas recevoir de notifications d'AdBlock VPN.";

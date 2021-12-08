@@ -18,12 +18,18 @@ import SwiftUI
 
 struct OnboardingBodyView: View {
     let headerImage: String
+    let headerImageLabel: Text?
     let bodyTitle: Text
 
     var body: some View {
         VStack {
             Spacer().frame(height: 32)
-            Image(headerImage)
+            if headerImageLabel != nil {
+                // swiftlint:disable:next force_unwrapping
+                Image(headerImage, label: headerImageLabel!)
+            } else {
+                Image(decorative: headerImage)
+            }
             Divider()
                 .opacity(0)
                 .background(Color.abBorder)
@@ -41,8 +47,8 @@ struct OnboardingBodyView: View {
 
 struct OnboardingSubviewTemplate_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingBodyView(headerImage: "OnboardingIntro",
+        OnboardingBodyView(headerImage: "OnboardingIntro", headerImageLabel: nil,
                            bodyTitle: Text(verbatim: "Thanks for installing AdBlockVPN"))
-            .background(Color.white)
+            .background(Color.abBackground)
     }
 }

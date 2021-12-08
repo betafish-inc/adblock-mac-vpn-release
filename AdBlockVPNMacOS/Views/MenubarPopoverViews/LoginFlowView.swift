@@ -34,6 +34,8 @@ struct LoginFlowView: View {
                     .onAppear {
                         viewModel.isSpinning = true
                     }
+                    .customAccessibilityLabel(Text("Processing", comment: "Label for spinning circle when login flow is waiting for the server response"))
+                    .customAccessibilityAddTraits(.isImage)
             } else {
                 VStack(alignment: .leading) {
                     Text(viewModel.pageStrings.titleText)
@@ -50,128 +52,89 @@ struct LoginFlowView: View {
                                           isFocused: $textFieldFocused,
                                           placeholderText: placeholder,
                                           alignCenter: viewModel.currentPage == .codeEntry,
+                                          trimWhitespace: true,
                                           onCommit: textEntryButtonClicked)
                         .padding(.horizontal, 16)
                         .frame(width: 272, height: 40)
-                        .background(Color.white)
+                        .background(Color.abBackground)
                         .cornerRadius(6)
                         .clipped()
                         .overlay(
                             RoundedRectangle(cornerRadius: 6)
                                 .stroke(Color.abBorder, lineWidth: 1)
                         )
-                        .shadow(color: textFieldFocused ? Color.abShadow : .white, radius: 20, x: 0, y: 5)
+                        .shadow(color: textFieldFocused ? Color.abShadow : .abShadowLight,
+                                radius: 20, x: 0, y: 5)
                     Spacer().frame(height: 17)
                 }
                 if !inputString.isEmpty || [.noAccountError, .subEndedError, .deviceLimitError].contains(viewModel.currentPage) {
                     Button(action: { textEntryButtonClicked() }, label: { Text(viewModel.pageStrings.buttonText) }).buttonStyle(PrimaryButtonStyle())
                 } else {
-                    DisabledButtonView(text: Text(viewModel.pageStrings.buttonText))
+                    Button(action: {}, label: { Text(viewModel.pageStrings.buttonText) }).buttonStyle(DisabledButtonStyle())
                 }
                 if let linkText = viewModel.pageStrings.linkText {
                     Spacer().frame(height: 8)
-                    HTMLStringView(htmlContent: linkText, fontSize: 12, centered: true)
+                    LinkButtonView(action: {
+                        if let url = URL(string: linkText.1) {
+                            NSWorkspace.shared.open(url)
+                        }
+                    }, text: Text(linkText.0))
                 }
             }
             Spacer()
             if let footerText = viewModel.pageStrings.footerText {
-                ZStack(alignment: .center) {
-                    Rectangle()
-                        .fill(Color.abHeaderBackground)
-                    VStack(alignment: .center) {
-                        HStack(alignment: .center) {
-                            if let tryAgainText = viewModel.pageStrings.footerTryAgainText {
-                                MultiLinkTextField(content: footerText,
-                                                   fontSize: 14,
-                                                   centered: true,
-                                                   backgroundColor: .abHeaderBackground,
-                                                   textColor: .abLightText,
-                                                   accentColorLinks: true,
-                                                   localLinks: [tryAgainText: { viewModel.tryAgainClicked() }],
-                                                   webLinks: viewModel.pageStrings.footerWebLinks)
-                                    .frame(width: 300)
-                                    .fixedSize(horizontal: true, vertical: true)
-                            } else {
-                                MultiLinkTextField(content: footerText,
-                                                   fontSize: 14,
-                                                   centered: true,
-                                                   backgroundColor: .abHeaderBackground,
-                                                   textColor: .abLightText,
-                                                   accentColorLinks: true,
-                                                   localLinks: nil,
-                                                   webLinks: viewModel.pageStrings.footerWebLinks)
-                                    .frame(width: 300)
-                                    .fixedSize(horizontal: true, vertical: true)
-                            }
+                FooterBlockView(footerText: footerText, linkAction: {
+                    if viewModel.pageStrings.footerTryAgain {
+                        tryAgainClicked()
+                    } else {
+                        if let myURL = viewModel.pageStrings.footerWebLink, let url = URL(string: myURL) {
+                            NSWorkspace.shared.open(url)
                         }
                     }
-                }.frame(width: 320, height: 62)
+                })
+                .frame(width: 320)
+                .if(viewModel.isOverlayError) {
+                    $0.hidden()
+                }
+                .fixedSize(horizontal: false, vertical: true)
             }
         }
+        .accessibilityElement(children: .contain)
         .frame(width: 320, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
-        .foregroundColor(Color.black)
+        .background(Color.abBackground)
         .latoFont()
         .overlay(
             VStack {
                 Spacer().layoutPriority(2)
-                if viewModel.isError {
-                    ZStack {
-                        Rectangle().fill(Color.abErrorAccent)
-                        HStack(alignment: .top) {
-                            if let tryAgainText = viewModel.errorStrings.errorTryAgainText {
-                                MultiLinkTextField(content: viewModel.errorStrings.errorText,
-                                                   fontSize: 14,
-                                                   centered: false,
-                                                   backgroundColor: .abErrorAccent,
-                                                   textColor: .white,
-                                                   accentColorLinks: false,
-                                                   localLinks: [tryAgainText: { viewModel.tryAgainClicked() }],
-                                                   webLinks: viewModel.errorStrings.errorWebLinks,
-                                                   width: 252)
-                                    .frame(width: 252)
-                                    .fixedSize(horizontal: true, vertical: true)
-                                    .padding(EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 0))
-                            } else {
-                                MultiLinkTextField(content: viewModel.errorStrings.errorText,
-                                                   fontSize: 14,
-                                                   centered: false,
-                                                   backgroundColor: .abErrorAccent,
-                                                   textColor: .white,
-                                                   accentColorLinks: false,
-                                                   localLinks: nil,
-                                                   webLinks: viewModel.errorStrings.errorWebLinks,
-                                                   width: 252)
-                                    .frame(width: 252)
-                                    .fixedSize(horizontal: true, vertical: true)
-                                    .padding(EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 0))
-                            }
-                            Button {
-                                viewModel.dismissError()
-                            } label: {
-                                Image("CloseIcon")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .onHover { inside in
-                                        if inside {
-                                            NSCursor.pointingHand.push()
-                                        } else {
-                                            NSCursor.pop()
-                                        }
-                                    }
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                            .foregroundColor(.white)
-                            .frame(width: 20, height: 20)
-                            .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 24))
-                        }
-                    }.layoutPriority(1)
+                if viewModel.isOverlayError {
+                    ErrorBlockView(
+                        errorText: viewModel.errorStrings.errorText,
+                        linkAction: viewModel.errorStrings.errorTryAgain ? tryAgainClicked : nil,
+                        dismissError: viewModel.dismissError,
+                        showHelp: true)
+                        .layoutPriority(1)
                 }
             }
         )
         .onAppear {
             viewModel.checkError()
         }
+        .onReceive(viewModel.$isOverlayError, perform: { newVal in
+            if newVal, newVal != viewModel.isOverlayError {
+                if NSWorkspace.shared.isVoiceOverEnabled {
+                    // delay until after the last UI element is read (hopefully)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        NSAccessibility.post(
+                            element: NSApp as Any,
+                            notification: .announcementRequested,
+                            userInfo: [
+                                NSAccessibility.NotificationUserInfoKey.announcement: viewModel.errorStrings.errorText,
+                                .priority: NSAccessibilityPriorityLevel.high.rawValue
+                            ])
+                    }
+                }
+            }
+        })
     }
     
     func textEntryButtonClicked() {
@@ -184,10 +147,18 @@ struct LoginFlowView: View {
             inputString = ""
         }
     }
+    
+    func tryAgainClicked() {
+        inputString = ""
+        viewModel.tryAgainClicked()
+    }
 }
 
 struct LoginFlowView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginFlowView(viewModel: LoginViewModel(authManager: AuthManager(), logManager: LogManager(), errorManager: ErrorManager())).environmentObject(AppState())
+        LoginFlowView(viewModel: LoginViewModel(authManager: AuthManager(),
+                                                logManager: LogManager(),
+                                                errorManager: ErrorManager()))
+            .environmentObject(AppState())
     }
 }

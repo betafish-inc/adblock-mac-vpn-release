@@ -31,7 +31,7 @@ class FocusTextField: NSTextField {
         super.init(frame: .zero)
         self.onFocusChange = onFocusChange
         self.textColor = .abDarkText
-        self.backgroundColor = .white
+        self.backgroundColor = .abBackground
         self.isBezeled = false
         let paragraph = NSMutableParagraphStyle()
         if alignment == .center {
@@ -66,10 +66,11 @@ struct FocusTextFieldElement: NSViewRepresentable {
     @Binding var isFocused: Bool
     var placeholderText: String
     var alignCenter: Bool
+    let trimWhitespace: Bool
     var onCommit: () -> Void
 
     func makeCoordinator() -> FocusTextFieldElement.Coordinator {
-        return Coordinator(text: $text, isFocused: $isFocused, onCommit: onCommit)
+        return Coordinator(text: $text, isFocused: $isFocused, trimWhitespace: trimWhitespace, onCommit: onCommit)
     }
 
     func makeNSView(context: NSViewRepresentableContext<FocusTextFieldElement>) -> FocusTextField {
@@ -100,27 +101,34 @@ struct FocusTextFieldElement: NSViewRepresentable {
         @Binding var text: String
         @Binding var isFocused: Bool
         var onCommit: () -> Void
+        let trimWhitespace: Bool
 
-        init(text: Binding<String>, isFocused: Binding<Bool>, onCommit: @escaping () -> Void) {
+        init(text: Binding<String>, isFocused: Binding<Bool>, trimWhitespace: Bool, onCommit: @escaping () -> Void) {
             self._text = text
             self._isFocused = isFocused
+            self.trimWhitespace = trimWhitespace
             self.onCommit = onCommit
         }
 
         func controlTextDidChange(_ notification: Notification) {
             guard let textField = notification.object as? NSTextField else { return }
-            // Trim whitespace
-            textField.stringValue = textField.stringValue.filter { !$0.isWhitespace }
+            if trimWhitespace {
+                textField.stringValue = textField.stringValue.filter { !$0.isWhitespace }
+            }
             text = textField.stringValue
             textField.font = NSFont.latoFont()
         }
 
         func controlTextDidBeginEditing(_ obj: Notification) {
-            self.isFocused = true
+            DispatchQueue.main.async {
+                self.isFocused = true
+            }
         }
 
         func controlTextDidEndEditing(_ obj: Notification) {
-            self.isFocused = false
+            DispatchQueue.main.async {
+                self.isFocused = false
+            }
         }
 
         func textFieldShouldReturn(_ textField: NSTextField) -> Bool {

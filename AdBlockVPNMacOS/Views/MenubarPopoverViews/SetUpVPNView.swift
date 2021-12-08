@@ -23,7 +23,10 @@ struct SetUpVPNView: View {
         VStack {
             Spacer()
             ZStack {
-                Image("LockNotConnected").resizable().scaledToFit().frame(width: 120, height: 145)
+                Image("LockNotConnected", label: Text("VPN disabled", comment: "Alt text for image on VPN set up page"))
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 120, height: 145)
             }
             Spacer().frame(height: 5)
             Text("Please allow VPN configurations when prompted to connect to AdBlock VPN.", comment: "Title for VPN setup page")
@@ -32,18 +35,17 @@ struct SetUpVPNView: View {
                 .multilineTextAlignment(.center)
             Spacer()
                 .if(!state.showConnectionInfo) { $0.frame(height: 17) }
-            HTMLStringView(htmlContent:
-                            String(format:
-                                    NSLocalizedString("<a href='%@'>Need Help?</a>", comment: "Link to help page"), Constants.permissionsHelpURL),
-                           fontSize: 12, centered: true)
+            LinkButtonView(action: {
+                if let url = URL(string: Constants.permissionsHelpURL) {
+                    NSWorkspace.shared.open(url)
+                }
+            }, text: Text("Need Help?", comment: "Link to help site"))
             Spacer().frame(height: 27)
-            DisabledButtonView(text: Text("Connect", comment: "Label for disabled button on VPN setup page"))
-                .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+            Button(action: {}, label: { Text("Connect", comment: "Label for disabled button on VPN setup page") }).buttonStyle(DisabledButtonStyle())
             Spacer().frame(height: 24)
         }
         .frame(width: 320, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
-        .foregroundColor(Color.black)
+        .background(Color.abBackground)
         .onReceive(state.$providerAuthChecked, perform: { newVal in
             // need to wait on this until response from provider is complete
             if newVal {

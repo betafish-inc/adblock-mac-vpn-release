@@ -23,7 +23,7 @@ struct ErrorView: View {
         VStack {
             VStack {
                 Spacer().frame(height: state.showConnectionInfo ? 58 : 8)
-                Image("Alert")
+                Image("Alert", label: Text("Error", comment: "Alt text for alert icon"))
                     .resizable()
                     .scaledToFit()
                     .frame(width: 112, height: 139)
@@ -33,28 +33,30 @@ struct ErrorView: View {
                     .foregroundColor(.abDarkText)
             }
             Spacer()
-            ZStack(alignment: .center) {
-                Rectangle()
-                    .fill(Color.abErrorAccent)
-                VStack(alignment: .center) {
-                    HStack(alignment: .center) {
-                        MultiLinkTextField(content: viewModel.errorString.text,
-                                           fontSize: 14,
-                                           centered: true,
-                                           backgroundColor: .abErrorAccent,
-                                           textColor: .white,
-                                           accentColorLinks: false,
-                                           localLinks: nil,
-                                           webLinks: viewModel.errorString.links)
-                            .frame(width: 300)
-                            .fixedSize(horizontal: true, vertical: true)
-                    }
-                }
-            }.frame(width: 320, height: 118)
+            if viewModel.errorString.inlineLink {
+                ErrorBlockView(
+                    errorText: viewModel.errorString.text,
+                    linkAction: {
+                        if let urlString = viewModel.errorString.link, let url = URL(string: urlString) {
+                            NSWorkspace.shared.open(url)
+                        }
+                    },
+                    dismissError: nil,
+                    showHelp: true,
+                    helpURL: Constants.helpURL
+                )
+            } else {
+                ErrorBlockView(
+                    errorText: viewModel.errorString.text,
+                    linkAction: nil,
+                    dismissError: nil,
+                    showHelp: true,
+                    helpURL: viewModel.errorString.link ?? Constants.helpURL
+                )
+            }
         }
         .frame(width: 320, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
-        .foregroundColor(Color.black)
+        .background(Color.abBackground)
         .latoFont()
     }
 }
@@ -62,5 +64,6 @@ struct ErrorView: View {
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
         ErrorView(viewModel: ErrorViewModel(errorManager: ErrorManager()))
+            .environmentObject(AppState())
     }
 }

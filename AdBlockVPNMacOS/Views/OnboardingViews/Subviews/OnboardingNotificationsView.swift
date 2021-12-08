@@ -27,6 +27,7 @@ struct OnboardingNotificationsView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: (model.notificationInstructions == .alert) ? "OnboardingNotificationsAlert" : "OnboardingNotificationsSysPrefs",
+                               headerImageLabel: nil,
                                bodyTitle: Text("Allow AdBlock VPN Notifications", comment: "Title for notifications page in onboarding flow"))
             if model.notificationInstructions == .alert {
                 alertInstructions

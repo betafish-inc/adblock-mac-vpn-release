@@ -48,7 +48,7 @@ struct SecondaryButtonStyle: ButtonStyle {
                 .overlay(RoundedRectangle(cornerRadius: 6).stroke(borderColor, lineWidth: 1))
                 .latoFont(weight: bold ? .bold : .regular)
             if !icon.isEmpty {
-                Image(icon)
+                Image(decorative: icon)
                     .renderingMode(.template)
                     .resizable()
                     .scaledToFit()

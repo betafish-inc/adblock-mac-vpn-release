@@ -21,17 +21,24 @@ struct SearchBar: View {
     @State private var isFocused: Bool = false
     var body: some View {
         HStack {
-            Image("SearchIcon")
+            Image(decorative: "SearchIcon")
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 24)
-            FocusTextFieldElement(text: $searchText, isFocused: $isFocused, placeholderText: "Search", alignCenter: false, onCommit: {})
+            FocusTextFieldElement(text: $searchText,
+                                  isFocused: $isFocused,
+                                  placeholderText: "Search",
+                                  alignCenter: false,
+                                  trimWhitespace: false,
+                                  onCommit: {})
         }
+        .accessibilityElement(children: .contain)
+        .customAccessibilityLabel(Text("Search regions list", comment: "Alt text for regions search bar"))
         .foregroundColor(.abDarkText)
         .padding(.horizontal, 16)
         .frame(width: 272, height: 40)
-        .background(Color.white)
+        .background(Color.abSearchBarBackground)
         .cornerRadius(6)
         .clipped()
         .overlay(

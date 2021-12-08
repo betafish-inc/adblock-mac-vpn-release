@@ -24,22 +24,34 @@ struct AcceptanceView: View {
                 Text("Welcome to AdBlock VPN", comment: "Title of acceptance page")
                     .foregroundColor(.abDarkText)
                     .latoFont(weight: .bold)
-                HTMLStringView(
-                    htmlContent: String(format:
-                                            // swiftlint:disable:next line_length
-                                            NSLocalizedString("By proceeding, you are confirming you have read and accepted the <a href='%@'>End User License Agreement (EULA)</a>, and our <a href='%@'>Privacy Policy</a>.", comment: "Links to EULA and Privacy Policy"),
-                                        Constants.eulaURL, Constants.privacyURL),
-                    fontSize: 16,
-                    centered: false)
+                Spacer().frame(height: 6)
+                Text("By proceeding, you are confirming you have read and accepted both of the following...", comment: "Text explaining acceptance of EULA and Privacy Policy")
+                    .latoFont(size: 16)
+                    .foregroundColor(.abLightText)
             }
+            Spacer().frame(height: 16)
+            Button(action: {
+                if let url = URL(string: Constants.eulaURL) {
+                    NSWorkspace.shared.open(url)
+                }
+            }, label: { Text("End User License Agreement", comment: "Link to EULA") }).buttonStyle(SecondaryButtonStyle(bold: true))
+            Spacer().frame(height: 16)
+            Button(action: {
+                if let url = URL(string: Constants.privacyURL) {
+                    NSWorkspace.shared.open(url)
+                }
+            }, label: { Text("Privacy Policy", comment: "Link to Privacy Policy") }).buttonStyle(SecondaryButtonStyle(bold: true))
             Spacer()
             VStack(alignment: .center) {
-                HTMLStringView(
-                    htmlContent: String(format:
-                                            NSLocalizedString("Questions? <a href='%@'>Chat with our support team</a>", comment: "Link to contact support team"),
-                                        Constants.newTicketURL),
-                    fontSize: 12,
-                    centered: true)
+                LinkButtonView(
+                    action: {
+                        if let url = URL(string: Constants.newTicketURL) {
+                            NSWorkspace.shared.open(url)
+                        }
+                    },
+                    text:
+                        Text("Questions? Chat with our support team", comment: "Link to support site"),
+                    fontSize: 16)
                 Spacer().frame(height: 13)
                 Button(action: {
                     self.state.eulaAccepted = true
@@ -51,12 +63,13 @@ struct AcceptanceView: View {
             Spacer().frame(height: 25)
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
+        .background(Color.abBackground)
     }
 }
 
 struct AcceptanceView_Previews: PreviewProvider {
     static var previews: some View {
         AcceptanceView()
+            .environmentObject(AppState())
     }
 }

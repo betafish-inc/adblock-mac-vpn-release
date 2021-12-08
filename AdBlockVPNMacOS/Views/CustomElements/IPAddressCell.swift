@@ -38,38 +38,42 @@ struct IPAddressCell: View {
     var body: some View {
         ZStack {
             HStack {
-                Text(IPVersion)
-                    .latoFont(weight: .bold, size: 16)
-                    .foregroundColor(IPAddress.count == 2 ? .abInactiveElement : .abDarkText)
-                Spacer(minLength: 24)
-                if isIPError {
-                    ZStack(alignment: .trailing) {
-                        Text("Error", comment: "Label that is shown when IP Address lookup fails")
-                            .latoFont()
-                            .offset(y: errorTextOffset)
-                            .opacity(errorTextOpacity)
-                        Text("Retrying...", comment: "Label that is shown when retrying a network request")
-                            .latoFont()
-                            .offset(y: retryTextOffset)
-                            .opacity(retryTextOpacity)
-                            .foregroundColor(.abVPNStateConnected)
-                    }
-                } else {
-                    ZStack(alignment: .trailing) {
-                        Text(IPAddress)
-                            .latoFont()
-                            .offset(y: IPAddressTextOffset)
-                            .opacity(IPAddressTextOpacity)
-                            .foregroundColor(IPAddress.count == 2 ? .abInactiveElement : .abDarkText)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
-                        Text("Copied", comment: "Label that is shown when user copies data to clipboard.")
-                            .latoFont()
-                            .foregroundColor(.abVPNStateConnected)
-                            .offset(y: copiedTextOffset)
-                            .opacity(copiedTextOpacity)
+                HStack {
+                    Text(IPVersion)
+                        .latoFont(weight: .bold, size: 16)
+                        .foregroundColor(IPAddress.count == 2 ? .abInactiveAccent : .abDarkText)
+                    Spacer(minLength: 24)
+                    if isIPError {
+                        ZStack(alignment: .trailing) {
+                            Text("Error", comment: "Label that is shown when IP Address lookup fails")
+                                .latoFont()
+                                .offset(y: errorTextOffset)
+                                .opacity(errorTextOpacity)
+                            Text("Retrying...", comment: "Label that is shown when retrying a network request")
+                                .latoFont()
+                                .offset(y: retryTextOffset)
+                                .opacity(retryTextOpacity)
+                                .foregroundColor(.abVPNStateConnected)
+                        }
+                    } else {
+                        ZStack(alignment: .trailing) {
+                            Text(IPAddress)
+                                .latoFont()
+                                .offset(y: IPAddressTextOffset)
+                                .opacity(IPAddressTextOpacity)
+                                .foregroundColor(IPAddress.count == 2 ? .abInactiveAccent : .abDarkText)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                            Text("Copied", comment: "Label that is shown when user copies data to clipboard.")
+                                .latoFont()
+                                .foregroundColor(.abVPNStateConnected)
+                                .offset(y: copiedTextOffset)
+                                .opacity(copiedTextOpacity)
+                        }
                     }
                 }
+                .accessibilityElement(children: .combine)
+                .customAccessibilityLabel(getIPLabel())
                 ZStack {
                     if isIPError {
                         Button(action: refreshIPAddress, label: { Image("RefreshIcon").renderingMode(.template) })
@@ -77,13 +81,15 @@ struct IPAddressCell: View {
                             .rotationEffect(Angle(degrees: refreshIconRotationAngle))
                             .foregroundColor(isRefreshing ? .abVPNStateConnected : .abDarkText)
                             .disabled(isDisabled)
+                            .customAccessibilityLabel(Text("Refresh", comment: "Label for resfresh icon"))
                     } else {
                         Button(action: copyToPasteboard, label: { Image("CopyIcon") })
                             .buttonStyle(PlainButtonStyle())
                             .disabled(IPAddress.count == 2)
                             .offset(y: IPAddressTextOffset)
                             .opacity(IPAddressTextOpacity)
-                        Image("CheckIcon")
+                            .customAccessibilityLabel(Text("Copy \(IPVersion)", comment: "Label for copy icon, variable holds 'IPV4' or 'IPV6'"))
+                        Image(decorative: "CheckIcon")
                             .renderingMode(.template)
                             .foregroundColor(.abVPNStateConnected)
                             .offset(y: copiedTextOffset)
@@ -92,6 +98,23 @@ struct IPAddressCell: View {
                 }
             }
         }
+    }
+    
+    private func getIPLabel() -> Text {
+        var content = IPAddress
+        if isIPError {
+            if errorTextOpacity != 0 {
+                content = NSLocalizedString("Error", comment: "Label that is shown when IP Address lookup fails")
+            } else if retryTextOpacity != 0 {
+                content = NSLocalizedString("Retrying...", comment: "Label that is shown when retrying a network request")
+            }
+        }
+        
+        if content == "--" {
+            content = NSLocalizedString("inactive", comment: "Label for empty IP address shown in connection info")
+        }
+            
+        return Text("\(IPVersion): \(content)")
     }
 
     private func refreshIPAddress() {
@@ -149,6 +172,18 @@ struct IPAddressCell: View {
                 IPAddressTextOpacity = 1
                 copiedTextOffset = 15
                 copiedTextOpacity = 0
+            }
+        }
+        
+        if NSWorkspace.shared.isVoiceOverEnabled {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                NSAccessibility.post(
+                    element: NSApp as Any,
+                    notification: .announcementRequested,
+                    userInfo: [
+                        NSAccessibility.NotificationUserInfoKey.announcement: NSLocalizedString("Copied", comment: "Voiceover notification when IP address is copied"),
+                        .priority: NSAccessibilityPriorityLevel.high.rawValue
+                    ])
             }
         }
     }

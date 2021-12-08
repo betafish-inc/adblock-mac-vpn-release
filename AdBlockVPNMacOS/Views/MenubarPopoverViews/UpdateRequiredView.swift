@@ -23,7 +23,7 @@ struct UpdateRequiredView: View {
         VStack {
             Spacer()
                 .if(!state.showConnectionInfo) { $0.frame(height: 5) }
-            Image("RequiredUpdateIcon")
+            Image(decorative: "RequiredUpdateIcon")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 144, height: 144)

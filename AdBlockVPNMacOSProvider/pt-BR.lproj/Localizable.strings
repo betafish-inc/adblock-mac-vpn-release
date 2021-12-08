@@ -7,7 +7,7 @@
 /* Error msg when connection retry fails */
 "Connection retry failed." = "Falha ao tentar conectar novamente.";
 
-/* Needs support error full msg */
+/* Link to support site */
 "For help solving this problem, please contact our support team." = "Para ajudar a solucionar o problema, entre em contato com a equipe de suporte.";
 
 /* Needs knowledge base article error full msg */
@@ -32,42 +32,36 @@
 "Please restart AdBlock VPN" = "Reinicie o AdBlock VPN";
 
 /* Needs app restart error full msg */
-"Please restart AdBlock VPN. If the problem persists, contact our support team." = "Reinicie o AdBlock VPN. Se o problema persistir, entre em contato com a equipe de suporte.";
+"Please restart AdBlock VPN." = "Reinicie o AdBlock VPN.";
 
 /* Needs machine restart short msg */
 "Please restart your computer" = "Reinicie seu computador";
 
 /* Needs machine restart error full msg */
-"Please restart your computer. If the problem persists, contact our support team." = "Reinicie seu computador. Se o problema persistir, entre em contato com a equipe de suporte.";
+"Please restart your computer." = "Reinicie seu computador.";
 
 /* Needs authentication short msg */
 "Please sign in again" = "Entre novamente";
 
 /* Needs authentication error full msg */
-"Please sign in again. If the problem persists, contact our support team." = "Entre novamente. Se o problema persistir, entre em contato com a equipe de suporte.";
+"Please sign in again." = "Entre novamente.";
 
 /* Protocol configuration error msg */
 "Protocol configuration error." = "Erro de configuração de protocolo.";
 
-/* Link to contact support. Text must match corresponding text in full msg */
-"support team" = "equipe de suporte";
-
-/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
-"this article" = "este artigo";
-
 /* Generic token error */
 "Unknown token error." = "Erro de token desconhecido.";
 
-/* Server error short msg */
+/* Server error full msg
+   Server error short msg */
 "We can't connect to our servers. Please try again later." = "Não foi possível se conectar com nossos servidores. Tente novamente mais tarde.";
-
-/* Server error full msg */
-"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "Não foi possível se conectar aos nossos servidores. Tente novamente mais tarde. Se o problema persistir, entre em contato com a equipe de suporte.";
 
 /* Not signed in error */
 "You are not signed in." = "Você não entrou.";
 
-/* No internet error full msg
-   No internet error short msg */
+/* No internet error short msg */
 "You aren't connected to the internet!\nPlease check your network connection." = "Você não se conectou com a Internet!\nVerifique sua conexão com a rede.";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "Você não se conectou com a Internet! Verifique sua conexão com a rede.";
 

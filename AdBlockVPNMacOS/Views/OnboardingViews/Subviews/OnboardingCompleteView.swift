@@ -22,6 +22,7 @@ struct OnboardingCompleteView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingComplete",
+                               headerImageLabel: Text("Onboarding complete", comment: "Alt text for onboarding complete header image"),
                                bodyTitle: Text("You're ready to start using AdBlock VPN!", comment: "Title of onboarding complete page"))
             Spacer().frame(height: 48)
             HStack(spacing: 32) {

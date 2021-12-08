@@ -21,21 +21,31 @@ struct AccountView: View {
     @ObservedObject var viewModel: AccountViewModel
     var body: some View {
         VStack {
-            MenuButtonView(action: {
-                self.viewModel.openAccountManagement()
-            }, text: Text("Manage Account", comment: "Label for button that links to the account management page"), bold: false, icon: "LinkIcon", iconSize: 16)
+            MenuButtonView(
+                action: { self.viewModel.openAccountManagement() },
+                text: Text("Manage Account", comment: "Label for button that links to the account management page"),
+                bold: false,
+                icon: "LinkIcon",
+                iconSize: 16
+            )
+            .customAccessibilityAddTraits(.isLink)
             .disabled(viewModel.isRequestingMagicLink)
             Spacer().frame(height: 16)
             Divider().background(Color.abBorder).frame(width: 256)
             Spacer().frame(height: 16)
-            MenuButtonView(action: {
-                self.viewModel.logOut()
-                self.state.viewToShow = .landing
-            }, text: Text("Sign Out", comment: "Label for button that signs the user out of their account (and the app)"), bold: false, icon: "", iconSize: 11)
+            MenuButtonView(
+                action: {
+                    self.viewModel.logOut()
+                    self.state.viewToShow = .landing
+                },
+                text: Text("Sign Out", comment: "Label for button that signs the user out of their account (and the app)"),
+                bold: false, icon: "",
+                iconSize: 11
+            )
             Spacer()
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
+        .background(Color.abBackground)
         .foregroundColor(.abDarkText)
     }
 }
@@ -43,5 +53,6 @@ struct AccountView: View {
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
         AccountView(viewModel: AccountViewModel(vpnManager: VPNManager(), authManager: AuthManager()))
+            .environmentObject(AppState())
     }
 }

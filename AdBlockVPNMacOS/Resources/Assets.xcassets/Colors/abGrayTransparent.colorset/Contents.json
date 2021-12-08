@@ -4,13 +4,13 @@
       "color" : {
         "color-space" : "srgb",
         "components" : {
-          "alpha" : "1.000",
-          "blue" : "0xB7",
-          "green" : "0x55",
+          "alpha" : "0.150",
+          "blue" : "0x00",
+          "green" : "0x00",
           "red" : "0x00"
         }
       },
-      "idiom" : "universal"
+      "idiom" : "mac"
     }
   ],
   "info" : {

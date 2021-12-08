@@ -23,37 +23,37 @@ class LoginViewModel: ObservableObject {
     private var authManager: AuthManager
     private var logManager: LogManager
     private var errorManager: ErrorManager
-    private var error: LoginError? = nil {
+    private var error: LoginError? {
         didSet {
             switch error {
             case nil:
                 errorStrings = LoginViewModel.genericErrorText
-                isError = false
+                isOverlayError = false
             case .deviceLimit:
                 currentPage = .deviceLimitError
-                isError = true
+                isOverlayError = false
             case .noAccount:
                 currentPage = .noAccountError
-                isError = true
+                isOverlayError = false
             case .subEnded:
                 currentPage = .subEndedError
-                isError = true
+                isOverlayError = false
             case .invalidEmail:
                 errorStrings = LoginViewModel.invalidEmailErrorText
-                isError = true
+                isOverlayError = true
             case .invalidCode:
                 errorStrings = LoginViewModel.invalidCodeErrorText
-                isError = true
+                isOverlayError = true
             case .generic:
                 errorStrings = LoginViewModel.genericErrorText
-                isError = true
+                isOverlayError = true
             case .noServer:
                 errorStrings = LoginViewModel.genericErrorText
-                isError = true
+                isOverlayError = true
                 errorManager.setError(error: ErrorManager.ErrorObj(message: "", type: .noServer, link: nil))
             case .loggedOut:
                 errorStrings = LoginViewModel.loggedOutErrorText
-                isError = true
+                isOverlayError = true
                 errorManager.clearError()
             }
         }
@@ -84,7 +84,7 @@ class LoginViewModel: ObservableObject {
         }
     }
     @Published var isSpinning = false
-    @Published var isError = false
+    @Published var isOverlayError = false
     @Published var errorStrings = LoginViewModel.genericErrorText
     
     init(authManager: AuthManager, logManager: LogManager, errorManager: ErrorManager) {
@@ -184,16 +184,15 @@ extension LoginViewModel {
         var descriptionText: String
         var placeholderText: String?
         var buttonText: String
-        var linkText: String?
+        var linkText: (String, String)?
         var footerText: String?
-        var footerTryAgainText: String?
-        var footerWebLinks: [String: String]?
+        var footerTryAgain: Bool = false
+        var footerWebLink: String?
     }
     
     struct ErrorStrings {
         var errorText: String
-        var errorTryAgainText: String?
-        var errorWebLinks: [String: String]?
+        var errorTryAgain: Bool = false
     }
     
     static let emailEntryText =
@@ -210,15 +209,13 @@ extension LoginViewModel {
                         NSLocalizedString("Next",
                                           comment: "Label for button on email entry page"),
                      linkText:
-                        String(format: NSLocalizedString("<a href='%@'>Forgot your email?</a>",
-                                                         comment: "Link to create a help ticket on email entry page"), Constants.newTicketURL),
+                        (NSLocalizedString("Forgot your email?",
+                                           comment: "Link to create a help ticket on email entry page"),
+                        Constants.newTicketURL),
                      footerText:
                         NSLocalizedString("Don't have an AdBlock account? Sign up.",
                                           comment: "Footer text on email entry page"),
-                     footerWebLinks: [
-                        NSLocalizedString("Sign up.",
-                                          comment: "Link text on email entry page. This text must match the corresponding text in the footer text."):
-                            Constants.mainVpnURL])
+                     footerWebLink: Constants.mainVpnURL)
     static let codeEntryText =
         LoginStrings(titleText:
                         NSLocalizedString("Check Your Email",
@@ -235,9 +232,7 @@ extension LoginViewModel {
                      footerText:
                         NSLocalizedString("Didn't get the code? Try again.",
                                           comment: "Footer text on code entry page"),
-                     footerTryAgainText:
-                        NSLocalizedString("Try again.",
-                                          comment: "Link to try again on code entry page. This text must match the corresponding text in the footer text."))
+                     footerTryAgain: true)
     static let noAccountText =
         LoginStrings(titleText:
                         NSLocalizedString("Oops!",
@@ -249,15 +244,9 @@ extension LoginViewModel {
                         NSLocalizedString("Get AdBlock VPN",
                                           comment: "Label for button on no account error page. Links to page to set up account"),
                      footerText:
-                        NSLocalizedString("Doesn’t sound right? Try using a different email address or contact support.",
+                        NSLocalizedString("Doesn’t sound right? Try using a different email address.",
                                           comment: "Footer text on no account error page"),
-                     footerTryAgainText:
-                        NSLocalizedString("Try using a different email address",
-                                          comment: "Link to try again on the no account error page. Text must match corresponding text in footer."),
-                     footerWebLinks: [
-                        NSLocalizedString("contact support",
-                                          comment: "Link to contact support on no account error page. Text must match corresponding text in footer"):
-                            Constants.newTicketURL])
+                     footerTryAgain: true)
     static let subEndedText =
         LoginStrings(titleText:
                         NSLocalizedString("Oops!",
@@ -269,15 +258,9 @@ extension LoginViewModel {
                         NSLocalizedString("Renew Subscription",
                                           comment: "Label for button on subscription ended error page. Links to page where user can renew their subscription"),
                      footerText:
-                        NSLocalizedString("Doesn’t sound right? Try using a different email address or contact support.",
+                        NSLocalizedString("Doesn’t sound right? Try using a different email address.",
                                           comment: "Footer text on subscription ended page"),
-                     footerTryAgainText:
-                        NSLocalizedString("Try using a different email address",
-                                          comment: "Link to try again on the subscription ended error page. Text must match corresponding text in footer"),
-                     footerWebLinks: [
-                        NSLocalizedString("contact support",
-                                          comment: "Link to contact support on subscription ended error page. Text must match corresponding text in footer"):
-                            Constants.newTicketURL])
+                     footerTryAgain: true)
     static let deviceLimitText =
         LoginStrings(titleText:
                         NSLocalizedString("Oops!",
@@ -291,40 +274,21 @@ extension LoginViewModel {
     
     static let invalidEmailErrorText =
         ErrorStrings(errorText:
-                        NSLocalizedString("Oops! We don’t recognize that email address. Please try again or contact support.",
+                        NSLocalizedString("We don’t recognize that email address. Please try again.",
                                           comment: "Error text for imvalid email error."),
-                     errorTryAgainText:
-                        NSLocalizedString("try again",
-                                          comment: "Link to try again on invalid email error. Text must match corresponding text in error"),
-                     errorWebLinks: [
-                        NSLocalizedString("contact support",
-                                          comment: "Link to contact support. Text must match corresponding text in error"):
-                            Constants.newTicketURL])
+                     errorTryAgain: true)
     static let invalidCodeErrorText =
         ErrorStrings(errorText:
-                        NSLocalizedString("Oops! That code didn’t work. Please try again.",
+                        NSLocalizedString("That code didn’t work. Please try again.",
                                           comment: "Error text for invalid code error"),
-                     errorTryAgainText:
-                        NSLocalizedString("try again",
-                                          comment: "Link to try again on invalid code error. Text must match corresponding text in error"))
+                     errorTryAgain: true)
     static let genericErrorText =
         ErrorStrings(errorText:
-                        NSLocalizedString("Oops! Something went wrong. Please try again or contact support.",
+                        NSLocalizedString("Something went wrong. Please try again.",
                                           comment: "Error text for generic errors"),
-                     errorTryAgainText:
-                        NSLocalizedString("try again",
-                                          comment: "Link to try again on generic errors. Text must match corresponding text in error"),
-                     errorWebLinks: [
-                        NSLocalizedString("contact support",
-                                          comment: "Link to contact support. Text must match corresponding text in error"):
-                            Constants.newTicketURL])
+                     errorTryAgain: true)
     static let loggedOutErrorText =
         ErrorStrings(errorText:
-                        NSLocalizedString("You were logged out. Please sign in again. If the problem persists, contact our support team.",
-                                          comment: "Error text for loggeed out error"),
-                     errorTryAgainText: nil,
-                     errorWebLinks: [
-                        NSLocalizedString("support team",
-                                          comment: "Link to contact support. Text must match corresponding text in error"):
-                            Constants.newTicketURL])
+                        NSLocalizedString("You were logged out. Please sign in again.",
+                                          comment: "Error text for loggeed out error"))
 }

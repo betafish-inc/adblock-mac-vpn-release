@@ -26,8 +26,8 @@ struct ListItemButtonStyle: ButtonStyle {
         configuration.label
             .frame(width: buttonWidth, height: 40, alignment: .center)
             .offset(x: 0, y: configuration.isPressed ? 0 : isHover ? -1 : 0)
-            .background(selected ? Color.abPrimaryAccent : configuration.isPressed ? Color.abListItemClicked : Color.white)
-            .foregroundColor(selected ? .white : .abDarkText)
+            .background(selected ? Color.abPrimaryAccent : configuration.isPressed ? Color.abListItemClicked : Color.abListItemBackground)
+            .foregroundColor(selected ? .abWhiteText : .abDarkText)
             .cornerRadius(6)
             .shadow(color: selected ? .clear : configuration.isPressed ? .clear : isHover ? .abShadow : .clear,
                     radius: isHover ? 4 : 0,

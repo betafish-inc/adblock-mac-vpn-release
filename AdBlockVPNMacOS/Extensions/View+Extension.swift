@@ -16,6 +16,96 @@
 
 import SwiftUI
 
+@available(macOS 11.0, *)
+struct AccessibilitySortPriorityViewModifier: ViewModifier {
+    var text: Double
+    
+    func body(content: Content) -> some View {
+        content.accessibilitySortPriority(text)
+    }
+}
+
+struct AccessibilitySortPriorityDeprecatedVM: ViewModifier {
+    var text: Double
+    
+    func body(content: Content) -> some View {
+        content.accessibility(sortPriority: text)
+    }
+}
+
+extension View {
+    /// Allows you to use the appropriate version of accessibility sort priorityl based on what version of macOS is available
+    /// Example usage: `.customSortPriority(1)`
+    @ViewBuilder
+    func customSortPriority(_ priority: Double) -> some View {
+        if #available(macOS 11.0, *) {
+            self.modifier(AccessibilitySortPriorityViewModifier(text: priority))
+        } else {
+            self.modifier(AccessibilitySortPriorityDeprecatedVM(text: priority))
+        }
+    }
+}
+
+@available(macOS 11.0, *)
+struct AccessibilityLabelViewModifier: ViewModifier {
+    var text: Text
+    
+    func body(content: Content) -> some View {
+        content.accessibilityLabel(text)
+    }
+}
+
+struct AccessibilityLabelDeprecatedViewModifier: ViewModifier {
+    var text: Text
+    
+    func body(content: Content) -> some View {
+        content.accessibility(label: text)
+    }
+}
+
+extension View {
+    /// Allows you to use the appropriate version of accessibility label based on what version of macOS is available
+    /// Example usage: `.customAccessibilityLabel("Link to website")`
+    @ViewBuilder
+    func customAccessibilityLabel(_ text: Text) -> some View {
+        if #available(macOS 11.0, *) {
+            self.modifier(AccessibilityLabelViewModifier(text: text))
+        } else {
+            self.modifier(AccessibilityLabelDeprecatedViewModifier(text: text))
+        }
+    }
+}
+
+@available(macOS 11.0, *)
+struct AccessibilityAddTraitsViewModifier: ViewModifier {
+    var text: AccessibilityTraits
+    
+    func body(content: Content) -> some View {
+        content.accessibilityAddTraits(text)
+    }
+}
+
+struct AccessibilityAddTraitsDepViewModifier: ViewModifier {
+    var text: AccessibilityTraits
+    
+    func body(content: Content) -> some View {
+        content.accessibility(addTraits: text)
+    }
+}
+
+extension View {
+    /// Allows you to use the appropriate version of adding accessibility traits based on what version of macOS is available
+    /// Example usage: `.customAccessibilityAddTraits(.isLink)`
+    @ViewBuilder
+    func customAccessibilityAddTraits(_ text: AccessibilityTraits) -> some View {
+        if #available(macOS 11.0, *) {
+            self.modifier(AccessibilityAddTraitsViewModifier(text: text))
+        } else {
+            self.modifier(AccessibilityAddTraitsDepViewModifier(text: text))
+        }
+    }
+}
+
 extension View {
     /// Allows you to conditionally apply a `ViewModifier` to a `View`.
     /// If `condition` equates to true, the view modifier will transformed as per the closure input.

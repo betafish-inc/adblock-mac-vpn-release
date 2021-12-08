@@ -28,7 +28,7 @@ struct ConnectionView: View {
             Spacer().frame(height: state.showConnectionInfo ? 0 : 24)
             ZStack {
                 if !viewModel.flag.isEmpty && viewModel.grey {
-                    Image("FlagWorldGrey")
+                    Image(decorative: "FlagWorldGrey")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 120, height: 120)
@@ -37,12 +37,12 @@ struct ConnectionView: View {
                         .onAppear { connectionAnimation = true }
                         .onDisappear { connectionAnimation = false }
                 } else if !viewModel.flag.isEmpty {
-                    Image(viewModel.flag)
+                    Image(decorative: viewModel.flag)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 120, height: 120)
                 }
-                Image(viewModel.connectionIcon)
+                Image(decorative: viewModel.connectionIcon)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 120, height: 145)
@@ -68,6 +68,7 @@ struct ConnectionView: View {
             } else {
                 Button(action: { state.viewToShow = .locations }, label: { Text(viewModel.regionButtonText) })
                     .buttonStyle(SecondaryButtonStyle(icon: "NextIcon", bold: true))
+                    .customAccessibilityLabel(Text("\(viewModel.regionButtonText), next", comment: "Alt text for region selection button"))
             }
             Spacer().frame(height: 16)
             if viewModel.grey {
@@ -82,7 +83,7 @@ struct ConnectionView: View {
             }
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
+        .background(Color.abBackground)
         .onAppear {
             viewModel.updateViewBasedOnCurrentState()
         }
@@ -91,6 +92,23 @@ struct ConnectionView: View {
                 SwiftyBeaver.debug("received restartConnection")
                 viewModel.restart()
                 state.restartConnection = false
+            }
+        })
+        .onReceive(viewModel.$connectionStateText, perform: { _ in
+            if NSWorkspace.shared.isVoiceOverEnabled {
+                let notification = viewModel.getVoiceOverNotification()
+                if !notification.isEmpty {
+                    // delay until after the last UI element is read (hopefully)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        NSAccessibility.post(
+                            element: NSApp as Any,
+                            notification: .announcementRequested,
+                            userInfo: [
+                                NSAccessibility.NotificationUserInfoKey.announcement: notification,
+                                .priority: NSAccessibilityPriorityLevel.high.rawValue
+                            ])
+                    }
+                }
             }
         })
     }

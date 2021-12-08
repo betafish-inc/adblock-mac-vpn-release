@@ -49,7 +49,6 @@
 		05BE59A7261D3E6400BA210A /* AcceptanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE599A261D3E6400BA210A /* AcceptanceView.swift */; };
 		05BE59AF261D3E9600BA210A /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE59AA261D3E9600BA210A /* MenuButtonView.swift */; };
 		05BE59B0261D3E9600BA210A /* RegionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE59AB261D3E9600BA210A /* RegionButtonView.swift */; };
-		05BE59B1261D3E9600BA210A /* DisabledButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE59AC261D3E9600BA210A /* DisabledButtonView.swift */; };
 		05C1EDB825F83D5800733397 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EDB725F83D5800733397 /* Color+Extension.swift */; };
 		05C99E0026F9E6F50004F1CF /* IPAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C99DFF26F9E6F50004F1CF /* IPAddressCell.swift */; };
 		05DE17112627963200072B99 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE17102627963200072B99 /* OnboardingViewModel.swift */; };
@@ -62,7 +61,6 @@
 		710A599524F5CEA5000F25B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A599424F5CEA5000F25B4 /* Constants.swift */; };
 		710A599724F5D24B000F25B4 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710A599624F5D24B000F25B4 /* KeychainAccess.framework */; };
 		710A599824F5D273000F25B4 /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 710A599624F5D24B000F25B4 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		710D934725477EA700A8B6EA /* HTMLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6A8AF252E9081002EAD16 /* HTMLString.swift */; };
 		711B5C5D253E77D20087B394 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711B5C5C253E77D20087B394 /* AccountViewModel.swift */; };
 		711B5C5F253FA1C30087B394 /* HelpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711B5C5E253FA1C30087B394 /* HelpViewModel.swift */; };
 		712C4F8B24C0D4360063F9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712C4F8A24C0D4360063F9AB /* AppDelegate.swift */; };
@@ -77,6 +75,7 @@
 		7130A34A2637581D008FE10F /* CustomColorToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7130A3492637581D008FE10F /* CustomColorToggleStyle.swift */; };
 		7130A34F26376C1B008FE10F /* ColorfulButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7130A34E26376C1B008FE10F /* ColorfulButtonView.swift */; };
 		71318E562579911B00C40CFD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 71318E552579911B00C40CFD /* LaunchAtLogin */; };
+		7135B0DB2718C86400E6C949 /* DisabledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B0DA2718C86400E6C949 /* DisabledButtonStyle.swift */; };
 		714060002500227800E40456 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A599924F98914000F25B4 /* AuthManager.swift */; };
 		71406001250022C600E40456 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A599424F5CEA5000F25B4 /* Constants.swift */; };
 		71406004250023DC00E40456 /* TokenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71406003250023DC00E40456 /* TokenInfo.swift */; };
@@ -86,12 +85,13 @@
 		7140600925004A5C00E40456 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7140600725004A1600E40456 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7140600A25004BF100E40456 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7140600725004A1600E40456 /* Alamofire.framework */; };
 		7140600C250AEE6200E40456 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7140600B250AEE6200E40456 /* MainViewModel.swift */; };
+		71454FD72744741F00EFF4B9 /* ErrorBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71454FD62744741F00EFF4B9 /* ErrorBlockView.swift */; };
+		71454FD9274485C300EFF4B9 /* FooterBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71454FD8274485C300EFF4B9 /* FooterBlockView.swift */; };
 		7146367E24D73F850085DE9B /* adblock.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 71EDB85124CFA0580019A1CA /* adblock.ovpn */; };
 		714E25AE24D1009700CBDD91 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AC72424C658E200D226A4 /* NetworkExtension.framework */; };
 		7153224926CDCE1800742919 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7153224726CDCE1800742919 /* InfoPlist.strings */; };
 		7153224C26CDCE1800742919 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7153224A26CDCE1800742919 /* Localizable.strings */; };
 		7153224F26CDCE1800742919 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7153224D26CDCE1800742919 /* Localizable.strings */; };
-		716CF5AB25B7A6CE00C4E448 /* MultiLinkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CF5AA25B7A6CE00C4E448 /* MultiLinkTextField.swift */; };
 		716E6A572588354F00C06AE1 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E6A562588354F00C06AE1 /* LogManager.swift */; };
 		716E6A582588354F00C06AE1 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E6A562588354F00C06AE1 /* LogManager.swift */; };
 		717AC72524C658E200D226A4 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AC72424C658E200D226A4 /* NetworkExtension.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -108,6 +108,7 @@
 		717EC99D2617BD1F00299F0B /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717EC99C2617BD1F00299F0B /* ErrorViewModel.swift */; };
 		71900B8F2686A311004351F9 /* UpdatesErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71900B8E2686A311004351F9 /* UpdatesErrorView.swift */; };
 		7199E86A25DEF18B00DDAA0F /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 7199E86925DEF18B00DDAA0F /* regions.json */; };
+		719C1667272B563E006E11E7 /* LinkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719C1666272B563E006E11E7 /* LinkButtonView.swift */; };
 		719C2BBF25A695C400558568 /* FocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719C2BBE25A695C400558568 /* FocusTextField.swift */; };
 		719CA8CA24DE0D8B00C46537 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146367C24D488A50085DE9B /* SystemConfiguration.framework */; };
 		719CA8DA24DF30C000C46537 /* OpenVPNAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719CA8D924DF30C000C46537 /* OpenVPNAdapter.framework */; };
@@ -308,7 +309,6 @@
 		05BE599A261D3E6400BA210A /* AcceptanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptanceView.swift; sourceTree = "<group>"; };
 		05BE59AA261D3E9600BA210A /* MenuButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		05BE59AB261D3E9600BA210A /* RegionButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionButtonView.swift; sourceTree = "<group>"; };
-		05BE59AC261D3E9600BA210A /* DisabledButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisabledButtonView.swift; sourceTree = "<group>"; };
 		05C1EDB725F83D5800733397 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		05C99DFF26F9E6F50004F1CF /* IPAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressCell.swift; sourceTree = "<group>"; };
 		05DE17102627963200072B99 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -343,9 +343,12 @@
 		7130A33A26374193008FE10F /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		7130A3492637581D008FE10F /* CustomColorToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorToggleStyle.swift; sourceTree = "<group>"; };
 		7130A34E26376C1B008FE10F /* ColorfulButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulButtonView.swift; sourceTree = "<group>"; };
+		7135B0DA2718C86400E6C949 /* DisabledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledButtonStyle.swift; sourceTree = "<group>"; };
 		71406003250023DC00E40456 /* TokenInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInfo.swift; sourceTree = "<group>"; };
 		7140600725004A1600E40456 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Alamofire.framework; path = Alamofire/Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7140600B250AEE6200E40456 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		71454FD62744741F00EFF4B9 /* ErrorBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBlockView.swift; sourceTree = "<group>"; };
+		71454FD8274485C300EFF4B9 /* FooterBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterBlockView.swift; sourceTree = "<group>"; };
 		7146367C24D488A50085DE9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7153224626CDCE1800742919 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		7153224826CDCE1800742919 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -391,7 +394,6 @@
 		7153227526CDCF0C00742919 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7153227626CDCF0C00742919 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7153227726CDCF0C00742919 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		716CF5AA25B7A6CE00C4E448 /* MultiLinkTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLinkTextField.swift; sourceTree = "<group>"; };
 		716E6A562588354F00C06AE1 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		717AC72224C658E200D226A4 /* com.adblockinc.adblockvpn.macos.provider.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.adblockinc.adblockvpn.macos.provider.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		717AC72424C658E200D226A4 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -410,6 +412,7 @@
 		717EC9A9261B96FE00299F0B /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		71900B8E2686A311004351F9 /* UpdatesErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesErrorView.swift; sourceTree = "<group>"; };
 		7199E86925DEF18B00DDAA0F /* regions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
+		719C1666272B563E006E11E7 /* LinkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButtonView.swift; sourceTree = "<group>"; };
 		719C2BBE25A695C400558568 /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
 		719CA8D924DF30C000C46537 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = OpenVPNAdapter.framework; path = OpenVPNAdapter/OpenVPNAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719CA8DC24DF34E000C46537 /* TunnelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = TunnelKit.framework; path = TunnelKit/TunnelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -503,7 +506,6 @@
 		71DDE42024F07B3E000D00D0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		71EDB84C24CF54430019A1CA /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
 		71EDB85124CFA0580019A1CA /* adblock.ovpn */ = {isa = PBXFileReference; lastKnownFileType = text; name = adblock.ovpn; path = AdBlockVPNMacOS/Resources/adblock.ovpn; sourceTree = SOURCE_ROOT; };
-		71F6A8AF252E9081002EAD16 /* HTMLString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLString.swift; sourceTree = "<group>"; };
 		71F6A8B1252F9D06002EAD16 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		71F6A8B2252F9D07002EAD16 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		7518DB0B442517B19A3DD88F /* Pods_AdBlockVPNMacOSProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdBlockVPNMacOSProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -564,7 +566,9 @@
 				7130A32D263209DE008FE10F /* AppSettingsView.swift */,
 				05BE5994261D3E6400BA210A /* ConnectionView.swift */,
 				0565E2542702676500B6D1E8 /* ConnectionInfoView.swift */,
+				71454FD62744741F00EFF4B9 /* ErrorBlockView.swift */,
 				717EC997261681EE00299F0B /* ErrorView.swift */,
+				71454FD8274485C300EFF4B9 /* FooterBlockView.swift */,
 				05BE598E261D3E6400BA210A /* HelpView.swift */,
 				05BE5999261D3E6400BA210A /* LandingView.swift */,
 				05BE5995261D3E6400BA210A /* LoginFlowView.swift */,
@@ -646,7 +650,6 @@
 			children = (
 				05BE59AA261D3E9600BA210A /* MenuButtonView.swift */,
 				05BE59AB261D3E9600BA210A /* RegionButtonView.swift */,
-				05BE59AC261D3E9600BA210A /* DisabledButtonView.swift */,
 				7130A34E26376C1B008FE10F /* ColorfulButtonView.swift */,
 			);
 			path = Buttons;
@@ -824,17 +827,17 @@
 			children = (
 				7130A3492637581D008FE10F /* CustomColorToggleStyle.swift */,
 				05E97C6E264ADA2600742D02 /* CustomDividerModifier.swift */,
+				7135B0DA2718C86400E6C949 /* DisabledButtonStyle.swift */,
 				719C2BBE25A695C400558568 /* FocusTextField.swift */,
-				71F6A8AF252E9081002EAD16 /* HTMLString.swift */,
+				05C99DFF26F9E6F50004F1CF /* IPAddressCell.swift */,
 				0522C0F02601049500E6D38E /* LatoFontModifier.swift */,
-				716CF5AA25B7A6CE00C4E448 /* MultiLinkTextField.swift */,
+				719C1666272B563E006E11E7 /* LinkButtonView.swift */,
+				05F4779F268941B5001C1855 /* ListItemButtonStyle.swift */,
 				059513B8265892A4009E3AF9 /* PrimaryButtonStyle.swift */,
+				05A23D3B270C71EE004C7497 /* RefreshButtonStyle.swift */,
+				717C49C226DEE72D00CAE409 /* SearchBar.swift */,
 				059513BA265892B0009E3AF9 /* SecondaryButtonStyle.swift */,
 				0562110D26869192008ACF0B /* TopBarButtonStyle.swift */,
-				05F4779F268941B5001C1855 /* ListItemButtonStyle.swift */,
-				717C49C226DEE72D00CAE409 /* SearchBar.swift */,
-				05C99DFF26F9E6F50004F1CF /* IPAddressCell.swift */,
-				05A23D3B270C71EE004C7497 /* RefreshButtonStyle.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -1244,7 +1247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFTLINT=\"/usr/local/bin/swiftlint\"\nif [ -f $SWIFTLINT ]\nthen\n    $SWIFTLINT\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\" # Add Apple Silicon brew install directory to PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		440B65427F2581A2EC2DFAE0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1350,9 +1353,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7135B0DB2718C86400E6C949 /* DisabledButtonStyle.swift in Sources */,
 				052000D6260E219600AFD7E5 /* OnboardingStepTextView.swift in Sources */,
 				717AC73B24C7D1BC00D226A4 /* ConnectionViewModel.swift in Sources */,
 				0581841C25FA6D8300C519C8 /* StatusItemAnimationManager.swift in Sources */,
+				719C1667272B563E006E11E7 /* LinkButtonView.swift in Sources */,
 				059513BB265892B0009E3AF9 /* SecondaryButtonStyle.swift in Sources */,
 				05BE59AF261D3E9600BA210A /* MenuButtonView.swift in Sources */,
 				052000C2260DF4EA00AFD7E5 /* OnboardingNotificationsView.swift in Sources */,
@@ -1364,8 +1369,8 @@
 				05BE59B0261D3E9600BA210A /* RegionButtonView.swift in Sources */,
 				059513B9265892A4009E3AF9 /* PrimaryButtonStyle.swift in Sources */,
 				05BE599F261D3E6400BA210A /* MainView.swift in Sources */,
-				710D934725477EA700A8B6EA /* HTMLString.swift in Sources */,
 				05A23D3C270C71EE004C7497 /* RefreshButtonStyle.swift in Sources */,
+				71454FD9274485C300EFF4B9 /* FooterBlockView.swift in Sources */,
 				057B9959264326F500B60284 /* PFMoveApplication.m in Sources */,
 				056DD5DE264348A50084DF23 /* OnboardingMoveAppView.swift in Sources */,
 				71DDE42124F07B3E000D00D0 /* AppState.swift in Sources */,
@@ -1378,6 +1383,7 @@
 				711B5C5F253FA1C30087B394 /* HelpViewModel.swift in Sources */,
 				052000D4260E0EB100AFD7E5 /* View+Extension.swift in Sources */,
 				7130A34F26376C1B008FE10F /* ColorfulButtonView.swift in Sources */,
+				71454FD72744741F00EFF4B9 /* ErrorBlockView.swift in Sources */,
 				0565E257270267D700B6D1E8 /* ConnectionInfoViewModel.swift in Sources */,
 				717AC73D24C7D1D000D226A4 /* PreferencesViewModel.swift in Sources */,
 				05BE59A1261D3E6400BA210A /* ConnectionView.swift in Sources */,
@@ -1409,13 +1415,11 @@
 				0522C0F12601049500E6D38E /* LatoFontModifier.swift in Sources */,
 				7140600C250AEE6200E40456 /* MainViewModel.swift in Sources */,
 				051FB8D5260A46760018A8EA /* Date+Extension.swift in Sources */,
-				716CF5AB25B7A6CE00C4E448 /* MultiLinkTextField.swift in Sources */,
 				71406004250023DC00E40456 /* TokenInfo.swift in Sources */,
 				71D7FC73258C246D00E4E466 /* PingManager.swift in Sources */,
 				05BE59A6261D3E6400BA210A /* LandingView.swift in Sources */,
 				05BE598A261D302900BA210A /* OnboardingContactSupportButtonView.swift in Sources */,
 				71406006250049D900E40456 /* AuthManager.swift in Sources */,
-				05BE59B1261D3E9600BA210A /* DisabledButtonView.swift in Sources */,
 				052000C6260DF50600AFD7E5 /* OnboardingSysExtensionView.swift in Sources */,
 				052000CA260DF53500AFD7E5 /* OnboardingVPNConfigView.swift in Sources */,
 				05EF3CB9263192DC00902840 /* OnboardingModel.swift in Sources */,
@@ -1692,7 +1696,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 21.4.1.1;
+				CURRENT_PROJECT_VERSION = 21.4.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"AdBlockVPNMacOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1703,7 +1707,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 21.4.1;
+				MARKETING_VERSION = 21.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos;
 				PRODUCT_NAME = "AdBlock VPN";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN App Dev";
@@ -1725,7 +1729,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 21.4.1.1;
+				CURRENT_PROJECT_VERSION = 21.4.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"AdBlockVPNMacOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1736,7 +1740,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 21.4.1;
+				MARKETING_VERSION = 21.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos;
 				PRODUCT_NAME = "AdBlock VPN";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Distribution";
@@ -1838,7 +1842,7 @@
 				CODE_SIGN_ENTITLEMENTS = "AdBlockVPNMacOSProvider/AdBlockVPNMacOSProvider-Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 21.3.2.2;
+				CURRENT_PROJECT_VERSION = 21.4.2.1;
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1852,7 +1856,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 21.3.2;
+				MARKETING_VERSION = 21.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos.provider;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Provider Extension Dev";
@@ -1868,7 +1872,7 @@
 				CODE_SIGN_ENTITLEMENTS = AdBlockVPNMacOSProvider/AdBlockVPNMacOSProvider.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 21.3.2.2;
+				CURRENT_PROJECT_VERSION = 21.4.2.1;
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1882,7 +1886,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 21.3.2;
+				MARKETING_VERSION = 21.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos.provider;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Provider Distribution";

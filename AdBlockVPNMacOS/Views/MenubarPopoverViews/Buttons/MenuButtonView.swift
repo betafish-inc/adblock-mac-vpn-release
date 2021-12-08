@@ -23,7 +23,7 @@ struct MenuButtonView: View {
     var icon: String
     var iconSize: Int
     var body: some View {
-        Button(action: action) {
+        Button(action: action, label: {
             HStack {
                 Spacer().frame(width: 16)
                 text
@@ -31,7 +31,7 @@ struct MenuButtonView: View {
                     .latoFont(weight: bold ? .bold : .regular)
                 Spacer()
                 if !icon.isEmpty {
-                    Image(icon)
+                    Image(decorative: icon)
                         .renderingMode(.template)
                         .resizable()
                         .scaledToFit()
@@ -40,7 +40,7 @@ struct MenuButtonView: View {
                     Spacer().frame(width: 26)
                 }
             }
-        }
+        })
         .buttonStyle(ListItemButtonStyle())
     }
 }

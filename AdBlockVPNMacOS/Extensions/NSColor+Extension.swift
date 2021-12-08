@@ -18,11 +18,16 @@ import Cocoa
 
 // Asset Catalog custom colors
 extension NSColor {
-    static let abDarkText = NSColor(named: "DarkText") ?? .black
-    static let abHeaderBackground = NSColor(named: "HeaderBackground") ?? .white
-    static let abLightestText = NSColor(named: "LightestText") ?? .lightGray
-    static let abLightText = NSColor(named: "LightText") ?? .lightGray
-    static let abLinkColor = NSColor(named: "LinkColor") ?? .blue
-    static let abPrimaryAccent = NSColor(named: "PrimaryAccent") ?? .blue
-    static let abErrorAccent = NSColor(named: "ErrorAccent") ?? .red
+    // Text colors
+    static let abDarkText = NSColor(named: "abGray33") ?? .black
+    static let abWhiteText = NSColor(named: "abWhite") ?? .white
+    static let abLightText = NSColor(named: "abGray66") ?? .lightGray
+    static let abLightestText = NSColor(named: "abGray99") ?? .lightGray
+    static let abLinkColor = NSColor(named: "abBlueLight") ?? .blue
+
+    // General UI colors
+    static let abBackground = NSColor(named: "abWhite") ?? .white
+    static let abHeaderBackground = NSColor(named: "abGrayF4") ?? .white
+    static let abPrimaryAccent = NSColor(named: "abBlue") ?? .blue
+    static let abErrorAccent = NSColor(named: "abRed") ?? .red
 }

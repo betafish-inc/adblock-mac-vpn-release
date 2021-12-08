@@ -43,7 +43,9 @@ struct MainView: View {
             .if(state.showOverlay) {
                 $0.overlay(
                     UpdateOverlayView(text: Text("Update Complete!", comment: "Notification that an update has been completed"),
-                                      icon: "CheckIcon", background: .abUpToDateAccent, foreground: .white)
+                                      icon: "CheckIcon",
+                                      background: .abUpToDateAccent,
+                                      foreground: .abWhiteText)
                         .shadow(color: .abShadow, radius: 20, x: 0, y: 5),
                     alignment: .top
                 )
@@ -55,7 +57,7 @@ struct MainView: View {
             }
         }
         .frame(width: 320, height: state.showConnectionInfo ? 548 : 440)
-        .background([.updates, .updateError, .updateRequired].contains(state.viewToShow) ? Color.abAccentBackground : Color.white)
+        .background([.updates, .updateError, .updateRequired].contains(state.viewToShow) ? Color.abAccentBackground : Color.abBackground)
         .foregroundColor(.abLightText)
         .onReceive(authManager.$token, perform: { newVal in
             self.state.checkViewToShow(loggedIn: self.authManager.willBeLoggedIn(newToken: newVal),

@@ -22,6 +22,7 @@ struct OnboardingVPNConfigView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingVPNConfiguration",
+                               headerImageLabel: nil,
                                bodyTitle: Text("Allow AdBlock VPN to add VPN configurations", comment: "Title for VPN configuration page of onboarding flow"))
             // swiftlint:disable:next line_length
             Text("Click “Open System Dialog” below. In the following window, click the ”Allow” button. When you're done, click ”Next Steps” below to continue the setup process.", comment: "Instructions for VPN configuration page of onboarding flow")

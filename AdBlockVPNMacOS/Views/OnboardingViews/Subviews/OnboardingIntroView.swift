@@ -22,6 +22,7 @@ struct OnboardingIntroView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingIntro",
+                               headerImageLabel: nil,
                                bodyTitle: Text("Thanks for installing AdBlock VPN", comment: "Title for onboarding intro"))
             HStack {
                 Text("You'll need to change a couple of permissions on your device in order to use AdBlock VPN. We'll walk you through how to do that now.",

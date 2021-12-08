@@ -45,8 +45,9 @@ struct RegionSelectionView: View {
                 Spacer().frame(height: 24)
             }
             .frame(width: 272, height: state.showConnectionInfo ? 396 : 288, alignment: .leading)
+            .customAccessibilityLabel(Text("Select region"))
         }
-        .background(Color.white)
+        .background(Color.abBackground)
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352, alignment: .leading)
     }
 }
@@ -58,5 +59,6 @@ struct RegionSelectionView_Previews: PreviewProvider {
                                                            logManager: LogManager(),
                                                            notificationManager: NotificationManager(),
                                                            errorManager: ErrorManager()))
+            .environmentObject(AppState())
     }
 }

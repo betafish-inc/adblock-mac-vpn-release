@@ -66,7 +66,7 @@ struct OnboardingView_Previews: PreviewProvider {
         ForEach(OnboardingViews.allCases, id: \.self) { view in
             OnboardingMainView()
                 .environmentObject(OnboardingViewModel(viewToShow: view, vpnManager: VPNManager(), notificationManager: NotificationManager()))
-                .background(Color.white)
+                .background(Color.abBackground)
         }
     }
 }

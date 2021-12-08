@@ -22,6 +22,7 @@ struct OnboardingPermissionsErrorView: View {
     var body: some View {
         VStack {
             OnboardingBodyView(headerImage: "OnboardingError",
+                               headerImageLabel: Text("Error", comment: "Alt text for onboarding error page image header"),
                                bodyTitle: Text("Oops!", comment: "Title for onboarding flow error page"))
             Text("It looks like we still don't have permission to run on your device. Let's try again.",
                  comment: "Instructions for system extensions permissions error page in onboarding flow")

@@ -7,7 +7,7 @@
 /* Error msg when connection retry fails */
 "Connection retry failed." = "Opnieuw verbinding zoeken is mislukt.";
 
-/* Needs support error full msg */
+/* Link to support site */
 "For help solving this problem, please contact our support team." = "Voor hulp bij het oplossen van dit probleem neem je contact op met ons ondersteuningsteam.";
 
 /* Needs knowledge base article error full msg */
@@ -32,42 +32,36 @@
 "Please restart AdBlock VPN" = "Herstart AdBlock VPN";
 
 /* Needs app restart error full msg */
-"Please restart AdBlock VPN. If the problem persists, contact our support team." = "Herstart AdBlock VPN. Als het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
+"Please restart AdBlock VPN." = "Herstart AdBlock VPN.";
 
 /* Needs machine restart short msg */
 "Please restart your computer" = "Herstart je computer";
 
 /* Needs machine restart error full msg */
-"Please restart your computer. If the problem persists, contact our support team." = "Herstart je computer. Als het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
+"Please restart your computer." = "Herstart je computer.";
 
 /* Needs authentication short msg */
 "Please sign in again" = "Log opnieuw in";
 
 /* Needs authentication error full msg */
-"Please sign in again. If the problem persists, contact our support team." = "Log opnieuw in. Als het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
+"Please sign in again." = "Log opnieuw in.";
 
 /* Protocol configuration error msg */
 "Protocol configuration error." = "Protocolconfiguratiefout.";
 
-/* Link to contact support. Text must match corresponding text in full msg */
-"support team" = "ondersteuningsteam";
-
-/* Link to knowledge base article for help. Text must match corresponding text in full knowledge base error msg */
-"this article" = "dit artikel";
-
 /* Generic token error */
 "Unknown token error." = "Onbekende tokenfout.";
 
-/* Server error short msg */
+/* Server error full msg
+   Server error short msg */
 "We can't connect to our servers. Please try again later." = "We kunnen geen contact maken met onze servers. Probeer het later opnieuw.";
-
-/* Server error full msg */
-"We can't connect to our servers. Please try again later. If the problem persists, contact our support team." = "We kunnen geen contact maken met onze servers. Probeer het later opnieuw. Als het probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam.";
 
 /* Not signed in error */
 "You are not signed in." = "Je bent niet ingelogd.";
 
-/* No internet error full msg
-   No internet error short msg */
+/* No internet error short msg */
 "You aren't connected to the internet!\nPlease check your network connection." = "Je bent niet verbonden met het internet!\nControleer je netwerkverbinding.";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "Je bent niet verbonden met het internet! Controleer je netwerkverbinding.";
 

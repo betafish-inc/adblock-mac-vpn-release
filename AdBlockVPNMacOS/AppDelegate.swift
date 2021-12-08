@@ -192,7 +192,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             styleMask: [.titled, .miniaturizable, .closable, .fullSizeContentView],
             backing: .buffered, defer: false)
         window.titlebarAppearsTransparent = true
-        window.backgroundColor = .white
+        window.backgroundColor = .abBackground
         window.isMovableByWindowBackground = true
         window.setFrameAutosaveName("AdBlock VPN")
         window.center()

@@ -23,9 +23,13 @@ struct PreferencesView: View {
         VStack {
             Group {
                 if viewModel.showAccount() {
-                    MenuButtonView(action: {
-                        self.state.viewToShow = .account
-                    }, text: Text("Account", comment: "Label for button that takes the useer to the account page"), bold: true, icon: "NextIcon", iconSize: 11)
+                    MenuButtonView(
+                        action: { self.state.viewToShow = .account },
+                        text: Text("Account", comment: "Label for button that takes the useer to the account page"),
+                        bold: true,
+                        icon: "NextIcon",
+                        iconSize: 11
+                    )
                     Spacer().frame(height: 16)
                     Divider().background(Color.abBorder).frame(width: 256)
                     Spacer().frame(height: 16)
@@ -34,13 +38,18 @@ struct PreferencesView: View {
                                text: Text("App Settings", comment: "Label for button that takes the user to the app settings page"),
                                bold: true,
                                icon: "NextIcon",
-                               iconSize: 11)
+                               iconSize: 11
+                )
                 Spacer().frame(height: 16)
                 Divider().background(Color.abBorder).frame(width: 256)
                 Spacer().frame(height: 16)
-                MenuButtonView(action: {
-                    self.state.viewToShow = .help
-                }, text: Text("Help & Feedback", comment: "Label for button that takes the user to the help and feedback page"), bold: true, icon: "NextIcon", iconSize: 11)
+                MenuButtonView(
+                    action: { self.state.viewToShow = .help },
+                    text: Text("Help & Feedback", comment: "Label for button that takes the user to the help and feedback page"),
+                    bold: true,
+                    icon: "NextIcon",
+                    iconSize: 11
+                )
             }
             Spacer()
             Button(action: { self.viewModel.disconnectAndQuit() }, label: {
@@ -51,7 +60,7 @@ struct PreferencesView: View {
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.white)
+        .background(Color.abBackground)
         .foregroundColor(.abDarkText)
     }
 }
