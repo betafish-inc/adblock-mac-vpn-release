@@ -4,6 +4,9 @@
 /* Placeholder text in code entry box */
 "— — — — — —" = "— — — — — —";
 
+/* Contents of readme file describing app log files. */
+"# AdBlockVPNApp.log\nThis file contains debug and error log entries which are useful for debugging issues with the Adblock VPN Application.\n\n# AdBlockVPNProvider.log\nThis file contains debug and error log entries which are useful for debugging issues with the Adblock VPN System Extension.\n\nThese files can be viewed in a text editor and edited if there is any information you would like to redact from these logs.\n\nFor more information about the data we collect and how we use it, visit: (Constants.logsPrivacyInfoKBArticleURL)" = "# AdBlockVPNApp.log\n此文件包含调试和错误日志条目，可用于调试 AdBlock VPN 应用程序的问题。\n\n# AdBlockVPNProvider.log\n此文件包含调试和错误日志条目，可用于调试 AdBlock VPN 系统扩展的问题。\n\n您可以在文本编辑器中查看这些文件，亦可根据需要编辑这些日志中的任何信息。\n\n有关我们收集的数据及其使用方式的更多信息，请访问：(Constants.logsPrivacyInfoKBArticleURL)";
+
 /* Alt text for region selection button */
 "%@, next" = "%@，下一个";
 
@@ -37,6 +40,9 @@
 /* Title for updates view */
 "An update is available" = "有可用的更新";
 
+/* Label to confirm log file has been exported. */
+"App Logs Created" = "已创建应用日志";
+
 /* App settings page title */
 "App Settings" = "应用设置";
 
@@ -57,6 +63,9 @@
 
 /* Alt text for back button */
 "Back" = "返回";
+
+/* No comment provided by engineer. */
+"Before you submit a new ticket, click “Create App Logs” to save an app log file to your desktop." = "在您提交新工单之前，点击“创建应用日志”将应用日志文件保存到您的桌面。";
 
 /* Name of 'be' region */
 "Belgium" = "比利时";
@@ -117,7 +126,7 @@ Label for button that closes the onboarding flow */
 /* Error msg when connection retry fails */
 "Connection retry failed." = "重试连接失败。";
 
-/* Label for button to contact support from onboarding flow */
+/* Contact Support page title */
 "Contact Support" = "联系支持团队";
 
 /* Label for button that continues the process of moving the app to the correct folder */
@@ -128,6 +137,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
 "Copy %@" = "复制 %@";
+
+/* Label for button that exports app log file. */
+"Create App Logs" = "创建应用日志";
 
 /* Name of 'cz' region */
 "Czech Republic" = "捷克共和国";
@@ -244,6 +256,9 @@ Label for button that closes the onboarding flow */
 /* Instructions for VPN configuration error page in onboarding flow */
 "It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "似乎我们还没有权限向您的设备添加 VPN 配置。让我们重试。";
 
+/* Instructions for system extensions permissions error page in onboarding flow */
+"It looks like we still don't have permission to run on your device. Let's try again." = "看起来我们仍然没有权限在您的设备上运行。我们重试一次吧。";
+
 /* Instructions on subscription ended error page */
 "It looks like your subscription has ended. Please click below to renew." = "似乎您的订阅已结束。请点击下方续订。";
 
@@ -255,6 +270,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for toggle to turn the 'launch at login' feature on/off */
 "Launch at login" = "登录时启动";
+
+/* Label for button that links to privacy policy */
+"Learn more about the data we collect and how we use it." = "详细了解我们收集的数据及其使用方式。";
 
 /* Label for button to go to login page
 Label for button that takes user to login page */
@@ -398,6 +416,9 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Label for button on subscription ended error page. Links to page where user can renew their subscription */
 "Renew Subscription" = "续订";
 
+/* Label for button that opens a feedback page to request feedback */
+"Request Feature" = "请求功能";
+
 /* VPN state text when reasserting */
 "Retrying connection" = "正在重试连接";
 
@@ -412,6 +433,9 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Name of 'ru' region */
 "Russia" = "俄罗斯";
+
+/* Alt text for regions search bar */
+"Search regions list" = "搜索区域列表";
 
 /* VPN state text when connecting. */
 "Securing your connection." = "正在确保您的连接安全。";
@@ -458,8 +482,14 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Name of 'es' region */
 "Spain" = "西班牙";
 
+/* Subtitle for step 1 of contact support process */
+"Step 1" = "第 1 步";
+
 /* Prefix for step 1 of intructions */
 "Step 1:" = "第 1 步：";
+
+/* Subtitle for step 2 of contact support process */
+"Step 2" = "第 2 步";
 
 /* Prefix for step 2 of instructions */
 "Step 2:" = "第 2 步：";
@@ -469,6 +499,12 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Label for button on code entry page */
 "Submit" = "提交";
+
+/* Button title for submitting a support ticket */
+"Submit a New Ticket" = "提交新工单";
+
+/* Label with guidance on the support ticket submission process */
+"Submit your ticket using the link below. Our support team will respond promptly, typically within 24 hours." = "使用下面的链接提交工单。我们的支持团队通常会在 24 小时内迅速做出响应。";
 
 /* Name of 'se' region */
 "Sweden" = "瑞典";
@@ -484,6 +520,9 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Label for time connected secion of connection info */
 "Time connected: %@" = "连接时间：%@";
+
+/* Label with guidance for adding logs to support tickets. AdBlockVPNLogs.zip is a file name not to be localized. desktop refers to the users desktop folder. */
+"To speed up the troubleshooting process, please attach AdBlockVPNLogs.zip from your desktop to your ticket." = "为了加快故障排除过程，请将桌面上的 AdBlockVPNLogs.zip 附加到工单中。";
 
 /* Label for button to try the step again */
 "Try Again" = "重试";
@@ -546,6 +585,9 @@ Label for button that opens external update page */
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "版本 %@";
 
+/* Label for button that opens a help page */
+"Visit Help Center" = "访问帮助中心";
+
 /* Alt text for image on VPN set up page
 Alt text for image on extension set up page */
 "VPN disabled" = "VPN 已禁用";
@@ -559,6 +601,9 @@ Alt text for image on extension set up page */
 
 /* Error text for imvalid email error. */
 "We don’t recognize that email address. Please try again." = "我们无法识别该电子邮件地址。请重试。";
+
+/* Body text for error message shown when exporting app log file fails. */
+"We encountered an error, please manually attach your user logs" = "我们遇到了错误，请手动附加您的用户日志";
 
 /* Intructions on code entry page */
 "We sent you a 6-character access code. Enter it below:" = "我们给您发送了一个 6 个字符的访问代码。请在下方输入：";

@@ -26,6 +26,8 @@ enum VPNViews {
     case preferences
     case account
     case help
+    case contactSupportStepOne
+    case contactSupportStepTwo
     case locations
     case error
     case appSettings
@@ -37,7 +39,7 @@ enum VPNViews {
 class AppState: ObservableObject {
     @Published var viewToShow: VPNViews = .connection {
         didSet {
-            if ![.help, .account, .preferences, .appSettings, .updates, .updateError, .updateRequired].contains(oldValue) {
+            if ![.help, .contactSupportStepOne, .contactSupportStepTwo, .account, .preferences, .appSettings, .updates, .updateError, .updateRequired].contains(oldValue) {
                 previousView = oldValue
             }
         }
@@ -75,6 +77,7 @@ class AppState: ObservableObject {
     var versionString: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "x.x.x"
     }
+    var contactSupportStepOneSkipped = false
     
     func getViewTitle() -> String {
         switch viewToShow {
@@ -84,6 +87,8 @@ class AppState: ObservableObject {
             return NSLocalizedString("Account", comment: "Account page title")
         case .help:
             return NSLocalizedString("Help & Feedback", comment: "Help and feedback page title")
+        case .contactSupportStepOne, .contactSupportStepTwo:
+            return NSLocalizedString("Contact Support", comment: "Contact Support page title")
         case .locations:
             return NSLocalizedString("Choose location", comment: "Location picker page title")
         case .appSettings:
@@ -101,13 +106,19 @@ class AppState: ObservableObject {
             viewToShow = .preferences
         case .locations, .updates, .updateError:
             viewToShow = .connection
+        case .contactSupportStepOne:
+            viewToShow = .help
+        case .contactSupportStepTwo:
+            viewToShow = contactSupportStepOneSkipped ? .help : .contactSupportStepOne
+            contactSupportStepOneSkipped = false
         default:
             fatalError()
         }
     }
     
     func checkViewToShow(loggedIn: Bool, isError: Bool, updateRequired: Bool) {
-        if [.preferences, .account, .help, .appSettings, .updates, .updateError, .updateRequired, .locations].contains(viewToShow) {
+        if [.preferences, .account, .help, .contactSupportStepOne, .contactSupportStepTwo, .appSettings, .updates, .updateError, .updateRequired, .locations]
+            .contains(viewToShow) {
             return
         }
         if updateRequired {

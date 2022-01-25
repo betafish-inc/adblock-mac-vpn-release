@@ -40,8 +40,10 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     override init() {
         SwiftyBeaver.removeAllDestinations()
         let file = FileDestination()
-        file.logFileURL = FileManager.default.urls(for: .cachesDirectory, in: .localDomainMask).first?.appendingPathComponent("AdBlock VPN Provider/AdBlockVPNProvider.log")
+        file.logFileURL = FileManager.default.urls(for: .cachesDirectory, in: .localDomainMask).first?.appendingPathComponent(Constants.providerLogFilePath)
         file.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $L: ($N: $l) $M"
+        file.logFileMaxSize = (1 * 1024 * 1024) // Set limit of the log file maximum size to 1MB.
+        file.logFileAmount = 2 // `logFileAmount` needs to be greater than 1 for `logFileMaxSize` to be applied.
         let console = ConsoleDestination()
         console.useNSLog = true
         console.format = "ABLOG: $C$L$c: ($N: $l) $M"

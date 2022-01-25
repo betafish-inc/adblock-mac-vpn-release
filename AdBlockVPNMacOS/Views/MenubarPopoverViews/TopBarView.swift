@@ -23,7 +23,7 @@ struct TopBarView: View {
             RoundedRectangle(cornerRadius: 6)
                 .fill(Color.abHeaderBackground)
                 .frame(width: 272, height: 56)
-            if [.preferences, .account, .help, .locations, .appSettings].contains(state.viewToShow) {
+            if [.preferences, .account, .help, .contactSupportStepOne, .contactSupportStepTwo, .locations, .appSettings].contains(state.viewToShow) {
                 Button {
                     self.state.backButtonClick()
                 } label: {
@@ -37,6 +37,7 @@ struct TopBarView: View {
                 Text(state.getViewTitle())
                     .latoFont()
                     .foregroundColor(.abDarkText)
+                    .padding(.horizontal, 40) // Encourages long strings to wrap, rather than obscure the back button.
             } else {
                 if state.viewToShow != .acceptance {
                     Button { self.state.viewToShow = .preferences } label: {

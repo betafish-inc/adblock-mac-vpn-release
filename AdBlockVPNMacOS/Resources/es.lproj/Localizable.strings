@@ -4,6 +4,9 @@
 /* Placeholder text in code entry box */
 "— — — — — —" = "— — — — — —";
 
+/* Contents of readme file describing app log files. */
+"# AdBlockVPNApp.log\nThis file contains debug and error log entries which are useful for debugging issues with the Adblock VPN Application.\n\n# AdBlockVPNProvider.log\nThis file contains debug and error log entries which are useful for debugging issues with the Adblock VPN System Extension.\n\nThese files can be viewed in a text editor and edited if there is any information you would like to redact from these logs.\n\nFor more information about the data we collect and how we use it, visit: (Constants.logsPrivacyInfoKBArticleURL)" = "# AdBlockVPNApp.log\nEste archivo contiene entradas del registro de depuración y errores que son útiles para depurar problemas con la aplicación AdBlock VPN.\n\n# AdBlockVPNProvider.log\nEste archivo contiene entradas del registro de depuración y errores que son útiles para depurar problemas con la extensión de sistema AdBlock VPN.\n\nEstos archivos pueden visualizarse en un editor de texto y editarse si contienen algún dato que te gustaría eliminar de los registros.\n\nPara obtener más información sobre los datos que recopilamos y el uso que hacemos de ellos, visita: (Constants.logsPrivacyInfoKBArticleURL)";
+
 /* Alt text for region selection button */
 "%@, next" = "%@, siguiente";
 
@@ -37,6 +40,9 @@
 /* Title for updates view */
 "An update is available" = "Hay una actualización disponible";
 
+/* Label to confirm log file has been exported. */
+"App Logs Created" = "Se han creado los registros de la aplicación";
+
 /* App settings page title */
 "App Settings" = "Ajustes de la aplicación";
 
@@ -57,6 +63,9 @@
 
 /* Alt text for back button */
 "Back" = "Atrás";
+
+/* No comment provided by engineer. */
+"Before you submit a new ticket, click “Create App Logs” to save an app log file to your desktop." = "Antes de enviar una nueva solicitud, haz clic en \"Crear registros de la aplicación\" para guardar un archivo de registro de la aplicación en tu escritorio.";
 
 /* Name of 'be' region */
 "Belgium" = "Bélgica";
@@ -117,7 +126,7 @@ Label for button that closes the onboarding flow */
 /* Error msg when connection retry fails */
 "Connection retry failed." = "Error al reintentar la conexión.";
 
-/* Label for button to contact support from onboarding flow */
+/* Contact Support page title */
 "Contact Support" = "Contactar con el soporte técnico";
 
 /* Label for button that continues the process of moving the app to the correct folder */
@@ -128,6 +137,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
 "Copy %@" = "Copiar %@";
+
+/* Label for button that exports app log file. */
+"Create App Logs" = "Crear registros de la aplicación";
 
 /* Name of 'cz' region */
 "Czech Republic" = "República Checa";
@@ -244,6 +256,9 @@ Label for button that closes the onboarding flow */
 /* Instructions for VPN configuration error page in onboarding flow */
 "It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "Parece que aún no tenemos permiso para añadir configuraciones de VPN a tu dispositivo. Vamos a intentarlo de nuevo.";
 
+/* Instructions for system extensions permissions error page in onboarding flow */
+"It looks like we still don't have permission to run on your device. Let's try again." = "Parece que aún no tenemos permiso de ejecución en tu dispositivo. Vamos a intentarlo de nuevo.";
+
 /* Instructions on subscription ended error page */
 "It looks like your subscription has ended. Please click below to renew." = "Parece que tu suscripción ha finalizado. Haz clic a continuación para renovarla.";
 
@@ -255,6 +270,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for toggle to turn the 'launch at login' feature on/off */
 "Launch at login" = "Lanzar al iniciar sesión";
+
+/* Label for button that links to privacy policy */
+"Learn more about the data we collect and how we use it." = "Obtén más información sobre los datos que recopilamos y el uso que hacemos de ellos.";
 
 /* Label for button to go to login page
 Label for button that takes user to login page */
@@ -398,6 +416,9 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Label for button on subscription ended error page. Links to page where user can renew their subscription */
 "Renew Subscription" = "Renovar suscripción";
 
+/* Label for button that opens a feedback page to request feedback */
+"Request Feature" = "Solicitudes";
+
 /* VPN state text when reasserting */
 "Retrying connection" = "Reintentar conexión";
 
@@ -412,6 +433,9 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Name of 'ru' region */
 "Russia" = "Rusia";
+
+/* Alt text for regions search bar */
+"Search regions list" = "Lista de regiones de búsqueda";
 
 /* VPN state text when connecting. */
 "Securing your connection." = "Se está protegiendo tu conexión.";
@@ -458,8 +482,14 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Name of 'es' region */
 "Spain" = "España";
 
+/* Subtitle for step 1 of contact support process */
+"Step 1" = "Paso 1";
+
 /* Prefix for step 1 of intructions */
 "Step 1:" = "Paso 1:";
+
+/* Subtitle for step 2 of contact support process */
+"Step 2" = "Paso 2";
 
 /* Prefix for step 2 of instructions */
 "Step 2:" = "Paso 2:";
@@ -469,6 +499,12 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Label for button on code entry page */
 "Submit" = "Enviar";
+
+/* Button title for submitting a support ticket */
+"Submit a New Ticket" = "Enviar una nueva solicitud";
+
+/* Label with guidance on the support ticket submission process */
+"Submit your ticket using the link below. Our support team will respond promptly, typically within 24 hours." = "Envía tu solicitud mediante el siguiente enlace. Nuestro equipo de soporte responderá enseguida, normalmente en 24 horas.";
 
 /* Name of 'se' region */
 "Sweden" = "Suecia";
@@ -484,6 +520,9 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Label for time connected secion of connection info */
 "Time connected: %@" = "Tiempo de conexión: %@";
+
+/* Label with guidance for adding logs to support tickets. AdBlockVPNLogs.zip is a file name not to be localized. desktop refers to the users desktop folder. */
+"To speed up the troubleshooting process, please attach AdBlockVPNLogs.zip from your desktop to your ticket." = "Para acelerar el proceso de resolución de problemas, adjunta el archivo AdBlockVPNLogs.zip desde tu escritorio a tu solicitud.";
 
 /* Label for button to try the step again */
 "Try Again" = "Volver a intentarlo";
@@ -546,6 +585,9 @@ Label for button that opens external update page */
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "Versión %@";
 
+/* Label for button that opens a help page */
+"Visit Help Center" = "Visita el Centro de Ayuda";
+
 /* Alt text for image on VPN set up page
 Alt text for image on extension set up page */
 "VPN disabled" = "VPN desactivada";
@@ -559,6 +601,9 @@ Alt text for image on extension set up page */
 
 /* Error text for imvalid email error. */
 "We don’t recognize that email address. Please try again." = "No reconocemos la dirección de correo electrónico. Vuelve a intentarlo.";
+
+/* Body text for error message shown when exporting app log file fails. */
+"We encountered an error, please manually attach your user logs" = "Hemos encontrado un error, adjunta manualmente tus registros de usuario";
 
 /* Intructions on code entry page */
 "We sent you a 6-character access code. Enter it below:" = "Te hemos enviado un código de acceso de 6 caracteres. Introdúcelo a continuación:";

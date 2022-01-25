@@ -21,25 +21,33 @@ struct HelpView: View {
     @ObservedObject var viewModel: HelpViewModel
     var body: some View {
         VStack {
-            MenuButtonView(
-                action: { self.viewModel.openFeedback() },
-                text: Text("Send Feedback", comment: "Label for button that opens a feedback page"),
-                bold: false,
-                icon: "LinkIcon",
-                iconSize: 16
-            )
-            .customAccessibilityAddTraits(.isLink)
-            Spacer().frame(height: 16)
+            MenuButtonView(action: {
+                self.viewModel.openFeedback()
+            }, text: Text("Request Feature", comment: "Label for button that opens a feedback page to request feedback"),
+                           bold: true,
+                           icon: "LinkIcon",
+                           iconSize: 16)
+                .customAccessibilityAddTraits(.isLink)
+            Spacer().frame(height: 8)
             Divider().background(Color.abBorder).frame(width: 256)
-            Spacer().frame(height: 16)
-            MenuButtonView(
-                action: { self.viewModel.openHelp() },
-                text: Text("Get Help", comment: "Label for button that opens a help page"),
-                bold: false,
-                icon: "LinkIcon",
-                iconSize: 16
-            )
+            Spacer().frame(height: 8)
+            MenuButtonView(action: {
+                self.viewModel.openHelp()
+            }, text: Text("Visit Help Center", comment: "Label for button that opens a help page"),
+                           bold: true,
+                           icon: "LinkIcon",
+                           iconSize: 16)
             .customAccessibilityAddTraits(.isLink)
+            Spacer().frame(height: 8)
+            Divider().background(Color.abBorder).frame(width: 256)
+            Spacer().frame(height: 8)
+            MenuButtonView(action: {
+                self.state.viewToShow = .contactSupportStepOne
+            }, text: Text("Contact Support", comment: "Label for button that takes the user to a contact support page"),
+                           bold: true,
+                           icon: "NextIcon",
+                           iconSize: 14)
+
             Spacer()
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
