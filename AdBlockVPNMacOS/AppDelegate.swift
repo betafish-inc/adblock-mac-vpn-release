@@ -81,7 +81,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let file = FileDestination()
         file.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $L: ($N: $l) $M"
-        file.logFileURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("AdBlock VPN/AdBlockVPNApp.log")
+        file.logFileURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent(Constants.appLogFilePath)
+        file.logFileMaxSize = (1 * 1024 * 1024) // Limit log file size to 1MB.
+        file.logFileAmount = 2 // logFileAmount needs to be greater than 1 for logFileMaxSize to be applied.
         let console = ConsoleDestination()
         console.useNSLog = true
         console.format = "ABLOG: $C$L$c: ($N: $l) $M"

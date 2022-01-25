@@ -23,33 +23,30 @@ struct PreferencesView: View {
         VStack {
             Group {
                 if viewModel.showAccount() {
-                    MenuButtonView(
-                        action: { self.state.viewToShow = .account },
-                        text: Text("Account", comment: "Label for button that takes the useer to the account page"),
-                        bold: true,
-                        icon: "NextIcon",
-                        iconSize: 11
-                    )
-                    Spacer().frame(height: 16)
+                    MenuButtonView(action: {
+                        self.state.viewToShow = .account
+                    }, text: Text("Account", comment: "Label for button that takes the user to the account page"),
+                                   bold: true,
+                                   icon: "NextIcon",
+                                   iconSize: 14)
+                    Spacer().frame(height: 8)
                     Divider().background(Color.abBorder).frame(width: 256)
-                    Spacer().frame(height: 16)
+                    Spacer().frame(height: 8)
                 }
                 MenuButtonView(action: { self.state.viewToShow = .appSettings },
                                text: Text("App Settings", comment: "Label for button that takes the user to the app settings page"),
                                bold: true,
                                icon: "NextIcon",
-                               iconSize: 11
-                )
-                Spacer().frame(height: 16)
+                               iconSize: 14)
+                Spacer().frame(height: 8)
                 Divider().background(Color.abBorder).frame(width: 256)
-                Spacer().frame(height: 16)
-                MenuButtonView(
-                    action: { self.state.viewToShow = .help },
-                    text: Text("Help & Feedback", comment: "Label for button that takes the user to the help and feedback page"),
-                    bold: true,
-                    icon: "NextIcon",
-                    iconSize: 11
-                )
+                Spacer().frame(height: 8)
+                MenuButtonView(action: {
+                    self.state.viewToShow = .help
+                }, text: Text("Help & Feedback", comment: "Label for button that takes the user to the help and feedback page"),
+                               bold: true,
+                               icon: "NextIcon",
+                               iconSize: 14)
             }
             Spacer()
             Button(action: { self.viewModel.disconnectAndQuit() }, label: {

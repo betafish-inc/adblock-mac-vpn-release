@@ -36,6 +36,12 @@ public struct Constants {
     static let launchAtLoginSet_key = "launchAtLoginSet"
     static let lastError_key = "lastError"
     static let showConnectionInfo_key = "showConnectionInfo"
+
+    // Path suffixes for log files.
+    static let appLogFilePath = "AdBlock VPN/AdBlockVPNApp.log"
+    static let appLogFileReadmePath = "AdBlock VPN/README.txt"
+    static let providerLogFilePath = "AdBlock VPN Provider/AdBlockVPNProvider.log"
+    static let LogFilesArchiveFilename = "AdBlockVPNLogs.zip"
     
     static let helpURL = "http://vpnsupport.getadblock.com/"
     static let newTicketURL = "https://vpnsupport.getadblock.com/support/tickets/new"
@@ -49,6 +55,8 @@ public struct Constants {
     static let privacyURL = "https://getadblock.com/privacy/"
     static let mainVpnURL = "https://vpn.getadblock.com/"
     static let macDownloadsURL = "https://vpn.getadblock.com/mac/"
+    static let logsPrivacyInfoKBArticleURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000240495-about-privacy-and-tracking-in-adblock-vpn"
+    static let provideLogsKBArticleURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000247633-how-to-provide-your-adblock-vpn-logs"
     
     static let refreshURL = "https://api.adblock.dev/v1/vpn/oauth/token"
     static let logOutURL = "https://api.adblock.dev/v1/vpn/logout"

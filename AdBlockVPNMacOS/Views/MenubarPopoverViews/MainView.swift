@@ -113,8 +113,9 @@ struct MainView: View {
             }
         })
     }
-    
+
     @ViewBuilder
+    // swiftlint:disable:next cyclomatic_complexity
     func getViewToShow() -> some View {
         if state.viewToShow == .acceptance {
             AcceptanceView()
@@ -138,6 +139,10 @@ struct MainView: View {
             AccountView(viewModel: AccountViewModel(vpnManager: vpnManager, authManager: authManager))
         } else if state.viewToShow == .help {
             HelpView(viewModel: HelpViewModel())
+        } else if state.viewToShow == .contactSupportStepOne {
+            ContactSupportStepOneView()
+        } else if state.viewToShow == .contactSupportStepTwo {
+            ContactSupportStepTwoView()
         } else if state.viewToShow == .appSettings {
             AppSettingsView(viewModel: AppSettingsViewModel(updateManager: updateManager, dockIconManager: dockIconManager))
         } else if state.viewToShow == .updates {

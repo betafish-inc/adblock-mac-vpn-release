@@ -4,6 +4,9 @@
 /* Placeholder text in code entry box */
 "— — — — — —" = "— — — — — —";
 
+/* Contents of readme file describing app log files. */
+"# AdBlockVPNApp.log\nThis file contains debug and error log entries which are useful for debugging issues with the Adblock VPN Application.\n\n# AdBlockVPNProvider.log\nThis file contains debug and error log entries which are useful for debugging issues with the Adblock VPN System Extension.\n\nThese files can be viewed in a text editor and edited if there is any information you would like to redact from these logs.\n\nFor more information about the data we collect and how we use it, visit: (Constants.logsPrivacyInfoKBArticleURL)" = "# AdBlockVPNApp.log\nこのファイルには、AdBlock VPNアプリケーションの問題をデバッグするのに便利な、デバッグおよびエラーログのエントリが含まれています。\n\n# AdBlockVPNProvider.log\nこのファイルには、AdBlock VPNシステム拡張の問題をデバッグするのに便利な、デバッグおよびエラーログのエントリが含まれています。\n\nこれらのファイルは、テキストエディターで閲覧することができ、これらのログから削除したい情報があれば編集することができます。\n\n当社が収集するデータとその使用方法についての詳細は、こちらをご覧ください:\n(Constants.logsPrivacyInfoKBArticleURL)";
+
 /* Alt text for region selection button */
 "%@, next" = "%@、次";
 
@@ -37,6 +40,9 @@
 /* Title for updates view */
 "An update is available" = "更新あり";
 
+/* Label to confirm log file has been exported. */
+"App Logs Created" = "アプリログを作成しました";
+
 /* App settings page title */
 "App Settings" = "アプリ設定";
 
@@ -57,6 +63,9 @@
 
 /* Alt text for back button */
 "Back" = "戻る";
+
+/* No comment provided by engineer. */
+"Before you submit a new ticket, click “Create App Logs” to save an app log file to your desktop." = "新しいチケットを送信する前に、「アプリログを作成」をクリックして、デスクトップにアプリログファイルを保存してください。";
 
 /* Name of 'be' region */
 "Belgium" = "ベルギー";
@@ -117,7 +126,7 @@ Label for button that closes the onboarding flow */
 /* Error msg when connection retry fails */
 "Connection retry failed." = "接続の再試行に失敗しました。";
 
-/* Label for button to contact support from onboarding flow */
+/* Contact Support page title */
 "Contact Support" = "サポートに連絡";
 
 /* Label for button that continues the process of moving the app to the correct folder */
@@ -128,6 +137,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
 "Copy %@" = "%@をコピー";
+
+/* Label for button that exports app log file. */
+"Create App Logs" = "アプリログを作成";
 
 /* Name of 'cz' region */
 "Czech Republic" = "チェコ共和国";
@@ -244,6 +256,9 @@ Label for button that closes the onboarding flow */
 /* Instructions for VPN configuration error page in onboarding flow */
 "It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "お客様のデバイスにVPN設定を追加する許可がまだ下りていないようです。もう一度お試しください。";
 
+/* Instructions for system extensions permissions error page in onboarding flow */
+"It looks like we still don't have permission to run on your device. Let's try again." = "お客様のデバイス上で起動する許可がまだ下りていないようです。もう一度お試しください。";
+
 /* Instructions on subscription ended error page */
 "It looks like your subscription has ended. Please click below to renew." = "購読が終了したようです。以下をクリックして更新してください。";
 
@@ -255,6 +270,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for toggle to turn the 'launch at login' feature on/off */
 "Launch at login" = "ログイン時に起動";
+
+/* Label for button that links to privacy policy */
+"Learn more about the data we collect and how we use it." = "当社が収集するデータとその使用方法についての詳細を見る。";
 
 /* Label for button to go to login page
 Label for button that takes user to login page */
@@ -398,6 +416,9 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Label for button on subscription ended error page. Links to page where user can renew their subscription */
 "Renew Subscription" = "購読を更新";
 
+/* Label for button that opens a feedback page to request feedback */
+"Request Feature" = "リクエスト機能";
+
 /* VPN state text when reasserting */
 "Retrying connection" = "再接続を試行";
 
@@ -412,6 +433,9 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Name of 'ru' region */
 "Russia" = "ロシア";
+
+/* Alt text for regions search bar */
+"Search regions list" = "地域リストの検索";
 
 /* VPN state text when connecting. */
 "Securing your connection." = "接続を確保";
@@ -458,8 +482,14 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Name of 'es' region */
 "Spain" = "スペイン";
 
+/* Subtitle for step 1 of contact support process */
+"Step 1" = "ステップ1";
+
 /* Prefix for step 1 of intructions */
 "Step 1:" = "手順 1：";
+
+/* Subtitle for step 2 of contact support process */
+"Step 2" = "ステップ2";
 
 /* Prefix for step 2 of instructions */
 "Step 2:" = "手順 2：";
@@ -469,6 +499,12 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Label for button on code entry page */
 "Submit" = "送信";
+
+/* Button title for submitting a support ticket */
+"Submit a New Ticket" = "新しいチケットを送信";
+
+/* Label with guidance on the support ticket submission process */
+"Submit your ticket using the link below. Our support team will respond promptly, typically within 24 hours." = "以下のリンクを使ってチケットを送信してください。当社のサポートチームが通常24時間以内に、速やかに対応いたします。";
 
 /* Name of 'se' region */
 "Sweden" = "スウェーデン";
@@ -484,6 +520,9 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Label for time connected secion of connection info */
 "Time connected: %@" = "接続時間: %@";
+
+/* Label with guidance for adding logs to support tickets. AdBlockVPNLogs.zip is a file name not to be localized. desktop refers to the users desktop folder. */
+"To speed up the troubleshooting process, please attach AdBlockVPNLogs.zip from your desktop to your ticket." = "トラブルシューティングプロセスをスムーズに行うために、デスクトップにある AdBlockVPNLogs.zip をチケットに添付してください。";
 
 /* Label for button to try the step again */
 "Try Again" = "再試行";
@@ -546,6 +585,9 @@ Label for button that opens external update page */
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "バージョン %@";
 
+/* Label for button that opens a help page */
+"Visit Help Center" = "ヘルプセンターに移動";
+
 /* Alt text for image on VPN set up page
 Alt text for image on extension set up page */
 "VPN disabled" = "無効になったVPN";
@@ -559,6 +601,9 @@ Alt text for image on extension set up page */
 
 /* Error text for imvalid email error. */
 "We don’t recognize that email address. Please try again." = "入力されたコードを認証できません。もう一度お試しください。";
+
+/* Body text for error message shown when exporting app log file fails. */
+"We encountered an error, please manually attach your user logs" = "エラーが発生しました。ユーザーログを手動で添付してください";
 
 /* Intructions on code entry page */
 "We sent you a 6-character access code. Enter it below:" = "6文字のアクセスコードをお送りしました。以下に入力してください：";

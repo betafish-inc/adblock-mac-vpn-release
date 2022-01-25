@@ -4,6 +4,9 @@
 /* Placeholder text in code entry box */
 "— — — — — —" = "— — — — — —";
 
+/* Contents of readme file describing app log files. */
+"# AdBlockVPNApp.log\nThis file contains debug and error log entries which are useful for debugging issues with the Adblock VPN Application.\n\n# AdBlockVPNProvider.log\nThis file contains debug and error log entries which are useful for debugging issues with the Adblock VPN System Extension.\n\nThese files can be viewed in a text editor and edited if there is any information you would like to redact from these logs.\n\nFor more information about the data we collect and how we use it, visit: (Constants.logsPrivacyInfoKBArticleURL)" = "# AdBlockVPNApp.log\nDit bestand bevat debug- en foutmeldingen die handig zijn om problemen met de AdBlock VPN-app te debuggen.\n\n# AdBlockVPNProvider.log\nDit bestand bevat debug- en foutmeldingen die handig zijn om problemen met de AdBlock VPN-systeemextensie te debuggen.\n\nJe kunt deze bestanden weergeven in een tekstverwerker en bewerken als er informatie is in deze logs die je wilt herzien.\n\nVoor meer informatie over de gegevens die we verzamelen en hoe we die gebruiken, ga naar: (Constants.logsPrivacyInfoKBArticleURL)";
+
 /* Alt text for region selection button */
 "%@, next" = "%@, volgende";
 
@@ -37,6 +40,9 @@
 /* Title for updates view */
 "An update is available" = "Er is een update beschikbaar";
 
+/* Label to confirm log file has been exported. */
+"App Logs Created" = "App-logs gemaakt";
+
 /* App settings page title */
 "App Settings" = "App-instellingen";
 
@@ -57,6 +63,9 @@
 
 /* Alt text for back button */
 "Back" = "Terug";
+
+/* No comment provided by engineer. */
+"Before you submit a new ticket, click “Create App Logs” to save an app log file to your desktop." = "Klik voordat je een nieuw ticket indient op 'App-logs maken' om een app-logbestand op je bureaublad te plaatsen.";
 
 /* Name of 'be' region */
 "Belgium" = "België";
@@ -117,7 +126,7 @@ Label for button that closes the onboarding flow */
 /* Error msg when connection retry fails */
 "Connection retry failed." = "Opnieuw verbinding zoeken is mislukt.";
 
-/* Label for button to contact support from onboarding flow */
+/* Contact Support page title */
 "Contact Support" = "Contact opnemen met ondersteuning";
 
 /* Label for button that continues the process of moving the app to the correct folder */
@@ -128,6 +137,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
 "Copy %@" = "%@ kopiëren";
+
+/* Label for button that exports app log file. */
+"Create App Logs" = "App-logs maken";
 
 /* Name of 'cz' region */
 "Czech Republic" = "Tsjechië";
@@ -244,6 +256,9 @@ Label for button that closes the onboarding flow */
 /* Instructions for VPN configuration error page in onboarding flow */
 "It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "Het lijkt erop dat we nog geen toestemming hebben om VPN-configuraties toe te voegen aan je apparaat. Laten we het nog eens proberen.";
 
+/* Instructions for system extensions permissions error page in onboarding flow */
+"It looks like we still don't have permission to run on your device. Let's try again." = "Het lijkt erop dat we nog geen toestemming hebben om werkzaam te zijn op je apparaat. Laten we het nog eens proberen.";
+
 /* Instructions on subscription ended error page */
 "It looks like your subscription has ended. Please click below to renew." = "Het lijkt erop dat je abonnement is afgelopen. Klik hieronder om te vernieuwen.";
 
@@ -255,6 +270,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for toggle to turn the 'launch at login' feature on/off */
 "Launch at login" = "Opstarten bij inloggen";
+
+/* Label for button that links to privacy policy */
+"Learn more about the data we collect and how we use it." = "Meer info over de gegevens die we verzamelen en hoe we die gebruiken.";
 
 /* Label for button to go to login page
 Label for button that takes user to login page */
@@ -398,6 +416,9 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Label for button on subscription ended error page. Links to page where user can renew their subscription */
 "Renew Subscription" = "Abonnement vernieuwen";
 
+/* Label for button that opens a feedback page to request feedback */
+"Request Feature" = "Vragen om feedback";
+
 /* VPN state text when reasserting */
 "Retrying connection" = "Opnieuw proberen te verbinden";
 
@@ -412,6 +433,9 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Name of 'ru' region */
 "Russia" = "Rusland";
+
+/* Alt text for regions search bar */
+"Search regions list" = "In regiolijst zoeken";
 
 /* VPN state text when connecting. */
 "Securing your connection." = "Je verbinding wordt beveiligd.";
@@ -458,8 +482,14 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Name of 'es' region */
 "Spain" = "Spanje";
 
+/* Subtitle for step 1 of contact support process */
+"Step 1" = "Stap 1";
+
 /* Prefix for step 1 of intructions */
 "Step 1:" = "Stap 1:";
+
+/* Subtitle for step 2 of contact support process */
+"Step 2" = "Stap 2";
 
 /* Prefix for step 2 of instructions */
 "Step 2:" = "Stap 2:";
@@ -469,6 +499,12 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Label for button on code entry page */
 "Submit" = "Verzenden";
+
+/* Button title for submitting a support ticket */
+"Submit a New Ticket" = "Een nieuw ticket indienen";
+
+/* Label with guidance on the support ticket submission process */
+"Submit your ticket using the link below. Our support team will respond promptly, typically within 24 hours." = "Stuur je ticket in met de onderstaande link. Onze klantenservice reageert snel, over het algemeen binnen 24 uur.";
 
 /* Name of 'se' region */
 "Sweden" = "Zweden";
@@ -484,6 +520,9 @@ Label for button that take the user to the next step in the onboarding flow */
 
 /* Label for time connected secion of connection info */
 "Time connected: %@" = "Tijd verbonden: %@";
+
+/* Label with guidance for adding logs to support tickets. AdBlockVPNLogs.zip is a file name not to be localized. desktop refers to the users desktop folder. */
+"To speed up the troubleshooting process, please attach AdBlockVPNLogs.zip from your desktop to your ticket." = "Voeg om het proces van probleemoplossing te versnellen AdBlockVPNLogs.zip vanaf je bureaublad bij aan je ticket.";
 
 /* Label for button to try the step again */
 "Try Again" = "Probeer het opnieuw";
@@ -546,6 +585,9 @@ Label for button that opens external update page */
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "Versie %@";
 
+/* Label for button that opens a help page */
+"Visit Help Center" = "Naar hulpcentrum";
+
 /* Alt text for image on VPN set up page
 Alt text for image on extension set up page */
 "VPN disabled" = "VPN uitgeschakeld";
@@ -559,6 +601,9 @@ Alt text for image on extension set up page */
 
 /* Error text for imvalid email error. */
 "We don’t recognize that email address. Please try again." = "We herkennen dit e-mailadres niet. Probeer het nogmaals.";
+
+/* Body text for error message shown when exporting app log file fails. */
+"We encountered an error, please manually attach your user logs" = "Er is een fout opgetreden, voeg je gebruikerslogs handmatig toe";
 
 /* Intructions on code entry page */
 "We sent you a 6-character access code. Enter it below:" = "We hebben je een toegangscode van 6 tekens toegestuurd. Voer die hieronder in:";
