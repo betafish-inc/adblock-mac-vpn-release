@@ -25,7 +25,7 @@ struct CustomColorToggleStyle: ToggleStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         HStack {
             Button(action: {
-                withAnimation(Animation.easeInOut(duration: 0.1), {
+                withAccessibilityFriendlyAnimation(Animation.easeInOut(duration: 0.1), {
                     configuration.isOn.toggle()
                 })
             }, label: {

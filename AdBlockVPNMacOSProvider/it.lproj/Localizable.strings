@@ -8,10 +8,10 @@
 "Connection retry failed." = "Nuovo tentativo di connessione fallito.";
 
 /* Link to support site */
-"For help solving this problem, please contact our support team." = "Per ricevere aiuto e risolvere questo problema, contatta la nostra squadra di assistenza.";
+"For help solving this problem, please contact our support team." = "Per aiutarci a risolvere questo problema, contatta la nostra squadra di assistenza.";
 
 /* Needs knowledge base article error full msg */
-"For help solving this problem, please follow the steps in this article." = "Per ricevere aiuto e risolvere questo problema, segui i passi indicati in questo articolo.";
+"For help solving this problem, please follow the steps in this article." = "Per aiutarci a risolvere questo problema, segui i passi indicati in questo articolo.";
 
 /* Invalid refresh token error */
 "Invalid refresh token." = "Token di aggiornamento non valido.";
@@ -26,7 +26,7 @@
 "Please contact our support team" = "Contatta la nostra squadra di assistenza";
 
 /* Needs knowledge base article error short msg */
-"Please follow the steps in this article" = "Segui i passi indicati in questo articolo";
+"Please follow the steps in this article" = "Segui i passi descritti in questo articolo";
 
 /* Needs app restart short msg */
 "Please restart AdBlock VPN" = "Riavvia AdBlock VPN";

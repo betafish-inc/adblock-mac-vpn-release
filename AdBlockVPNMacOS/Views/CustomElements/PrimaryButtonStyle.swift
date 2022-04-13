@@ -18,10 +18,13 @@ import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
     @State private var isHover = false
+    private var labelHoverOffset: CGFloat {
+        NSWorkspace.shared.accessibilityDisplayShouldReduceMotion ? 0 : -1
+    }
     var buttonColor: Color = .abButtonNormal
     var buttonHoverColor: Color = .abButtonHover
     var buttonClickColor: Color = .abButtonClick
-    var textColor: Color = .abWhiteText
+    var textColor: Color = .abButtonForeground
     var shadowColor: Color = .abShadow
     var buttonWidth: CGFloat = 272
     var animationSpeed: Double = 0.15
@@ -29,7 +32,7 @@ struct PrimaryButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .offset(x: 0, y: configuration.isPressed ? 0 : isHover && enableAnimation ? -1 : 0)
+            .offset(x: 0, y: configuration.isPressed ? 0 : isHover && enableAnimation ? labelHoverOffset : 0)
             .multilineTextAlignment(.center)
             .padding(8)
             .frame(maxWidth: buttonWidth, minHeight: 40, idealHeight: 40)
@@ -42,7 +45,7 @@ struct PrimaryButtonStyle: ButtonStyle {
                     y: isHover ? 4 : 0)
             .latoFont(weight: .bold)
             .onHover { inside in
-                withAnimation(.easeInOut(duration: animationSpeed)) { isHover = inside }
+                withAccessibilityFriendlyAnimation(.easeInOut(duration: animationSpeed)) { isHover = inside }
             }
     }
 }

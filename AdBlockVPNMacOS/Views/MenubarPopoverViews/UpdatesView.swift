@@ -33,7 +33,7 @@ struct UpdatesView: View {
                 .foregroundColor(.abDarkText)
             Spacer()
             Button(action: { state.viewToShow = .connection }, label: { Text("Skip for now", comment: "Label for button that skips the available update") })
-                .buttonStyle(SecondaryButtonStyle(bold: true, buttonColor: .abAccentBackground))
+                .buttonStyle(SecondaryButtonStyle(bold: true, buttonColor: .abAccentBackground, textColor: .abUpdateText))
             Spacer().frame(height: 24)
             Button(action: {
                 viewModel.update()
@@ -42,11 +42,11 @@ struct UpdatesView: View {
             .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent,
                                             buttonHoverColor: .abUpdateAccent,
                                             buttonClickColor: .abUpdateAccentClick,
-                                            textColor: .abDarkText))
+                                            textColor: .abUpdateText))
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.abAccentBackground)
+        .background(Color.abUpdateErrorBackground)
     }
 }
 

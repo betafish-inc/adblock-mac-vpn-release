@@ -1,0 +1,67 @@
+/* Authentication error during VPN connection */
+"Auth error with server." = "Error d'autenticació amb el servidor.";
+
+/* Error applying VPN configuration */
+"Can't apply VPN configuration." = "No es pot aplicar la configuració VPN.";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "No s'ha pogut tornar a intentar la connexió.";
+
+/* Link to support site */
+"For help solving this problem, please contact our support team." = "Per obtenir ajuda per resoldre aquest problema, contacteu amb el nostre equip de suport.";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "Per obtenir ajuda per resoldre aquest problema, seguiu els passos d'aquest article.";
+
+/* Invalid refresh token error */
+"Invalid refresh token." = "El testimoni d'actualització no és vàlid.";
+
+/* Device ID not set error */
+"No deviceID found." = "No s'ha trobat cap ID de dispositiu.";
+
+/* Configuration file missing error */
+"OVPN file missing." = "Falta el fitxer OVPN.";
+
+/* Needs support error short msg */
+"Please contact our support team" = "Contacteu amb el nostre equip de suport";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "Seguiu els passos d'aquest article ";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "Reinicieu l'AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN." = "Reinicieu l'AdBlock VPN.";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "Reinicieu l'ordinador";
+
+/* Needs machine restart error full msg */
+"Please restart your computer." = "Reinicieu l'ordinador.";
+
+/* Needs authentication short msg */
+"Please sign in again" = "Torneu a iniciar la sessió";
+
+/* Needs authentication error full msg */
+"Please sign in again." = "Torneu a iniciar la sessió.";
+
+/* Protocol configuration error msg */
+"Protocol configuration error." = "Error de configuració del protocol.";
+
+/* Generic token error */
+"Unknown token error." = "Error de testimoni desconegut.";
+
+/* Server error full msg
+   Server error short msg */
+"We can't connect to our servers. Please try again later." = "No ens podem connectar als nostres servidors. Proveu-ho més tard.";
+
+/* Not signed in error */
+"You are not signed in." = "No heu iniciat sessió.";
+
+/* No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "No esteu connectat a Internet!\nComproveu la vostra connexió de xarxa.";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "No esteu connectat a Internet! Comproveu la vostra connexió de xarxa.";
+

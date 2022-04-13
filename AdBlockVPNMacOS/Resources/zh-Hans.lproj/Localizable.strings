@@ -10,7 +10,8 @@
 /* Alt text for region selection button */
 "%@, next" = "%@，下一个";
 
-/* Label for selected region button */
+/* Label for selected region button
+Label for selected theme button */
 "%@, selected" = "%@，已选中";
 
 /* No comment provided by engineer. */
@@ -144,6 +145,9 @@ Label for button that closes the onboarding flow */
 /* Name of 'cz' region */
 "Czech Republic" = "捷克共和国";
 
+/* Description of system theme setting. */
+"Dark" = "深色";
+
 /* Name of 'dk' region */
 "Denmark" = "丹麦";
 
@@ -273,6 +277,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for button that links to privacy policy */
 "Learn more about the data we collect and how we use it." = "详细了解我们收集的数据及其使用方式。";
+
+/* Description of system theme setting. */
+"Light" = "浅色";
 
 /* Label for button to go to login page
 Label for button that takes user to login page */
@@ -518,6 +525,9 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Error text for invalid code error */
 "That code didn’t work. Please try again." = "该代码无效。请重试。";
 
+/* Theme settings page title */
+"Theme" = "主题";
+
 /* Label for time connected secion of connection info */
 "Time connected: %@" = "连接时间：%@";
 
@@ -581,6 +591,9 @@ Label for button that opens external update page */
 
 /* Name of 'us_was' region */
 "US - Washington, D.C." = "美国 - 华盛顿特区";
+
+/* Description of system theme setting. */
+"Use system appearance" = "使用系统外观";
 
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "版本 %@";

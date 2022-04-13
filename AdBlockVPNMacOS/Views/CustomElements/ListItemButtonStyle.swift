@@ -17,7 +17,11 @@
 import SwiftUI
 
 struct ListItemButtonStyle: ButtonStyle {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State private var isHover = false
+    private var labelHoverOffset: CGFloat {
+        NSWorkspace.shared.accessibilityDisplayShouldReduceMotion ? 0 : -1
+    }
     var animationSpeed: Double = 0.15
     var selected: Bool = false
     var buttonWidth: CGFloat = 272
@@ -25,17 +29,32 @@ struct ListItemButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(width: buttonWidth, height: 40, alignment: .center)
-            .offset(x: 0, y: configuration.isPressed ? 0 : isHover ? -1 : 0)
-            .background(selected ? Color.abPrimaryAccent : configuration.isPressed ? Color.abListItemClicked : Color.abListItemBackground)
-            .foregroundColor(selected ? .abWhiteText : .abDarkText)
-            .cornerRadius(6)
-            .shadow(color: selected ? .clear : configuration.isPressed ? .clear : isHover ? .abShadow : .clear,
-                    radius: isHover ? 4 : 0,
-                    x: 0,
-                    y: isHover ? 3 : 0)
-            .blendMode(.plusDarker)
+            .offset(x: 0, y: configuration.isPressed ? 0 : isHover ? labelHoverOffset : 0)
+            .if(colorScheme == .light) {
+                $0.background(selected ?
+                              Color.abPrimaryAccent : configuration.isPressed ?
+                              Color.abListItemClicked : Color.abListItemBackground)
+                    .foregroundColor(selected ? .abButtonForeground : .abDarkText)
+                    .cornerRadius(6)
+                    .shadow(color: selected ?
+                                .clear : configuration.isPressed ?
+                                .clear : isHover ?
+                                .abShadow : .clear,
+                           radius: isHover ? 4 : 0,
+                           x: 0,
+                           y: isHover ? 3 : 0)
+                    .blendMode(.plusDarker)
+            }
+            .if(colorScheme == .dark) {
+                $0.background(selected ?
+                              Color.abPrimaryAccent : configuration.isPressed ?
+                              Color.abListItemClicked : isHover ?
+                              Color.abListItemForegroundDarkMode : Color.abListItemBackground)
+                    .foregroundColor(selected ? .abButtonForeground : .abDarkText)
+                    .cornerRadius(6)
+            }
             .onHover { inside in
-                withAnimation(.easeInOut(duration: animationSpeed)) {
+                withAccessibilityFriendlyAnimation(.easeInOut(duration: animationSpeed)) {
                     isHover = inside
                 }
             }

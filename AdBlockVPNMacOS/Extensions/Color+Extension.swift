@@ -22,24 +22,28 @@ extension Color {
     static let abDarkText = Color("abGray33")
     static let abLightText = Color("abGray66")
     static let abLightestText = Color("abGray99")
-    static let abWhiteText = Color("abWhite")
+    static let abWhiteText = Color("abWhiteText")
     static let abLinkColor = Color("abBlueLight")
 
     // Button colors
     static let abButtonNormal = Color("abBlue")
     static let abButtonHover = Color("abBlueLight")
     static let abButtonClick = Color("abBlueDark")
+    static let abButtonForeground = Color.white
     static let abSecondaryButtonNormal = Color("abWhite")
     static let abSecondaryButtonClick = Color("abGrayC6")
-    static let abDisabledButtonForeground = Color("abWhite")
+    static let abDisabledButtonForeground = Color.white
     static let abDisabledButtonBackground = Color("abGrayC6")
     static let abToggleOn = Color("abGreen")
     static let abToggleOff = Color("abGrayC6")
     static let abToggleCircle = Color("abWhite")
     static let abUpToDateAccent = Color("abGreen")
+    static let abUpToDateForeground = Color.white
     static let abUpdateAccent = Color("abYellow")
     static let abUpdateAccentClick = Color("abOrange")
+    static let abUpdateForeground = Color("abGray33-sansDark")
     static let abErrorAccent = Color("abRed")
+    static let abErrorText = Color.white
     static let abErrorDismiss = Color("abWhite")
 
     // VPN state colors
@@ -51,12 +55,16 @@ extension Color {
     static let abListItemClicked = Color("abGrayE6")
     static let abSearchBarBackground = Color("abWhite")
     static let abListItemBackground = Color("abWhite")
+    static let abListItemForegroundDarkMode = Color("abGray33-sansDark")
 
     // General UI Colors
     static let abBackground = Color("abWhite")
-    static let abAccentBackground = Color("abGrayE6")
+    static let abUpdateErrorBackground = Color("abGrayE6-update")
+    static let abUpdateText = Color("abGray33-sansDark")
+    static let abAccentBackground = Color("abGrayE6-sansDark")
     static let abHeaderBackground = Color("abGrayF4")
-    static let abSecondaryHeaderBackground = Color("abGrayE6")
+    static let abSecondaryHeaderBackground = Color("abGrayE6-sansDark")
+    static let abOnboardingDotsInactive = Color("abGrayE6")
     static let abBorder = Color("abGrayC6")
     static let abPrimaryAccent = Color("abBlue")
     static let abShadow = Color("abGrayTransparent")

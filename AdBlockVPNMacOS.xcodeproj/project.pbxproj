@@ -27,6 +27,7 @@
 		0522C0F6260115DA00E6D38E /* NSFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0522C0F5260115DA00E6D38E /* NSFont+Extension.swift */; };
 		053C1B75272A188D00DCF794 /* ContactSupportStepOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C1B74272A188D00DCF794 /* ContactSupportStepOneView.swift */; };
 		053C1B77272A266300DCF794 /* ContactSupportStepTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C1B76272A266300DCF794 /* ContactSupportStepTwoView.swift */; };
+		054434F527E3841800278DB4 /* ThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054434F427E3841800278DB4 /* ThemesView.swift */; };
 		0562110E26869192008ACF0B /* TopBarButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0562110D26869192008ACF0B /* TopBarButtonStyle.swift */; };
 		0565E2552702676500B6D1E8 /* ConnectionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565E2542702676500B6D1E8 /* ConnectionInfoView.swift */; };
 		0565E257270267D700B6D1E8 /* ConnectionInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565E256270267D700B6D1E8 /* ConnectionInfoViewModel.swift */; };
@@ -286,6 +287,7 @@
 		0522C0F5260115DA00E6D38E /* NSFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Extension.swift"; sourceTree = "<group>"; };
 		053C1B74272A188D00DCF794 /* ContactSupportStepOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupportStepOneView.swift; sourceTree = "<group>"; };
 		053C1B76272A266300DCF794 /* ContactSupportStepTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupportStepTwoView.swift; sourceTree = "<group>"; };
+		054434F427E3841800278DB4 /* ThemesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesView.swift; sourceTree = "<group>"; };
 		0562110D26869192008ACF0B /* TopBarButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarButtonStyle.swift; sourceTree = "<group>"; };
 		0565E2542702676500B6D1E8 /* ConnectionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfoView.swift; sourceTree = "<group>"; };
 		0565E256270267D700B6D1E8 /* ConnectionInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfoViewModel.swift; sourceTree = "<group>"; };
@@ -298,6 +300,14 @@
 		057B995A26433C8A00B60284 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		057C1A3925F849C3001AFFF9 /* NSColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Extension.swift"; sourceTree = "<group>"; };
 		0581841B25FA6D8300C519C8 /* StatusItemAnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemAnimationManager.swift; sourceTree = "<group>"; };
+		05922BE227AC0A7B002BE612 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
+		05922BE327AC0A85002BE612 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Main.strings; sourceTree = "<group>"; };
+		05922BE427AC0ADC002BE612 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05922BE527AC0ADC002BE612 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05922BE627AC0ADC002BE612 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05922BE727AC0AED002BE612 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05922BE827AC0AED002BE612 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05922BE927AC0AED002BE612 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		059513B8265892A4009E3AF9 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		059513BA265892B0009E3AF9 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		05A23D3B270C71EE004C7497 /* RefreshButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButtonStyle.swift; sourceTree = "<group>"; };
@@ -422,9 +432,7 @@
 		719C1666272B563E006E11E7 /* LinkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButtonView.swift; sourceTree = "<group>"; };
 		719C2BBE25A695C400558568 /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
 		719CA8D924DF30C000C46537 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = OpenVPNAdapter.framework; path = OpenVPNAdapter/OpenVPNAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		719CA8DC24DF34E000C46537 /* TunnelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = TunnelKit.framework; path = TunnelKit/TunnelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719CA8DF24DF357500C46537 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SwiftyBeaver.framework; path = SwiftyBeaver/SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		719CA8E224DF36B400C46537 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = openssl.framework; path = "Pods/OpenSSL-Apple/frameworks/MacOSX/openssl.framework"; sourceTree = "<group>"; };
 		719DB4822645FA9A004F4800 /* UpdatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesView.swift; sourceTree = "<group>"; };
 		719DB4872645FAEA004F4800 /* UpdatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewModel.swift; sourceTree = "<group>"; };
 		719DB48F264604BD004F4800 /* UpdateOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOverlayView.swift; sourceTree = "<group>"; };
@@ -583,6 +591,7 @@
 				05BE5999261D3E6400BA210A /* LandingView.swift */,
 				05BE5995261D3E6400BA210A /* LoginFlowView.swift */,
 				05BE5992261D3E6400BA210A /* MainView.swift */,
+				054434F427E3841800278DB4 /* ThemesView.swift */,
 				05BE5991261D3E6400BA210A /* PreferencesView.swift */,
 				05BE5996261D3E6400BA210A /* RegionSelectionView.swift */,
 				05BE598F261D3E6400BA210A /* SetUpExtensionView.swift */,
@@ -766,9 +775,7 @@
 				057B995A26433C8A00B60284 /* Security.framework */,
 				7140600725004A1600E40456 /* Alamofire.framework */,
 				710A599624F5D24B000F25B4 /* KeychainAccess.framework */,
-				719CA8E224DF36B400C46537 /* openssl.framework */,
 				719CA8DF24DF357500C46537 /* SwiftyBeaver.framework */,
-				719CA8DC24DF34E000C46537 /* TunnelKit.framework */,
 				719CA8D924DF30C000C46537 /* OpenVPNAdapter.framework */,
 				7146367C24D488A50085DE9B /* SystemConfiguration.framework */,
 				717AC72424C658E200D226A4 /* NetworkExtension.framework */,
@@ -1067,7 +1074,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Adblock, Inc.";
 				TargetAttributes = {
 					712C4F8624C0D4360063F9AB = {
@@ -1105,6 +1112,8 @@
 				it,
 				fr,
 				de,
+				ro,
+				ca,
 			);
 			mainGroup = 712C4F7E24C0D4360063F9AB;
 			packageReferences = (
@@ -1430,6 +1439,7 @@
 				0522C0F12601049500E6D38E /* LatoFontModifier.swift in Sources */,
 				7140600C250AEE6200E40456 /* MainViewModel.swift in Sources */,
 				051FB8D5260A46760018A8EA /* Date+Extension.swift in Sources */,
+				054434F527E3841800278DB4 /* ThemesView.swift in Sources */,
 				71406004250023DC00E40456 /* TokenInfo.swift in Sources */,
 				71D7FC73258C246D00E4E466 /* PingManager.swift in Sources */,
 				05BE59A6261D3E6400BA210A /* LandingView.swift in Sources */,
@@ -1523,6 +1533,8 @@
 				7153226C26CDCEE800742919 /* fr */,
 				7153227026CDCEFA00742919 /* es */,
 				7153227426CDCF0C00742919 /* de */,
+				05922BE227AC0A7B002BE612 /* ro */,
+				05922BE327AC0A85002BE612 /* ca */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1541,6 +1553,8 @@
 				7153226D26CDCEE800742919 /* fr */,
 				7153227126CDCEFA00742919 /* es */,
 				7153227526CDCF0C00742919 /* de */,
+				05922BE427AC0ADC002BE612 /* ca */,
+				05922BE727AC0AED002BE612 /* ro */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1559,6 +1573,8 @@
 				7153226E26CDCEE800742919 /* fr */,
 				7153227226CDCEFA00742919 /* es */,
 				7153227626CDCF0C00742919 /* de */,
+				05922BE527AC0ADC002BE612 /* ca */,
+				05922BE827AC0AED002BE612 /* ro */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1577,6 +1593,8 @@
 				7153226F26CDCEE800742919 /* fr */,
 				7153227326CDCEFA00742919 /* es */,
 				7153227726CDCF0C00742919 /* de */,
+				05922BE627AC0ADC002BE612 /* ca */,
+				05922BE927AC0AED002BE612 /* ro */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1712,7 +1730,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 22.1.2.1;
+				CURRENT_PROJECT_VERSION = 22.2.1.4;
 				DEVELOPMENT_ASSET_PATHS = "\"AdBlockVPNMacOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1723,7 +1741,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 22.1.2;
+				MARKETING_VERSION = 22.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos;
 				PRODUCT_NAME = "AdBlock VPN";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN App Dev";
@@ -1745,7 +1763,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 22.1.2.1;
+				CURRENT_PROJECT_VERSION = 22.2.1.4;
 				DEVELOPMENT_ASSET_PATHS = "\"AdBlockVPNMacOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1756,7 +1774,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 22.1.2;
+				MARKETING_VERSION = 22.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos;
 				PRODUCT_NAME = "AdBlock VPN";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Distribution";
@@ -1858,13 +1876,10 @@
 				CODE_SIGN_ENTITLEMENTS = "AdBlockVPNMacOSProvider/AdBlockVPNMacOSProvider-Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 22.1.2.1;
+				CURRENT_PROJECT_VERSION = 22.2.1.4;
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/OpenSSL-Apple/frameworks/MacOSX",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdBlockVPNMacOSProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1872,7 +1887,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 22.1.2;
+				MARKETING_VERSION = 22.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos.provider;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Provider Extension Dev";
@@ -1888,13 +1903,10 @@
 				CODE_SIGN_ENTITLEMENTS = AdBlockVPNMacOSProvider/AdBlockVPNMacOSProvider.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 22.1.2.1;
+				CURRENT_PROJECT_VERSION = 22.2.1.4;
 				DEVELOPMENT_TEAM = 3KKZV48AQD;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/OpenSSL-Apple/frameworks/MacOSX",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdBlockVPNMacOSProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1902,7 +1914,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 22.1.2;
+				MARKETING_VERSION = 22.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adblockinc.adblockvpn.macos.provider;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdBlock VPN Provider Distribution";

@@ -23,7 +23,14 @@ struct TopBarView: View {
             RoundedRectangle(cornerRadius: 6)
                 .fill(Color.abHeaderBackground)
                 .frame(width: 272, height: 56)
-            if [.preferences, .account, .help, .contactSupportStepOne, .contactSupportStepTwo, .locations, .appSettings].contains(state.viewToShow) {
+            if [.preferences,
+                .account,
+                .themeSettings,
+                .help,
+                .contactSupportStepOne,
+                .contactSupportStepTwo,
+                .locations,
+                .appSettings].contains(state.viewToShow) {
                 Button {
                     self.state.backButtonClick()
                 } label: {

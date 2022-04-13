@@ -28,16 +28,20 @@ struct MainView: View {
     private(set) var connectionViewModel: ConnectionViewModel
     private(set) var loginViewModel: LoginViewModel
     private(set) var connectionInfoViewModel: ConnectionInfoViewModel
+
     var body: some View {
         VStack {
-            Spacer().frame(width: 0, height: 16)
+            Spacer().frame(height: 16)
             TopBarView()
             VStack {
-                Spacer().frame(width: 0, height: 16)
+                Spacer().frame(height: 16)
                 getViewToShow()
-                    .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
+                    .frame(width: 272,
+                           height: state.showConnectionInfo ? 460 : 352)
                     .onAppear {
-                        self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn, isError: errorManager.isMainError, updateRequired: updateManager.updateIsRequired)
+                        self.state.checkViewToShow(loggedIn: self.authManager.isLoggedIn,
+                                                   isError: errorManager.isMainError,
+                                                   updateRequired: updateManager.updateIsRequired)
                     }
             }
             .if(state.showOverlay) {
@@ -45,7 +49,7 @@ struct MainView: View {
                     UpdateOverlayView(text: Text("Update Complete!", comment: "Notification that an update has been completed"),
                                       icon: "CheckIcon",
                                       background: .abUpToDateAccent,
-                                      foreground: .abWhiteText)
+                                      foreground: .abUpdateText)
                         .shadow(color: .abShadow, radius: 20, x: 0, y: 5),
                     alignment: .top
                 )
@@ -56,9 +60,12 @@ struct MainView: View {
                 }
             }
         }
-        .frame(width: 320, height: state.showConnectionInfo ? 548 : 440)
-        .background([.updates, .updateError, .updateRequired].contains(state.viewToShow) ? Color.abAccentBackground : Color.abBackground)
+        .scaleEffect(state.guiScaleFactor.scale.app)
+        .frame(width: 320 * state.guiScaleFactor.scale.app,
+               height: state.showConnectionInfo ? 548 * state.guiScaleFactor.scale.app : 440 * state.guiScaleFactor.scale.app)
+        .background([.updates, .updateError, .updateRequired].contains(state.viewToShow) ? Color.abUpdateErrorBackground : Color.abBackground)
         .foregroundColor(.abLightText)
+        .if(state.currentTheme != .system) { $0.colorScheme(state.currentTheme == .light ? .light : .dark) }
         .onReceive(authManager.$token, perform: { newVal in
             self.state.checkViewToShow(loggedIn: self.authManager.willBeLoggedIn(newToken: newVal),
                                        isError: errorManager.isMainError,
@@ -145,6 +152,8 @@ struct MainView: View {
             ContactSupportStepTwoView()
         } else if state.viewToShow == .appSettings {
             AppSettingsView(viewModel: AppSettingsViewModel(updateManager: updateManager, dockIconManager: dockIconManager))
+        } else if state.viewToShow == .themeSettings {
+            ThemesView()
         } else if state.viewToShow == .updates {
             UpdatesView(viewModel: UpdatesViewModel(updateManager: updateManager))
         } else if state.viewToShow == .updateError {

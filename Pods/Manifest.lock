@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.4)
+  - Alamofire (5.5.0)
   - KeychainAccess (4.2.2)
   - OpenVPNAdapter (0.8.0):
     - OpenVPNAdapter/ASIO (= 0.8.0)
@@ -14,14 +14,14 @@ PODS:
   - OpenVPNAdapter/OpenVPN3 (0.8.0)
   - OpenVPNAdapter/OpenVPNAdapter (0.8.0)
   - OpenVPNAdapter/OpenVPNClient (0.8.0)
-  - Sparkle (1.27.0)
+  - Sparkle (1.27.1)
   - SwiftyBeaver (1.9.5)
 
 DEPENDENCIES:
   - Alamofire
   - KeychainAccess
   - OpenVPNAdapter (from `https://github.com/betafish-inc/OpenVPNAdapter`)
-  - Sparkle
+  - Sparkle (~> 1.27.1)
   - SwiftyBeaver
 
 SPEC REPOS:
@@ -41,12 +41,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/betafish-inc/OpenVPNAdapter
 
 SPEC CHECKSUMS:
-  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   OpenVPNAdapter: 1d945f4528073ff641d4ed90d98e28f2b1c86d05
-  Sparkle: e1245ce5ba951c60183444a13a2c7d227778205d
+  Sparkle: 23f98b268284c8c03e6228230fc8f1807ef041d5
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: c667c3182d35df9c893bcea8744940154b48c085
+PODFILE CHECKSUM: 5513fa6c315d1ff10df732558bf87331a5f137e2
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.3

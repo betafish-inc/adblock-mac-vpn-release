@@ -24,6 +24,9 @@ final class StatusItemAnimationManager {
     private var statusBarItem: NSStatusItem?
     private var imageNamePattern: String
     private var imageCount: Int
+    private var animationTimeInterval: TimeInterval {
+        NSWorkspace.shared.accessibilityDisplayShouldReduceMotion ? 0.4 : 0.2
+    }
     
     init(statusBarItem: NSStatusItem?, imageNamePattern: String = "StatusBarIcon_", imageCount: Int = 4) {
         self.animTimer = Timer.init()
@@ -35,7 +38,8 @@ final class StatusItemAnimationManager {
     func startAnimating() {
         stopAnimating()
         currentFrame = 0
-        animTimer = Timer.scheduledTimer(timeInterval: 5.0 / 30.0, target: self,
+        animTimer = Timer.scheduledTimer(timeInterval: animationTimeInterval,
+                                         target: self,
                                          selector: #selector(self.updateImage(_:)),
                                          userInfo: nil,
                                          repeats: true)

@@ -37,11 +37,14 @@ struct UpdatesErrorView: View {
                 viewModel.openDownloadsPage()
                 state.viewToShow = .connection
             }, label: { Text("Update", comment: "Label for button that opens external update page") })
-            .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent, buttonHoverColor: .abUpdateAccent, buttonClickColor: .abUpdateAccentClick, textColor: .abDarkText))
+            .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent,
+                                            buttonHoverColor: .abUpdateAccent,
+                                            buttonClickColor: .abUpdateAccentClick,
+                                            textColor: .abUpdateText))
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.abAccentBackground)
+        .background(Color.abUpdateErrorBackground)
     }
 }
 

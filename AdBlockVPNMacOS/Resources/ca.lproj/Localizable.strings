@@ -1,0 +1,604 @@
+/* No comment provided by engineer. */
+" " = " ";
+
+/* Placeholder text in code entry box */
+"— — — — — —" = "— — — — — —";
+
+/* Alt text for region selection button */
+"%@, next" = "%@, següent";
+
+/* Label for selected region button */
+"%@, selected" = "%@, seleccionat";
+
+/* No comment provided by engineer. */
+"%@: %@" = "%@: %@";
+
+/* Label for button that accepts the EULA and takes the user to the next page of the intro flow */
+"Accept and Continue" = "Accepta i continua";
+
+/* Account page title */
+"Account" = "Compte";
+
+/* Alt text for AdBlock VPN logo */
+"AdBlock VPN" = "AdBlock VPN";
+
+/* Onboarding setup flow title */
+"AdBlock VPN Setup" = "Configuració d'AdBlock VPN";
+
+/* Title for system extensions permissions page in onboarding flow */
+"Allow AdBlock VPN in your security preferences" = "Permet l'AdBlock VPN a les vostres preferències de seguretat";
+
+/* Title for notifications page in onboarding flow */
+"Allow AdBlock VPN Notifications" = "Permet les notificacions d'AdBlock VPN";
+
+/* Title for VPN configuration page of onboarding flow */
+"Allow AdBlock VPN to add VPN configurations" = "Permet que l'AdBlock VPN afegeixi configuracions VPN";
+
+/* Title for updates view */
+"An update is available" = "Hi ha una actualització disponible";
+
+/* App settings page title */
+"App Settings" = "Configuració de l'aplicació";
+
+/* Label for toggle to turn the 'apply updates automatically' feature on/off */
+"Apply updates automatically" = "Aplica les actualitzacions automàticament";
+
+/* Second step in instruction to enable system extension */
+"At the bottom of the page, click the lock icon and enter your password." = "A la part inferior de la pàgina, feu clic a la icona de bloqueig i introduïu la vostra contrasenya.";
+
+/* Name of 'au_per' region */
+"Australia - Perth" = "Austràlia-Perth";
+
+/* Name of 'au_syd' region */
+"Australia - Sydney" = "Austràlia-Sydney";
+
+/* Name of 'at' region */
+"Austria" = "Àustria";
+
+/* Alt text for back button */
+"Back" = "Enrere";
+
+/* Name of 'be' region */
+"Belgium" = "Bèlgica";
+
+/* Name of 'br' region */
+"Brazil" = "Brasil";
+
+/* Name of 'bg' region */
+"Bulgaria" = "Bulgària";
+
+/* Text explaining acceptance of EULA and Privacy Policy */
+"By proceeding, you are confirming you have read and accepted both of the following..." = "En continuar, confirmeu que heu llegit i acceptat el següent...";
+
+/* Name of 'ca' region */
+"Canada" = "Canadà";
+
+/* Label for cancel button, shown when VPN is in the process of connecting
+   Label for cancel button, shown when VPN is in the process of reconnecting */
+"Cancel" = "Cancel·la";
+
+/* Default label for region selector
+   Text shown on region selector when the VPN is connected */
+"Change Location" = "Canvia la ubicació";
+
+/* Title of code entry page */
+"Check Your Email" = "Comproveu el vostre correu";
+
+/* Name of 'cl' region */
+"Chile" = "Xile";
+
+/* Location picker page title */
+"Choose location" = "Trieu la ubicació";
+
+/* First step in instructions to enable system extension */
+"Click “Open System Dialog” below. Click ”Open Security Preferences” in the next window." = "Feu clic a «Obre el diàleg del sistema» a continuació. Feu clic a «Obre les preferències de seguretat» a la finestra següent.";
+
+/* Instructions for VPN configuration page of onboarding flow */
+"Click “Open System Dialog” below. In the following window, click the ”Allow” button. When you're done, click ”Next Steps” below to continue the setup process." = "Feu clic a «Obre el diàleg del sistema» a continuació. A la finestra següent, feu clic al botó «Permet». Quan hàgiu acabat, feu clic a «Següents passos» a continuació per continuar el procés de configuració.";
+
+/* Third step in instructions to enable the system extension */
+"Click the “Allow” button to give AdBlock VPN permission to run on your device. Close the preferences window and click “Next Steps” below to continue the setup process." = "Feu clic al botó «Permet» per donar permís a l'AdBlock VPN perquè s'executi al vostre dispositiu. Tanqueu la finestra de preferències i feu clic a «Següents passos» a continuació per continuar el procés de configuració.";
+
+/* label for close icon
+Label for button that closes the onboarding flow */
+"Close" = "Tanca";
+
+/* Default label for connection button
+   Label for connect button, shown when VPN is disconnected
+   Label for connect button, shown when VPN is in an invalid state */
+"Connect" = "Connecta";
+
+/* Notification shown when the VPN connects to the given location. Variable holds the name of the location. */
+"Connected to\n%@" = "Connectat a\n%@";
+
+/* VPN state text when connected. Variable holds the name of the location. */
+"Connected to %@" = "Connectat a %@";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "No s'ha pogut tornar a intentar la connexió.";
+
+/* Contact Support page title */
+"Contact Support" = "Contacta amb el suport";
+
+/* Label for button that continues the process of moving the app to the correct folder */
+"Continue" = "Continua";
+
+/* Voiceover notification when IP address is copied */
+"Copied" = "S'ha copiat";
+
+/* Label for copy icon, variable holds 'IPV4' or 'IPV6' */
+"Copy %@" = "Copia %@";
+
+/* Name of 'cz' region */
+"Czech Republic" = "República Txeca";
+
+/* Name of 'dk' region */
+"Denmark" = "Dinamarca";
+
+/* Footer text on code entry page */
+"Didn't get the code? Try again." = "No heu rebut el codi? Torneu-ho a provar.";
+
+/* Label for disconnect button, shown when VPN is connected */
+"Disconnect" = "Desconnecta";
+
+/* Default text for connection state */
+"Disconnected" = "Desconnectat";
+
+/* Notification shown when the VPN disconnects from the given location. Variable holds the name of the location. */
+"Disconnected\n%@" = "Desconnectat\n%@";
+
+/* Footer text on no account error page
+   Footer text on subscription ended page */
+"Doesn’t sound right? Try using a different email address." = "No és correcte? Proveu a utilitzar una correu diferent.";
+
+/* Footer text on email entry page */
+"Don't have an AdBlock account? Sign up." = "No teniu un compte d'AdBlock? Registreu-vos.";
+
+/* Placeholder text in email entry box */
+"Email Address" = "Adreça electrònica";
+
+/* Link to EULA */
+"End User License Agreement" = "Acord de llicència d'usuari final";
+
+/* Intructions for entering your email address */
+"Enter the email address you used when you purchased AdBlock VPN:" = "Introduïu l'adreça de correu que vau utilitzar quan vau comprar l'AdBlock VPN:";
+
+/* Label that is shown when IP Address lookup fails
+   Shown when the location name cannot be found */
+"Error" = "Error";
+
+/* Error shown when error recovery fails */
+"Error connecting to VPN provider." = "S'ha produït un error en connectar-se al proveïdor de VPN.";
+
+/* Downloading and reading regions file failed error
+   Reading regions file failed error. */
+"Error in reading regions file." = "S'ha produït un error en llegir el fitxer de regions.";
+
+/* Name of 'fi' region */
+"Finland" = "Finlàndia";
+
+/* Link to support site */
+"For help solving this problem, please contact our support team." = "Per obtenir ajuda per resoldre aquest problema, contacteu el nostre equip de suport.";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "Per obtenir ajuda per resoldre aquest problema, seguiu els passos d'aquest article.";
+
+/* Instructions for enabling notifications from the system alert */
+"For the best app experience from AdBlock VPN, allow notifications. Click “Show Notification“ below. A notification will appear in the top right corner of your screen. Click “Options” then “Allow”. (You can choose “Don’t Allow” if you do not want notifications from AdBlock VPN.) Click “Next” below when you are done." = "Per obtenir la millor experiència de l'aplicació AdBlock VPN, permeteu les notificacions. Feu clic a «Mostra les notificacions» a continuació. Apareixerà una notificació a l'extrem superior dret de la pantalla. Feu clic a «Opcions» i després a «Permet». (Podeu triar «No permetre» si no voleu notificacions d'AdBlock VPN.) Feu clic a «Següent» a continuació quan hàgiu acabat.";
+
+/* Link to create a help ticket on email entry page */
+"Forgot your email?" = "Heu oblidat el vostre correu?";
+
+/* Name of 'fr' region */
+"France" = "França";
+
+/* Name of 'de' region */
+"Germany" = "Alemanya";
+
+/* Label for button on no account error page. Links to page to set up account */
+"Get AdBlock VPN" = "Obtén l'AdBlock VPN";
+
+/* Label for button that starts the onboarding flow */
+"Get Started" = "Primers passos";
+
+/* Name of 'gr' region */
+"Greece" = "Grècia";
+
+/* label for help icon */
+"Help" = "Ajuda";
+
+/* Help and feedback page title */
+"Help & Feedback" = "Ajuda i comentaris";
+
+/* Name of 'hk' region */
+"Hong Kong" = "Hong Kong";
+
+/* Name of 'hu' region */
+"Hungary" = "Hongria";
+
+/* Name of 'is' region */
+"Iceland" = "Islàndia";
+
+/* Label for empty IP address shown in connection info
+   Label for empty time connected section of connection info when the VPN isn't connected */
+"inactive" = "inactiu";
+
+/* Name of 'in' region */
+"India" = "Índia";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv4" = "IPv4";
+
+/* Label for IPv4 IP address shown in connection info */
+"IPv6" = "IPv6";
+
+/* Name of 'ie' region */
+"Ireland" = "Irlanda";
+
+/* Name of 'im' region */
+"Isle of Man" = "Illa de Man";
+
+/* Name of 'il' region */
+"Israel" = "Israel";
+
+/* Instructions for VPN configuration error page in onboarding flow */
+"It looks like we still don't have permission to add VPN configurations to your device. Let's try again." = "Sembla que encara no tenim permís per afegir configuracions VPN al vostre dispositiu. Intentem-ho una altre vegada.";
+
+/* Instructions for system extensions permissions error page in onboarding flow */
+"It looks like we still don't have permission to run on your device. Let's try again." = "Sembla que encara no tenim permís per executar-nos al vostre dispositiu. Intentem-ho una altre vegada.";
+
+/* Instructions on subscription ended error page */
+"It looks like your subscription has ended. Please click below to renew." = "Sembla que la vostra subscripció ha finalitzat. Feu clic a continuació per renovar-la.";
+
+/* Name of 'it' region */
+"Italy" = "Itàlia";
+
+/* Name of 'jp' region */
+"Japan" = "Japó";
+
+/* Label for toggle to turn the 'launch at login' feature on/off */
+"Launch at login" = "Inicia automàticament";
+
+/* Label for button to go to login page
+Label for button that takes user to login page */
+"Log In" = "Inicia sessió";
+
+/* Instructions on landing page */
+"Log in to connect to AdBlock VPN and secure your connection" = "Inicieu sessió per connectar-vos a l'AdBlock VPN i assegurar la vostra connexió";
+
+/* Label for button that links to the account management page */
+"Manage Account" = "Gestiona el compte";
+
+/* Label for button on device limit error page */
+"Manage Devices" = "Gestió de dispositius";
+
+/* Name of 'mx' region */
+"Mexico" = "Mèxic";
+
+/* Name of 'md' region */
+"Moldova" = "Moldàvia";
+
+/* Title for move app page of onboarding flow */
+"Move AdBlock VPN to the Applications folder" = "Mou l'AdBlock VPN a la carpeta Aplicacions";
+
+/* Name of option to use the nearest region */
+"Nearest location" = "Ubicació més propera";
+
+/* Link to help site */
+"Need Help?" = "Necessiteu ajuda?";
+
+/* Name of 'nl' region */
+"Netherlands" = "Països Baixos";
+
+/* Name of 'nz' region */
+"New Zealand" = "Nova Zelanda";
+
+/* Label for button on email entry page */
+"Next" = "Següent";
+
+/* Label for button that takes the user to the next step in the onboarding flow
+Label for button that take the user to the next step in the onboarding flow */
+"Next Steps" = "Passos següents";
+
+/* Name of 'no' region */
+"Norway" = "Noruega";
+
+/* Title for error view */
+"Oh dear. Something went wrong." = "Vaja! Alguna cosa ha anat malament.";
+
+/* Alt text for onboarding complete header image */
+"Onboarding complete" = "Incorporació completa";
+
+/* Title for device limit error page
+   Title for subscription ended error page
+   Title of no account error page */
+"Oops!" = "Vaja!";
+
+/* Label for button that opens the main app after onboarding flow is complete */
+"Open AdBlock VPN" = "Obre l'AdBlock VPN";
+
+/* Label for button to open system preferences to notifications */
+"Open Notifications" = "Obre les notificacions";
+
+/* Label for button that opens the system dialog */
+"Open System Dialog" = "Obre el diàleg del sistema";
+
+/* No comment provided by engineer. */
+"Page 1 of 5" = "Pàgina 1 de 5";
+
+/* No comment provided by engineer. */
+"Page 2 of 5" = "Pàgina 2 de 5";
+
+/* No comment provided by engineer. */
+"Page 3 of 5" = "Pàgina 3 de 5";
+
+/* No comment provided by engineer. */
+"Page 4 of 5" = "Pàgina 4 de 5";
+
+/* No comment provided by engineer. */
+"Page 5 of 5" = "Pàgina 5 de 5";
+
+/* Title for VPN setup page */
+"Please allow VPN configurations when prompted to connect to AdBlock VPN." = "Permeteu configuracions VPN quan se us demani que us connecteu a l'AdBlock VPN.";
+
+/* Needs support error short msg */
+"Please contact our support team" = "Contacteu el nostre equip de suport";
+
+/* Instructions on system extension set up page */
+"Please enable the AdBlock VPN system extension to start using AdBlock VPN." = "Activeu l'extensió del sistema AdBlock VPN per començar a utilitzar l'AdBlock VPN.";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "Seguiu els passos d'aquest article ";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "Reinicieu l'AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN." = "Reinicieu l'AdBlock VPN.";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "Reinicieu l'ordinador";
+
+/* Needs machine restart error full msg */
+"Please restart your computer." = "Reinicieu l'ordinador.";
+
+/* Needs authentication short msg */
+"Please sign in again" = "Torneu a iniciar la sessió";
+
+/* Needs authentication error full msg */
+"Please sign in again." = "Torneu a iniciar la sessió.";
+
+/* Title for update required page */
+"Please update AdBlock VPN to continue." = "Actualitzeu l'AdBlock VPN per continuar.";
+
+/* Name of 'pl' region */
+"Poland" = "Polònia";
+
+/* Preferences page title */
+"Preferences" = "Preferències";
+
+/* Link to Privacy Policy */
+"Privacy Policy" = "Política de privadesa";
+
+/* Label for spinning circle when login flow is waiting for the server response */
+"Processing" = "S'està processant";
+
+/* Link to support site */
+"Questions? Chat with our support team" = "Teniu cap pregunta? Xategeu amb el nostre equip de suport";
+
+/* Label for quit button when the VPN is disconnected */
+"Quit" = "Surt";
+
+/* Label for quit button when the VPN is connected */
+"Quit & Disconnect" = "Tanca i desconnecta";
+
+/* Label for reconnect button, shown when VPN is in the process of disconnecting */
+"Reconnect" = "Reconnecta";
+
+/* Label for resfresh icon */
+"Refresh" = "Actualitza";
+
+/* Label for button on subscription ended error page. Links to page where user can renew their subscription */
+"Renew Subscription" = "Renova la subscripció";
+
+/* VPN state text when reasserting */
+"Retrying connection" = "S'està reintentant la connexió";
+
+/* Notification shown when the VPN is reconnecting to the given location. Variable holds the name of the location. */
+"Retrying connection...\n%@" = "S'està reintentant la connexió...\n%@";
+
+/* Label that is shown when retrying a network request */
+"Retrying..." = "Reintentant...";
+
+/* Name of 'ro' region */
+"Romania" = "Romania";
+
+/* Name of 'ru' region */
+"Russia" = "Rússia";
+
+/* Alt text for regions search bar */
+"Search regions list" = "Cerca a la llista de regions";
+
+/* VPN state text when connecting. */
+"Securing your connection." = "S'està assegurant la connexió.";
+
+/* Notification shown when the VPN is connecting to the given location. Variable holds the name of the location. */
+"Securing your connection...\n%@" = "S'està assegurant la connexió...\n%@";
+
+/* No comment provided by engineer. */
+"Select region" = "Seleccioneu una regió";
+
+/* Name of 'rs' region */
+"Serbia" = "Sèrbia";
+
+/* Label for toggle to turn the 'show connection info' feature on/off */
+"Show connection info" = "Mostra la informació de la connexió";
+
+/* Label for toggle to turn the 'show dock icon' feature on/off */
+"Show dock icon" = "Mostra la icona de l'acoblador";
+
+/* Label for button to show the notifications system alert */
+"Show Notification" = "Mostra les notificacions";
+
+/* Title for email entry page */
+"Sign In" = "Inicia sessió";
+
+/* Label for button that signs the user out of their account (and the app) */
+"Sign Out" = "Tanca la sessió";
+
+/* Name of 'sg' region */
+"Singapore" = "Singapur";
+
+/* Label for button that skips the available update */
+"Skip for now" = "Omet per ara";
+
+/* Name of 'si' region */
+"Slovenia" = "Eslovènia";
+
+/* Instructions on update error page */
+"Something went wrong while attempting to update AdBlock VPN. Please try again." = "S'ha produït un error en intentar actualitzar l'AdBlock VPN. Torneu-ho a provar.";
+
+/* Error text for generic errors */
+"Something went wrong. Please try again." = "Alguna cosa ha anat malament. Torneu-ho a provar.";
+
+/* Name of 'es' region */
+"Spain" = "Espanya";
+
+/* Prefix for step 1 of intructions */
+"Step 1:" = "Pas 1:";
+
+/* Prefix for step 2 of instructions */
+"Step 2:" = "Pas 2:";
+
+/* Prefix for step 3 of instructions */
+"Step 3:" = "Pas 3:";
+
+/* Label for button on code entry page */
+"Submit" = "Envia";
+
+/* Name of 'se' region */
+"Sweden" = "Suècia";
+
+/* Name of 'ch' region */
+"Switzerland" = "Suïssa";
+
+/* Title for onboarding intro */
+"Thanks for installing AdBlock VPN" = "Gràcies per instal·lar l'AdBlock VPN";
+
+/* Error text for invalid code error */
+"That code didn’t work. Please try again." = "Aquest codi no ha funcionat. Torneu-ho a provar.";
+
+/* Label for time connected secion of connection info */
+"Time connected: %@" = "Temps connectat: %@";
+
+/* Label for button to try the step again */
+"Try Again" = "Torna-ho a provar";
+
+/* Name of 'gb_lon' region */
+"United Kingdom - London" = "Regne Unit - Londres";
+
+/* Name of 'gb_mnc' region */
+"United Kingdom - Manchester" = "Regne Unit - Manchester";
+
+/* Label for disabled button (when no update is available) */
+"Up To Date" = "Actualitzat";
+
+/* Label for button that triggers an update
+Label for button that opens external update page */
+"Update" = "Actualitza";
+
+/* Label for button to go to updates page */
+"Update Available" = "Actualització disponible";
+
+/* Notification that an update has been completed */
+"Update Complete!" = "Actualització completada!";
+
+/* Name of 'us_atl' region */
+"US - Atlanta" = "EUA - Atlanta";
+
+/* Name of 'us_chi' region */
+"US - Chicago" = "EUA - Chicago";
+
+/* Name of 'us_dal' region */
+"US - Dallas" = "EUA - Dallas";
+
+/* Name of 'us_las' region */
+"US - Las Vegas" = "EUA - Las Vegas";
+
+/* Name of 'us_lax' region */
+"US - Los Angeles" = "EUA - Los Angeles";
+
+/* Name of 'us_mia' region */
+"US - Miami" = "EUA - Miami";
+
+/* Name of 'us_nyc' region */
+"US - New York City" = "EUA - Nova York";
+
+/* Name of 'us_ewr' region */
+"US - Newark" = "EUA - Newark";
+
+/* Name of 'us_phx' region */
+"US - Phoenix" = "EUA - Phoenix";
+
+/* Name of 'us_sfo' region */
+"US - San Francisco" = "EUA - San Francisco";
+
+/* Name of 'us_sea' region */
+"US - Seattle" = "EUA - Seattle";
+
+/* Name of 'us_was' region */
+"US - Washington, D.C." = "EUA - Washington, D.C.";
+
+/* App version shown on settings page. Variable holds the version number */
+"Version %@" = "Versió %@";
+
+/* Alt text for image on VPN set up page
+Alt text for image on extension set up page */
+"VPN disabled" = "VPN desactivada";
+
+/* Server error full msg
+   Server error short msg */
+"We can't connect to our servers. Please try again later." = "No ens podem connectar als nostres servidors. Proveu-ho més tard.";
+
+/* Intructions for no account error page */
+"We couldn’t find an account for that email address. Please click below to get started." = "No hem pogut trobar cap compte per a aquesta adreça electrònica. Feu clic a continuació per començar.";
+
+/* Error text for imvalid email error. */
+"We don’t recognize that email address. Please try again." = "No reconeixem aquesta adreça de correu . Torneu-ho a provar.";
+
+/* Intructions on code entry page */
+"We sent you a 6-character access code. Enter it below:" = "Us hem enviat un codi d'accés de 6 caràcters. Introduïu-lo a continuació:";
+
+/* Instructions for move app page of onboarding flow */
+"We’ll need to move the AdBlock VPN app into your Applications folder first. Click “Continue” to confirm this change." = "Primer haurem de moure l'aplicació VPN AdBlock a la carpeta Aplicacions. Feu clic a «Continua» per confirmar aquest canvi.";
+
+/* Title of acceptance page */
+"Welcome to AdBlock VPN" = "Us donem la benvinguda a l'AdBlock VPN";
+
+/* Subtitle on update required page */
+"You are using an unsupported version of AdBlock VPN." = "Esteu utilitzant una versió d'AdBlock VPN no compatible.";
+
+/* No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "No esteu connectat a Internet!\nComproveu la vostra connexió de xarxa.";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "No esteu connectat a Internet! Comproveu la vostra connexió de xarxa.";
+
+/* Intructions for device limit error page */
+"You have already registered the maximum 6 devices. Please click below to update your settings." = "Ja heu registrat el màxim de 6 dispositius. Feu clic a continuació per actualitzar la configuració.";
+
+/* Error text for loggeed out error */
+"You were logged out. Please sign in again." = "Heu tancat la sessió. Torneu a iniciar la sessió.";
+
+/* Instructions for enabling notifications from system preferences */
+"You will get the best app experience from AdBlock VPN by turning on notifications. Click ”Open Notifications”  then toggle notifications from AdBlock VPN to ”On”. You can also skip this step if you do not want notifications from AdBlock VPN." = "Obtindreu la millor experiència de l'aplicació AdBlock VPN activant les notificacions. Feu clic a «Obre les notificacions», a continuació, canvieu les notificacions d'AdBlock VPN a «Activat». També podeu ometre aquest pas si no voleu notificacions d'AdBlock VPN.";
+
+/* Onboarding flow intro instructions */
+"You'll need to change a couple of permissions on your device in order to use AdBlock VPN. We'll walk you through how to do that now." = "Haureu de canviar un parell de permisos al vostre dispositiu per utilitzar l'AdBlock VPN. Ara us explicarem com fer-ho.";
+
+/* Title of onboarding complete page */
+"You're ready to start using AdBlock VPN!" = "Ja podeu començar a utilitzar l'AdBlock VPN!";
+
+/* VPN state text when disconnected, disconnecting, or in an invalid state. */
+"Your connection is not secure" = "La connexió no és segura";
+

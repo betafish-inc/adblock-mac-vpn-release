@@ -28,6 +28,9 @@
 /* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "7mb-Wn-kq1"; */
 "7mb-Wn-kq1.title" = "Guillemets intelligents";
 
+/* Class = "NSMenuItem"; title = "Zoom In"; ObjectID = "7zf-1F-dEi"; */
+"7zf-1F-dEi.title" = "Zoom avant";
+
 /* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "8T5-WF-ZRb"; */
 "8T5-WF-ZRb.title" = "Transformations";
 
@@ -64,6 +67,9 @@
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "cgc-6D-UqQ"; */
 "cgc-6D-UqQ.title" = "Modifier";
 
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "CNj-ob-8bi"; */
+"CNj-ob-8bi.title" = "Affichage";
+
 /* Class = "NSMenuItem"; title = "Manage Account"; ObjectID = "COb-vw-9el"; */
 "COb-vw-9el.title" = "Gérer le compte";
 
@@ -85,6 +91,9 @@
 /* Class = "NSMenuItem"; title = "Send Feedback"; ObjectID = "FKE-Sm-Kum"; */
 "FKE-Sm-Kum.title" = "Envoyer commentaires";
 
+/* Class = "NSMenuItem"; title = "Zoom Out"; ObjectID = "fLc-8H-Wn1"; */
+"fLc-8H-Wn1.title" = "Zoom arrière";
+
 /* Class = "NSMenuItem"; title = "Check for Updates"; ObjectID = "G3G-6v-6rx"; */
 "G3G-6v-6rx.title" = "Vérifier les mises à jour";
 
@@ -102,6 +111,9 @@
 
 /* Class = "NSMenuItem"; title = "Sign Out"; ObjectID = "hkF-uJ-ObW"; */
 "hkF-uJ-ObW.title" = "Se déconnecter";
+
+/* Class = "NSMenuItem"; title = "Actual Size"; ObjectID = "Hy4-nw-4yc"; */
+"Hy4-nw-4yc.title" = "Taille réelle";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
 "hz9-B4-Xy5.title" = "Services";
@@ -150,6 +162,9 @@
 
 /* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "syr-ue-Ar8"; */
 "syr-ue-Ar8.title" = "Mettre en majuscules";
+
+/* Class = "NSMenu"; title = "View"; ObjectID = "tau-4j-JX1"; */
+"tau-4j-JX1.title" = "Affichage";
 
 /* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "UdN-gX-18k"; */
 "UdN-gX-18k.title" = "Tirets intelligents";

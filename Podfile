@@ -6,7 +6,7 @@ target 'AdBlockVPNMacOS' do
   
   pod 'Alamofire'
   pod 'KeychainAccess'
-  pod 'Sparkle'
+  pod 'Sparkle', '~> 1.27.1'
   pod 'SwiftyBeaver'
 end
 

@@ -83,7 +83,7 @@ struct IPAddressCell: View {
                             .disabled(isDisabled)
                             .customAccessibilityLabel(Text("Refresh", comment: "Label for resfresh icon"))
                     } else {
-                        Button(action: copyToPasteboard, label: { Image("CopyIcon") })
+                        Button(action: copyToPasteboard, label: { Image("CopyIcon").foregroundColor(Color.abDarkText) })
                             .buttonStyle(PlainButtonStyle())
                             .disabled(IPAddress.count == 2)
                             .offset(y: IPAddressTextOffset)
@@ -126,12 +126,12 @@ struct IPAddressCell: View {
         isRefreshing = true
 
         // Rotate the refresh icon.
-        withAnimation(isDisabled ? Animation.easeOut(duration: 5.2) : Animation.default) {
+        withAccessibilityFriendlyAnimation(isDisabled ? Animation.easeOut(duration: 5.2) : Animation.default) {
             refreshIconRotationAngle += 1800
         }
 
         // Replace `Error` text with `Retrying...` text.
-        withAnimation(Animation.easeInOut(duration: 0.3)) {
+        withAccessibilityFriendlyAnimation(Animation.easeInOut(duration: 0.3)) {
             errorTextOffset = -12
             errorTextOpacity = 0
             retryTextOffset = 0
@@ -142,7 +142,7 @@ struct IPAddressCell: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             isDisabled = false
             isRefreshing = false
-            withAnimation(Animation.easeInOut(duration: 0.3)) {
+            withAccessibilityFriendlyAnimation(Animation.easeInOut(duration: 0.3)) {
                 errorTextOffset = 0
                 errorTextOpacity = 1
                 retryTextOffset = 15
@@ -158,7 +158,7 @@ struct IPAddressCell: View {
         pasteboard.setString(IPAddress, forType: .string)
 
         // Animate presentation of `Copied` text.
-        withAnimation(Animation.easeInOut(duration: 0.3)) {
+        withAccessibilityFriendlyAnimation(Animation.easeInOut(duration: 0.3)) {
             IPAddressTextOffset = -12
             IPAddressTextOpacity = 0
             copiedTextOffset = 0
@@ -167,7 +167,7 @@ struct IPAddressCell: View {
 
         // Reset back to pre-animation state.
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            withAnimation(Animation.easeInOut(duration: 0.3)) {
+            withAccessibilityFriendlyAnimation(Animation.easeInOut(duration: 0.3)) {
                 IPAddressTextOffset = 0
                 IPAddressTextOpacity = 1
                 copiedTextOffset = 15

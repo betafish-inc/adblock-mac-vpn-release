@@ -10,7 +10,8 @@
 /* Alt text for region selection button */
 "%@, next" = "%@, далее";
 
-/* Label for selected region button */
+/* Label for selected region button
+Label for selected theme button */
 "%@, selected" = "%@, выбрано";
 
 /* No comment provided by engineer. */
@@ -144,6 +145,9 @@ Label for button that closes the onboarding flow */
 /* Name of 'cz' region */
 "Czech Republic" = "Чехия";
 
+/* Description of system theme setting. */
+"Dark" = "Темная";
+
 /* Name of 'dk' region */
 "Denmark" = "Дания";
 
@@ -273,6 +277,9 @@ Label for button that closes the onboarding flow */
 
 /* Label for button that links to privacy policy */
 "Learn more about the data we collect and how we use it." = "Узнайте больше о том, какие данные мы собираем, и как они используются.";
+
+/* Description of system theme setting. */
+"Light" = "Светлая";
 
 /* Label for button to go to login page
 Label for button that takes user to login page */
@@ -518,6 +525,9 @@ Label for button that take the user to the next step in the onboarding flow */
 /* Error text for invalid code error */
 "That code didn’t work. Please try again." = "Код не сработал. Попробуйте еще раз.";
 
+/* Theme settings page title */
+"Theme" = "Тема";
+
 /* Label for time connected secion of connection info */
 "Time connected: %@" = "Время подключения: %@";
 
@@ -581,6 +591,9 @@ Label for button that opens external update page */
 
 /* Name of 'us_was' region */
 "US - Washington, D.C." = "США — Вашингтон, округ Колумбия";
+
+/* Description of system theme setting. */
+"Use system appearance" = "Использовать настройки системы";
 
 /* App version shown on settings page. Variable holds the version number */
 "Version %@" = "Версия %@";

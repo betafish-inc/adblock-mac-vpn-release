@@ -17,6 +17,7 @@
 import SwiftUI
 
 struct SearchBar: View {
+    @EnvironmentObject var state: AppState
     @Binding var searchText: String
     @State private var isFocused: Bool = false
     var body: some View {
@@ -31,13 +32,15 @@ struct SearchBar: View {
                                   placeholderText: "Search",
                                   alignCenter: false,
                                   trimWhitespace: false,
+                                  fontSize: state.guiScaleFactor.scale.textFieldFontSize,
                                   onCommit: {})
         }
         .accessibilityElement(children: .contain)
         .customAccessibilityLabel(Text("Search regions list", comment: "Alt text for regions search bar"))
         .foregroundColor(.abDarkText)
         .padding(.horizontal, 16)
-        .frame(width: 272, height: 40)
+        .frame(width: 272 * state.guiScaleFactor.scale.app,
+               height: 40 * state.guiScaleFactor.scale.app)
         .background(Color.abSearchBarBackground)
         .cornerRadius(6)
         .clipped()
@@ -45,11 +48,13 @@ struct SearchBar: View {
             RoundedRectangle(cornerRadius: 6)
                 .stroke(Color.abBorder, lineWidth: 1)
         )
+        .scaleEffect(state.guiScaleFactor.scale.textField)
+        .frame(width: 272 * state.guiScaleFactor.scale.app - 80)
     }
 }
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(searchText: .constant(""))
+        SearchBar(searchText: .constant("")).environmentObject(AppState())
     }
 }

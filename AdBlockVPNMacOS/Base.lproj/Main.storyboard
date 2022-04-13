@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19150" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19150"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -274,6 +274,28 @@
                                                     </menuItem>
                                                 </items>
                                             </menu>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="View" id="CNj-ob-8bi">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="View" id="tau-4j-JX1">
+                                    <items>
+                                        <menuItem title="Actual Size" keyEquivalent="0" identifier="ActualSizeMenuItem" id="Hy4-nw-4yc">
+                                            <connections>
+                                                <action selector="zoomMenuClicked:" target="Voe-Tx-rLC" id="ai7-aj-e2M"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom In" keyEquivalent="+" identifier="ZoomInMenuItem" id="7zf-1F-dEi">
+                                            <connections>
+                                                <action selector="zoomMenuClicked:" target="Voe-Tx-rLC" id="c0A-8a-kq7"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom Out" keyEquivalent="-" identifier="ZoomOutMenuItem" id="fLc-8H-Wn1">
+                                            <connections>
+                                                <action selector="zoomMenuClicked:" target="Voe-Tx-rLC" id="beE-c9-PBE"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>

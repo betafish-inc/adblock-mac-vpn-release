@@ -30,7 +30,10 @@ struct LoginFlowView: View {
                     .stroke(Color.abPrimaryAccent, lineWidth: 16)
                     .frame(width: 100, height: 100)
                     .rotationEffect(Angle(degrees: viewModel.isSpinning ? 360 : 0))
-                    .animation(Animation.default.repeatForever(autoreverses: false))
+                    .animation(Animation
+                                // displays a slower rotation animation if the user enables the systemwide Reduce Motion setting
+                                .linear(duration: NSWorkspace.shared.accessibilityDisplayShouldReduceMotion ? 2.5 : 0.5)
+                                .repeatForever(autoreverses: false))
                     .onAppear {
                         viewModel.isSpinning = true
                     }
@@ -53,9 +56,11 @@ struct LoginFlowView: View {
                                           placeholderText: placeholder,
                                           alignCenter: viewModel.currentPage == .codeEntry,
                                           trimWhitespace: true,
+                                          fontSize: state.guiScaleFactor.scale.textFieldFontSize,
                                           onCommit: textEntryButtonClicked)
                         .padding(.horizontal, 16)
-                        .frame(width: 272, height: 40)
+                        .frame(width: 272 * state.guiScaleFactor.scale.app,
+                               height: 40 * state.guiScaleFactor.scale.app)
                         .background(Color.abBackground)
                         .cornerRadius(6)
                         .clipped()
@@ -65,6 +70,7 @@ struct LoginFlowView: View {
                         )
                         .shadow(color: textFieldFocused ? Color.abShadow : .abShadowLight,
                                 radius: 20, x: 0, y: 5)
+                        .scaleEffect(state.guiScaleFactor.scale.textField)
                     Spacer().frame(height: 17)
                 }
                 if !inputString.isEmpty || [.noAccountError, .subEndedError, .deviceLimitError].contains(viewModel.currentPage) {

@@ -36,16 +36,19 @@ struct UpdateRequiredView: View {
             Text("You are using an unsupported version of AdBlock VPN.", comment: "Subtitle on update required page")
                 .multilineTextAlignment(.center)
                 .latoFont(size: 14)
-                .foregroundColor(.abLightText)
+                .foregroundColor(.abDarkText)
             Spacer()
             Button(action: {
                 viewModel.update()
             }, label: { Text("Update", comment: "Label for button that triggers an update") })
-            .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent, buttonHoverColor: .abUpdateAccent, buttonClickColor: .abUpdateAccentClick, textColor: .abDarkText))
+            .buttonStyle(PrimaryButtonStyle(buttonColor: .abUpdateAccent,
+                                            buttonHoverColor: .abUpdateAccent,
+                                            buttonClickColor: .abUpdateAccentClick,
+                                            textColor: .abUpdateText))
             Spacer().frame(height: 24)
         }
         .frame(width: 272, height: state.showConnectionInfo ? 460 : 352)
-        .background(Color.abAccentBackground)
+        .background(Color.abUpdateErrorBackground)
     }
 }
 

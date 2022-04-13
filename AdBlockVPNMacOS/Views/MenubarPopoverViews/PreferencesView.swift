@@ -22,6 +22,24 @@ struct PreferencesView: View {
     var body: some View {
         VStack {
             Group {
+                MenuButtonView(action: {
+                    state.viewToShow = .themeSettings
+                }, text: Text("Theme", comment: "Label for button that opens the themes menu"),
+                               bold: true,
+                               icon: "NextIcon",
+                               iconSize: 16)
+                    .customAccessibilityAddTraits(.isLink)
+                Spacer().frame(height: 8)
+                Divider().background(Color.abBorder).frame(width: 256)
+                Spacer().frame(height: 8)
+                MenuButtonView(action: { self.state.viewToShow = .appSettings },
+                               text: Text("App Settings", comment: "Label for button that takes the user to the app settings page"),
+                               bold: true,
+                               icon: "NextIcon",
+                               iconSize: 14)
+                Spacer().frame(height: 8)
+                Divider().background(Color.abBorder).frame(width: 256)
+                Spacer().frame(height: 8)
                 if viewModel.showAccount() {
                     MenuButtonView(action: {
                         self.state.viewToShow = .account
@@ -33,14 +51,6 @@ struct PreferencesView: View {
                     Divider().background(Color.abBorder).frame(width: 256)
                     Spacer().frame(height: 8)
                 }
-                MenuButtonView(action: { self.state.viewToShow = .appSettings },
-                               text: Text("App Settings", comment: "Label for button that takes the user to the app settings page"),
-                               bold: true,
-                               icon: "NextIcon",
-                               iconSize: 14)
-                Spacer().frame(height: 8)
-                Divider().background(Color.abBorder).frame(width: 256)
-                Spacer().frame(height: 8)
                 MenuButtonView(action: {
                     self.state.viewToShow = .help
                 }, text: Text("Help & Feedback", comment: "Label for button that takes the user to the help and feedback page"),
