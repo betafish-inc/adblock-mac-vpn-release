@@ -28,6 +28,9 @@
 /* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "7mb-Wn-kq1"; */
 "7mb-Wn-kq1.title" = "スマートな括弧";
 
+/* Class = "NSMenuItem"; title = "Zoom In"; ObjectID = "7zf-1F-dEi"; */
+"7zf-1F-dEi.title" = "拡大";
+
 /* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "8T5-WF-ZRb"; */
 "8T5-WF-ZRb.title" = "変換";
 
@@ -64,6 +67,9 @@
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "cgc-6D-UqQ"; */
 "cgc-6D-UqQ.title" = "編集";
 
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "CNj-ob-8bi"; */
+"CNj-ob-8bi.title" = "表示";
+
 /* Class = "NSMenuItem"; title = "Manage Account"; ObjectID = "COb-vw-9el"; */
 "COb-vw-9el.title" = "アカウント管理";
 
@@ -85,6 +91,9 @@
 /* Class = "NSMenuItem"; title = "Send Feedback"; ObjectID = "FKE-Sm-Kum"; */
 "FKE-Sm-Kum.title" = "帰還を送信";
 
+/* Class = "NSMenuItem"; title = "Zoom Out"; ObjectID = "fLc-8H-Wn1"; */
+"fLc-8H-Wn1.title" = "縮小";
+
 /* Class = "NSMenuItem"; title = "Check for Updates"; ObjectID = "G3G-6v-6rx"; */
 "G3G-6v-6rx.title" = "更新を確認";
 
@@ -102,6 +111,9 @@
 
 /* Class = "NSMenuItem"; title = "Sign Out"; ObjectID = "hkF-uJ-ObW"; */
 "hkF-uJ-ObW.title" = "ログアウト";
+
+/* Class = "NSMenuItem"; title = "Actual Size"; ObjectID = "Hy4-nw-4yc"; */
+"Hy4-nw-4yc.title" = "通常サイズ";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
 "hz9-B4-Xy5.title" = "サービス";
@@ -150,6 +162,9 @@
 
 /* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "syr-ue-Ar8"; */
 "syr-ue-Ar8.title" = "大文字にする";
+
+/* Class = "NSMenu"; title = "View"; ObjectID = "tau-4j-JX1"; */
+"tau-4j-JX1.title" = "表示";
 
 /* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "UdN-gX-18k"; */
 "UdN-gX-18k.title" = "スマートダッシュ";

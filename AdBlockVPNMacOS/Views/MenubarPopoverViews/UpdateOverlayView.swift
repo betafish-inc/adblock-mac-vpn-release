@@ -73,9 +73,9 @@ struct UpdateOverlayView_Previews: PreviewProvider {
             UpdateOverlayView(text: Text(verbatim: "Update Complete!"),
                               icon: "CheckIcon",
                               background: .abUpToDateAccent,
-                              foreground: .abWhiteText)
+                              foreground: .abUpdateText)
             UpdateOverlayView(text: Text(verbatim: "Update required in XX days"),
-                              icon: "TimerIcon", background: .abUpdateAccent, foreground: .abDarkText)
+                              icon: "TimerIcon", background: .abUpdateAccent, foreground: .abUpdateText)
         }
     }
 }

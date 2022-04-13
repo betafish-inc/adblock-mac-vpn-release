@@ -36,6 +36,9 @@ public struct Constants {
     static let launchAtLoginSet_key = "launchAtLoginSet"
     static let lastError_key = "lastError"
     static let showConnectionInfo_key = "showConnectionInfo"
+    static let guiScaleFactor_key = "guiScaleFactor"
+    static let guiTextFieldFontSize_key = "guiTextFieldFontSize_key"
+    static let selectedTheme_key = "selectedTheme_key"
 
     // Path suffixes for log files.
     static let appLogFilePath = "AdBlock VPN/AdBlockVPNApp.log"
@@ -44,7 +47,7 @@ public struct Constants {
     static let LogFilesArchiveFilename = "AdBlockVPNLogs.zip"
     
     static let helpURL = "http://vpnsupport.getadblock.com/"
-    static let newTicketURL = "https://vpnsupport.getadblock.com/support/tickets/new"
+    static let newTicketURL = "https://vpn.getadblock.com/new-support-ticket"
     static let needMachineRestartURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000247634-how-to-install-uninstall-and-reinstall-adblock-vpn"
     static let connectionHelpURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000247858-adblock-vpn-connection-issues/"
     static let permissionsHelpURL = "https://vpnsupport.getadblock.com/support/solutions/articles/6000249111-about-adblock-vpn-permissions-for-mac"

@@ -30,7 +30,7 @@ struct LinkButtonView: View {
             text
                 .underline()
                 .multilineTextAlignment(center ? .center : .leading)
-                .foregroundColor(whiteText ? .abWhiteText : .abLinkColor)
+                .foregroundColor(whiteText ? .abButtonForeground : .abLinkColor)
         })
             .buttonStyle(PlainButtonStyle())
             .latoFont(weight: .bold, size: fontSize)

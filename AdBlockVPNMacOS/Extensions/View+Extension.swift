@@ -107,6 +107,27 @@ extension View {
 }
 
 extension View {
+    @ViewBuilder
+    /// A drop in replacment for `.animation` which conditionally animates depending on the systemwide `Reduce Animation` accessibility option.
+    func accessibilityFriendlyAnimation(_ animation: Animation? = .default) -> some View {
+        if NSWorkspace.shared.accessibilityDisplayShouldReduceMotion {
+            self
+        } else {
+            self.animation(animation)
+        }
+    }
+}
+
+/// A drop in replacment for `withAnimation` which conditionally animates depending on the systemwide `Reduce Animation` accessibility option.
+func withAccessibilityFriendlyAnimation<Result>(_ animation: Animation? = .default, _ body: () throws -> Result) rethrows -> Result {
+    if NSWorkspace.shared.accessibilityDisplayShouldReduceMotion {
+        return try body()
+    } else {
+        return try withAnimation(animation, body)
+    }
+}
+
+extension View {
     /// Allows you to conditionally apply a `ViewModifier` to a `View`.
     /// If `condition` equates to true, the view modifier will transformed as per the closure input.
     /// If `condition` equares to false, the view will return unmodified.

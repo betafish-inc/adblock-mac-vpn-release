@@ -27,6 +27,7 @@ import SystemExtensions
 class AppDelegate: NSObject, NSApplicationDelegate {
     var userApproval = false
     var popover = NSPopover()
+    var onboardingWindow: NSWindow?
     var statusBarItem: NSStatusItem?
     var showPopoverOnActive = true
     private var state = AppState()
@@ -119,7 +120,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                    connectionInfoViewModel: ConnectionInfoViewModel(vpnManager: vpnManager))
             .environmentObject(state)
 
-        popover.contentSize = NSSize(width: 320, height: 440)
+        popover.contentSize = NSSize(width: 320 * state.guiScaleFactor.scale.app, height: 440)
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(rootView: contentView)
 
@@ -188,19 +189,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func showOnboardingWindow() {
         let contentView = OnboardingMainView()
             .environmentObject(onboardingViewModel)
+            .environmentObject(state)
 
-        let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+        onboardingWindow = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 1000, height: 1000),
             styleMask: [.titled, .miniaturizable, .closable, .fullSizeContentView],
             backing: .buffered, defer: false)
-        window.titlebarAppearsTransparent = true
-        window.backgroundColor = .abBackground
-        window.isMovableByWindowBackground = true
-        window.setFrameAutosaveName("AdBlock VPN")
-        window.center()
-        window.contentView = NSHostingView(rootView: contentView)
-        window.makeKeyAndOrderFront(nil)
-        window.isReleasedWhenClosed = false
+        onboardingWindow?.titlebarAppearsTransparent = true
+        onboardingWindow?.backgroundColor = getOnboardingTitlebarColor()
+        onboardingWindow?.isMovableByWindowBackground = true
+        onboardingWindow?.setFrameAutosaveName("AdBlock VPN")
+        onboardingWindow?.center()
+        onboardingWindow?.contentView = NSHostingView(rootView: contentView)
+        onboardingWindow?.makeKeyAndOrderFront(nil)
+        onboardingWindow?.isReleasedWhenClosed = false
     }
 
     @objc func togglePopover(_ sender: AnyObject?) {
@@ -232,6 +234,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             sender.reply(toApplicationShouldTerminate: true)
         }
         return .terminateLater
+    }
+
+    /// - Returns: The correct NSColor for titlebar styling, based on user theme preference. 
+    private func getOnboardingTitlebarColor() -> NSColor {
+        switch state.currentTheme {
+        case .system:
+            return .abBackground
+        case .light:
+            return .abOnboardingTitlebarLight
+        case .dark:
+            return .abOnboardingTitlebarDark
+        }
     }
 
     /// Checks if the user has performed an update or fresh reinstall of the VPN, and if update, shows update overlay, if reinstall, resets the users login state.
@@ -416,6 +430,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if let url = URL(string: stringURL) {
                 NSWorkspace.shared.open(url)
             }
+        }
+    }
+
+    @IBAction func zoomMenuClicked(_ sender: NSMenuItem) {
+        guard let senderID = sender.identifier?.rawValue else { return }
+        if senderID == "ActualSizeMenuItem" {
+            state.guiResetView()
+        } else if senderID == "ZoomInMenuItem" {
+            state.guiZoomIn()
+        } else if senderID == "ZoomOutMenuItem" {
+            state.guiZoomOut()
         }
     }
 }

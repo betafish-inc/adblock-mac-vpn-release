@@ -1,0 +1,67 @@
+/* Authentication error during VPN connection */
+"Auth error with server." = "Eroare de autentificare cu serverul.";
+
+/* Error applying VPN configuration */
+"Can't apply VPN configuration." = "Configurația VPN nu se poate aplica.";
+
+/* Error msg when connection retry fails */
+"Connection retry failed." = "Reîncercarea conexiunii a eșuat.";
+
+/* Link to support site */
+"For help solving this problem, please contact our support team." = "Pentru ajutor la rezolvarea acestei probleme, te rugăm să contactezi echipa noastră de asistență.";
+
+/* Needs knowledge base article error full msg */
+"For help solving this problem, please follow the steps in this article." = "Pentru ajutor la rezolvarea acestei probleme, te rugăm să urmezi etapele din acest articol.";
+
+/* Invalid refresh token error */
+"Invalid refresh token." = "Jeton de reîmprospătare nevalid.";
+
+/* Device ID not set error */
+"No deviceID found." = "Niciun ID de dispozitiv găsit.";
+
+/* Configuration file missing error */
+"OVPN file missing." = "Fișierul OVPN lipsește.";
+
+/* Needs support error short msg */
+"Please contact our support team" = "Te rugăm să contactezi echipa noastră de asistență";
+
+/* Needs knowledge base article error short msg */
+"Please follow the steps in this article" = "Te rugăm să urmezi etapele din acest articol";
+
+/* Needs app restart short msg */
+"Please restart AdBlock VPN" = "Te rugăm să repornești AdBlock VPN";
+
+/* Needs app restart error full msg */
+"Please restart AdBlock VPN." = "Te rugăm să repornești AdBlock VPN";
+
+/* Needs machine restart short msg */
+"Please restart your computer" = "Te rugăm să repornești computerul";
+
+/* Needs machine restart error full msg */
+"Please restart your computer." = "Te rugăm să repornești computerul";
+
+/* Needs authentication short msg */
+"Please sign in again" = "Te rugăm să te conectezi din nou";
+
+/* Needs authentication error full msg */
+"Please sign in again." = "Te rugăm să te conectezi din nou";
+
+/* Protocol configuration error msg */
+"Protocol configuration error." = "Eroare de configurare a protocolului.";
+
+/* Generic token error */
+"Unknown token error." = "Eroare de jeton necunoscută.";
+
+/* Server error full msg
+   Server error short msg */
+"We can't connect to our servers. Please try again later." = "Nu ne putem conecta la serverele noastre. Te rugăm să încerci din nou mai târziu.";
+
+/* Not signed in error */
+"You are not signed in." = "Nu sunteți conectat(ă).";
+
+/* No internet error short msg */
+"You aren't connected to the internet!\nPlease check your network connection." = "Nu ești conectat la internet! \nTe rugăm să verifici conexiunea la rețea.";
+
+/* No internet error full msg */
+"You aren't connected to the internet! Please check your network connection." = "Nu ești conectat la internet! Te rugăm să-ți verifici conexiunea la rețea.";
+

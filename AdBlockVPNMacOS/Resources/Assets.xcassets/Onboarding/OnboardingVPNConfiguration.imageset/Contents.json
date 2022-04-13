@@ -1,23 +1,23 @@
 {
   "images" : [
     {
-      "filename" : "config_ss_exportable_generic.png",
+      "filename" : "dark_config_ss_exportable_generic.png",
       "idiom" : "mac",
       "scale" : "1x"
     },
     {
-      "filename" : "config_ss_exportable_generic@2x.png",
+      "filename" : "dark_config_ss_exportable_generic@2x.png",
       "idiom" : "mac",
       "scale" : "2x"
     },
     {
-      "filename" : "config_ss_exportable.png",
+      "filename" : "dark_config_ss_exportable.png",
       "idiom" : "mac",
       "locale" : "en",
       "scale" : "1x"
     },
     {
-      "filename" : "config_ss_exportable@2x.png",
+      "filename" : "dark_config_ss_exportable@2x.png",
       "idiom" : "mac",
       "locale" : "en",
       "scale" : "2x"

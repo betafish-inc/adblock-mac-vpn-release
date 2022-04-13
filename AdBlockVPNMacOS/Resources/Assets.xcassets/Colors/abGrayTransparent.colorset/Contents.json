@@ -11,6 +11,24 @@
         }
       },
       "idiom" : "mac"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "0.300",
+          "blue" : "0x00",
+          "green" : "0x00",
+          "red" : "0x00"
+        }
+      },
+      "idiom" : "mac"
     }
   ],
   "info" : {

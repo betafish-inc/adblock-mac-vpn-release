@@ -28,7 +28,7 @@ struct TopBarButtonStyle: ButtonStyle {
                     x: 0,
                     y: isHover ? 4 : 0)
             .onHover { inside in
-                withAnimation(.easeInOut(duration: animationSpeed)) {
+                withAccessibilityFriendlyAnimation(.easeInOut(duration: animationSpeed)) {
                     isHover = inside
                 }
             }

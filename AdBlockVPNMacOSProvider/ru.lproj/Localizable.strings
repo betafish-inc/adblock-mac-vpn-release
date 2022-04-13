@@ -11,7 +11,7 @@
 "For help solving this problem, please contact our support team." = "Получите помощь в решении этой проблемы у нашей службы поддержки.";
 
 /* Needs knowledge base article error full msg */
-"For help solving this problem, please follow the steps in this article." = "Чтобы решить эту проблему, выполните шаги, описанные в этом материале.";
+"For help solving this problem, please follow the steps in this article." = "Чтобы решить эту проблему, выполните шаги, описанные в этой статье.";
 
 /* Invalid refresh token error */
 "Invalid refresh token." = "Недействительный токен обновления.";

@@ -42,7 +42,7 @@ struct ColorfulButtonView: View {
         .buttonStyle(PrimaryButtonStyle(buttonColor: updateAvailable ? .abUpdateAccent : .abUpToDateAccent,
                                         buttonHoverColor: updateAvailable ? .abUpdateAccent : .abUpToDateAccent,
                                         buttonClickColor: updateAvailable ? .abUpdateAccentClick : .abUpToDateAccent,
-                                        textColor: updateAvailable ? .abDarkText : .abWhiteText,
+                                        textColor: updateAvailable ? .abUpdateForeground : .abUpToDateForeground,
                                         shadowColor: updateAvailable ? .abShadow : .clear,
                                         enableAnimation: updateAvailable))
     }

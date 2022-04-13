@@ -60,7 +60,7 @@
 "You are not signed in." = "Vous n'êtes pas connecté.";
 
 /* No internet error short msg */
-"You aren't connected to the internet!\nPlease check your network connection." = "Vous n'êtes pas connecté à l'Internet !\nVeuillez vérifier votre connexion réseau.";
+"You aren't connected to the internet!\nPlease check your network connection." = "Vous n'êtes pas connecté à Internet !\nVeuillez vérifier votre connexion réseau.";
 
 /* No internet error full msg */
 "You aren't connected to the internet! Please check your network connection." = "Vous n'êtes pas connecté à l'Internet ! Veuillez vérifier votre connexion réseau.";

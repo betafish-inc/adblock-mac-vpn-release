@@ -30,7 +30,7 @@ struct ErrorBlockView: View {
                     Text("Oops!", comment: "Header for error block")
                         .padding(EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 2))
                         .latoFont(weight: .bold, size: 14)
-                        .foregroundColor(.abWhiteText)
+                        .foregroundColor(.abErrorText)
                     Spacer()
                     if showHelp {
                         Button {
@@ -51,7 +51,7 @@ struct ErrorBlockView: View {
                         }
                         .customSortPriority(-1)
                         .buttonStyle(PlainButtonStyle())
-                        .foregroundColor(.abWhiteText)
+                        .foregroundColor(.abErrorText)
                         .frame(width: 20, height: 20)
                         .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 24))
                     }
@@ -72,7 +72,7 @@ struct ErrorBlockView: View {
                         }
                         .customSortPriority(-1)
                         .buttonStyle(PlainButtonStyle())
-                        .foregroundColor(.abWhiteText)
+                        .foregroundColor(.abErrorText)
                         .frame(width: 20, height: 20)
                         .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 24))
                     }
@@ -86,7 +86,7 @@ struct ErrorBlockView: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(EdgeInsets(top: 0, leading: 24, bottom: 16, trailing: 16))
                         .latoFont(weight: .bold, size: 14)
-                        .foregroundColor(.abWhiteText)
+                        .foregroundColor(.abErrorText)
                 }
             }
             .accessibilityElement(children: .contain)

@@ -33,7 +33,9 @@ struct ConnectionView: View {
                         .scaledToFit()
                         .frame(width: 120, height: 120)
                         .rotationEffect(Angle(degrees: connectionAnimation ? 360 : 0))
-                        .animation(Animation.linear(duration: 10.0).repeatForever(autoreverses: false))
+                        .accessibilityFriendlyAnimation(Animation
+                                                            .linear(duration: 10.0)
+                                                            .repeatForever(autoreverses: false))
                         .onAppear { connectionAnimation = true }
                         .onDisappear { connectionAnimation = false }
                 } else if !viewModel.flag.isEmpty {

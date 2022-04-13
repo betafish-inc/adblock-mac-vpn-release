@@ -18,6 +18,9 @@ import SwiftUI
 
 struct SecondaryButtonStyle: ButtonStyle {
     @State private var isHover = false
+    private var labelHoverOffset: CGFloat {
+        NSWorkspace.shared.accessibilityDisplayShouldReduceMotion ? 0 : -1
+    }
     var buttonWidth: CGFloat = 272
     var icon: String = ""
     var bold: Bool = true
@@ -34,7 +37,7 @@ struct SecondaryButtonStyle: ButtonStyle {
                 // CGFloat() explicitly added to fix bug in SwiftUI Previews
                 // Extra horizontal padding prevents ZStack clipping with icon
                 .padding(.horizontal, icon.isEmpty ? 0 : CGFloat(32))
-                .offset(x: 0, y: configuration.isPressed ? 0 : isHover ? -1 : 0)
+                .offset(x: 0, y: configuration.isPressed ? 0 : isHover ? labelHoverOffset : 0)
                 .multilineTextAlignment(.center)
                 .padding(8)
                 .frame(maxWidth: buttonWidth, minHeight: 40, idealHeight: 40)
@@ -54,11 +57,11 @@ struct SecondaryButtonStyle: ButtonStyle {
                     .scaledToFit()
                     .frame(height: 13)
                     .foregroundColor(iconColor)
-                    .offset(x: CGFloat((buttonWidth / 2) - 22), y: isHover ? -1 : 0)
+                    .offset(x: CGFloat((buttonWidth / 2) - 22), y: isHover ? labelHoverOffset : 0)
             }
         }
         .onHover { inside in
-            withAnimation(.easeInOut(duration: animationSpeed)) { isHover = inside }
+            withAccessibilityFriendlyAnimation(.easeInOut(duration: animationSpeed)) { isHover = inside }
         }
     }
 }

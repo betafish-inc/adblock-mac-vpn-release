@@ -30,4 +30,8 @@ extension NSColor {
     static let abHeaderBackground = NSColor(named: "abGrayF4") ?? .white
     static let abPrimaryAccent = NSColor(named: "abBlue") ?? .blue
     static let abErrorAccent = NSColor(named: "abRed") ?? .red
+
+    // Onboarding Titlebar Override Colors
+    static let abOnboardingTitlebarLight = NSColor(red: 1, green: 1, blue: 1, alpha: 1)
+    static let abOnboardingTitlebarDark = NSColor(red: 38 / 255, green: 38 / 255, blue: 38 / 255, alpha: 1)
 }

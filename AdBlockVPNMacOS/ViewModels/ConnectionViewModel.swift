@@ -66,7 +66,7 @@ class ConnectionViewModel: ObservableObject {
                 SwiftyBeaver.debug("downloaded regions.json")
                 self?.connection.availableGeos = geos.regions
             } else if let fileURL = Bundle.main.url(forResource: "regions", withExtension: "json") {
-                SwiftyBeaver.debug("couldn't download regions.json")
+                SwiftyBeaver.debug("failed to download regions.json with error: \(String(describing: response.debugDescription))")
                 do {
                     let data = try Data(contentsOf: fileURL)
                     let geos = try JSONDecoder().decode(Regions.self, from: data)

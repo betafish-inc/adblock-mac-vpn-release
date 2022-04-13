@@ -6,7 +6,29 @@
       "scale" : "1x"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "dark_permissions_ss_exportable_CROPPED_generic.png",
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
       "filename" : "permissions_ss_exportable_CROPPED_generic@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "dark_permissions_ss_exportable_CROPPED_generic@2x.png",
       "idiom" : "mac",
       "scale" : "2x"
     },
@@ -17,7 +39,31 @@
       "scale" : "1x"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "dark_permissions_ss_exportable_CROPPED.png",
+      "idiom" : "mac",
+      "locale" : "en",
+      "scale" : "1x"
+    },
+    {
       "filename" : "permissions_ss_exportable_CROPPED@2x.png",
+      "idiom" : "mac",
+      "locale" : "en",
+      "scale" : "2x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "dark_permissions_ss_exportable_CROPPED@2x.png",
       "idiom" : "mac",
       "locale" : "en",
       "scale" : "2x"

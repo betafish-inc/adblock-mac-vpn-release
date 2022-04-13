@@ -18,6 +18,7 @@ import SwiftUI
 
 struct OnboardingMainView: View {
     @EnvironmentObject var model: OnboardingViewModel
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         VStack {
@@ -25,9 +26,13 @@ struct OnboardingMainView: View {
             getBodyView()
         }
         .frame(width: 576)
+        .scaleEffect(state.guiScaleFactor.scale.app)
+        .frame(width: 576 * state.guiScaleFactor.scale.app,
+               height: 640 * state.guiScaleFactor.scale.app)
         .padding(.horizontal, 32)
         .padding(.top, 8)
         .padding(.bottom)
+        .background(Color.abBackground)
         // If onboarding window is closed by the user, the app will either terminate or complete the onboarding process if they are on the final `.complete` page
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { _ in
             if model.viewToShow == .complete {
@@ -36,6 +41,7 @@ struct OnboardingMainView: View {
                 NSApp.terminate(self)
             }
         }
+        .if(state.currentTheme != .system) { $0.colorScheme(state.currentTheme == .light ? .light : .dark) }
     }
 
     @ViewBuilder
@@ -66,6 +72,8 @@ struct OnboardingView_Previews: PreviewProvider {
         ForEach(OnboardingViews.allCases, id: \.self) { view in
             OnboardingMainView()
                 .environmentObject(OnboardingViewModel(viewToShow: view, vpnManager: VPNManager(), notificationManager: NotificationManager()))
+
+                .environmentObject(AppState())
                 .background(Color.abBackground)
         }
     }
