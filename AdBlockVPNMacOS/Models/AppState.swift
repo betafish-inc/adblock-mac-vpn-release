@@ -106,6 +106,10 @@ class AppState: ObservableObject {
     @Published var showConnectionInfo = UserDefaults.standard.bool(forKey: Constants.showConnectionInfo_key) {
         didSet {
             UserDefaults.standard.set(showConnectionInfo, forKey: Constants.showConnectionInfo_key)
+            // If showConnectionInfo is set to true, trigger a refresh of IP Addresses
+            if showConnectionInfo {
+                NotificationCenter.default.post(name: Constants.connectionSatisfiedNotification, object: nil)
+            }
         }
     }
 

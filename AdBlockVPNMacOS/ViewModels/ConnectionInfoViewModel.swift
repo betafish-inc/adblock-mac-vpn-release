@@ -95,6 +95,10 @@ class ConnectionInfoViewModel: ObservableObject {
 
     /// Requests an update to the IP Addresses.
     @objc func updateIPAddresses() {
+        // Return without updating if Connection Info UI is not enabled
+        let connectionUIEnabledState = UserDefaults.standard.bool(forKey: Constants.showConnectionInfo_key)
+        if !connectionUIEnabledState { return }
+
         DispatchQueue.main.async {
             self.ipv4Address = "--"
             self.ipv6Address = "--"
@@ -114,20 +118,20 @@ class ConnectionInfoViewModel: ObservableObject {
         AF.session.getAllTasks { tasks in
             tasks.forEach { task in
                 if task.originalRequest?.url?.absoluteString == url {
-                    SwiftyBeaver.verbose("IP Address Cancel Task: \(task)")
+                    SwiftyBeaver.verbose("\(ipVersion) Address Cancel Task: \(task)")
                     task.cancel()
                 }
             }
         }
 
         // Request data from server
-        SwiftyBeaver.verbose("Updating IP Address")
+        SwiftyBeaver.verbose("Updating \(ipVersion) Address")
         let headers: HTTPHeaders = ["content-type": "application/json"]
         AF.request(url, method: .get, headers: headers)
             .responseDecodable(of: IPAddress.self) { response in
                 switch response.result {
                 case .success(let response):
-                    SwiftyBeaver.verbose("IP Address Updated")
+                    SwiftyBeaver.verbose("\(ipVersion) Address Updated")
                     self.ipError = false
                     switch ipVersion {
                     case .ipv4:
@@ -136,15 +140,18 @@ class ConnectionInfoViewModel: ObservableObject {
                         self.ipv6Address = response.ip
                     }
                 case .failure(let error):
-                    SwiftyBeaver.warning("IP Address Update Failed: \(String(describing: error.errorDescription))")
                     // The following failures are intentionally ignored:
                     // Error caused by network task being manually cancelled - this uses error code `-999`
-                    // Error caused by being unable to connect to the IPv6 hostname on incompatible network - this uses error code `-1003` or `-1004`
+                    // Error caused by being unable to connect to the IPv6 hostname on incompatible network - this uses error code `-1001, -1003`, and `-1004`
                     if let urlError = error.underlyingError as? URLError,
-                       urlError.code.rawValue == -999 || (urlError.code.rawValue == -1003 || urlError.code.rawValue == -1004 && ipVersion == .ipv6) {
-                        SwiftyBeaver.warning("IP Address Update Error Ignored")
+                       urlError.code.rawValue == -999 || (urlError.code.rawValue == -1001 ||
+                                                          urlError.code.rawValue == -1003 ||
+                                                          urlError.code.rawValue == -1004 &&
+                                                          ipVersion == .ipv6) {
+                        SwiftyBeaver.warning("\(ipVersion) Address Update Error Ignored for \(ipVersion) with error code \(urlError.code.rawValue)")
                         return
                     }
+                    SwiftyBeaver.warning("\(ipVersion) Address Update Failed: \(String(describing: error.errorDescription))")
                     self.ipError = true
                 }
             }

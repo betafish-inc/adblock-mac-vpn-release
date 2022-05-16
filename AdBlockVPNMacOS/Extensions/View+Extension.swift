@@ -14,6 +14,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import Combine
 import SwiftUI
 
 @available(macOS 11.0, *)
@@ -138,6 +139,30 @@ extension View {
             transform(self)
         } else {
             self
+        }
+    }
+}
+
+extension View {
+    /// A wrapper for the `.onChange` ViewModifier to provide backwards compatibility to macOS 10.x
+    @ViewBuilder func onChangeWrapper<T: Equatable>(value: T, onChange: @escaping (T) -> Void) -> some View {
+        if #available(macOS 11.0, *) {
+            self.onChange(of: value, perform: onChange)
+        } else {
+            self.onReceive(Just(value)) { (value) in
+                onChange(value)
+            }
+        }
+    }
+}
+
+extension View {
+    /// A wrapper for the `.preferredColorScheme` ViewModifier to provide backwards compatibility to macOS 10.x
+    @ViewBuilder func preferredColorSchemeWrapper(_ colorScheme: ColorScheme) -> some View {
+        if #available(macOS 11.0, *) {
+            self.preferredColorScheme(colorScheme)
+        } else {
+            self.colorScheme(colorScheme)
         }
     }
 }

@@ -31,9 +31,9 @@ struct LoginFlowView: View {
                     .frame(width: 100, height: 100)
                     .rotationEffect(Angle(degrees: viewModel.isSpinning ? 360 : 0))
                     .animation(Animation
-                                // displays a slower rotation animation if the user enables the systemwide Reduce Motion setting
-                                .linear(duration: NSWorkspace.shared.accessibilityDisplayShouldReduceMotion ? 2.5 : 0.5)
-                                .repeatForever(autoreverses: false))
+                               // displays a slower rotation animation if the user enables the systemwide Reduce Motion setting
+                        .linear(duration: NSWorkspace.shared.accessibilityDisplayShouldReduceMotion ? 2.5 : 0.5)
+                        .repeatForever(autoreverses: false))
                     .onAppear {
                         viewModel.isSpinning = true
                     }
@@ -58,19 +58,19 @@ struct LoginFlowView: View {
                                           trimWhitespace: true,
                                           fontSize: state.guiScaleFactor.scale.textFieldFontSize,
                                           onCommit: textEntryButtonClicked)
-                        .padding(.horizontal, 16)
-                        .frame(width: 272 * state.guiScaleFactor.scale.app,
-                               height: 40 * state.guiScaleFactor.scale.app)
-                        .background(Color.abBackground)
-                        .cornerRadius(6)
-                        .clipped()
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(Color.abBorder, lineWidth: 1)
-                        )
-                        .shadow(color: textFieldFocused ? Color.abShadow : .abShadowLight,
-                                radius: 20, x: 0, y: 5)
-                        .scaleEffect(state.guiScaleFactor.scale.textField)
+                    .padding(.horizontal, 16)
+                    .frame(width: 272 * state.guiScaleFactor.scale.app,
+                           height: 40 * state.guiScaleFactor.scale.app)
+                    .background(Color.abBackground)
+                    .cornerRadius(6)
+                    .clipped()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 6)
+                            .stroke(Color.abBorder, lineWidth: 1)
+                    )
+                    .shadow(color: textFieldFocused ? Color.abShadow : .abShadowLight,
+                            radius: 20, x: 0, y: 5)
+                    .scaleEffect(state.guiScaleFactor.scale.textField)
                     Spacer().frame(height: 17)
                 }
                 if !inputString.isEmpty || [.noAccountError, .subEndedError, .deviceLimitError].contains(viewModel.currentPage) {
@@ -118,7 +118,7 @@ struct LoginFlowView: View {
                         linkAction: viewModel.errorStrings.errorTryAgain ? tryAgainClicked : nil,
                         dismissError: viewModel.dismissError,
                         showHelp: true)
-                        .layoutPriority(1)
+                    .layoutPriority(1)
                 }
             }
         )
@@ -139,6 +139,12 @@ struct LoginFlowView: View {
                             ])
                     }
                 }
+            }
+        })
+        .onChangeWrapper(value: inputString, onChange: { [inputString] newInputString in
+            // Automatically submits code entry on macOS 11 and above if textfield paste is detected
+            if viewModel.currentPage == .codeEntry && inputString.isEmpty && newInputString.count == 6 {
+                textEntryButtonClicked()
             }
         })
     }
@@ -165,6 +171,6 @@ struct LoginFlowView_Previews: PreviewProvider {
         LoginFlowView(viewModel: LoginViewModel(authManager: AuthManager(),
                                                 logManager: LogManager(),
                                                 errorManager: ErrorManager()))
-            .environmentObject(AppState())
+        .environmentObject(AppState())
     }
 }

@@ -121,7 +121,7 @@ Label for button that closes the onboarding flow */
 "Contact Support" = "Contactați asistența";
 
 /* Label for button that continues the process of moving the app to the correct folder */
-"Continue" = "Continuați";
+"Continue" = "Continuare";
 
 /* Voiceover notification when IP address is copied */
 "Copied" = "Copiat";

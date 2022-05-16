@@ -28,6 +28,7 @@ struct ColorfulButtonView: View {
                 Spacer().frame(width: 16)
                 text
                     .latoFont()
+                    .minimumScaleFactor(0.7)
                 Spacer()
                 if !icon.isEmpty {
                     Image(decorative: icon)
