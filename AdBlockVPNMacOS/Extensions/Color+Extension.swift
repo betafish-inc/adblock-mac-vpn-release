@@ -30,12 +30,13 @@ extension Color {
     static let abButtonHover = Color("abBlueLight")
     static let abButtonClick = Color("abBlueDark")
     static let abButtonForeground = Color.white
+    static let abButtonDisabled = Color("abGrayC6")
     static let abSecondaryButtonNormal = Color("abWhite")
     static let abSecondaryButtonClick = Color("abGrayC6")
     static let abDisabledButtonForeground = Color.white
     static let abDisabledButtonBackground = Color("abGrayC6")
     static let abToggleOn = Color("abGreen")
-    static let abToggleOff = Color("abGrayC6")
+    static let abToggleOff = Color("abGrayC6-sansDark")
     static let abToggleCircle = Color("abWhite")
     static let abUpToDateAccent = Color("abGreen")
     static let abUpToDateForeground = Color.white
@@ -65,7 +66,7 @@ extension Color {
     static let abHeaderBackground = Color("abGrayF4")
     static let abSecondaryHeaderBackground = Color("abGrayE6-sansDark")
     static let abOnboardingDotsInactive = Color("abGrayE6")
-    static let abBorder = Color("abGrayC6")
+    static let abBorder = Color("abGrayC6-sansDark")
     static let abPrimaryAccent = Color("abBlue")
     static let abShadow = Color("abGrayTransparent")
     static let abShadowLight = Color("abWhite")

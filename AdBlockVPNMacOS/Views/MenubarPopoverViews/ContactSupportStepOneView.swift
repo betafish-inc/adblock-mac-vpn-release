@@ -35,7 +35,7 @@ struct ContactSupportStepOneView: View {
             LinkButtonView(action: { viewModel.openLogsKBArticleURL() },
                            text: Text("Learn more about the data we collect and how we use it.",
                                       comment: "Label for button that links to privacy policy"),
-                           fontSize: 16,
+                           fontSize: 14,
                            center: false)
             Spacer()
             if viewModel.zipWriteComplete {

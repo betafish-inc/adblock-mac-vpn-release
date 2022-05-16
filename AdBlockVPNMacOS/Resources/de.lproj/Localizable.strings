@@ -131,7 +131,7 @@ Label for button that closes the onboarding flow */
 "Contact Support" = "Support kontaktieren";
 
 /* Label for button that continues the process of moving the app to the correct folder */
-"Continue" = "Fortsetzen";
+"Continue" = "Weiter";
 
 /* Voiceover notification when IP address is copied */
 "Copied" = "Kopiert";

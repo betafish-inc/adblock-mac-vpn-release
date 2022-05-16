@@ -41,7 +41,7 @@ struct OnboardingMainView: View {
                 NSApp.terminate(self)
             }
         }
-        .if(state.currentTheme != .system) { $0.colorScheme(state.currentTheme == .light ? .light : .dark) }
+        .if(state.currentTheme != .system) { $0.preferredColorSchemeWrapper(state.currentTheme == .light ? .light : .dark) }
     }
 
     @ViewBuilder

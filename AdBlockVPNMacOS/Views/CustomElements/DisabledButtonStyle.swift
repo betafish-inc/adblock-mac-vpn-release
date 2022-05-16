@@ -18,7 +18,7 @@ import SwiftUI
 
 struct DisabledButtonStyle: ButtonStyle {
     @State private var isHover = false
-    var buttonColor: Color = .abBorder
+    var buttonColor: Color = .abButtonDisabled
     var textColor: Color = .abDisabledButtonForeground
     var buttonWidth: CGFloat = 272
 

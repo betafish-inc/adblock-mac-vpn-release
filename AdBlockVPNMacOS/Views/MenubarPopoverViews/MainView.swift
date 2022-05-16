@@ -65,7 +65,7 @@ struct MainView: View {
                height: state.showConnectionInfo ? 548 * state.guiScaleFactor.scale.app : 440 * state.guiScaleFactor.scale.app)
         .background([.updates, .updateError, .updateRequired].contains(state.viewToShow) ? Color.abUpdateErrorBackground : Color.abBackground)
         .foregroundColor(.abLightText)
-        .if(state.currentTheme != .system) { $0.colorScheme(state.currentTheme == .light ? .light : .dark) }
+        .if(state.currentTheme != .system) { $0.preferredColorSchemeWrapper(state.currentTheme == .light ? .light : .dark) }
         .onReceive(authManager.$token, perform: { newVal in
             self.state.checkViewToShow(loggedIn: self.authManager.willBeLoggedIn(newToken: newVal),
                                        isError: errorManager.isMainError,
